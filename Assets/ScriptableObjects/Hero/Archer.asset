@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
+  m_Name: Archer
+  m_EditorClassIdentifier: 
+  heroPrefab: {fileID: 1982329319156788161, guid: f8e5fe8211454c847bb682c9806ac54f, type: 3}
+  typeId: 1
+  heroName: Archer
+  goldCost: 70
+  hitPerSecond: 4
+  hitPower: 20
+  HP: 40
+  slotCost: 1
+  level: 1
+  levelUpMultiplier: 1.2
+  coolDownTime: 60
+  goldPerAttack: 8
