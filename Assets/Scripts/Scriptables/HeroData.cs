@@ -1,7 +1,7 @@
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "HeroType", menuName = "Scriptable Objects/HeroType")]
-public class HeroType : ScriptableObject
+[CreateAssetMenu(fileName = "HeroData", menuName = "Scriptable Objects/HeroType")]
+public class HeroData : ScriptableObject
 {
     public GameObject heroPrefab;
     public int typeId;

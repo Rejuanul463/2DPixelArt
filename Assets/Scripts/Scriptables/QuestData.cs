@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using UnityEngine;
+using static QuestData;
 
 [CreateAssetMenu(fileName = "QuestData", menuName = "Scriptable Objects/QuestData")]
 public class QuestData : ScriptableObject
@@ -11,15 +13,27 @@ public class QuestData : ScriptableObject
     public QuestType questType;
     public QuestDifficulty questDifficulty;
     [TextArea] public string description;
+    [SerializeField] private Sprite questIcon;
 
     [Header("Requirements")]
-    public int requiredLevel;
-    public int recommendedLevel;
-    public int requiredGoldToAttack;
+    [SerializeField] private int requiredLevel;
+    [SerializeField] private int minTeamSize = 1;
+    [SerializeField] private int maxTeamSize = 4;
+    [SerializeField] private int estimatedDuration = 1; // In hours
 
     [Header("Rewards")]
-    public int experienceReward;
-    public int goldReward;
+    [SerializeField] private int goldRewardBase;
+    [SerializeField] private int goldRewardBonus;
+    [SerializeField] private int experienceReward;
+    [SerializeField] private int experienceRewardBonus;
+    [SerializeField] private List<string> itemRewards = new();
+
+
+    [Header("Location")]
+    [SerializeField] private string location = "";
+    [SerializeField] private bool isInCity = true;
+    [SerializeField] private int travelDistance = 0; // Distance from city in kilometers
+
 
     [Header("Enemy Info")]
     public string enemyName;
@@ -38,3 +52,4 @@ public class QuestData : ScriptableObject
     public float TotalDPS => SingleDPS * enemyCount;
     public float TotalHP => HP * enemyCount;
 }
+

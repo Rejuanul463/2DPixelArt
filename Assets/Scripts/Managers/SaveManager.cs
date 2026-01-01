@@ -1,9 +1,10 @@
+using System;
 using UnityEngine;
-public class SaveManager : MonoBehaviour
+
+[Serializable]
+public class SaveManager
 {
-
-    public static SaveManager Instance { get; private set; }
-
+    [SerializeField] string data;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +14,6 @@ public class SaveManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        data = "data";
     }
 }

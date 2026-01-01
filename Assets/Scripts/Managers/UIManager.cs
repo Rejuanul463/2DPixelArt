@@ -1,10 +1,10 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager: MonoBehaviour
+[Serializable]
+public class UIManager
 {
-    public static UIManager Instance;
-
     [SerializeField] public PannelManager pannelManager;
     [Header("Pannels")]
     [SerializeField] public GameObject GamePannel;
@@ -51,15 +51,5 @@ public class UIManager: MonoBehaviour
     [SerializeField] public Button QDelZimbie;
     [SerializeField] public Button QAddValkyri;
     [SerializeField] public Button QDelValkyri;
-
-
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-    }
-
 
 }

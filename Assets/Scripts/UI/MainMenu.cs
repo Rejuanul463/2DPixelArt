@@ -13,8 +13,6 @@ public class MainMenu : MonoBehaviour
     [SerializeField] private GameObject volumeFullSprite;
     [SerializeField] private GameObject volumeMidSprite;
 
-    GameManager gameManager;
-
     private void Start()
     {
 
@@ -22,7 +20,7 @@ public class MainMenu : MonoBehaviour
     public void newGame()
     {
         continueButton.interactable = true;
-        SceneManager.LoadScene("GameTown");
+        SceneManager.Instance.LoadScene("GameTown");
     }
 
     public void OnApplicationQuit()
@@ -37,7 +35,7 @@ public class MainMenu : MonoBehaviour
 
     public void Update()
     {
-        AudioManager.Instance.setVolume(volumeSlider.value);
+        SceneManager.Instance.AudioManager.setVolume(volumeSlider.value);
 
         if (volumeSlider.value == 0)
         {

@@ -33,6 +33,6 @@ public class GoldGenerator : MonoBehaviour
     public void collectGold(int index)
     {
         goldMine[index].SetActive(false);
-        PlayerStats.Instance.AddGold(goldAmount);
+        //PlayerStats.Instance.AddGold(goldAmount);
     }
 }
