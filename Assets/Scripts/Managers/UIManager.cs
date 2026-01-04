@@ -1,10 +1,15 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 [Serializable]
 public class UIManager
 {
+    [SerializeField] public TextMeshProUGUI gold;
+    [SerializeField] public TextMeshProUGUI gems;
+
+
     [SerializeField] public PannelManager pannelManager;
     [Header("Pannels")]
     [SerializeField] public GameObject GamePannel;
@@ -23,6 +28,11 @@ public class UIManager
     [SerializeField] public Button HeroesButton;
     [SerializeField] public Button BuildingsButton;
     [SerializeField] public Button GoToQuestButton;
+    [SerializeField] public Button SummonPlayerButton;
+    [SerializeField] public Button BlackSmithButton;
+    [SerializeField] public Button PauseMenuButton;
+
+    [SerializeField] public Button chooseHeroesButton;
 
     [SerializeField] public Button AddBerberian;
     [SerializeField] public Button DelBerberian;
@@ -52,4 +62,6 @@ public class UIManager
     [SerializeField] public Button QAddValkyri;
     [SerializeField] public Button QDelValkyri;
 
+
+    [SerializeField] public Button play;
 }

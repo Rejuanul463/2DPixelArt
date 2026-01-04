@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 1982329319156788161, guid: f8e5fe8211454c847bb682c9806ac54f, type: 3}
-  typeId: 1
+  Id: 1
   heroName: Archer
   goldCost: 70
   hitPerSecond: 4

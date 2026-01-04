@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Giant
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 0}
-  typeId: 2
+  Id: 2
   heroName: Giant
   goldCost: 100
   hitPerSecond: 0.5

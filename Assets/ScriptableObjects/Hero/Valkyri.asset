@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Valkyri
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 0}
-  typeId: 5
+  Id: 5
   heroName: Valkyri
   goldCost: 200
   hitPerSecond: 4

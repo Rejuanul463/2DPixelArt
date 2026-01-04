@@ -201,7 +201,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -326,56 +326,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 35280427}
   m_CullTransparentMesh: 1
---- !u!1 &35853673
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 35853675}
-  - component: {fileID: 35853674}
-  m_Layer: 0
-  m_Name: PannelManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &35853674
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35853673}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e6f7456bbfe25a64292f27e5913d1ce1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pannels: []
-  spawner: {fileID: 1579189147}
-  heroesSummonButtons: []
-  heroSummonDelet: []
-  activePannelObj: {fileID: 0}
-  requiredGold: 0
---- !u!4 &35853675
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 35853673}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -255.54991, y: -1602.5697, z: 16.400219}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 767845172}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &46463296
 GameObject:
   m_ObjectHideFlags: 0
@@ -697,10 +647,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1659785434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 135, y: -41}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &113706026
 MonoBehaviour:
@@ -746,7 +696,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -954,7 +904,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: activePannel
         m_Mode: 3
@@ -1230,12 +1180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7db9776152010034cb0a9aa41a5603e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DelayedAttribute: 3600
-  isUpdated: 0
-  questUIHolder: {fileID: 5633437935926695750, guid: 73c8247863e1a2d4a861d64cd7dee847, type: 3}
-  questUIText: {fileID: 1366374229}
-  questTextMeshPro: {fileID: 1366374227}
-  QuestStartPannel: {fileID: 2105178987}
 --- !u!1 &159613653
 GameObject:
   m_ObjectHideFlags: 0
@@ -1269,10 +1213,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 777790510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 465, y: -85}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &159613655
 MonoBehaviour:
@@ -1318,7 +1262,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -1812,7 +1756,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 9107377152094392517}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deactivePannel
         m_Mode: 1
@@ -2641,10 +2585,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1659785434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 315, y: -41}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &332829254
 MonoBehaviour:
@@ -2690,7 +2634,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -3268,10 +3212,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 777790510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 275, y: -85}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &435905446
 MonoBehaviour:
@@ -3317,7 +3261,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -3865,7 +3809,7 @@ MonoBehaviour:
   smoothTime: 0.2
   minBounds: {x: -100, y: -100}
   maxBounds: {x: 100, y: 100}
-  pannelManager: {fileID: 35853674}
+  pannelManager: {fileID: 9107377152094392517}
 --- !u!1 &528257964
 GameObject:
   m_ObjectHideFlags: 0
@@ -4019,10 +3963,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 777790510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 275, y: -275}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &529137716
 MonoBehaviour:
@@ -4068,7 +4012,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -4228,7 +4172,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.11577213}
   m_AnchorMax: {x: 1, y: 0.85578156}
-  m_AnchoredPosition: {x: 0, y: -17.351639}
+  m_AnchoredPosition: {x: 0, y: -17.351685}
   m_SizeDelta: {x: 0, y: -8.836426}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &558751844
@@ -4476,10 +4420,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 777790510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 85, y: -275}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &567456177
 MonoBehaviour:
@@ -4525,7 +4469,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -4608,10 +4552,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 777790510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 85, y: -85}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &572149948
 MonoBehaviour:
@@ -4657,7 +4601,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -4948,7 +4892,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -4998,51 +4942,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 625592652}
   m_CullTransparentMesh: 1
---- !u!1 &629498216
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 629498219}
-  - component: {fileID: 629498218}
-  m_Layer: 0
-  m_Name: BattleManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &629498218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629498216}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 902d49f9466a2eb43ae1332439dc3f82, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  quest: {fileID: 0}
---- !u!4 &629498219
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 629498216}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 22.159353, y: 20.783636, z: -0.35922778}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &643424445
 GameObject:
   m_ObjectHideFlags: 0
@@ -5076,10 +4975,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1659785434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 495, y: -41}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &643424447
 MonoBehaviour:
@@ -5125,7 +5024,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -5437,7 +5336,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -5865,7 +5764,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &758286638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5926,91 +5825,6 @@ RectTransform:
   m_AnchoredPosition: {x: 1.2000122, y: -3.0423584}
   m_SizeDelta: {x: 2.4, y: -6.0851}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &767845170
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 767845172}
-  - component: {fileID: 767845171}
-  m_Layer: 0
-  m_Name: UIManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &767845171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767845170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 575d1a864cabe5f46a6db6f025a47aeb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  pannelManager: {fileID: 35853674}
-  GamePannel: {fileID: 1807319821529786222}
-  InventoryPannel: {fileID: 1549686240}
-  QuestPannel: {fileID: 123619970}
-  HeroPannel: {fileID: 1388532660}
-  BuildingPannel: {fileID: 917936606}
-  SummonPlayerPannel: {fileID: 758286637}
-  GoToQuestPannel: {fileID: 2105178987}
-  BlackSmith: {fileID: 323163804}
-  PauseMenuPannel: {fileID: 1214280371}
-  InventoryButton: {fileID: 0}
-  QuestsButton: {fileID: 1443705801}
-  HeroesButton: {fileID: 1367604547}
-  BuildingsButton: {fileID: 1460988216}
-  GoToQuestButton: {fileID: 1609908333}
-  AddBerberian: {fileID: 572149948}
-  DelBerberian: {fileID: 1158528656}
-  AddArcher: {fileID: 435905446}
-  DelArcher: {fileID: 113706026}
-  AddGiant: {fileID: 159613655}
-  DelGiant: {fileID: 1869766005}
-  AddWiz: {fileID: 567456177}
-  DelWiz: {fileID: 332829254}
-  AddZimbie: {fileID: 529137716}
-  DelZimbie: {fileID: 1574161247}
-  AddValkyri: {fileID: 1785910617}
-  DelValkyri: {fileID: 643424447}
-  SummonButton: {fileID: 1229396233}
-  QAddBerberian: {fileID: 0}
-  QDelBerberian: {fileID: 0}
-  QAddArcher: {fileID: 0}
-  QDelArcher: {fileID: 0}
-  QAddGiant: {fileID: 0}
-  QDelGiant: {fileID: 0}
-  QAddWiz: {fileID: 0}
-  QDelWiz: {fileID: 0}
-  QAddZimbie: {fileID: 0}
-  QDelZimbie: {fileID: 0}
-  QAddValkyri: {fileID: 0}
-  QDelValkyri: {fileID: 0}
---- !u!4 &767845172
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 767845170}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 255.54991, y: 1602.5697, z: -16.400219}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 35853675}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &777790509
 GameObject:
   m_ObjectHideFlags: 0
@@ -6048,10 +5862,10 @@ RectTransform:
   - {fileID: 1785910620}
   m_Father: {fileID: 257396500}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_SizeDelta: {x: 550, y: 421.70337}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &777790511
 MonoBehaviour:
@@ -6113,7 +5927,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15875001, y: 0.268}
   m_AnchorMax: {x: 0.84375, y: 0.7086406}
-  m_AnchoredPosition: {x: 0.54870605, y: -22.852013}
+  m_AnchoredPosition: {x: 0.54870605, y: -22.85199}
   m_SizeDelta: {x: 1.03, y: -49.092697}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &779618900
@@ -6266,7 +6080,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -6427,7 +6241,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15875001, y: 0.268}
   m_AnchorMax: {x: 0.84375, y: 0.7086406}
-  m_AnchoredPosition: {x: 0.54870605, y: -22.852013}
+  m_AnchoredPosition: {x: 0.54870605, y: -22.85199}
   m_SizeDelta: {x: 1.03, y: -49.092697}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &809125048
@@ -7300,7 +7114,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 9107377152094392517}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deactivePannel
         m_Mode: 1
@@ -7778,7 +7592,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 9107377152094392517}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deactivePannel
         m_Mode: 1
@@ -7985,7 +7799,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: activePannel
         m_Mode: 3
@@ -8044,7 +7858,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1071181830}
-  - component: {fileID: 1071181832}
   m_Layer: 5
   m_Name: Bottom
   m_TagString: Untagged
@@ -8072,24 +7885,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 1.1185303}
   m_SizeDelta: {x: 484, y: 220.98682}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1071181832
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1071181829}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76dcf152247ae9045b713a76d6031358, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startButton: {fileID: 1905429352}
-  settings: {fileID: 0}
-  Continue: {fileID: 0}
-  st: 1
-  set: 2
-  con: 0
 --- !u!1 &1075142645
 GameObject:
   m_ObjectHideFlags: 0
@@ -8546,7 +8341,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -8716,7 +8511,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -8943,10 +8738,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1659785434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 45, y: -41}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1158528656
 MonoBehaviour:
@@ -8992,7 +8787,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -9284,7 +9079,7 @@ Transform:
   m_GameObject: {fileID: 1175994314}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -13.9, y: 27.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -9374,7 +9169,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -9556,6 +9351,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1182968157}
   m_CullTransparentMesh: 1
+--- !u!1 &1191472161
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1191472162}
+  - component: {fileID: 1191472163}
+  - component: {fileID: 1191472164}
+  m_Layer: 0
+  m_Name: GuildManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1191472162
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191472161}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 821.94727, y: 1278.7007, z: -13.42428}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1191472163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191472161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47caa3b1d46b42c45af4c77efde0df7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  guildData: {fileID: 11400000, guid: c1f304181004ab740b163d42ec9746e6, type: 2}
+--- !u!114 &1191472164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1191472161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2698c9cd83a02514c8ee2d88dd3dfadb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heroDatas:
+  - {fileID: 11400000, guid: 1d9289731da99bd4d83f864064374616, type: 2}
+  - {fileID: 11400000, guid: 690007be5ab12b744bac75a633a40dc4, type: 2}
+  - {fileID: 11400000, guid: 6d793606e08ba884ab9ee02801013400, type: 2}
+  - {fileID: 11400000, guid: 1530f775c2e45a24d993ac6bfba06f25, type: 2}
+  - {fileID: 11400000, guid: dfeb5bbee08a4ff4e81b650473b5ef98, type: 2}
+  - {fileID: 11400000, guid: c3c2c2465db2ed4449a1f34045300fbd, type: 2}
 --- !u!1 &1194616245
 GameObject:
   m_ObjectHideFlags: 0
@@ -9833,7 +9693,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -10130,7 +9990,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.4117647}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -10144,12 +10004,12 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1229396234}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroSummonButton
         m_Mode: 1
@@ -10235,7 +10095,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.11577213}
   m_AnchorMax: {x: 1, y: 0.85578156}
-  m_AnchoredPosition: {x: -2.4000244, y: -17.669128}
+  m_AnchoredPosition: {x: -2.4000244, y: -17.66919}
   m_SizeDelta: {x: 0, y: -8.5407715}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1238867219
@@ -10763,7 +10623,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: activePannel
         m_Mode: 3
@@ -11047,7 +10907,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -11356,7 +11216,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -11488,7 +11348,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: activePannel
         m_Mode: 3
@@ -11620,7 +11480,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: activePannel
         m_Mode: 3
@@ -12336,7 +12196,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: activePannel
         m_Mode: 3
@@ -12582,7 +12442,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -12789,7 +12649,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -12921,7 +12781,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 9107377152094392517}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deactivePannel
         m_Mode: 1
@@ -13004,10 +12864,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1659785434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 405, y: -41}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1574161247
 MonoBehaviour:
@@ -13053,7 +12913,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -13291,7 +13151,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: activePannel
         m_Mode: 3
@@ -13753,7 +13613,7 @@ Transform:
   m_GameObject: {fileID: 1643906644}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.83, y: 96.21, z: 0}
+  m_LocalPosition: {x: -0.4, y: 2.8, z: 0}
   m_LocalScale: {x: 3.806502, y: 3.806502, z: 3.806502}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -14427,7 +14287,56 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b9183f98262feb048ab2d0e8a074f639, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  AudioManager: {fileID: 0}
+  UIManager:
+    gold: {fileID: 59387708}
+    gems: {fileID: 1494817895}
+    pannelManager: {fileID: 9107377152094392517}
+    GamePannel: {fileID: 1807319821529786222}
+    InventoryPannel: {fileID: 1549686240}
+    QuestPannel: {fileID: 123619970}
+    HeroPannel: {fileID: 1388532660}
+    BuildingPannel: {fileID: 917936606}
+    SummonPlayerPannel: {fileID: 758286637}
+    GoToQuestPannel: {fileID: 2105178987}
+    BlackSmith: {fileID: 323163804}
+    PauseMenuPannel: {fileID: 1214280371}
+    InventoryButton: {fileID: 690844956945760670}
+    QuestsButton: {fileID: 1443705801}
+    HeroesButton: {fileID: 1367604547}
+    BuildingsButton: {fileID: 1460988216}
+    GoToQuestButton: {fileID: 122836334}
+    SummonPlayerButton: {fileID: 1542491235}
+    BlackSmithButton: {fileID: 1064745067}
+    PauseMenuButton: {fileID: 397734989}
+    chooseHeroesButton: {fileID: 1609908333}
+    AddBerberian: {fileID: 572149948}
+    DelBerberian: {fileID: 1158528656}
+    AddArcher: {fileID: 435905446}
+    DelArcher: {fileID: 113706026}
+    AddGiant: {fileID: 159613655}
+    DelGiant: {fileID: 1869766005}
+    AddWiz: {fileID: 567456177}
+    DelWiz: {fileID: 332829254}
+    AddZimbie: {fileID: 529137716}
+    DelZimbie: {fileID: 1574161247}
+    AddValkyri: {fileID: 1785910617}
+    DelValkyri: {fileID: 643424447}
+    SummonButton: {fileID: 1229396233}
+    QAddBerberian: {fileID: 1394279487}
+    QDelBerberian: {fileID: 35180081}
+    QAddArcher: {fileID: 1441709700}
+    QDelArcher: {fileID: 1133196891}
+    QAddGiant: {fileID: 1103966113}
+    QDelGiant: {fileID: 677616050}
+    QAddWiz: {fileID: 1564810767}
+    QDelWiz: {fileID: 1176969662}
+    QAddZimbie: {fileID: 1210702675}
+    QDelZimbie: {fileID: 1560517175}
+    QAddValkyri: {fileID: 793214476}
+    QDelValkyri: {fileID: 625592654}
+    play: {fileID: 1905429349}
+  GuildManager: {fileID: 1191472163}
+  HeroManager: {fileID: 1191472164}
 --- !u!4 &1736130336
 Transform:
   m_ObjectHideFlags: 0
@@ -14657,7 +14566,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: heroTypeMultiplayer
         m_Mode: 3
@@ -14721,10 +14630,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 777790510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 465, y: -275}
+  m_SizeDelta: {x: 130, y: 130}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1795607224
 GameObject:
@@ -14960,10 +14869,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1659785434}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 225, y: -41}
+  m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1869766005
 MonoBehaviour:
@@ -15009,7 +14918,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deleteType
         m_Mode: 3
@@ -15473,7 +15382,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 9107377152094392517}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deactivePannel
         m_Mode: 1
@@ -15797,7 +15706,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 9107377152094392517}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deactivePannel
         m_Mode: 1
@@ -16349,7 +16258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 9107377152094392517}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: deactivePannel
         m_Mode: 1
@@ -16443,7 +16352,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 35853674}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
         m_MethodName: activePannel
         m_Mode: 3
@@ -16553,6 +16462,7 @@ GameObject:
   - component: {fileID: 9107377152094392516}
   - component: {fileID: 8261074972792840908}
   - component: {fileID: 5793492744752334467}
+  - component: {fileID: 9107377152094392517}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -16577,7 +16487,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.11946652}
-  m_AnchoredPosition: {x: 0, y: -0.10998535}
+  m_AnchoredPosition: {x: 0, y: -0.11010742}
   m_SizeDelta: {x: 0, y: -0.22000122}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!224 &4660161539452460256
@@ -16718,6 +16628,27 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 1
   m_TargetDisplay: 0
+--- !u!114 &9107377152094392517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3396401948417443007}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e6f7456bbfe25a64292f27e5913d1ce1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pannels: []
+  spawner: {fileID: 0}
+  heroesSummonButtons: []
+  heroSummonDelet: []
+  heroesQuestButtons: []
+  heroQuestDeletButtons: []
+  activePannelObj: {fileID: 0}
+  typeAvailable: 
+  requiredGold: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -16729,7 +16660,6 @@ SceneRoots:
   - {fileID: 1075142648}
   - {fileID: 1538734383}
   - {fileID: 4660161539452460256}
-  - {fileID: 629498219}
   - {fileID: 1175994316}
-  - {fileID: 767845172}
   - {fileID: 1736130336}
+  - {fileID: 1191472162}

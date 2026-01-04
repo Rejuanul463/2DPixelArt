@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Zimbie
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 0}
-  typeId: 4
+  Id: 4
   heroName: Zimbie
   goldCost: 150
   hitPerSecond: 0.4

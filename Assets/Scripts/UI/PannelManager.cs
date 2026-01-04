@@ -8,31 +8,90 @@ using UnityEngine.UI;
 [Serializable]
 public class PannelManager : MonoBehaviour
 {
+    private Button inventoryButton;
+    private Button questButton;
+    private Button heroButton;
+    private Button buildingButton;
+    private Button summonButton;
+    private Button blackSmithButton;
+    private Button pauseButton;
+    private Button heroSelectionButton;
+
+    private Button GoToQuestButton;
+    private Button summonHeroButton;
+
     [SerializeField] private List<GameObject> pannels;
     [SerializeField] private Transform spawner;
     [SerializeField] private List<Button> heroesSummonButtons;
     [SerializeField] private List<Button> heroSummonDelet;
-    public GameObject activePannelObj;
-    private int[] typeCount;
 
-    private bool isSpawning = false;
-    private int spawnType = 0;
+    [SerializeField] private List<Button> heroesQuestButtons;
+    [SerializeField] private List<Button> heroQuestDeletButtons;
+    public GameObject activePannelObj;
+
+    public bool[] typeAvailable;
 
     [SerializeField] private int requiredGold;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         AddGameObjects();
-        typeCount = new int[6];
         deactiveAllPannels();
-
+        addListener();
+        typeAvailable = new bool[6];
     }
 
-    private void Update()
+
+
+    private void checkInterectableForSummon()
     {
-        if (isSpawning)
-            StartCoroutine(summonCooldown(spawnType, 2f));
+        for(int i = 0; i < typeAvailable.Length; i++)
+        {
+            if(i <= GameManager.Instance.GuildManager.unlockedHeroes || i > GameManager.Instance.GuildManager.unlockableHeroes)
+            {
+                heroesSummonButtons[i].interactable = false;
+                heroSummonDelet[i].interactable = false;
+                continue;
+            }
+            
+            if (typeAvailable[i])
+            {
+                Debug.Log("Disable summon button");
+                heroesSummonButtons[i].interactable = false;
+                heroSummonDelet[i].interactable = true;
+            }
+            else
+            {
+                heroesSummonButtons[i].interactable = true;
+                heroSummonDelet[i].interactable = false;
+            }
+        }
     }
+
+    private void checkInterectableForQuest()
+    {
+        for (int i = 0; i < typeAvailable.Length; i++)
+        {
+            if(i > GameManager.Instance.GuildManager.unlockedHeroes)
+            {
+                heroesQuestButtons[i].interactable = false;
+                heroQuestDeletButtons[i].interactable = false;
+                continue;
+            }
+            if (typeAvailable[i])
+            {
+                heroesQuestButtons[i].interactable = false;
+                heroQuestDeletButtons[i].interactable = true;
+            }
+            else
+            {
+                heroesQuestButtons[i].interactable = true;
+                heroQuestDeletButtons[i].interactable = false;
+            }
+        }
+    }
+
+
     private void deactiveAllPannels()
     {
         foreach (GameObject pannel in pannels)
@@ -40,16 +99,25 @@ public class PannelManager : MonoBehaviour
             pannel.SetActive(false);
         }
     }
-
-    public void activePannel(int ind)
+    void activePannel(int ind)
     {
-        //if (ind == 4)
-        //{
-        //    setHeroSummonButtonsInteractable(PlayerStats.Instance.getPlayerUnlocked());
-        //    deinteractable();
-        //}
-        if(activePannelObj != null)
+        if(ind == 4)
+        {
+            summonCost = 0;
+            summonIds = new bool[6];
+            typeAvailable = new bool[6];
+            summonHeroButton.interactable = false;
+            checkInterectableForSummon();
+        }else if(ind == 7)
+        {
+            typeAvailable = new bool[6];
+            Debug.Log("PlayerSelectionPannel");
+            checkInterectableForQuest();
+        }
+
+        if (activePannelObj != null)
             activePannelObj.SetActive(false);
+
         pannels[ind].SetActive(true);
         activePannelObj = pannels[ind];
     }
@@ -58,116 +126,153 @@ public class PannelManager : MonoBehaviour
     {
         activePannelObj.SetActive(false);
         activePannelObj = null;
+
+        for (int i = 0; i < typeAvailable.Length; i++)
+        {
+            typeAvailable[i] = false;
+        }
     }
 
-    //public void heroTypeMultiplayer(int type)
-    //{
-    //    requiredGold += HeroManager.Instance.getHeroSummonCost(type);
-    //    if (!PlayerStats.Instance.CanAfford(requiredGold))
-    //    {
-    //        requiredGold -= HeroManager.Instance.getHeroSummonCost(type);
-    //        return;
-    //    }
+    int summonCost = 0;
+    bool[] summonIds = new bool[6];
 
-    //    typeCount[type]++;
-    //    heroSummonDelet[type].interactable = true;
-    //}
-    //public void deleteType(int type)
-    //{
-    //    if(typeCount[type] > 0)
-    //    {
-    //        requiredGold -= HeroManager.Instance.getHeroSummonCost(type);
-    //        typeCount[type]--;
-    //    }
-    //    if(typeCount[type] == 0)
-    //    {
-    //        heroSummonDelet[type].interactable = false;
-    //    }
-    //}
-
-    //public void heroSummonButton()
-    //{
-    //    PlayerStats.Instance.SpendGold(requiredGold);
-    //    requiredGold = 0;
-    //    deactivePannel();
-    //    isSpawning = true;
-    //    spawnType = 0;
-
-    //}
-
-    IEnumerator  summonCooldown(int type, float cooldown)
+    private void addHero(int id)
     {
-        isSpawning = false;
-        yield return new WaitForSeconds(cooldown);
-        if (typeCount[type] > 0)
+        int val = GameManager.Instance.HeroManager.isSummonable(id);
+        if(val > 0)
         {
-            //HeroManager.Instance.SummonHero(type, spawner);
-            //typeCount[type]--;
+            summonCost += val;
+            typeAvailable[id] = true;
+            summonIds[id] = true;
         }
-        else
-        {
-            spawnType = type + 1;
-        }
-
-        if(spawnType == typeCount.Length)
-        {
-            isSpawning = false;
-            spawnType = 0;
-        }
-        else
-        {
-            isSpawning = true;
-        }
+        checkInterectableForSummon();
+        
+        if (canSummon()) summonHeroButton.interactable = true;
+        else summonHeroButton.interactable = false;
     }
 
-    private void setHeroSummonButtonsInteractable(int numAvailable)
+    private bool canSummon()
     {
-        for(int i = 0; i <= Mathf.Min(heroesSummonButtons.Count, numAvailable); i++)
+        foreach(bool val in summonIds)
         {
-            heroesSummonButtons[i].interactable = true;
+            if (val) return val;
         }
 
-        for(int i = numAvailable + 1; i < heroesSummonButtons.Count; i++)
-        {
-            heroesSummonButtons[i].interactable = false;
-        }
+        return false;
     }
 
-    private void deinteractable()
+    private void removeHero(int id)
     {
-        for(int i = 0; i < heroesSummonButtons.Count; i++)
+        if(summonIds[id])
         {
-            if(typeCount[i] == 0)
-                heroSummonDelet[i].interactable = false;
+            int val = GameManager.Instance.HeroManager.isSummonable(id);
+            summonCost -= val;
+            typeAvailable[id] = false;
+            summonIds[id] = false;
         }
+        checkInterectableForSummon();
+        
+        if(canSummon()) summonHeroButton.interactable = true;
+        else summonHeroButton.interactable = false;
     }
-
-
-
-
     private void AddGameObjects()
     {
-        pannels.Add(SceneManager.Instance.UIManager.InventoryPannel);
-        pannels.Add(SceneManager.Instance.UIManager.QuestPannel);
-        pannels.Add(SceneManager.Instance.UIManager.HeroPannel);
-        pannels.Add(SceneManager.Instance.UIManager.BuildingPannel);
-        pannels.Add(SceneManager.Instance.UIManager.SummonPlayerPannel);
-        pannels.Add(SceneManager.Instance.UIManager.BlackSmith);
-        pannels.Add(SceneManager.Instance.UIManager.PauseMenuPannel);
-        pannels.Add(SceneManager.Instance.UIManager.GoToQuestPannel);
+        inventoryButton = GameManager.Instance.UIManager.InventoryButton;
+        questButton = GameManager.Instance.UIManager.QuestsButton;
+        heroButton = GameManager.Instance.UIManager.HeroesButton;
+        buildingButton = GameManager.Instance.UIManager.BuildingsButton;
+        summonButton = GameManager.Instance.UIManager.SummonPlayerButton;
+        blackSmithButton = GameManager.Instance.UIManager.BlackSmithButton;
+        pauseButton = GameManager.Instance.UIManager.PauseMenuButton;
 
-        heroesSummonButtons.Add(SceneManager.Instance.UIManager.AddBerberian);
-        heroesSummonButtons.Add(SceneManager.Instance.UIManager.AddArcher);
-        heroesSummonButtons.Add(SceneManager.Instance.UIManager.AddGiant);
-        heroesSummonButtons.Add(SceneManager.Instance.UIManager.AddWiz);
-        heroesSummonButtons.Add(SceneManager.Instance.UIManager.AddZimbie);
-        heroesSummonButtons.Add(SceneManager.Instance.UIManager.AddValkyri);
+        pannels.Add(GameManager.Instance.UIManager.InventoryPannel);
+        pannels.Add(GameManager.Instance.UIManager.QuestPannel);
+        pannels.Add(GameManager.Instance.UIManager.HeroPannel);
+        pannels.Add(GameManager.Instance.UIManager.BuildingPannel);
+        pannels.Add(GameManager.Instance.UIManager.SummonPlayerPannel);
+        pannels.Add(GameManager.Instance.UIManager.BlackSmith);
+        pannels.Add(GameManager.Instance.UIManager.PauseMenuPannel);
+        pannels.Add(GameManager.Instance.UIManager.GoToQuestPannel);
 
-        heroSummonDelet.Add(SceneManager.Instance.UIManager.DelBerberian);
-        heroSummonDelet.Add(SceneManager.Instance.UIManager.DelArcher);
-        heroSummonDelet.Add(SceneManager.Instance.UIManager.DelGiant);
-        heroSummonDelet.Add(SceneManager.Instance.UIManager.DelWiz);
-        heroSummonDelet.Add(SceneManager.Instance.UIManager.DelZimbie);
-        heroSummonDelet.Add(SceneManager.Instance.UIManager.DelValkyri);
+        heroesSummonButtons.Add(GameManager.Instance.UIManager.AddBerberian);
+        heroesSummonButtons.Add(GameManager.Instance.UIManager.AddArcher);
+        heroesSummonButtons.Add(GameManager.Instance.UIManager.AddGiant);
+        heroesSummonButtons.Add(GameManager.Instance.UIManager.AddWiz);
+        heroesSummonButtons.Add(GameManager.Instance.UIManager.AddZimbie);
+        heroesSummonButtons.Add(GameManager.Instance.UIManager.AddValkyri);
+
+        heroSummonDelet.Add(GameManager.Instance.UIManager.DelBerberian);
+        heroSummonDelet.Add(GameManager.Instance.UIManager.DelArcher);
+        heroSummonDelet.Add(GameManager.Instance.UIManager.DelGiant);
+        heroSummonDelet.Add(GameManager.Instance.UIManager.DelWiz);
+        heroSummonDelet.Add(GameManager.Instance.UIManager.DelZimbie);
+        heroSummonDelet.Add(GameManager.Instance.UIManager.DelValkyri);
+
+        heroesQuestButtons.Add(GameManager.Instance.UIManager.QAddBerberian);
+        heroesQuestButtons.Add(GameManager.Instance.UIManager.QAddArcher);
+        heroesQuestButtons.Add(GameManager.Instance.UIManager.QAddGiant);
+        heroesQuestButtons.Add(GameManager.Instance.UIManager.QAddWiz);
+        heroesQuestButtons.Add(GameManager.Instance.UIManager.QAddZimbie);
+        heroesQuestButtons.Add(GameManager.Instance.UIManager.QAddValkyri);
+
+        heroQuestDeletButtons.Add(GameManager.Instance.UIManager.QDelBerberian);
+        heroQuestDeletButtons.Add(GameManager.Instance.UIManager.QDelArcher);
+        heroQuestDeletButtons.Add(GameManager.Instance.UIManager.QDelGiant);
+        heroQuestDeletButtons.Add(GameManager.Instance.UIManager.QDelWiz);
+        heroQuestDeletButtons.Add(GameManager.Instance.UIManager.QDelZimbie);
+        heroQuestDeletButtons.Add(GameManager.Instance.UIManager.QDelValkyri);
+
+        heroSelectionButton = GameManager.Instance.UIManager.chooseHeroesButton;
+
+        GoToQuestButton = GameManager.Instance.UIManager.GoToQuestButton;
+        summonHeroButton = GameManager.Instance.UIManager.SummonButton;
+
     }
+
+
+    private void addListener()
+    {
+        inventoryButton.onClick.AddListener(() => activePannel(0));
+        questButton.onClick.AddListener(() => activePannel(1));
+        heroButton.onClick.AddListener(() => activePannel(2));
+        buildingButton.onClick.AddListener(() => activePannel(3));
+
+
+        summonButton.onClick.AddListener(() => activePannel(4));
+        blackSmithButton.onClick.AddListener(() => activePannel(5));
+        pauseButton.onClick.AddListener(() => activePannel(6));
+        heroSelectionButton.onClick.AddListener(() => activePannel(7));
+
+        GoToQuestButton.onClick.AddListener(() => GoQuest());
+        summonHeroButton.onClick.AddListener(() => summonHeroes());
+
+        GameManager.Instance.UIManager.play.onClick.AddListener(() => deactivePannel());
+
+        heroesSummonButtons[0].onClick.AddListener(() => addHero(0));
+        heroesSummonButtons[1].onClick.AddListener(() => addHero(1));
+        heroesSummonButtons[2].onClick.AddListener(() => addHero(2));
+        heroesSummonButtons[3].onClick.AddListener(() => addHero(3));
+        heroesSummonButtons[4].onClick.AddListener(() => addHero(4));
+        heroesSummonButtons[5].onClick.AddListener(() => addHero(5));
+
+        heroSummonDelet[0].onClick.AddListener(() => removeHero(0));
+        heroSummonDelet[1].onClick.AddListener(() => removeHero(1));
+        heroSummonDelet[2].onClick.AddListener(() => removeHero(2));
+        heroSummonDelet[3].onClick.AddListener(() => removeHero(3));
+        heroSummonDelet[4].onClick.AddListener(() => removeHero(4));
+        heroSummonDelet[5].onClick.AddListener(() => removeHero(5));
+    }
+
+    private void GoQuest()
+    {
+
+        //deactivePannel();
+    }
+
+    private void summonHeroes()
+    {
+        GameManager.Instance.HeroManager.summonHeroes(summonIds, summonCost);
+        deactivePannel();
+    }
+
 }

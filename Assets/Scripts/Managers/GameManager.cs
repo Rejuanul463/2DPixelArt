@@ -1,9 +1,13 @@
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
 
     public static GameManager Instance { get; private set; }
+    [SerializeField] public UIManager UIManager;
+    [SerializeField] public GuildManager GuildManager;
+    [SerializeField] public HeroManager HeroManager;
 
     private void Awake()
     {
@@ -33,4 +37,5 @@ public class GameManager : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
+
 }

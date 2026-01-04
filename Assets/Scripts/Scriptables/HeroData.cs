@@ -4,13 +4,12 @@ using UnityEngine;
 public class HeroData : ScriptableObject
 {
     public GameObject heroPrefab;
-    public int typeId;
+    public int Id;
     public string heroName;
     public int goldCost;
     public float hitPerSecond;
     public float hitPower;
     public float HP;
-    public int slotCost;
     public int level;
     public float levelUpMultiplier;
     public float coolDownTime;

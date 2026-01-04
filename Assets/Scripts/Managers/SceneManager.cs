@@ -4,7 +4,6 @@ public class SceneManager : MonoBehaviour
 {
     public static SceneManager Instance { get; private set; }
 
-    [SerializeField] public UIManager UIManager;
     [SerializeField] public SaveManager SaveManager;
     [SerializeField] public AudioManager AudioManager;
     public enum SceneStatus

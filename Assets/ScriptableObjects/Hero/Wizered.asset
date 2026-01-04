@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Wizered
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 0}
-  typeId: 3
+  Id: 3
   heroName: Wizered
   goldCost: 120
   hitPerSecond: 3
