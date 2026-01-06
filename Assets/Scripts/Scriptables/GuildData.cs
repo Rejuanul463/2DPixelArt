@@ -10,7 +10,7 @@ public class GuildData : ScriptableObject
     [SerializeField] public int currentExperience = 0;
     [SerializeField] public int experienceToNextLevel = 100;
     [SerializeField] public int gold = 0;
-    [SerializeField] public int maxUnlockedHeroID = 0;
+    [SerializeField] public bool[] unlockedHeroID;
     [SerializeField] public int maxUnlockableHeroID = 0;
     [SerializeField] public int gems = 0;
     [SerializeField] public int woods = 0;

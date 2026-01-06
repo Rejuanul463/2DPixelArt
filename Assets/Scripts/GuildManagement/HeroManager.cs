@@ -5,13 +5,13 @@ public class HeroManager : MonoBehaviour
     [SerializeField] private HeroData[] heroDatas;
 
     
-    public int isSummonable(int id)
+    public int isSummonable(int id , int currentCost)
     {
-        if (heroDatas[id].goldCost <= GameManager.Instance.GuildManager.Gold)
+        if (heroDatas[id].goldCost + currentCost <= GameManager.Instance.GuildManager.Gold)
         {
-            return heroDatas[id].goldCost;
+            return currentCost + heroDatas[id].goldCost;
         }
-        return 0;
+        return currentCost;
     }
 
 
@@ -22,7 +22,8 @@ public class HeroManager : MonoBehaviour
         {
             if (ids[i])
             {
-                Debug.Log("Summoned Hero: " + heroDatas[i].heroName);
+                Instantiate(heroDatas[i].heroPrefab, GameManager.Instance.SummonPoint.position, Quaternion.identity);
+                GameManager.Instance.GuildManager.UnlockHero(i);
             }
         }
     }

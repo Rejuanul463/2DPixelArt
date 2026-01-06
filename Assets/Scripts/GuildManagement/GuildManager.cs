@@ -65,10 +65,20 @@ public class GuildManager : MonoBehaviour
     public int GuildLevel => guildData.guildLevel;
 
 
-    public int unlockedHeroes
+    public bool IsHeroUnlocked(int index)
     {
-        get => guildData.maxUnlockedHeroID;
-        set => guildData.maxUnlockedHeroID += 1;
+        if (index < 0 || index >= guildData.unlockedHeroID.Length)
+            return false;
+
+        return guildData.unlockedHeroID[index];
+    }
+
+    public void UnlockHero(int index)
+    {
+        if (index < 0 || index >= guildData.unlockedHeroID.Length)
+            return;
+
+        guildData.unlockedHeroID[index] = true;
     }
 
     public int unlockableHeroes

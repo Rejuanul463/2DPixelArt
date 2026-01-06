@@ -62,6 +62,8 @@ public class UIManager
     [SerializeField] public Button QAddValkyri;
     [SerializeField] public Button QDelValkyri;
 
-
     [SerializeField] public Button play;
+
+    [Header ("PopUps")]
+    [SerializeField] public GameObject popUpPannel;
 }

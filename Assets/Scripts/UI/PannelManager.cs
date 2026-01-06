@@ -47,7 +47,7 @@ public class PannelManager : MonoBehaviour
     {
         for(int i = 0; i < typeAvailable.Length; i++)
         {
-            if(i <= GameManager.Instance.GuildManager.unlockedHeroes || i > GameManager.Instance.GuildManager.unlockableHeroes)
+            if(GameManager.Instance.GuildManager.IsHeroUnlocked(i) || i > GameManager.Instance.GuildManager.unlockableHeroes)
             {
                 heroesSummonButtons[i].interactable = false;
                 heroSummonDelet[i].interactable = false;
@@ -56,7 +56,7 @@ public class PannelManager : MonoBehaviour
             
             if (typeAvailable[i])
             {
-                Debug.Log("Disable summon button");
+                //Debug.Log("Disable summon button");
                 heroesSummonButtons[i].interactable = false;
                 heroSummonDelet[i].interactable = true;
             }
@@ -72,7 +72,7 @@ public class PannelManager : MonoBehaviour
     {
         for (int i = 0; i < typeAvailable.Length; i++)
         {
-            if(i > GameManager.Instance.GuildManager.unlockedHeroes)
+            if(!GameManager.Instance.GuildManager.IsHeroUnlocked(i))
             {
                 heroesQuestButtons[i].interactable = false;
                 heroQuestDeletButtons[i].interactable = false;
@@ -138,12 +138,19 @@ public class PannelManager : MonoBehaviour
 
     private void addHero(int id)
     {
-        int val = GameManager.Instance.HeroManager.isSummonable(id);
-        if(val > 0)
+        int val = GameManager.Instance.HeroManager.isSummonable(id, summonCost);
+        
+        if(val > summonCost)
         {
             summonCost += val;
             typeAvailable[id] = true;
             summonIds[id] = true;
+        }
+        else
+        {
+            // Popup Insufficient Gold Message
+            GameManager.Instance.UIManager.popUpPannel.SetActive(true);
+            GameManager.Instance.popUpManager.ShowNotEnoughtGold();
         }
         checkInterectableForSummon();
         
@@ -165,7 +172,7 @@ public class PannelManager : MonoBehaviour
     {
         if(summonIds[id])
         {
-            int val = GameManager.Instance.HeroManager.isSummonable(id);
+            int val = GameManager.Instance.HeroManager.isSummonable(id, summonCost);
             summonCost -= val;
             typeAvailable[id] = false;
             summonIds[id] = false;

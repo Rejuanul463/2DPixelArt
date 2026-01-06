@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
   m_Name: Archer
   m_EditorClassIdentifier: 
-  heroPrefab: {fileID: 1982329319156788161, guid: f8e5fe8211454c847bb682c9806ac54f, type: 3}
+  heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
   Id: 1
   heroName: Archer
   goldCost: 70
   hitPerSecond: 4
   hitPower: 20
   HP: 40
-  slotCost: 1
   level: 1
   levelUpMultiplier: 1.2
   coolDownTime: 60

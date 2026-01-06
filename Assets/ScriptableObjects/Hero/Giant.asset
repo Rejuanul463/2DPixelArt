@@ -12,14 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
   m_Name: Giant
   m_EditorClassIdentifier: 
-  heroPrefab: {fileID: 0}
+  heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
   Id: 2
   heroName: Giant
   goldCost: 100
   hitPerSecond: 0.5
   hitPower: 60
   HP: 100
-  slotCost: 2
   level: 1
   levelUpMultiplier: 1.2
   coolDownTime: 100
