@@ -84,6 +84,12 @@ public class GuildManager : MonoBehaviour
     public int unlockableHeroes
     {
         get => guildData.maxUnlockableHeroID;
-        set => guildData.maxUnlockableHeroID += 1;
+        set => guildData.maxUnlockableHeroID += value;
+    }
+
+    public void setUnlockableHeroes(int value)
+    {
+        Debug.Log("Setting unlockable heroes to: " + value);
+        guildData.maxUnlockableHeroID = value;
     }
 }

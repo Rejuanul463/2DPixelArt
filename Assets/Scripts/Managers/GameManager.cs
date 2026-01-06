@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance { get; private set; }
     [SerializeField] public UIManager UIManager;
     [SerializeField] public GuildManager GuildManager;
-    [SerializeField] public HeroManager HeroManager;
+    [SerializeField] public HeroSummoner HeroSummoner;
 
     [SerializeField] public PopUPManager popUpManager;
     [SerializeField] public Transform SummonPoint;

@@ -138,7 +138,7 @@ public class PannelManager : MonoBehaviour
 
     private void addHero(int id)
     {
-        int val = GameManager.Instance.HeroManager.isSummonable(id, summonCost);
+        int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost);
         
         if(val > summonCost)
         {
@@ -172,7 +172,7 @@ public class PannelManager : MonoBehaviour
     {
         if(summonIds[id])
         {
-            int val = GameManager.Instance.HeroManager.isSummonable(id, summonCost);
+            int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost);
             summonCost -= val;
             typeAvailable[id] = false;
             summonIds[id] = false;
@@ -278,7 +278,7 @@ public class PannelManager : MonoBehaviour
 
     private void summonHeroes()
     {
-        GameManager.Instance.HeroManager.summonHeroes(summonIds, summonCost);
+        GameManager.Instance.HeroSummoner.summonHeroes(summonIds, summonCost);
         deactivePannel();
     }
 

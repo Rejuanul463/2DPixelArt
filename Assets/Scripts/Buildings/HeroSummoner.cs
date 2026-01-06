@@ -1,10 +1,10 @@
 using UnityEngine;
 
-public class HeroManager : MonoBehaviour
+public class HeroSummoner : Building
 {
     [SerializeField] private HeroData[] heroDatas;
+    [SerializeField] private Transform summonPoint;
 
-    
     public int isSummonable(int id , int currentCost)
     {
         if (heroDatas[id].goldCost + currentCost <= GameManager.Instance.GuildManager.Gold)
@@ -22,7 +22,7 @@ public class HeroManager : MonoBehaviour
         {
             if (ids[i])
             {
-                Instantiate(heroDatas[i].heroPrefab, GameManager.Instance.SummonPoint.position, Quaternion.identity);
+                Instantiate(heroDatas[i].heroPrefab, summonPoint.position, Quaternion.identity);
                 GameManager.Instance.GuildManager.UnlockHero(i);
             }
         }

@@ -21,6 +21,13 @@ public class PopUPManager : MonoBehaviour
         notEnoughtGold.SetActive(true);
     }
 
+    public void ShowNotEnoughtResources()
+    {
+        if (currentActive != null) currentActive.SetActive(false);
+        currentActive = notEnoughtGold;
+        notEnoughtGold.SetActive(true);
+    }
+
     public void ShowNotEnoughtGems()
     {
         if (currentActive != null) currentActive.SetActive(false);

@@ -17,7 +17,7 @@ MonoBehaviour:
   experienceToNextLevel: 100
   gold: 120
   unlockedHeroID: 000000000000
-  maxUnlockableHeroID: 4
+  maxUnlockableHeroID: 2
   gems: 0
   woods: 0
   stones: 0
