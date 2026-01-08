@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
-    [SerializeField] private BuildingData buildingData;
+    [SerializeField] public BuildingData buildingData;
 
     public void upgradeBuilding()
     {
@@ -27,25 +27,33 @@ public class Building : MonoBehaviour
             }
         }
     }
-    public bool upgradable = false;
-    public void Update()
+
+    public void Start()
     {
-        if (upgradable)
-        {
-            upgradable = false;
-            buildingData.Upgrade();
-            StartCoroutine(completeUpgrade(0));
-            Debug.Log("Upgraded without resources for testing :" + buildingData.buildingLevel);
-        }
-        
+        Debug.Log("workign");
+        GetComponent<SpriteRenderer>().sprite = buildingData.currentBuilding;
     }
+
+    //public bool upgradable = false;
+
+    //public void Update()
+    //{
+    //    if (upgradable)
+    //    {
+    //        upgradable = false;
+    //        buildingData.Upgrade();
+    //        StartCoroutine(completeUpgrade(0));
+    //        Debug.Log("Upgraded without resources for testing :" + buildingData.buildingLevel);
+    //    }
+        
+    //}
     public void upgradeCompletion(long timeLeft)
     {
         StartCoroutine(completeUpgrade(timeLeft));
     }
 
 
-    IEnumerator completeUpgrade(long timeLeft)
+    public virtual IEnumerator completeUpgrade(long timeLeft)
     {
         yield return new WaitForSeconds(timeLeft);
         if (buildingData.buildingLevel <= 3)

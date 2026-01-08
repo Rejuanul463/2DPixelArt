@@ -13,11 +13,12 @@ MonoBehaviour:
   m_Name: SummoningPoint
   m_EditorClassIdentifier: 
   buildingType: 4
-  buildingPrefabs:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  currentBuilding: {fileID: 5649187464185397831, guid: b7df187c799f69149b3dcdf5dddda9e1, type: 3}
+  buildingSprites:
+  - {fileID: 5649187464185397831, guid: b7df187c799f69149b3dcdf5dddda9e1, type: 3}
+  - {fileID: -9221372646831500594, guid: 9d51c044a0115aa4094c817a187ea958, type: 3}
+  - {fileID: -8162382995348875702, guid: e3322836356c26048aaf03a900908a92, type: 3}
+  - {fileID: -7296707713171318115, guid: 919dc689fee002b4d91a02df25a04950, type: 3}
   buildingLevel: 1
   maxBuildingLevel: 4
   upgradeCostGold: 745039

@@ -1,7 +1,6 @@
 using System;
 using System.Collections;
 using UnityEngine;
-
 public class PopUPManager : MonoBehaviour
 {
     [SerializeField] private GameObject notEnoughtGold;

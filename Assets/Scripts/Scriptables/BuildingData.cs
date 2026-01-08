@@ -10,11 +10,13 @@ public class BuildingData : ScriptableObject
         Farm,
         Shop,
         BlackSmith,
-        SummonPoint
+        SummonPoint,
+        Guild
     }
+
     [SerializeField] BuildingType buildingType;
-    private GameObject currentBuilding;
-    [SerializeField] GameObject[] buildingPrefabs;
+    [SerializeField] public Sprite currentBuilding;
+    [SerializeField] Sprite[] buildingSprites;
     [SerializeField] public int buildingLevel = 1;
     [SerializeField] public int maxBuildingLevel = 4;
     [SerializeField] public int upgradeCostGold = 100;
@@ -48,6 +50,6 @@ public class BuildingData : ScriptableObject
     {
         if (!isUpgradable) return;
         isUnderUpgrade = false;
-        currentBuilding = buildingPrefabs[buildingLevel - 1];
+        currentBuilding = buildingSprites[buildingLevel - 1];
     }
 }

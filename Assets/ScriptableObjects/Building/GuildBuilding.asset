@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfcc3af7df89ac419d64ab074c2c59d, type: 3}
+  m_Name: GuildBuilding
+  m_EditorClassIdentifier: 
+  buildingType: 5
+  currentBuilding: {fileID: -5408450449081530149, guid: 12a1b1ffc39fea449ba3e20993baf082, type: 3}
+  buildingSprites:
+  - {fileID: -5408450449081530149, guid: 12a1b1ffc39fea449ba3e20993baf082, type: 3}
+  - {fileID: -5158463297161461763, guid: 0f6eec374b4f76f4199dab14c85ad236, type: 3}
+  - {fileID: -5847501919112670475, guid: 8a775d9bbdc804845b8bbf4d2934c79e, type: 3}
+  - {fileID: 857871553925087978, guid: 88f8d57c93848cf478e9ac7164256993, type: 3}
+  buildingLevel: 1
+  maxBuildingLevel: 4
+  upgradeCostGold: 300
+  upgradeCostWood: 150
+  upgradeCostStone: 200
+  xpBoost: 200
+  isUnderUpgrade: 0
+  isUpgradable: 1
+  upgradeTime: 300
+  UpgradeMultiplier: 1.5
+  upgradeStartTime: 0
