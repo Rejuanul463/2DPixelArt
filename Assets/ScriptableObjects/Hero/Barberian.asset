@@ -18,7 +18,7 @@ MonoBehaviour:
   goldCost: 50
   hitPerSecond: 2
   hitPower: 10
-  HP: 20
+  HP: 40
   level: 1
   levelUpMultiplier: 1.2
   coolDownTime: 60

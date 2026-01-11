@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
   Id: 4
-  heroName: Zimbie
+  heroName: Knight
   goldCost: 150
   hitPerSecond: 0.4
   hitPower: 100

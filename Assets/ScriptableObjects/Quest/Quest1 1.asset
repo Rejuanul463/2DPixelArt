@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
+  m_Name: Quest1 1
+  m_EditorClassIdentifier: 
+  questName: ' The Moonlit Rebellion'
+  questType: 0
+  questDifficulty: 0
+  description: The stars have spoken. Ancient forces return to reclaim what was once
+    theirs.
+  questIcon: {fileID: 0}
+  requiredLevel: 1
+  minTeamSize: 1
+  maxTeamSize: 1
+  estimatedDuration: 1
+  goldRewardBase: 140
+  goldRewardBonus: 40
+  experienceReward: 200
+  experienceRewardBonus: 60
+  itemRewards: []
+  location: Frontier Zone
+  isInCity: 0
+  travelDistance: 6
+  enemyName: Shadowmancer Legion
+  hitPerSecond: 1.44
+  hitPower: 17
+  HP: 120
+  enemyCount: 1
+  completionTime: 0
+  isCompleted: 0
+  slots: 1

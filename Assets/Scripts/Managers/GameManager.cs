@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] public UIManager UIManager;
     [SerializeField] public GuildManager GuildManager;
     [SerializeField] public HeroSummoner HeroSummoner;
-
+    [SerializeField] public QuestManager QuestManager;
     [SerializeField] public PopUPManager popUpManager;
     [SerializeField] public Transform SummonPoint;
     private void Awake()

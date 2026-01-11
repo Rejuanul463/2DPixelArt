@@ -27,4 +27,17 @@ public class HeroSummoner : Building
             }
         }
     }
+
+    public float getHeroHP(int id)
+    {
+        return heroDatas[id].HP;
+    }
+    public float getHeroHitPerSecound(int id)
+    {
+        return heroDatas[id].hitPerSecond;
+    }
+    public float getHeroPower(int id)
+    {
+        return heroDatas[id].hitPower;
+    }
 }

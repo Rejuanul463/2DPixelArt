@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
+  m_Name: Quest1 24
+  m_EditorClassIdentifier: 
+  questName: The Ironfang Wars
+  questType: 0
+  questDifficulty: 2
+  description: Burning winds carry whispers of a new power, and your guild is in
+    its path.
+  questIcon: {fileID: 0}
+  requiredLevel: 6
+  minTeamSize: 1
+  maxTeamSize: 3
+  estimatedDuration: 3
+  goldRewardBase: 800
+  goldRewardBonus: 260
+  experienceReward: 1080
+  experienceRewardBonus: 390
+  itemRewards: []
+  location: Frontier Zone
+  isInCity: 0
+  travelDistance: 75
+  enemyName: Stellar Serpents
+  hitPerSecond: 4.2
+  hitPower: 74.5
+  HP: 580
+  enemyCount: 5
+  completionTime: 0
+  isCompleted: 0
+  slots: 0

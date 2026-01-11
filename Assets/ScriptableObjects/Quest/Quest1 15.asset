@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
+  m_Name: Quest1 15
+  m_EditorClassIdentifier: 
+  questName: Nightfall's Wrath
+  questType: 0
+  questDifficulty: 1
+  description: The iron wolves grow restless. A looming war threatens everything
+    you've built.
+  questIcon: {fileID: 0}
+  requiredLevel: 5
+  minTeamSize: 1
+  maxTeamSize: 3
+  estimatedDuration: 1
+  goldRewardBase: 530
+  goldRewardBonus: 170
+  experienceReward: 720
+  experienceRewardBonus: 255
+  itemRewards: []
+  location: Frontier Zone
+  isInCity: 0
+  travelDistance: 45
+  enemyName: Flameborne Juggernauts
+  hitPerSecond: 3
+  hitPower: 49.5
+  HP: 380
+  enemyCount: 3
+  completionTime: 0
+  isCompleted: 0
+  slots: 0

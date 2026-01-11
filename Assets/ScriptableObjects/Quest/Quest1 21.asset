@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
+  m_Name: Quest1 21
+  m_EditorClassIdentifier: 
+  questName: Nightfall's Wrath
+  questType: 0
+  questDifficulty: 2
+  description: The stars have spoken. Ancient forces return to reclaim what was once
+    theirs.
+  questIcon: {fileID: 0}
+  requiredLevel: 6
+  minTeamSize: 1
+  maxTeamSize: 2
+  estimatedDuration: 5
+  goldRewardBase: 710
+  goldRewardBonus: 230
+  experienceReward: 960
+  experienceRewardBonus: 345
+  itemRewards: []
+  location: Frontier Zone
+  isInCity: 0
+  travelDistance: 63
+  enemyName: Stellar Serpents
+  hitPerSecond: 3.72
+  hitPower: 64.5
+  HP: 500
+  enemyCount: 4
+  completionTime: 0
+  isCompleted: 0
+  slots: 0

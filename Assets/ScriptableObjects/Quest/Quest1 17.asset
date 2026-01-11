@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
+  m_Name: Quest1 17
+  m_EditorClassIdentifier: 
+  questName: Nightfall's Wrath
+  questType: 0
+  questDifficulty: 1
+  description: The stars have spoken. Ancient forces return to reclaim what was once
+    theirs.
+  questIcon: {fileID: 0}
+  requiredLevel: 6
+  minTeamSize: 1
+  maxTeamSize: 2
+  estimatedDuration: 2
+  goldRewardBase: 590
+  goldRewardBonus: 190
+  experienceReward: 800
+  experienceRewardBonus: 285
+  itemRewards: []
+  location: Frontier Zone
+  isInCity: 0
+  travelDistance: 51
+  enemyName: Elder Dragonspawn
+  hitPerSecond: 3.24
+  hitPower: 54.5
+  HP: 420
+  enemyCount: 3
+  completionTime: 0
+  isCompleted: 0
+  slots: 0

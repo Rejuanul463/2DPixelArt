@@ -99,6 +99,7 @@ public class PannelManager : MonoBehaviour
             pannel.SetActive(false);
         }
     }
+
     void activePannel(int ind)
     {
         if(ind == 4)
@@ -110,6 +111,9 @@ public class PannelManager : MonoBehaviour
             checkInterectableForSummon();
         }else if(ind == 7)
         {
+
+            if (!GameManager.Instance.QuestManager.questSelected) return;
+            checkInteractableForHire();
             typeAvailable = new bool[6];
             Debug.Log("PlayerSelectionPannel");
             checkInterectableForQuest();
@@ -124,6 +128,8 @@ public class PannelManager : MonoBehaviour
 
     public void deactivePannel()
     {
+        GameManager.Instance.QuestManager.questSelected = false;
+        GameManager.Instance.QuestManager.details.text = "Quest Details";
         activePannelObj.SetActive(false);
         activePannelObj = null;
 
@@ -268,12 +274,87 @@ public class PannelManager : MonoBehaviour
         heroSummonDelet[3].onClick.AddListener(() => removeHero(3));
         heroSummonDelet[4].onClick.AddListener(() => removeHero(4));
         heroSummonDelet[5].onClick.AddListener(() => removeHero(5));
+
+        heroesQuestButtons[0].onClick.AddListener(() => addHeroForQuest(0));
+        heroesQuestButtons[1].onClick.AddListener(() => addHeroForQuest(1));
+        heroesQuestButtons[2].onClick.AddListener(() => addHeroForQuest(2));
+        heroesQuestButtons[3].onClick.AddListener(() => addHeroForQuest(3));
+        heroesQuestButtons[4].onClick.AddListener(() => addHeroForQuest(4));
+        heroesQuestButtons[5].onClick.AddListener(() => addHeroForQuest(5));
+
+
+        heroQuestDeletButtons[0].onClick.AddListener(() => removeHeroForQuest(0));
+        heroQuestDeletButtons[1].onClick.AddListener(() => removeHeroForQuest(1));
+        heroQuestDeletButtons[2].onClick.AddListener(() => removeHeroForQuest(2));
+        heroQuestDeletButtons[3].onClick.AddListener(() => removeHeroForQuest(3));
+        heroQuestDeletButtons[4].onClick.AddListener(() => removeHeroForQuest(4));
+        heroQuestDeletButtons[5].onClick.AddListener(() => removeHeroForQuest(5));
+
+    }
+
+    bool[] selectedHero;
+    int count = 0;
+    private void checkInteractableForHire()
+    {
+        selectedHero = new bool[6];
+        count = 0;
+        for (int i = 0; i < typeAvailable.Length; i++)
+        {
+            if (GameManager.Instance.GuildManager.IsHeroUnlocked(i))
+            {
+                heroesSummonButtons[i].interactable = true;
+                heroSummonDelet[i].interactable = false;
+            }
+        }
+    }
+    
+    
+    private void addHeroForQuest(int id)
+    {
+        
+        if (count < GameManager.Instance.QuestManager.SelectedQD.maxPlayerCount)
+        {
+            Debug.Log("PlayerAdded");
+            selectedHero[id] = true;
+            count++;
+            heroesQuestButtons[id].interactable = false;
+            heroQuestDeletButtons[id].interactable = true;
+        }
+    }
+
+    private void removeHeroForQuest(int id)
+    {
+        selectedHero[id] = false;
+        count--;
+        heroesQuestButtons[id].interactable = true;
+        heroQuestDeletButtons[id].interactable = false;
     }
 
     private void GoQuest()
     {
-
-        //deactivePannel();
+        if(count > 0)
+        {
+            float hitDamage = 0;
+            float hps = 0;
+            float hp = 0;
+            for(int i = 0; i < 6; i++)
+            {
+                if (selectedHero[i])
+                {
+                    hitDamage += GameManager.Instance.HeroSummoner.getHeroPower(i);
+                    hps += GameManager.Instance.HeroSummoner.getHeroHitPerSecound(i);
+                    hp += GameManager.Instance.HeroSummoner.getHeroHP(i);
+                }
+            }
+            if(GameManager.Instance.QuestManager.SimulateCombat(hp, hps, hitDamage))
+            {
+                Debug.Log("Wins");
+            }
+            else
+            {
+                Debug.Log("loses");
+            }
+        }
     }
 
     private void summonHeroes()

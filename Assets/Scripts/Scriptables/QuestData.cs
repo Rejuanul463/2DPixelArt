@@ -16,23 +16,23 @@ public class QuestData : ScriptableObject
     [SerializeField] private Sprite questIcon;
 
     [Header("Requirements")]
-    [SerializeField] private int requiredLevel;
-    [SerializeField] private int minTeamSize = 1;
-    [SerializeField] private int maxTeamSize = 4;
-    [SerializeField] private int estimatedDuration = 1; // In hours
+    [SerializeField] public int requiredLevel;
+    [SerializeField] public int minTeamSize = 1;
+    [SerializeField] public int maxTeamSize = 4;
+    [SerializeField] public int estimatedDuration = 1; // In hours
 
     [Header("Rewards")]
-    [SerializeField] private int goldRewardBase;
-    [SerializeField] private int goldRewardBonus;
-    [SerializeField] private int experienceReward;
-    [SerializeField] private int experienceRewardBonus;
-    [SerializeField] private List<string> itemRewards = new();
+    [SerializeField] public int goldRewardBase;
+    [SerializeField] public int goldRewardBonus;
+    [SerializeField] public int experienceReward;
+    [SerializeField] public int experienceRewardBonus;
+    [SerializeField] public List<string> itemRewards = new();
 
 
     [Header("Location")]
-    [SerializeField] private string location = "";
-    [SerializeField] private bool isInCity = true;
-    [SerializeField] private int travelDistance = 0; // Distance from city in kilometers
+    [SerializeField] public string location = "";
+    [SerializeField] public bool isInCity = true;
+    [SerializeField] public int travelDistance = 0; // Distance from city in kilometers
 
 
     [Header("Enemy Info")]
