@@ -1,10 +1,9 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "BuildingData", menuName = "Scriptable Objects/BuildingData")]
 public class BuildingData : ScriptableObject
 {
-    enum BuildingType
+    public enum BuildingType
     {
         House,
         Farm,
@@ -14,9 +13,10 @@ public class BuildingData : ScriptableObject
         Guild
     }
 
+    [SerializeField] public int buildingID;
     [SerializeField] BuildingType buildingType;
     [SerializeField] public Sprite currentBuilding;
-    [SerializeField] Sprite[] buildingSprites;
+    [SerializeField] public Sprite[] buildingSprites;
     [SerializeField] public int buildingLevel = 1;
     [SerializeField] public int maxBuildingLevel = 4;
     [SerializeField] public int upgradeCostGold = 100;
@@ -45,11 +45,18 @@ public class BuildingData : ScriptableObject
         upgradeCostStone = (int)(upgradeCostStone * UpgradeMultiplier);
         xpBoost = (int)(xpBoost * UpgradeMultiplier);
     }
-
     public void CompleteUpgrade()
     {
         if (!isUpgradable) return;
         isUnderUpgrade = false;
         currentBuilding = buildingSprites[buildingLevel - 1];
+    }
+    public bool isTownHall()
+    {
+        if(buildingType == BuildingType.Guild)
+        {
+            return true;
+        }
+        return false;
     }
 }

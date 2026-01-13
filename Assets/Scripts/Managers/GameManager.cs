@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public QuestManager QuestManager;
     [SerializeField] public PopUPManager popUpManager;
     [SerializeField] public Transform SummonPoint;
+
+    [SerializeField] public BuildingData TownHall;
     private void Awake()
     {
         if (Instance != null && Instance != this)

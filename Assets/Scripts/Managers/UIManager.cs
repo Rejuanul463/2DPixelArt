@@ -8,6 +8,7 @@ public class UIManager
 {
     [SerializeField] public TextMeshProUGUI gold;
     [SerializeField] public TextMeshProUGUI gems;
+    [SerializeField] public TextMeshProUGUI guildLevel;
 
 
     [SerializeField] public PannelManager pannelManager;

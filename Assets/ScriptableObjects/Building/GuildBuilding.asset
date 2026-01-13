@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cfcc3af7df89ac419d64ab074c2c59d, type: 3}
   m_Name: GuildBuilding
   m_EditorClassIdentifier: 
+  buildingID: 0
   buildingType: 5
   currentBuilding: {fileID: -5408450449081530149, guid: 12a1b1ffc39fea449ba3e20993baf082, type: 3}
   buildingSprites:
@@ -21,12 +22,12 @@ MonoBehaviour:
   - {fileID: 857871553925087978, guid: 88f8d57c93848cf478e9ac7164256993, type: 3}
   buildingLevel: 1
   maxBuildingLevel: 4
-  upgradeCostGold: 300
-  upgradeCostWood: 150
-  upgradeCostStone: 200
-  xpBoost: 200
+  upgradeCostGold: 1
+  upgradeCostWood: 1
+  upgradeCostStone: 1
+  xpBoost: 1
   isUnderUpgrade: 0
   isUpgradable: 1
-  upgradeTime: 300
+  upgradeTime: 1
   UpgradeMultiplier: 1.5
   upgradeStartTime: 0

@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfcc3af7df89ac419d64ab074c2c59d, type: 3}
+  m_Name: BlackSmithBuilding
+  m_EditorClassIdentifier: 
+  buildingID: 2
+  buildingType: 3
+  currentBuilding: {fileID: 6801117023246281240, guid: b862c714d4735fa4a81297428acdf9ca, type: 3}
+  buildingSprites:
+  - {fileID: 6801117023246281240, guid: b862c714d4735fa4a81297428acdf9ca, type: 3}
+  - {fileID: 6914442600668188890, guid: 62690619282a5db4f8dab39fe37f2615, type: 3}
+  - {fileID: -6551805626470343092, guid: b857d6891bd3f6845b999e8d975035b3, type: 3}
+  - {fileID: 6914442600668188890, guid: 62690619282a5db4f8dab39fe37f2615, type: 3}
+  buildingLevel: 1
+  maxBuildingLevel: 4
+  upgradeCostGold: 1
+  upgradeCostWood: 1
+  upgradeCostStone: 1
+  xpBoost: 1
+  isUnderUpgrade: 0
+  isUpgradable: 1
+  upgradeTime: 1
+  UpgradeMultiplier: 1.5
+  upgradeStartTime: 0

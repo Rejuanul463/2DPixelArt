@@ -26,7 +26,8 @@ public class QuestData : ScriptableObject
     [SerializeField] public int goldRewardBonus;
     [SerializeField] public int experienceReward;
     [SerializeField] public int experienceRewardBonus;
-    [SerializeField] public List<string> itemRewards = new();
+    [SerializeField] public int WoodReward;
+    [SerializeField] public int StoneReward;
 
 
     [Header("Location")]

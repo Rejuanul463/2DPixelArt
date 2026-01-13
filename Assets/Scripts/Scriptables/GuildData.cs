@@ -15,6 +15,7 @@ public class GuildData : ScriptableObject
     [SerializeField] public int gems = 0;
     [SerializeField] public int woods = 0;
     [SerializeField] public int stones = 0;
-
+    [SerializeField] public int BlackSmithLevel = 1;
+    [SerializeField] public int HeroSummonerLevel = 1;
     [SerializeField] public long[] questCompleteTime;
 }

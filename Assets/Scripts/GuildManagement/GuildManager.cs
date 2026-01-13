@@ -22,6 +22,24 @@ public class GuildManager : MonoBehaviour
     {
         GameManager.Instance.UIManager.gold.text = guildData.gold.ToString();
         GameManager.Instance.UIManager.gems.text = guildData.gems.ToString();
+
+        GameManager.Instance.UIManager.guildLevel.text += guildData.guildLevel.ToString();
+    }
+
+
+
+    public int Experience
+    {
+        get => guildData.currentExperience;
+        set
+        {
+            guildData.currentExperience = Mathf.Max(0, value);
+            if (guildData.currentExperience > guildData.experienceToNextLevel)
+            {
+                guildData.guildLevel += 1;
+            }
+            updateResourcesUI();
+        }
     }
 
 

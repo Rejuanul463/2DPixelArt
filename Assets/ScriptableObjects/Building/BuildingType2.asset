@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cfcc3af7df89ac419d64ab074c2c59d, type: 3}
+  m_Name: BuildingType2
+  m_EditorClassIdentifier: 
+  buildingID: 4
+  buildingType: 0
+  currentBuilding: {fileID: -5526327991656178582, guid: ec2e6904312d5fe439c1ea18ba8358f8, type: 3}
+  buildingSprites:
+  - {fileID: -5526327991656178582, guid: ec2e6904312d5fe439c1ea18ba8358f8, type: 3}
+  - {fileID: -7411356308102892701, guid: c8ebfd54bd7ffb74eb71d9aee2948034, type: 3}
+  - {fileID: 9053888668234287261, guid: eac5c92edb070214f8396aafba6afcd8, type: 3}
+  - {fileID: -8738219050688121939, guid: bd5378e6f7b82ca48ae2ec66d3f9444b, type: 3}
+  buildingLevel: 1
+  maxBuildingLevel: 4
+  upgradeCostGold: 1
+  upgradeCostWood: 1
+  upgradeCostStone: 1
+  xpBoost: 1
+  isUnderUpgrade: 0
+  isUpgradable: 1
+  upgradeTime: 1
+  UpgradeMultiplier: 1.5
+  upgradeStartTime: 0

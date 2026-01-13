@@ -154,7 +154,16 @@ public class QuestManager : MonoBehaviour
         Debug.Log($"Enemies DPS: {totalEnemyDPS}, Total Hero HP: {totalHeroHP}, Time to kill: {timeForEnemiesToKillHeroes}");
 
         // Winner is the side that kills the other first
-        return timeForHeroesToKillEnemies <= timeForEnemiesToKillHeroes;
+        if( timeForHeroesToKillEnemies <= timeForEnemiesToKillHeroes)
+        {
+            GameManager.Instance.GuildManager.Gold += (int)SelectedQD.reward;
+            //GameManager.Instance.GuildManager.
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
 }
 

@@ -1,7 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -188,6 +186,7 @@ public class PannelManager : MonoBehaviour
         if(canSummon()) summonHeroButton.interactable = true;
         else summonHeroButton.interactable = false;
     }
+
     private void AddGameObjects()
     {
         inventoryButton = GameManager.Instance.UIManager.InventoryButton;
@@ -349,6 +348,7 @@ public class PannelManager : MonoBehaviour
             if(GameManager.Instance.QuestManager.SimulateCombat(hp, hps, hitDamage))
             {
                 Debug.Log("Wins");
+
             }
             else
             {
@@ -362,5 +362,4 @@ public class PannelManager : MonoBehaviour
         GameManager.Instance.HeroSummoner.summonHeroes(summonIds, summonCost);
         deactivePannel();
     }
-
 }

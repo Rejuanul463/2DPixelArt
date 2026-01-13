@@ -3,14 +3,12 @@ using UnityEngine;
 
 public class GridManagement : MonoBehaviour
 {
-
     [SerializeField] GameObject gridRiverTile;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         StartCoroutine(AnimateRiver());
     }
-
 
     IEnumerator AnimateRiver()
     {
@@ -22,7 +20,4 @@ public class GridManagement : MonoBehaviour
             gridRiverTile.SetActive(false);
         }
     }
-
-    
-
 }
