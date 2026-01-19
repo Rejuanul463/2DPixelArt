@@ -100,6 +100,10 @@ public class PannelManager : MonoBehaviour
 
     void activePannel(int ind)
     {
+        if(ind == 1)
+        {
+            GameManager.Instance.QuestManager.loadQuests();
+        }
         if(ind == 4)
         {
             summonCost = 0;
@@ -345,15 +349,19 @@ public class PannelManager : MonoBehaviour
                     hp += GameManager.Instance.HeroSummoner.getHeroHP(i);
                 }
             }
-            if(GameManager.Instance.QuestManager.SimulateCombat(hp, hps, hitDamage))
+            QuestData simulationQuestData = GameManager.Instance.QuestManager.SimulateCombat(hp, hps, hitDamage);
+            if (simulationQuestData != null)
             {
                 Debug.Log("Wins");
-
+                GameManager.Instance.GuildManager.Gold += simulationQuestData.goldRewardBase;
+                GameManager.Instance.GuildManager.Experience += simulationQuestData.experienceReward;
+                simulationQuestData.isCompleted = true;
             }
             else
             {
                 Debug.Log("loses");
             }
+            deactiveAllPannels();
         }
     }
 

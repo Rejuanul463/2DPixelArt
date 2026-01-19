@@ -52,5 +52,10 @@ public class QuestData : ScriptableObject
     public float SingleDPS => hitPerSecond * hitPower;
     public float TotalDPS => SingleDPS * enemyCount;
     public float TotalHP => HP * enemyCount;
+
+    public void CompleteTask()
+    {
+        isCompleted = true;
+    }
 }
 

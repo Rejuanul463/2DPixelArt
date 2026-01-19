@@ -11,13 +11,6 @@ public class GuildManager : MonoBehaviour
         updateResourcesUI();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
     public void updateResourcesUI()
     {
         GameManager.Instance.UIManager.gold.text = guildData.gold.ToString();
@@ -37,6 +30,7 @@ public class GuildManager : MonoBehaviour
             if (guildData.currentExperience > guildData.experienceToNextLevel)
             {
                 guildData.guildLevel += 1;
+                // logic to update Experience to Next Level
             }
             updateResourcesUI();
         }

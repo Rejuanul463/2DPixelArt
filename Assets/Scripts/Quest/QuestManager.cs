@@ -1,4 +1,6 @@
+using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +33,7 @@ public class QuestManager : MonoBehaviour
             maxPlayerCount = plc;
         }
     }
-
+    public QuestData selectedQuestData;
     public QuestDetails SelectedQD;
 
     [SerializeField] QuestData[] questData;
@@ -39,6 +41,7 @@ public class QuestManager : MonoBehaviour
 
     [SerializeField] private RectTransform content;
     [SerializeField] private GameObject itemPrefab;
+    List<GameObject> questItemList;
 
     [SerializeField] public TextMeshProUGUI details;
 
@@ -47,89 +50,114 @@ public class QuestManager : MonoBehaviour
     private void Start()
     {
         questSelected = false;
+        latestQuestInd = 0;
         loadQuests();
     }
 
-    private void loadQuests()
+    public void loadQuests()
     {
         for (int i = latestQuestInd; i < questData.Length; i++)
         {
+            // Skip quests above guild level (DO NOT return)
             if (GameManager.Instance.GuildManager.GuildLevel < questData[i].requiredLevel)
-                return;
+                continue;
 
+            // Skip completed quests
             if (questData[i].isCompleted)
                 continue;
 
-            // Instantiate prefab
+            // Cache loop variables (CRITICAL FIX)
+            int index = i;
+            QuestData quest = questData[index];
+
+            // Instantiate UI item
             GameObject item = Instantiate(itemPrefab, content);
             item.transform.localScale = Vector3.one;
 
-            // Set name
-            TextMeshProUGUI nameText = item.transform.Find("name")?.GetComponent<TextMeshProUGUI>();
-            if (nameText != null) nameText.text = questData[i].questName;
+            // Quest Name
+            var nameText = item.transform.Find("name")
+                ?.GetComponent<TextMeshProUGUI>();
+            if (nameText != null)
+                nameText.text = quest.questName;
 
-            // Set type
-            TextMeshProUGUI typeText = item.transform.Find("type")?.GetComponent<TextMeshProUGUI>();
+            // Quest Type
+            var typeText = item.transform.Find("type")
+                ?.GetComponent<TextMeshProUGUI>();
             if (typeText != null)
-                typeText.text = questData[i].questType == QuestData.QuestType.Main ? "Main" : "Side";
+                typeText.text = quest.questType == QuestData.QuestType.Main ? "Main" : "Side";
 
-            // Set difficulty and color
-            TextMeshProUGUI diffText = item.transform.Find("Difficulty")?.GetComponent<TextMeshProUGUI>();
+            // Difficulty + Color
+            var diffText = item.transform.Find("Difficulty")
+                ?.GetComponent<TextMeshProUGUI>();
             if (diffText != null)
             {
-                switch (questData[i].questDifficulty)
+                switch (quest.questDifficulty)
                 {
                     case QuestData.QuestDifficulty.Easy:
-                        diffText.text = "Easy"; diffText.color = Color.green; break;
+                        diffText.text = "Easy";
+                        diffText.color = Color.green;
+                        break;
+
                     case QuestData.QuestDifficulty.Medium:
-                        diffText.text = "Medium"; diffText.color = Color.cyan; break;
+                        diffText.text = "Medium";
+                        diffText.color = Color.cyan;
+                        break;
+
                     case QuestData.QuestDifficulty.Hard:
-                        diffText.text = "Hard"; diffText.color = Color.yellow; break;
+                        diffText.text = "Hard";
+                        diffText.color = Color.yellow;
+                        break;
+
                     case QuestData.QuestDifficulty.SuperHard:
-                        diffText.text = "Super Hard"; diffText.color = Color.red; break;
+                        diffText.text = "Super Hard";
+                        diffText.color = Color.red;
+                        break;
+
                     default:
-                        diffText.text = "Epic"; diffText.color = Color.magenta; break;
+                        diffText.text = "Epic";
+                        diffText.color = Color.magenta;
+                        break;
                 }
             }
 
-            // Prepare quest details struct
+            // Build QuestDetails from cached quest
             QuestDetails qDetails = new QuestDetails(
-                questData[i].questName,
-                questData[i].description,
-                questData[i].enemyName,
-                questData[i].HP,
-                questData[i].hitPerSecond,
-                questData[i].hitPower,
-                questData[i].goldRewardBase,
-                questData[i].enemyCount,
-                questData[i].maxTeamSize
+                quest.questName,
+                quest.description,
+                quest.enemyName,
+                quest.HP,
+                quest.hitPerSecond,
+                quest.hitPower,
+                quest.goldRewardBase,
+                quest.enemyCount,
+                quest.maxTeamSize
             );
 
-            // Assign onClick using lambda and pass the struct
+            // Assign button listener (SAFE)
             Button btn = item.GetComponent<Button>();
-            if (btn != null)
-            {
-                btn.onClick.AddListener(() => OnQuestButtonPressed(qDetails));
-            }
+            btn.onClick.RemoveAllListeners(); // safety
+            btn.onClick.AddListener(() =>
+                OnQuestButtonPressed(qDetails, quest, index, ref item));
         }
     }
 
+    private int selectedQuestindex;
+    private GameObject currentItem;
     // Now the button sends the struct instead of multiple arguments
-    private void OnQuestButtonPressed(QuestDetails qD)
+    private void OnQuestButtonPressed(QuestDetails qD, QuestData quest, int ind, ref GameObject itm)
     {
+        currentItem = itm;
+        selectedQuestindex = ind;
+        selectedQuestData = quest;
         SelectedQD = qD;
         questSelected = true;
         details.text = "Quest Details" + qD.name + " : " + qD.description + "\n"
                         + "Enemy : " + qD.enemyName + "\n"
                         + "HP : " + qD.enemyHP + ",  Hit/s : " + qD.hitPerSecond + "\n"
                         + "HitDmg : " + qD.hitPower + ",  Gold : " + qD.reward;
-
-
     }
 
-
-
-    public bool SimulateCombat(float heroHP, float heroHPS, float heroHitPower)
+    public QuestData SimulateCombat(float heroHP, float heroHPS, float heroHitPower)
     {
         questSelected = false;
         float enemyHP = SelectedQD.enemyHP;
@@ -157,13 +185,14 @@ public class QuestManager : MonoBehaviour
         if( timeForHeroesToKillEnemies <= timeForEnemiesToKillHeroes)
         {
             GameManager.Instance.GuildManager.Gold += (int)SelectedQD.reward;
-            //GameManager.Instance.GuildManager.
-            return true;
+            selectedQuestData.isCompleted = true;
+            Debug.Log(selectedQuestindex);
+            Destroy(currentItem);
+            return selectedQuestData;
         }
         else
         {
-            return false;
+            return null;
         }
     }
 }
-

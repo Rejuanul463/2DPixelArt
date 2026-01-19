@@ -26,7 +26,8 @@ MonoBehaviour:
   goldRewardBonus: 300
   experienceReward: 1240
   experienceRewardBonus: 450
-  itemRewards: []
+  WoodReward: 0
+  StoneReward: 0
   location: Frontier Zone
   isInCity: 0
   travelDistance: 84
