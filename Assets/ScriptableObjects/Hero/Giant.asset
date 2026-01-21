@@ -13,12 +13,19 @@ MonoBehaviour:
   m_Name: Giant
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
+  heroSprite:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   Id: 2
   heroName: Giant
-  goldCost: 100
+  goldCost: 120
   hitPerSecond: 0.5
-  hitPower: 60
-  HP: 100
+  hitPower: 72
+  HP: 120
   level: 1
   levelUpMultiplier: 1.2
   coolDownTime: 100

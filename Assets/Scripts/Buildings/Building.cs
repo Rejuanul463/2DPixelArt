@@ -6,7 +6,7 @@ public class Building : MonoBehaviour
 {
     [SerializeField] public BuildingData buildingDataPref;
     public static Action<int> OnUpgradeRequested;
-    protected BuildingData buildingData;
+    [HideInInspector] public BuildingData buildingData;
 
     void Awake()
     {

@@ -13,13 +13,20 @@ MonoBehaviour:
   m_Name: Valkyri
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
+  heroSprite:
+  - {fileID: 6630341104690361922, guid: e96fec00830140742b9729a632a51cef, type: 3}
+  - {fileID: -6464869995595449900, guid: d6da606426478564ebef8c952ab15974, type: 3}
+  - {fileID: -2749261331969839478, guid: 79de9373febae124d88fba930b28e0f2, type: 3}
+  - {fileID: -394276232368140000, guid: 6a0a24313b7ba214bae3418f2d084b44, type: 3}
+  - {fileID: -7840245296287319653, guid: 3e85772a7357b204b880a94dc28452fa, type: 3}
+  - {fileID: 7096352024863751258, guid: 3614ac5468d473548966acab96f16d7b, type: 3}
   Id: 5
   heroName: Valkyri
-  goldCost: 200
+  goldCost: 1012
   hitPerSecond: 4
-  hitPower: 50
-  HP: 100
-  level: 1
+  hitPower: 252
+  HP: 505
+  level: 2
   levelUpMultiplier: 1.5
   coolDownTime: 200
   goldPerAttack: 24

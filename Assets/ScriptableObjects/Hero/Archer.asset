@@ -13,13 +13,20 @@ MonoBehaviour:
   m_Name: Archer
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
+  heroSprite:
+  - {fileID: 7913795812276003576, guid: 3789da2f71e823547a5c37e522c71176, type: 3}
+  - {fileID: 6630341104690361922, guid: 03c03eb342bca7f4a8ae5e1f055e6274, type: 3}
+  - {fileID: 133982719826790466, guid: 0c84ba94f6066cf47a46c45cde2199b2, type: 3}
+  - {fileID: -7854140664152144422, guid: 7bcfcb7d951d1d3418c6d8586ac90ae9, type: 3}
+  - {fileID: -2103097836041421020, guid: 2955396aa40592c4791c241bd33478dc, type: 3}
+  - {fileID: 114185655640970728, guid: 0df971b3dfde43f45a608da42e82e3be, type: 3}
   Id: 1
   heroName: Archer
-  goldCost: 70
+  goldCost: 1188
   hitPerSecond: 4
-  hitPower: 20
-  HP: 40
+  hitPower: 337
+  HP: 681
   level: 1
-  levelUpMultiplier: 1.2
+  levelUpMultiplier: 1.5
   coolDownTime: 60
   goldPerAttack: 8

@@ -6,6 +6,8 @@ public class HeroSummoner : Building
     [SerializeField] private HeroData[] heroDatas;
     [SerializeField] private Transform summonPoint;
 
+    [SerializeField] private Building blackSmith;
+
     public int isSummonable(int id , int currentCost)
     {
         if (heroDatas[id].goldCost + currentCost <= GameManager.Instance.GuildManager.Gold)
@@ -41,9 +43,15 @@ public class HeroSummoner : Building
         return heroDatas[id].hitPower;
     }
 
+    public int getHeroLevel(int id)
+    {
+        return heroDatas[id].level;
+    }
 
-
-
+    public Sprite getCurrentHeroSprite(int id)
+    {
+        return heroDatas[id].heroSprite[getHeroLevel(id)];
+    }
 
     public override IEnumerator completeUpgrade(long timeLeft)
     {
@@ -60,4 +68,35 @@ public class HeroSummoner : Building
         if (buildingDataPref.isUnderUpgrade)
             buildingDataPref.CompleteUpgrade();
     }
+
+
+    public bool UpgradeHero(int id)
+    {
+        if (getHeroLevel(id) >= blackSmith.buildingData.buildingLevel)
+        {
+            return false;
+        }
+
+        int reqGold = (int) (heroDatas[id].goldCost * heroDatas[id].levelUpMultiplier * getHeroLevel(id));
+
+
+        if(GameManager.Instance.GuildManager.Gold < reqGold)
+        {
+            Debug.Log("NotEnoughtGold");
+            GameManager.Instance.popUpManager.gameObject.SetActive(true);
+            GameManager.Instance.popUpManager.ShowNotEnoughtGold();
+            return false;
+        }
+
+        heroDatas[id].level += 1;
+        heroDatas[id].goldCost = (int)(heroDatas[id].goldCost * heroDatas[id].levelUpMultiplier);
+        heroDatas[id].HP = (int)(heroDatas[id].HP * heroDatas[id].levelUpMultiplier);
+        heroDatas[id].hitPower = (int)(heroDatas[id].hitPower * heroDatas[id].levelUpMultiplier);
+
+        GameManager.Instance.GuildManager.Gold -= reqGold;
+
+        return true;
+
+    }
+
 }

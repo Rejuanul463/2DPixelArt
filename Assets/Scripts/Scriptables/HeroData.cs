@@ -4,6 +4,7 @@ using UnityEngine;
 public class HeroData : ScriptableObject
 {
     public GameObject heroPrefab;
+    public Sprite[] heroSprite;
     public int Id;
     public string heroName;
     public int goldCost;

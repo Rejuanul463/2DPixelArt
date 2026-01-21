@@ -56,4 +56,33 @@ public class DestinationSetter : MonoBehaviour
     {
         StartCoroutine(SetDestination());
     }
+
+
+    private void Update()
+    {
+        Vector3 moveDirection = aiPath.desiredVelocity.normalized;
+
+        if (moveDirection.x > 0 && moveDirection.y == 0)
+        {
+            //MoveRight
+        }
+        else if (moveDirection.x < 0 && moveDirection.y == 0)
+        {
+            // move left
+        }
+        else if(moveDirection.x == 0 && moveDirection.y < 0)
+        {
+            //move Up
+        }else if(moveDirection.x == 0 && moveDirection.y > 0)
+        {
+            //move down
+        }else if(moveDirection.y > 0)
+        {
+            //moveUp
+        }
+        else
+        {
+            //movdDown
+        }
+    }
 }
