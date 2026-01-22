@@ -18,13 +18,13 @@ MonoBehaviour:
   description: Whispers of old secrets and forgotten magic travel on the wind. Find
     them before others do.
   questIcon: {fileID: 0}
-  requiredLevel: 5
+  requiredLevel: 2
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 3
   estimatedDuration: 3
-  goldRewardBase: 380
+  goldRewardBase: 170
   goldRewardBonus: 120
-  experienceReward: 520
+  experienceReward: 190
   experienceRewardBonus: 180
   WoodReward: 0
   StoneReward: 0
@@ -32,10 +32,10 @@ MonoBehaviour:
   isInCity: 0
   travelDistance: 30
   enemyName: Voidwalkers
-  hitPerSecond: 2.4
-  hitPower: 37
-  HP: 280
-  enemyCount: 2
+  hitPerSecond: 2.2
+  hitPower: 30
+  HP: 110
+  enemyCount: 5
   completionTime: 0
   isCompleted: 0
   slots: 0

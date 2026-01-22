@@ -18,24 +18,24 @@ MonoBehaviour:
   description: Long-forgotten forces of darkness have risen. Stop them before they
     claim the world.
   questIcon: {fileID: 0}
-  requiredLevel: 5
+  requiredLevel: 4
   minTeamSize: 1
-  maxTeamSize: 3
+  maxTeamSize: 5
   estimatedDuration: 3
-  goldRewardBase: 560
-  goldRewardBonus: 180
-  experienceReward: 760
+  goldRewardBase: 300
+  goldRewardBonus: 430
+  experienceReward: 430
   experienceRewardBonus: 270
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 300
+  StoneReward: 300
   location: Frontier Zone
   isInCity: 0
   travelDistance: 48
   enemyName: Flameborne Juggernauts
-  hitPerSecond: 3.12
-  hitPower: 52
-  HP: 400
-  enemyCount: 3
+  hitPerSecond: 5.6
+  hitPower: 66
+  HP: 320
+  enemyCount: 7
   completionTime: 0
   isCompleted: 0
   slots: 0

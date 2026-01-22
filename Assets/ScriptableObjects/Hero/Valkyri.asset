@@ -22,11 +22,11 @@ MonoBehaviour:
   - {fileID: 7096352024863751258, guid: 3614ac5468d473548966acab96f16d7b, type: 3}
   Id: 5
   heroName: Valkyri
-  goldCost: 1012
+  goldCost: 250
   hitPerSecond: 4
-  hitPower: 252
-  HP: 505
-  level: 2
+  hitPower: 70
+  HP: 60
+  level: 1
   levelUpMultiplier: 1.5
   coolDownTime: 200
   goldPerAttack: 24

@@ -18,13 +18,13 @@ MonoBehaviour:
   description: The stars have spoken. Ancient forces return to reclaim what was once
     theirs.
   questIcon: {fileID: 0}
-  requiredLevel: 3
+  requiredLevel: 2
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 3
   estimatedDuration: 2
-  goldRewardBase: 350
+  goldRewardBase: 160
   goldRewardBonus: 110
-  experienceReward: 480
+  experienceReward: 160
   experienceRewardBonus: 165
   WoodReward: 0
   StoneReward: 0
@@ -32,10 +32,10 @@ MonoBehaviour:
   isInCity: 0
   travelDistance: 27
   enemyName: Ironfang Behemoths
-  hitPerSecond: 2.28
-  hitPower: 34.5
-  HP: 260
-  enemyCount: 2
+  hitPerSecond: 1.9
+  hitPower: 26
+  HP: 90
+  enemyCount: 5
   completionTime: 0
   isCompleted: 0
   slots: 1

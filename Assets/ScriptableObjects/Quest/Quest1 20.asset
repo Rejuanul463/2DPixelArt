@@ -18,13 +18,13 @@ MonoBehaviour:
   description: Burning winds carry whispers of a new power, and your guild is in
     its path.
   questIcon: {fileID: 0}
-  requiredLevel: 6
+  requiredLevel: 4
   minTeamSize: 1
-  maxTeamSize: 2
+  maxTeamSize: 6
   estimatedDuration: 3
-  goldRewardBase: 680
+  goldRewardBase: 600
   goldRewardBonus: 220
-  experienceReward: 920
+  experienceReward: 900
   experienceRewardBonus: 330
   WoodReward: 0
   StoneReward: 0
@@ -32,10 +32,10 @@ MonoBehaviour:
   isInCity: 0
   travelDistance: 60
   enemyName: Celestial Hounds
-  hitPerSecond: 3.6
-  hitPower: 62
-  HP: 480
-  enemyCount: 4
+  hitPerSecond: 14
+  hitPower: 160
+  HP: 1800
+  enemyCount: 1
   completionTime: 0
   isCompleted: 0
   slots: 0

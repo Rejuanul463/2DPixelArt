@@ -18,24 +18,24 @@ MonoBehaviour:
   description: Burning winds carry whispers of a new power, and your guild is in
     its path.
   questIcon: {fileID: 0}
-  requiredLevel: 2
+  requiredLevel: 1
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 2
   estimatedDuration: 1
-  goldRewardBase: 170
+  goldRewardBase: 100
   goldRewardBonus: 50
-  experienceReward: 240
+  experienceReward: 45
   experienceRewardBonus: 75
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 100
+  StoneReward: 100
   location: Frontier Zone
   isInCity: 0
   travelDistance: 9
   enemyName: Elder Dragonspawn
-  hitPerSecond: 1.56
-  hitPower: 19.5
-  HP: 140
-  enemyCount: 1
+  hitPerSecond: 0.6
+  hitPower: 9
+  HP: 30
+  enemyCount: 3
   completionTime: 0
   isCompleted: 0
   slots: 1

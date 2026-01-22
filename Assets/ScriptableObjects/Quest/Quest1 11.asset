@@ -18,13 +18,13 @@ MonoBehaviour:
   description: The vortex threatens to consume the world. Only the bravest can survive
     its pull.
   questIcon: {fileID: 0}
-  requiredLevel: 5
+  requiredLevel: 3
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 3
   estimatedDuration: 3
-  goldRewardBase: 410
+  goldRewardBase: 180
   goldRewardBonus: 130
-  experienceReward: 560
+  experienceReward: 220
   experienceRewardBonus: 195
   WoodReward: 0
   StoneReward: 0
@@ -32,10 +32,10 @@ MonoBehaviour:
   isInCity: 0
   travelDistance: 33
   enemyName: Arcane Shadows
-  hitPerSecond: 2.52
-  hitPower: 39.5
-  HP: 300
-  enemyCount: 2
+  hitPerSecond: 2.6
+  hitPower: 34
+  HP: 130
+  enemyCount: 5
   completionTime: 0
   isCompleted: 0
   slots: 0

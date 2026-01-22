@@ -18,24 +18,24 @@ MonoBehaviour:
   description: The iron wolves grow restless. A looming war threatens everything
     you've built.
   questIcon: {fileID: 0}
-  requiredLevel: 3
+  requiredLevel: 1
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 2
   estimatedDuration: 2
-  goldRewardBase: 260
+  goldRewardBase: 130
   goldRewardBonus: 80
-  experienceReward: 360
+  experienceReward: 90
   experienceRewardBonus: 120
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 130
+  StoneReward: 130
   location: Frontier Zone
   isInCity: 0
   travelDistance: 18
   enemyName: Stellar Serpents
-  hitPerSecond: 1.92
-  hitPower: 27
-  HP: 200
-  enemyCount: 2
+  hitPerSecond: 1.2
+  hitPower: 16
+  HP: 55
+  enemyCount: 4
   completionTime: 0
   isCompleted: 0
   slots: 1

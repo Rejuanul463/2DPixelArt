@@ -18,13 +18,13 @@ MonoBehaviour:
   description: The vortex threatens to consume the world. Only the bravest can survive
     its pull.
   questIcon: {fileID: 0}
-  requiredLevel: 6
+  requiredLevel: 4
   minTeamSize: 1
-  maxTeamSize: 2
+  maxTeamSize: 6
   estimatedDuration: 1
-  goldRewardBase: 620
+  goldRewardBase: 380
   goldRewardBonus: 200
-  experienceReward: 840
+  experienceReward: 580
   experienceRewardBonus: 300
   WoodReward: 0
   StoneReward: 0
@@ -32,10 +32,10 @@ MonoBehaviour:
   isInCity: 0
   travelDistance: 54
   enemyName: Night Reapers
-  hitPerSecond: 3.36
-  hitPower: 57
-  HP: 440
-  enemyCount: 4
+  hitPerSecond: 8
+  hitPower: 90
+  HP: 640
+  enemyCount: 8
   completionTime: 0
   isCompleted: 0
   slots: 0

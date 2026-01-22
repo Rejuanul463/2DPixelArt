@@ -22,9 +22,9 @@ MonoBehaviour:
   - {fileID: 0}
   Id: 2
   heroName: Giant
-  goldCost: 120
+  goldCost: 150
   hitPerSecond: 0.5
-  hitPower: 72
+  hitPower: 70
   HP: 120
   level: 1
   levelUpMultiplier: 1.2

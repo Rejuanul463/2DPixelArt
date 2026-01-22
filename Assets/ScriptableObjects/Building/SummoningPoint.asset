@@ -22,10 +22,10 @@ MonoBehaviour:
   - {fileID: 21300000, guid: db265b7bb1739a84d878a5f6ca3ca3ff, type: 3}
   buildingLevel: 1
   maxBuildingLevel: 4
-  upgradeCostGold: 1
-  upgradeCostWood: 1
-  upgradeCostStone: 1
-  xpBoost: 1
+  upgradeCostGold: 100
+  upgradeCostWood: 100
+  upgradeCostStone: 100
+  xpBoost: 30
   isUnderUpgrade: 0
   isUpgradable: 1
   upgradeTime: 1

@@ -18,24 +18,24 @@ MonoBehaviour:
   description: Burning winds carry whispers of a new power, and your guild is in
     its path.
   questIcon: {fileID: 0}
-  requiredLevel: 5
+  requiredLevel: 3
   minTeamSize: 1
-  maxTeamSize: 2
+  maxTeamSize: 4
   estimatedDuration: 4
-  goldRewardBase: 500
-  goldRewardBonus: 160
-  experienceReward: 680
+  goldRewardBase: 260
+  goldRewardBonus: 280
+  experienceReward: 380
   experienceRewardBonus: 240
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 260
+  StoneReward: 260
   location: Frontier Zone
   isInCity: 1
   travelDistance: 42
   enemyName: Arcane Shadows
-  hitPerSecond: 2.88
-  hitPower: 47
-  HP: 360
-  enemyCount: 3
+  hitPerSecond: 4.8
+  hitPower: 58
+  HP: 270
+  enemyCount: 6
   completionTime: 0
   isCompleted: 0
   slots: 0

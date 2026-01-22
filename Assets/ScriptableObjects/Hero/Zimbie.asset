@@ -22,10 +22,10 @@ MonoBehaviour:
   - {fileID: 0}
   Id: 4
   heroName: Knight
-  goldCost: 252
-  hitPerSecond: 0.4
-  hitPower: 167
-  HP: 252
+  goldCost: 200
+  hitPerSecond: 1
+  hitPower: 50
+  HP: 200
   level: 1
   levelUpMultiplier: 1.3
   coolDownTime: 140

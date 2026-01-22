@@ -62,6 +62,10 @@ public class DestinationSetter : MonoBehaviour
     {
         Vector3 moveDirection = aiPath.desiredVelocity.normalized;
 
+        if(moveDirection ==  Vector3.zero)
+        {
+            //PlayIdle
+        }
         if (moveDirection.x > 0 && moveDirection.y == 0)
         {
             //MoveRight

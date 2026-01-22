@@ -18,24 +18,24 @@ MonoBehaviour:
   description: Long-forgotten forces of darkness have risen. Stop them before they
     claim the world.
   questIcon: {fileID: 0}
-  requiredLevel: 2
+  requiredLevel: 1
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 2
   estimatedDuration: 1
-  goldRewardBase: 200
-  goldRewardBonus: 60
-  experienceReward: 280
-  experienceRewardBonus: 90
-  WoodReward: 0
-  StoneReward: 0
+  goldRewardBase: 110
+  goldRewardBonus: 110
+  experienceReward: 60
+  experienceRewardBonus: 60
+  WoodReward: 110
+  StoneReward: 110
   location: Frontier Zone
   isInCity: 0
   travelDistance: 12
   enemyName: Celestial Hounds
-  hitPerSecond: 1.68
-  hitPower: 22
-  HP: 160
-  enemyCount: 1
+  hitPerSecond: 0.8
+  hitPower: 12
+  HP: 38
+  enemyCount: 3
   completionTime: 0
   isCompleted: 0
   slots: 1

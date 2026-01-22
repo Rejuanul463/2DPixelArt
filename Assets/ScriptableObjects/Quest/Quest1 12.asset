@@ -18,24 +18,24 @@ MonoBehaviour:
   description: A forbidden pact must be completed before the ancient enemies arrive.
     The road ahead is treacherous and cursed.
   questIcon: {fileID: 0}
-  requiredLevel: 5
+  requiredLevel: 3
   minTeamSize: 1
-  maxTeamSize: 2
+  maxTeamSize: 4
   estimatedDuration: 3
-  goldRewardBase: 440
-  goldRewardBonus: 140
-  experienceReward: 600
+  goldRewardBase: 200
+  goldRewardBonus: 220
+  experienceReward: 220
   experienceRewardBonus: 210
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 36
   enemyName: Ironfang Behemoths
-  hitPerSecond: 2.64
-  hitPower: 42
-  HP: 320
-  enemyCount: 3
+  hitPerSecond: 3
+  hitPower: 40
+  HP: 160
+  enemyCount: 6
   completionTime: 0
   isCompleted: 0
   slots: 0

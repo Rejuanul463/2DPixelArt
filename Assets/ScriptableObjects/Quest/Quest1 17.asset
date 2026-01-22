@@ -18,24 +18,24 @@ MonoBehaviour:
   description: The stars have spoken. Ancient forces return to reclaim what was once
     theirs.
   questIcon: {fileID: 0}
-  requiredLevel: 6
+  requiredLevel: 4
   minTeamSize: 1
-  maxTeamSize: 2
+  maxTeamSize: 6
   estimatedDuration: 2
-  goldRewardBase: 590
+  goldRewardBase: 340
   goldRewardBonus: 190
-  experienceReward: 800
+  experienceReward: 380
   experienceRewardBonus: 285
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 340
+  StoneReward: 340
   location: Frontier Zone
   isInCity: 0
   travelDistance: 51
   enemyName: Elder Dragonspawn
-  hitPerSecond: 3.24
-  hitPower: 54.5
-  HP: 420
-  enemyCount: 3
+  hitPerSecond: 6.8
+  hitPower: 78
+  HP: 380
+  enemyCount: 7
   completionTime: 0
   isCompleted: 0
   slots: 0

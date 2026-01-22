@@ -18,13 +18,13 @@ MonoBehaviour:
   description: Across frozen tundras and beneath the Northern Lights, the Guild's
     fate hangs in the balance.
   questIcon: {fileID: 0}
-  requiredLevel: 3
+  requiredLevel: 2
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 3
   estimatedDuration: 1
-  goldRewardBase: 290
+  goldRewardBase: 140
   goldRewardBonus: 90
-  experienceReward: 400
+  experienceReward: 110
   experienceRewardBonus: 135
   WoodReward: 0
   StoneReward: 0
@@ -32,10 +32,10 @@ MonoBehaviour:
   isInCity: 0
   travelDistance: 21
   enemyName: Elder Dragonspawn
-  hitPerSecond: 2.04
-  hitPower: 29.5
-  HP: 220
-  enemyCount: 2
+  hitPerSecond: 1.4
+  hitPower: 18
+  HP: 65
+  enemyCount: 4
   completionTime: 0
   isCompleted: 0
   slots: 1

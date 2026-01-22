@@ -20,22 +20,22 @@ MonoBehaviour:
   questIcon: {fileID: 0}
   requiredLevel: 1
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 2
   estimatedDuration: 1
-  goldRewardBase: 140
-  goldRewardBonus: 40
-  experienceReward: 200
+  goldRewardBase: 90
+  goldRewardBonus: 70
+  experienceReward: 35
   experienceRewardBonus: 60
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 90
+  StoneReward: 90
   location: Frontier Zone
   isInCity: 0
   travelDistance: 6
   enemyName: Shadowmancer Legion
-  hitPerSecond: 1.44
-  hitPower: 17
-  HP: 120
-  enemyCount: 1
+  hitPerSecond: 0.4
+  hitPower: 7
+  HP: 22
+  enemyCount: 3
   completionTime: 0
-  isCompleted: 1
+  isCompleted: 0
   slots: 1

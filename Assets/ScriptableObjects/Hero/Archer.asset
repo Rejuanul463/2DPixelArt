@@ -22,11 +22,11 @@ MonoBehaviour:
   - {fileID: 114185655640970728, guid: 0df971b3dfde43f45a608da42e82e3be, type: 3}
   Id: 1
   heroName: Archer
-  goldCost: 1188
+  goldCost: 120
   hitPerSecond: 4
-  hitPower: 337
-  HP: 681
+  hitPower: 40
+  HP: 20
   level: 1
-  levelUpMultiplier: 1.5
+  levelUpMultiplier: 1.3
   coolDownTime: 60
   goldPerAttack: 8

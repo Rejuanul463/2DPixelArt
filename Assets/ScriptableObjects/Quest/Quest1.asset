@@ -20,22 +20,22 @@ MonoBehaviour:
   questIcon: {fileID: 0}
   requiredLevel: 1
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 2
   estimatedDuration: 1
-  goldRewardBase: 100
-  goldRewardBonus: 30
-  experienceReward: 160
-  experienceRewardBonus: 45
-  WoodReward: 0
-  StoneReward: 0
+  goldRewardBase: 80
+  goldRewardBonus: 0
+  experienceReward: 30
+  experienceRewardBonus: 0
+  WoodReward: 80
+  StoneReward: 80
   location: Frontier Zone
   isInCity: 0
   travelDistance: 3
   enemyName: Elder Dragonspawn
-  hitPerSecond: 1.3
-  hitPower: 14.5
-  HP: 100
-  enemyCount: 1
+  hitPerSecond: 0.3
+  hitPower: 5
+  HP: 18
+  enemyCount: 2
   completionTime: 0
-  isCompleted: 1
+  isCompleted: 0
   slots: 1

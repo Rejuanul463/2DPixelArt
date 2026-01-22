@@ -18,24 +18,24 @@ MonoBehaviour:
   description: The vortex threatens to consume the world. Only the bravest can survive
     its pull.
   questIcon: {fileID: 0}
-  requiredLevel: 2
+  requiredLevel: 1
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 2
   estimatedDuration: 2
-  goldRewardBase: 230
+  goldRewardBase: 120
   goldRewardBonus: 70
-  experienceReward: 320
-  experienceRewardBonus: 105
-  WoodReward: 0
-  StoneReward: 0
+  experienceReward: 75
+  experienceRewardBonus: 1
+  WoodReward: 120
+  StoneReward: 120
   location: Frontier Zone
   isInCity: 0
   travelDistance: 15
   enemyName: Elder Frost Wraiths
-  hitPerSecond: 1.8
-  hitPower: 24.5
-  HP: 180
-  enemyCount: 1
+  hitPerSecond: 1
+  hitPower: 14
+  HP: 45
+  enemyCount: 4
   completionTime: 0
   isCompleted: 0
   slots: 1

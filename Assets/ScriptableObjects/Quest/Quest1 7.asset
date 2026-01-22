@@ -18,24 +18,24 @@ MonoBehaviour:
   description: The stars have spoken. Ancient forces return to reclaim what was once
     theirs.
   questIcon: {fileID: 0}
-  requiredLevel: 3
+  requiredLevel: 2
   minTeamSize: 1
-  maxTeamSize: 1
+  maxTeamSize: 3
   estimatedDuration: 2
-  goldRewardBase: 320
-  goldRewardBonus: 100
-  experienceReward: 440
+  goldRewardBase: 150
+  goldRewardBonus: 130
+  experienceReward: 120
   experienceRewardBonus: 150
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 150
+  StoneReward: 150
   location: Frontier Zone
   isInCity: 0
   travelDistance: 24
   enemyName: Stellar Serpents
-  hitPerSecond: 2.16
-  hitPower: 32
-  HP: 240
-  enemyCount: 2
+  hitPerSecond: 1.6
+  hitPower: 22
+  HP: 75
+  enemyCount: 4
   completionTime: 0
   isCompleted: 0
   slots: 1

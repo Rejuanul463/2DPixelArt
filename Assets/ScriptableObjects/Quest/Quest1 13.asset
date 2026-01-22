@@ -18,24 +18,24 @@ MonoBehaviour:
   description: Long-forgotten forces of darkness have risen. Stop them before they
     claim the world.
   questIcon: {fileID: 0}
-  requiredLevel: 5
+  requiredLevel: 3
   minTeamSize: 1
-  maxTeamSize: 2
+  maxTeamSize: 4
   estimatedDuration: 4
-  goldRewardBase: 470
+  goldRewardBase: 220
   goldRewardBonus: 150
-  experienceReward: 640
+  experienceReward: 300
   experienceRewardBonus: 225
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 220
+  StoneReward: 220
   location: Frontier Zone
   isInCity: 0
   travelDistance: 39
   enemyName: Elder Dragonspawn
-  hitPerSecond: 2.76
-  hitPower: 44.5
-  HP: 340
-  enemyCount: 3
+  hitPerSecond: 3.6
+  hitPower: 46
+  HP: 190
+  enemyCount: 6
   completionTime: 0
   isCompleted: 0
   slots: 0
