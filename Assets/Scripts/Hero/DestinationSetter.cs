@@ -11,6 +11,7 @@ public class DestinationSetter : MonoBehaviour
 
     private int ignoreIndex = -1;
 
+    public Animator animator;
     private void Start()
     {
         DestinationPoint = new GameObject("HeroDestination");
@@ -62,31 +63,39 @@ public class DestinationSetter : MonoBehaviour
     {
         Vector3 moveDirection = aiPath.desiredVelocity.normalized;
 
-        if(moveDirection ==  Vector3.zero)
-        {
-            //PlayIdle
-        }
+        //if(moveDirection ==  Vector3.zero)
+        //{
+            
+        //}
         if (moveDirection.x > 0 && moveDirection.y == 0)
         {
             //MoveRight
+            animator.Play("Side");
+            transform.localScale = new Vector3(-1f,1f,1f);
         }
         else if (moveDirection.x < 0 && moveDirection.y == 0)
         {
             // move left
+            animator.Play("Side");
+            transform.localScale = Vector3.one;
         }
         else if(moveDirection.x == 0 && moveDirection.y < 0)
         {
             //move Up
+            animator.Play("Back");
         }else if(moveDirection.x == 0 && moveDirection.y > 0)
         {
             //move down
+            animator.Play("Front");
         }else if(moveDirection.y > 0)
         {
             //moveUp
+            animator.Play("Back");
         }
         else
         {
             //movdDown
+            animator.Play("Front");
         }
     }
 }
