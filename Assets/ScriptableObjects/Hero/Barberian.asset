@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
   m_Name: Barberian
   m_EditorClassIdentifier: 
-  heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
+  heroPrefab: {fileID: 5576259084274473655, guid: 1a0a988c33d93434691a57249a575b4f, type: 3}
   heroSprite:
   - {fileID: -5537651049389226108, guid: 673d91bff86cd704a9f14b173e8801ef, type: 3}
   - {fileID: 3703430272227039834, guid: 47a0d65f938b605469f89f7e02a8d76a, type: 3}

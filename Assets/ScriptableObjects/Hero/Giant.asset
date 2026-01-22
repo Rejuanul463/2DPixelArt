@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
   m_Name: Giant
   m_EditorClassIdentifier: 
-  heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
+  heroPrefab: {fileID: 5576259084274473655, guid: f4719763fc7d84425886c35a6b038636, type: 3}
   heroSprite:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: b3c2b99d1464d08458bbe912f32448ac, type: 3}
+  - {fileID: -8557477925683267791, guid: 9b680c7a0bd3ef848b621923a0a192f9, type: 3}
+  - {fileID: -3939334936916213359, guid: 664b24a3b062f3e45897b6b2f5da8a43, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

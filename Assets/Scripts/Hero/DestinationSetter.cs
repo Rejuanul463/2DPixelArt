@@ -63,38 +63,26 @@ public class DestinationSetter : MonoBehaviour
     {
         Vector3 moveDirection = aiPath.desiredVelocity.normalized;
 
-        //if(moveDirection ==  Vector3.zero)
-        //{
-            
-        //}
-        if (moveDirection.x > 0 && moveDirection.y == 0)
+        if (moveDirection.x > 0)
         {
             //MoveRight
             animator.Play("Side");
             transform.localScale = new Vector3(-1f,1f,1f);
         }
-        else if (moveDirection.x < 0 && moveDirection.y == 0)
+        else if (moveDirection.x < 0)
         {
             // move left
             animator.Play("Side");
             transform.localScale = Vector3.one;
         }
-        else if(moveDirection.x == 0 && moveDirection.y < 0)
+        else if(moveDirection.y < 0)
         {
             //move Up
             animator.Play("Back");
-        }else if(moveDirection.x == 0 && moveDirection.y > 0)
-        {
-            //move down
-            animator.Play("Front");
+            Debug.Log("UP");
         }else if(moveDirection.y > 0)
         {
-            //moveUp
-            animator.Play("Back");
-        }
-        else
-        {
-            //movdDown
+            //move down
             animator.Play("Front");
         }
     }

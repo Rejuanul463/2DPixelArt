@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
   m_Name: Wizered
   m_EditorClassIdentifier: 
-  heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
+  heroPrefab: {fileID: 5576259084274473655, guid: 48a5d64ac578e451fa13c5ce958415a4, type: 3}
   heroSprite:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6849802187831281344, guid: 6a6ff56b10c09cd47817e576bef4a301, type: 3}
+  - {fileID: 8237497181132718695, guid: 973b7169e2483784182da1cb63c3b91e, type: 3}
+  - {fileID: 6032464249032308898, guid: 6490bff9c4341d4468df335aff0622a7, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}

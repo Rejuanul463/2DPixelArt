@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
   m_Name: Zimbie
   m_EditorClassIdentifier: 
-  heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
+  heroPrefab: {fileID: 5576259084274473655, guid: 8ee6d27a27d58437192611f518cebef7, type: 3}
   heroSprite:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -2870692065489565903, guid: 22cbffed8ed02c44f8bfba3ec0de5180, type: 3}
+  - {fileID: 5195653994910286440, guid: 53db973f211a08943869afe25fe3b38c, type: 3}
+  - {fileID: -5119011098554586429, guid: e2773a4c82a983c4487f9cbd14bf210f, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
