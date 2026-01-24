@@ -124,6 +124,13 @@ public class PannelManager : MonoBehaviour
         if (activePannelObj != null)
             activePannelObj.SetActive(false);
 
+        if(activePannelObj == pannels[ind])
+        {
+            activePannelObj.SetActive(false);
+            activePannelObj = null;
+            return;
+        }
+
         pannels[ind].SetActive(true);
         activePannelObj = pannels[ind];
     }
