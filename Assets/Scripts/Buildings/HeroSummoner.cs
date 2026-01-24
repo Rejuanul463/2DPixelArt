@@ -25,6 +25,7 @@ public class HeroSummoner : Building
             if (ids[i])
             {
                 Instantiate(heroDatas[i].heroPrefab, summonPoint.position, Quaternion.identity);
+                heroDatas[i].isHeroSummoned = true;
                 GameManager.Instance.GuildManager.UnlockHero(i);
             }
         }
@@ -97,6 +98,11 @@ public class HeroSummoner : Building
 
         return true;
 
+    }
+
+    public bool isHeroSummoned(int id)
+    {
+        return heroDatas[id].isHeroSummoned;
     }
 
 }

@@ -15,6 +15,7 @@ public class HeroData : ScriptableObject
     public float levelUpMultiplier;
     public float coolDownTime;
     public int goldPerAttack;
+    public bool isHeroSummoned;
     public float speed => 3 * hitPerSecond;
     public float DPS => hitPerSecond * hitPower;
 }

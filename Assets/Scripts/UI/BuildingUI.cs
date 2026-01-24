@@ -47,6 +47,12 @@ public class BuildingUI : MonoBehaviour
         else
             Upgrade.interactable = false;
 
+        if(ind != 0)
+        {
+            if (buildingData[ind].buildingLevel >= buildingData[0].buildingLevel)
+                Upgrade.interactable = false;
+        }
+
         buildingId = ind;
 
         imageHolder.gameObject.SetActive(true);

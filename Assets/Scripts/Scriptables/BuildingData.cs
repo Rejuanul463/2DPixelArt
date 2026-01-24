@@ -14,7 +14,7 @@ public class BuildingData : ScriptableObject
     }
 
     [SerializeField] public int buildingID;
-    [SerializeField] BuildingType buildingType;
+    [SerializeField] public BuildingType buildingType;
     [SerializeField] public Sprite currentBuilding;
     [SerializeField] public Sprite[] buildingSprites;
     [SerializeField] public int buildingLevel = 1;
