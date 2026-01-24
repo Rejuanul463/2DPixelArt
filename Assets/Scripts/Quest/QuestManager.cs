@@ -58,6 +58,7 @@ public class QuestManager : MonoBehaviour
     {
         for (int i = latestQuestInd; i < questData.Length; i++)
         {
+            string difficulty = "";
             // Skip quests above guild level (DO NOT return)
             if (GameManager.Instance.GuildManager.GuildLevel < questData[i].requiredLevel)
                 continue;
@@ -95,26 +96,31 @@ public class QuestManager : MonoBehaviour
                 {
                     case QuestData.QuestDifficulty.Easy:
                         diffText.text = "Easy";
+                        difficulty = "Easy";
                         diffText.color = Color.green;
                         break;
 
                     case QuestData.QuestDifficulty.Medium:
                         diffText.text = "Medium";
                         diffText.color = Color.cyan;
+                        difficulty = "Medium";
                         break;
 
                     case QuestData.QuestDifficulty.Hard:
                         diffText.text = "Hard";
                         diffText.color = Color.yellow;
+                        difficulty = "Hard";
                         break;
 
                     case QuestData.QuestDifficulty.SuperHard:
                         diffText.text = "Super Hard";
                         diffText.color = Color.red;
+                        difficulty = "Super Hard";
                         break;
 
                     default:
                         diffText.text = "Epic";
+                        difficulty = "Epic";
                         diffText.color = Color.magenta;
                         break;
                 }
@@ -137,24 +143,23 @@ public class QuestManager : MonoBehaviour
             Button btn = item.GetComponent<Button>();
             btn.onClick.RemoveAllListeners(); // safety
             btn.onClick.AddListener(() =>
-                OnQuestButtonPressed(qDetails, quest, index, ref item));
+                OnQuestButtonPressed(qDetails, quest, index, ref item, difficulty));
         }
     }
 
     private int selectedQuestindex;
     private GameObject currentItem;
     // Now the button sends the struct instead of multiple arguments
-    private void OnQuestButtonPressed(QuestDetails qD, QuestData quest, int ind, ref GameObject itm)
+    private void OnQuestButtonPressed(QuestDetails qD, QuestData quest, int ind, ref GameObject itm, string difficulty)
     {
         currentItem = itm;
         selectedQuestindex = ind;
         selectedQuestData = quest;
         SelectedQD = qD;
         questSelected = true;
-        details.text = "Quest Details" + qD.name + " : " + qD.description + "\n"
-                        + "Enemy : " + qD.enemyName + "\n"
-                        + "HP : " + qD.enemyHP + ",  Hit/s : " + qD.hitPerSecond + "\n"
-                        + "HitDmg : " + qD.hitPower + ",  Gold : " + qD.reward;
+        details.text =  "<b>Quest Details :</b> " + "<color=#FFFFFF>" + qD.name + "</color>\n" + "\n" +
+                        "<b>Difficulty :</b> " + "<color=#FFFFFF>" + difficulty + "</color>\n" + "\n" +
+                        "<b>Enemy :</b> " + "<color=#FFFFFF>" + qD.enemyName + "</color>\n";
     }
 
     public QuestData SimulateCombat(float heroHP, float heroHPS, float heroHitPower)

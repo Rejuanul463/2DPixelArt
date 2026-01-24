@@ -16,7 +16,7 @@ public class GuildManager : MonoBehaviour
         GameManager.Instance.UIManager.gold.text = guildData.gold.ToString();
         GameManager.Instance.UIManager.gems.text = guildData.gems.ToString();
 
-        GameManager.Instance.UIManager.guildLevel.text += guildData.guildLevel.ToString();
+        GameManager.Instance.UIManager.guildLevel.text = "Guild Level : " + guildData.guildLevel.ToString();
     }
 
 
