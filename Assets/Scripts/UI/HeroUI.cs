@@ -40,6 +40,14 @@ public class HeroUI : UiHandler
         for(int i = 0; i < itemButtons.Length; i++)
         {
             itemButtons[i].GetComponent<Image>().sprite = GameManager.Instance.HeroSummoner.getCurrentHeroSprite(i);
+            if (!GameManager.Instance.HeroSummoner.isHeroSummoned(i))
+            {
+                itemButtons[i].gameObject.SetActive(false);
+            }
+            else
+            {
+                itemButtons[i].gameObject.SetActive(true);
+            }
         }
     }
 
