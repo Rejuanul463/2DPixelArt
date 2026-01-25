@@ -17,9 +17,11 @@ public class DestinationSetter : MonoBehaviour
         DestinationPoint = new GameObject("HeroDestination");
         aiPath = GetComponent<AIPath>();
         destinationSetter = GetComponent<AIDestinationSetter>();
+        int x = Random.Range(0, destinationPoints.points.Length);
+        DestinationPoint.transform.position = destinationPoints.points[x];
         destinationSetter.target = DestinationPoint.transform;
 
-
+        
         StartCoroutine(SetDestination());
     }
 

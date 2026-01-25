@@ -30,3 +30,4 @@ MonoBehaviour:
   levelUpMultiplier: 1.2
   coolDownTime: 60
   goldPerAttack: 5
+  isHeroSummoned: 0
