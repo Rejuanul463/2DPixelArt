@@ -17,9 +17,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b3c2b99d1464d08458bbe912f32448ac, type: 3}
   - {fileID: -8557477925683267791, guid: 9b680c7a0bd3ef848b621923a0a192f9, type: 3}
   - {fileID: -3939334936916213359, guid: 664b24a3b062f3e45897b6b2f5da8a43, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 3190505987534764736, guid: 174ea8c9c6bca1546a67cb12d342e213, type: 3}
+  - {fileID: 1314777561561512713, guid: d40cfbad960b57844ab26a09fb3d7636, type: 3}
+  - {fileID: 5676001472787654812, guid: 74922428c7eb59546b3a690dc3c884c8, type: 3}
   Id: 2
   heroName: Giant
   goldCost: 150
@@ -30,3 +30,4 @@ MonoBehaviour:
   levelUpMultiplier: 1.2
   coolDownTime: 100
   goldPerAttack: 10
+  isHeroSummoned: 0

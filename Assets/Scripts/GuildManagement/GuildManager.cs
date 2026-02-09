@@ -19,8 +19,6 @@ public class GuildManager : MonoBehaviour
         GameManager.Instance.UIManager.guildLevel.text = "Guild Level : " + guildData.guildLevel.ToString();
     }
 
-
-
     public int Experience
     {
         get => guildData.currentExperience;
@@ -35,7 +33,6 @@ public class GuildManager : MonoBehaviour
             updateResourcesUI();
         }
     }
-
 
     // -------- GOLD --------
     public int Gold

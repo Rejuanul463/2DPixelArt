@@ -17,9 +17,9 @@ MonoBehaviour:
   - {fileID: -2870692065489565903, guid: 22cbffed8ed02c44f8bfba3ec0de5180, type: 3}
   - {fileID: 5195653994910286440, guid: 53db973f211a08943869afe25fe3b38c, type: 3}
   - {fileID: -5119011098554586429, guid: e2773a4c82a983c4487f9cbd14bf210f, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -7246147038634735225, guid: 3a85393126ee7514681d509eec62d84e, type: 3}
+  - {fileID: -2357124976804389777, guid: f02402afb3a408b4d9fd2fa8da77249b, type: 3}
+  - {fileID: 5596886527519851878, guid: f34e9271f29adaa4e8893e5d9d8ac886, type: 3}
   Id: 4
   heroName: Knight
   goldCost: 200
@@ -30,3 +30,4 @@ MonoBehaviour:
   levelUpMultiplier: 1.3
   coolDownTime: 140
   goldPerAttack: 20
+  isHeroSummoned: 0

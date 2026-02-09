@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class HeroSummoner : Building
@@ -16,20 +16,46 @@ public class HeroSummoner : Building
         }
         return currentCost;
     }
-
-    public void summonHeroes(bool[] ids, int cost)
+    public void summonHeroes(int[] ids, int cost)
     {
         GameManager.Instance.GuildManager.Gold -= cost;
-        for(int i = 0; i < ids.Length; i++)
-        {
-            if (ids[i])
-            {
-                Instantiate(heroDatas[i].heroPrefab, summonPoint.position, Quaternion.identity);
-                heroDatas[i].isHeroSummoned = true;
-                GameManager.Instance.GuildManager.UnlockHero(i);
-            }
-        }
+
+        // 🔒 Take a snapshot so coroutine data never changes
+        int[] idsSnapshot = (int[])ids.Clone();
+
+        StartCoroutine(summonAll(idsSnapshot));
     }
+
+    IEnumerator summon(int heroIndex, int count)
+    {
+        for (int j = 0; j < count; j++)
+        {
+            yield return new WaitForSecondsRealtime(1f);
+
+            Instantiate(
+                heroDatas[heroIndex].heroPrefab,
+                summonPoint.position,
+                Quaternion.identity
+            );
+
+            heroDatas[heroIndex].isHeroSummoned = true;
+        }
+
+        GameManager.Instance.GuildManager.UnlockHero(heroIndex);
+    }
+
+    IEnumerator summonAll(int[] ids)
+    {
+        for (int i = 0; i < ids.Length; i++)
+        {
+            Debug.Log("Summoning hero ID: " + i + " Count: " + ids[i]);
+            if (ids[i] <= 0) continue;
+            yield return StartCoroutine(summon(i, ids[i]));
+        }
+
+        Debug.Log("All heroes summoned");
+    }
+
 
     public float getHeroHP(int id)
     {
@@ -70,7 +96,6 @@ public class HeroSummoner : Building
             buildingDataPref.CompleteUpgrade();
     }
 
-
     public bool UpgradeHero(int id)
     {
         if (getHeroLevel(id) >= blackSmith.buildingData.buildingLevel)
@@ -79,7 +104,6 @@ public class HeroSummoner : Building
         }
 
         int reqGold = (int) (heroDatas[id].goldCost * heroDatas[id].levelUpMultiplier * getHeroLevel(id));
-
 
         if(GameManager.Instance.GuildManager.Gold < reqGold)
         {
@@ -97,12 +121,10 @@ public class HeroSummoner : Building
         GameManager.Instance.GuildManager.Gold -= reqGold;
 
         return true;
-
     }
 
     public bool isHeroSummoned(int id)
     {
         return heroDatas[id].isHeroSummoned;
     }
-
 }

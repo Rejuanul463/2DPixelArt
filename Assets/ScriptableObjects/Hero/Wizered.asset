@@ -17,9 +17,9 @@ MonoBehaviour:
   - {fileID: 6849802187831281344, guid: 6a6ff56b10c09cd47817e576bef4a301, type: 3}
   - {fileID: 8237497181132718695, guid: 973b7169e2483784182da1cb63c3b91e, type: 3}
   - {fileID: 6032464249032308898, guid: 6490bff9c4341d4468df335aff0622a7, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: -2121992375279323850, guid: 5bdad9c1ad380e04e86bce7f78a92df1, type: 3}
+  - {fileID: -1970347022445959733, guid: 7527f85a422a6c244b0a52a3af5b3199, type: 3}
+  - {fileID: -8794772296308962584, guid: 3f4420e57c9025a4ab30ed0d1d6acd9d, type: 3}
   Id: 3
   heroName: Wizard
   goldCost: 180
@@ -30,3 +30,4 @@ MonoBehaviour:
   levelUpMultiplier: 1.3
   coolDownTime: 100
   goldPerAttack: 14
+  isHeroSummoned: 0

@@ -27,7 +27,7 @@ public class PannelManager : MonoBehaviour
     [SerializeField] private List<Button> heroQuestDeletButtons;
     public GameObject activePannelObj;
 
-    public bool[] typeAvailable;
+    public int[] typeAvailable;
 
     [SerializeField] private int requiredGold;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +36,7 @@ public class PannelManager : MonoBehaviour
         AddGameObjects();
         deactiveAllPannels();
         addListener();
-        typeAvailable = new bool[6];
+        typeAvailable = new int[6];
     }
 
 
@@ -45,17 +45,17 @@ public class PannelManager : MonoBehaviour
     {
         for(int i = 0; i < typeAvailable.Length; i++)
         {
-            if(GameManager.Instance.GuildManager.IsHeroUnlocked(i) || i > GameManager.Instance.GuildManager.unlockableHeroes)
+            if(i > GameManager.Instance.GuildManager.unlockableHeroes)
             {
                 heroesSummonButtons[i].interactable = false;
                 heroSummonDelet[i].interactable = false;
                 continue;
             }
-            
-            if (typeAvailable[i])
+
+            if (typeAvailable[i] > 0)
             {
                 //Debug.Log("Disable summon button");
-                heroesSummonButtons[i].interactable = false;
+                //heroesSummonButtons[i].interactable = false;
                 heroSummonDelet[i].interactable = true;
             }
             else
@@ -76,7 +76,7 @@ public class PannelManager : MonoBehaviour
                 heroQuestDeletButtons[i].interactable = false;
                 continue;
             }
-            if (typeAvailable[i])
+            if (typeAvailable[i] > 0)
             {
                 heroesQuestButtons[i].interactable = false;
                 heroQuestDeletButtons[i].interactable = true;
@@ -108,7 +108,7 @@ public class PannelManager : MonoBehaviour
         {
             summonCost = 0;
             summonIds = new bool[6];
-            typeAvailable = new bool[6];
+            typeAvailable = new int[6];
             summonHeroButton.interactable = false;
             checkInterectableForSummon();
         }else if(ind == 7)
@@ -116,7 +116,7 @@ public class PannelManager : MonoBehaviour
 
             if (!GameManager.Instance.QuestManager.questSelected) return;
             checkInteractableForHire();
-            typeAvailable = new bool[6];
+            typeAvailable = new int[6];
             Debug.Log("PlayerSelectionPannel");
             checkInterectableForQuest();
         }
@@ -144,7 +144,7 @@ public class PannelManager : MonoBehaviour
 
         for (int i = 0; i < typeAvailable.Length; i++)
         {
-            typeAvailable[i] = false;
+            typeAvailable[i] = 0;
         }
     }
 
@@ -154,11 +154,11 @@ public class PannelManager : MonoBehaviour
     private void addHero(int id)
     {
         int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost);
-        
-        if(val > summonCost)
+
+        if (val > summonCost)
         {
-            summonCost += val;
-            typeAvailable[id] = true;
+            summonCost = val;
+            typeAvailable[id] += 1;
             summonIds[id] = true;
         }
         else
@@ -168,10 +168,11 @@ public class PannelManager : MonoBehaviour
             GameManager.Instance.popUpManager.ShowNotEnoughtGold();
         }
         checkInterectableForSummon();
-        
+
         if (canSummon()) summonHeroButton.interactable = true;
         else summonHeroButton.interactable = false;
     }
+
 
     private bool canSummon()
     {
@@ -188,8 +189,8 @@ public class PannelManager : MonoBehaviour
         if(summonIds[id])
         {
             int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost);
-            summonCost -= val;
-            typeAvailable[id] = false;
+            summonCost = val;
+            typeAvailable[id] -= 1;
             summonIds[id] = false;
         }
         checkInterectableForSummon();
@@ -327,8 +328,13 @@ public class PannelManager : MonoBehaviour
             Debug.Log("PlayerAdded");
             selectedHero[id] = true;
             count++;
-            heroesQuestButtons[id].interactable = false;
+            //heroesQuestButtons[id].interactable = false;
             heroQuestDeletButtons[id].interactable = true;
+        }
+        else
+        {
+            GameManager.Instance.UIManager.popUpPannel.SetActive(true);
+            GameManager.Instance.popUpManager.ShowMaxPlayerCount();
         }
     }
 
@@ -336,7 +342,7 @@ public class PannelManager : MonoBehaviour
     {
         selectedHero[id] = false;
         count--;
-        heroesQuestButtons[id].interactable = true;
+        //heroesQuestButtons[id].interactable = true;
         heroQuestDeletButtons[id].interactable = false;
     }
 
@@ -374,7 +380,7 @@ public class PannelManager : MonoBehaviour
 
     private void summonHeroes()
     {
-        GameManager.Instance.HeroSummoner.summonHeroes(summonIds, summonCost);
+        GameManager.Instance.HeroSummoner.summonHeroes(typeAvailable, summonCost);
         deactivePannel();
     }
 }
