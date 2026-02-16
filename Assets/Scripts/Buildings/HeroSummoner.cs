@@ -1,18 +1,21 @@
-﻿using UnityEngine;
+﻿using NUnit.Framework;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 public class HeroSummoner : Building
 {
-    [SerializeField] private HeroData[] heroDatas;
+    [SerializeField] private HeroData[] heroClassTemplates;
+    [SerializeField] public List<HeroData> heroDatas = new List<HeroData>();
     [SerializeField] private Transform summonPoint;
 
     [SerializeField] private Building blackSmith;
 
     public int isSummonable(int id , int currentCost)
     {
-        if (heroDatas[id].goldCost + currentCost <= GameManager.Instance.GuildManager.Gold)
+        if (heroClassTemplates[id].goldCost + currentCost <= GameManager.Instance.GuildManager.Gold)
         {
-            return currentCost + heroDatas[id].goldCost;
+            return currentCost + heroClassTemplates[id].goldCost;
         }
         return currentCost;
     }
@@ -32,11 +35,24 @@ public class HeroSummoner : Building
         {
             yield return new WaitForSecondsRealtime(1f);
 
+            // 1. Clone class template
+            HeroData newHero = Instantiate(heroClassTemplates[heroIndex]);
+
+            // 3. Add to player hero list
+            heroDatas.Add(newHero);
+
+            // 4. Save immediately
+            //SaveManager.Instance.AddHero(newHero);
+            
+            GameManager.Instance.heroUI.AddButton(newHero);
+
+            // 5. Spawn prefab
             Instantiate(
-                heroDatas[heroIndex].heroPrefab,
+                newHero.heroPrefab,
                 summonPoint.position,
                 Quaternion.identity
             );
+
 
             heroDatas[heroIndex].isHeroSummoned = true;
         }

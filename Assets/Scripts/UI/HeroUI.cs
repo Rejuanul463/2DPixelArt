@@ -1,11 +1,16 @@
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections.Generic;
 
-public class HeroUI : UiHandler
+public class HeroUI : MonoBehaviour
 {
-
+    [SerializeField] public GameObject ButtonContainer;
+    [SerializeField] public GameObject heroButtonPrefabe;
+    [SerializeField] public List<Button> itemButtons = new List<Button>();
+    [SerializeField] public Image itemImage;
+    [SerializeField] public TextMeshProUGUI name;
+    [SerializeField] TextMeshProUGUI description;
     [SerializeField] TextMeshProUGUI level;
     [SerializeField] TextMeshProUGUI hp;
     [SerializeField] TextMeshProUGUI damage;
@@ -18,7 +23,7 @@ public class HeroUI : UiHandler
         heroIconUpdate();
     }
 
-    public override void ShowDetails(int ind)
+    public void ShowDetails(int ind)
     {
         UpgradeButton.onClick.RemoveAllListeners();
         UpgradeButton.onClick.AddListener( () => UpgradeHero(ind));
@@ -36,8 +41,7 @@ public class HeroUI : UiHandler
 
     public void heroIconUpdate()
     {
-        
-        for(int i = 0; i < itemButtons.Length; i++)
+        for(int i = 0; i < itemButtons.Count; i++)
         {
             itemButtons[i].GetComponent<Image>().sprite = GameManager.Instance.HeroSummoner.getCurrentHeroSprite(i);
             if (!GameManager.Instance.HeroSummoner.isHeroSummoned(i))
@@ -49,7 +53,17 @@ public class HeroUI : UiHandler
                 itemButtons[i].gameObject.SetActive(true);
             }
         }
+
+        
     }
+
+    public void AddButton(HeroData data)
+    {
+        GameObject child = Instantiate(heroButtonPrefabe, ButtonContainer.transform);
+        child.GetComponent<Image>().sprite = data.heroSprite[0];
+        itemButtons.Add(child.GetComponent<Button>());
+    }
+
 
 
     void UpgradeHero(int id)

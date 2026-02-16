@@ -5,6 +5,8 @@ public class Hero : MonoBehaviour
 {
     [SerializeField] private HeroData heroData;
     [SerializeField] private AIPath heroAIPath;
+    
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

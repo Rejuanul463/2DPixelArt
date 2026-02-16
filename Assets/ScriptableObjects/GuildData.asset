@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GuildData
   m_EditorClassIdentifier: 
   guildLevel: 1
-  currentExperience: 65
+  currentExperience: 95
   experienceToNextLevel: 100
-  gold: 3191
+  gold: 2147483367
   unlockedHeroID: 010100000000
   maxUnlockableHeroID: 1
   gems: 0
