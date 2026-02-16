@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -159,6 +160,8 @@ public class QuestManager : MonoBehaviour
         details.text =  "<b>Quest Details :</b> " + "<color=#FFFFFF>" + qD.name + "</color>\n" + "\n" +
                         "<b>Difficulty :</b> " + "<color=#FFFFFF>" + difficulty + "</color>\n" + "\n" +
                         "<b>Enemy :</b> " + "<color=#FFFFFF>" + qD.enemyName + "</color>\n";
+
+        //GameManager.Instance.heroSelectionForQuestUI.setMaxHeroNumber()
     }
 
     public QuestData SimulateCombat(float heroHP, float heroHPS, float heroHitPower)

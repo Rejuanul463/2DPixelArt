@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] public PopUPManager popUpManager;
     [SerializeField] public Transform SummonPoint;
     [SerializeField] public HeroUI heroUI;
+    [SerializeField] public HeroSelectionForQuestUI heroSelectionForQuestUI;
+    [SerializeField] public PannelManager pannelManager;
 
     [SerializeField] public BuildingData TownHall;
     private void Awake()

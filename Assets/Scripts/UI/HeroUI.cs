@@ -18,10 +18,10 @@ public class HeroUI : MonoBehaviour
 
     [SerializeField] Button UpgradeButton;
 
-    private void OnEnable()
-    {
-        heroIconUpdate();
-    }
+    //private void OnEnable()
+    //{
+    //    heroIconUpdate();
+    //}
 
     public void ShowDetails(int ind)
     {
@@ -31,7 +31,7 @@ public class HeroUI : MonoBehaviour
         itemImage.enabled = true;
         itemImage.sprite = itemButtons[ind].GetComponent<Image>().sprite;
 
-        name.text = "Stone";
+        name.text = GameManager.Instance.HeroSummoner.getHeroName(ind);
         level.text = "Level: " + GameManager.Instance.HeroSummoner.getHeroLevel(ind).ToString();
         hp.text = "HP: " + GameManager.Instance.HeroSummoner.getHeroHP(ind).ToString();
         damage.text = "Damage: " + GameManager.Instance.HeroSummoner.getHeroPower(ind).ToString();
@@ -53,14 +53,15 @@ public class HeroUI : MonoBehaviour
                 itemButtons[i].gameObject.SetActive(true);
             }
         }
-
-        
     }
 
     public void AddButton(HeroData data)
     {
         GameObject child = Instantiate(heroButtonPrefabe, ButtonContainer.transform);
         child.GetComponent<Image>().sprite = data.heroSprite[0];
+        
+        child.GetComponent<Button>().onClick.AddListener(() => ShowDetails(data.uniqueId));
+
         itemButtons.Add(child.GetComponent<Button>());
     }
 
@@ -74,4 +75,5 @@ public class HeroUI : MonoBehaviour
             ShowDetails(id);
         }
     }
+
 }

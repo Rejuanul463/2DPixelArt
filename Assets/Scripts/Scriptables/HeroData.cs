@@ -6,6 +6,7 @@ public class HeroData : ScriptableObject
     public GameObject heroPrefab;
     public Sprite[] heroSprite;
     public int Id;
+    public int uniqueId;
     public string heroName;
     public int goldCost;
     public float hitPerSecond;

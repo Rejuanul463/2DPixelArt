@@ -115,10 +115,11 @@ public class PannelManager : MonoBehaviour
         {
 
             if (!GameManager.Instance.QuestManager.questSelected) return;
-            checkInteractableForHire();
+            //checkInteractableForHire();
+            GameManager.Instance.heroSelectionForQuestUI.setMaxHeroNumber(GameManager.Instance.QuestManager.SelectedQD.maxPlayerCount);
             typeAvailable = new int[6];
             Debug.Log("PlayerSelectionPannel");
-            checkInterectableForQuest();
+            //checkInterectableForQuest();
         }
 
         if (activePannelObj != null)
@@ -267,7 +268,7 @@ public class PannelManager : MonoBehaviour
         pauseButton.onClick.AddListener(() => activePannel(6));
         heroSelectionButton.onClick.AddListener(() => activePannel(7));
 
-        GoToQuestButton.onClick.AddListener(() => GoQuest());
+        //GoToQuestButton.onClick.AddListener(() => GoQuest());
         summonHeroButton.onClick.AddListener(() => summonHeroes());
 
         GameManager.Instance.UIManager.play.onClick.AddListener(() => deactivePannel());
@@ -294,42 +295,43 @@ public class PannelManager : MonoBehaviour
         heroesQuestButtons[5].onClick.AddListener(() => addHeroForQuest(5));
 
 
-        heroQuestDeletButtons[0].onClick.AddListener(() => removeHeroForQuest(0));
-        heroQuestDeletButtons[1].onClick.AddListener(() => removeHeroForQuest(1));
-        heroQuestDeletButtons[2].onClick.AddListener(() => removeHeroForQuest(2));
-        heroQuestDeletButtons[3].onClick.AddListener(() => removeHeroForQuest(3));
-        heroQuestDeletButtons[4].onClick.AddListener(() => removeHeroForQuest(4));
-        heroQuestDeletButtons[5].onClick.AddListener(() => removeHeroForQuest(5));
+        //heroQuestDeletButtons[0].onClick.AddListener(() => removeHeroForQuest(0));
+        //heroQuestDeletButtons[1].onClick.AddListener(() => removeHeroForQuest(1));
+        //heroQuestDeletButtons[2].onClick.AddListener(() => removeHeroForQuest(2));
+        //heroQuestDeletButtons[3].onClick.AddListener(() => removeHeroForQuest(3));
+        //heroQuestDeletButtons[4].onClick.AddListener(() => removeHeroForQuest(4));
+        //heroQuestDeletButtons[5].onClick.AddListener(() => removeHeroForQuest(5));
 
     }
 
-    bool[] selectedHero;
+    //bool[] selectedHero;
     int count = 0;
-    private void checkInteractableForHire()
-    {
-        selectedHero = new bool[6];
-        count = 0;
-        for (int i = 0; i < typeAvailable.Length; i++)
-        {
-            if (GameManager.Instance.GuildManager.IsHeroUnlocked(i))
-            {
-                heroesSummonButtons[i].interactable = true;
-                heroSummonDelet[i].interactable = false;
-            }
-        }
-    }
+    //private void checkInteractableForHire()
+    //{
+    //    selectedHero = new bool[6];
+    //    count = 0;
+    //    for (int i = 0; i < typeAvailable.Length; i++)
+    //    {
+    //        if (GameManager.Instance.GuildManager.IsHeroUnlocked(i))
+    //        {
+    //            heroesSummonButtons[i].interactable = true;
+    //            heroSummonDelet[i].interactable = false;
+    //        }
+    //    }
+    //}
     
-    
+    List<int> selectedHeroesForQuest = new List<int>();
     private void addHeroForQuest(int id)
     {
         
         if (count < GameManager.Instance.QuestManager.SelectedQD.maxPlayerCount)
         {
             Debug.Log("PlayerAdded");
-            selectedHero[id] = true;
+            //selectedHero[id] = true;
+            selectedHeroesForQuest.Add(id);
             count++;
             //heroesQuestButtons[id].interactable = false;
-            heroQuestDeletButtons[id].interactable = true;
+            //heroQuestDeletButtons[id].interactable = true;
         }
         else
         {
@@ -338,31 +340,32 @@ public class PannelManager : MonoBehaviour
         }
     }
 
-    private void removeHeroForQuest(int id)
-    {
-        selectedHero[id] = false;
-        count--;
-        //heroesQuestButtons[id].interactable = true;
-        heroQuestDeletButtons[id].interactable = false;
-    }
+    //private void removeHeroForQuest(int id)
+    //{
+    //    //selectedHero[id] = false;
+    //    count--;
+    //    //heroesQuestButtons[id].interactable = true;
+    //    heroQuestDeletButtons[id].interactable = false;
+    //}
 
-    private void GoQuest()
+    public void GoQuest(int cnt, List<int> HeroesForQuest)
     {
-        if(count > 0)
+        if(cnt > 0)
         {
             float hitDamage = 0;
             float hps = 0;
             float hp = 0;
-            for(int i = 0; i < 6; i++)
+            foreach(int i in HeroesForQuest)
             {
-                if (selectedHero[i])
-                {
+                //if (selectedHero[i])
+                //{
                     hitDamage += GameManager.Instance.HeroSummoner.getHeroPower(i);
                     hps += GameManager.Instance.HeroSummoner.getHeroHitPerSecound(i);
                     hp += GameManager.Instance.HeroSummoner.getHeroHP(i);
-                }
+                //}
             }
             QuestData simulationQuestData = GameManager.Instance.QuestManager.SimulateCombat(hp, hps, hitDamage);
+            
             if (simulationQuestData != null)
             {
                 Debug.Log("Wins");

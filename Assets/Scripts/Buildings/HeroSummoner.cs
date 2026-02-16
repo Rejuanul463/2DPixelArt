@@ -37,7 +37,7 @@ public class HeroSummoner : Building
 
             // 1. Clone class template
             HeroData newHero = Instantiate(heroClassTemplates[heroIndex]);
-
+            newHero.uniqueId = heroDatas.Count;
             // 3. Add to player hero list
             heroDatas.Add(newHero);
 
@@ -45,6 +45,7 @@ public class HeroSummoner : Building
             //SaveManager.Instance.AddHero(newHero);
             
             GameManager.Instance.heroUI.AddButton(newHero);
+            GameManager.Instance.heroSelectionForQuestUI.AddButton(newHero);
 
             // 5. Spawn prefab
             Instantiate(
@@ -72,7 +73,10 @@ public class HeroSummoner : Building
         Debug.Log("All heroes summoned");
     }
 
-
+    public string getHeroName(int id)
+    {
+        return heroDatas[id].heroName;
+    }
     public float getHeroHP(int id)
     {
         return heroDatas[id].HP;
