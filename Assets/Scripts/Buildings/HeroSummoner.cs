@@ -23,7 +23,7 @@ public class HeroSummoner : Building
     {
         GameManager.Instance.GuildManager.Gold -= cost;
 
-        // 🔒 Take a snapshot so coroutine data never changes
+        // Take a snapshot so coroutine data never changes
         int[] idsSnapshot = (int[])ids.Clone();
 
         StartCoroutine(summonAll(idsSnapshot));

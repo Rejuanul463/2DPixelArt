@@ -4,7 +4,6 @@ using UnityEngine;
 [Serializable]
 public class SaveManager
 {
-    [SerializeField] string data;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,6 +13,5 @@ public class SaveManager
     // Update is called once per frame
     void Update()
     {
-        data = "data";
     }
 }
