@@ -1,9 +1,10 @@
 using Pathfinding;
+using System.Collections;
 using UnityEngine;
 
 public class Hero : MonoBehaviour
 {
-    [SerializeField] private HeroData heroData;
+    [SerializeField] public HeroData heroData;
     [SerializeField] private AIPath heroAIPath;
     
 
@@ -12,11 +13,7 @@ public class Hero : MonoBehaviour
     {
         heroAIPath = GetComponent<AIPath>();
         heroAIPath.maxSpeed = heroData.speed;
+        GetComponent<DestinationSetter>().UpdateHero(heroData.level);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

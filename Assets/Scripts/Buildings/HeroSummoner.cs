@@ -48,14 +48,16 @@ public class HeroSummoner : Building
             GameManager.Instance.heroSelectionForQuestUI.AddButton(newHero);
 
             // 5. Spawn prefab
-            Instantiate(
+            GameObject hero = Instantiate(
                 newHero.heroPrefab,
                 summonPoint.position,
                 Quaternion.identity
             );
 
+            hero.GetComponent<Hero>().heroData = newHero;
 
-            heroDatas[heroIndex].isHeroSummoned = true;
+
+            heroDatas[newHero.uniqueId].isHeroSummoned = true;
         }
 
         GameManager.Instance.GuildManager.UnlockHero(heroIndex);

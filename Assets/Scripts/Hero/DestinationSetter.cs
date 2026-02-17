@@ -12,6 +12,10 @@ public class DestinationSetter : MonoBehaviour
     private int ignoreIndex = -1;
 
     public Animator animator;
+
+
+    [SerializeField] private GameObject[] CharacterLevels;
+
     private void Start()
     {
         DestinationPoint = new GameObject("HeroDestination");
@@ -64,18 +68,18 @@ public class DestinationSetter : MonoBehaviour
     private void Update()
     {
         Vector3 moveDirection = aiPath.desiredVelocity.normalized;
-
         if (moveDirection.x > 0)
         {
             //MoveRight
             animator.Play("Side");
-            transform.localScale = new Vector3(-1f,1f,1f);
+            transform.localScale = Vector3.one;
         }
         else if (moveDirection.x < 0)
         {
             // move left
             animator.Play("Side");
-            transform.localScale = Vector3.one;
+            
+            transform.localScale = new Vector3(1f, 1f, 1f);
         }
         else if(moveDirection.y < 0)
         {
@@ -86,6 +90,22 @@ public class DestinationSetter : MonoBehaviour
         {
             //move down
             animator.Play("Front");
+        }
+    }
+
+    public void UpdateHero(int level)
+    {
+        for(int i = 0; i < CharacterLevels.Length; i++)
+        {
+            if(i == level - 1)
+            {
+                CharacterLevels[i].SetActive(true);
+                animator = CharacterLevels[level - 1].GetComponent<Animator>();
+            }
+            else
+            {
+                CharacterLevels[i].SetActive(false);
+            }
         }
     }
 }
