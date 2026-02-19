@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 1314777561561512713, guid: d40cfbad960b57844ab26a09fb3d7636, type: 3}
   - {fileID: 5676001472787654812, guid: 74922428c7eb59546b3a690dc3c884c8, type: 3}
   Id: 2
+  uniqueId: 0
   heroName: Giant
   goldCost: 150
   hitPerSecond: 0.5

@@ -131,12 +131,12 @@ TextureImporter:
       name: walking_0
       rect:
         serializedVersion: 2
-        x: 10
-        y: 234
-        width: 208
-        height: 253
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 11
+        y: 236
+        width: 201
+        height: 248
+      alignment: 9
+      pivot: {x: 0.5198015, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -153,12 +153,12 @@ TextureImporter:
       name: walking_1
       rect:
         serializedVersion: 2
-        x: 207
-        y: 237
-        width: 186
-        height: 246
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 224
+        y: 240
+        width: 181
+        height: 244
+      alignment: 9
+      pivot: {x: 0.34607354, y: 0.50543725}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -175,12 +175,12 @@ TextureImporter:
       name: walking_2
       rect:
         serializedVersion: 2
-        x: 383
-        y: 235
-        width: 165
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 395
+        y: 239
+        width: 164
+        height: 242
+      alignment: 9
+      pivot: {x: 0.24922143, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -197,12 +197,12 @@ TextureImporter:
       name: walking_3
       rect:
         serializedVersion: 2
-        x: 537
-        y: 238
-        width: 193
-        height: 244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 550
+        y: 239
+        width: 191
+        height: 242
+      alignment: 9
+      pivot: {x: 0.37497061, y: 0.49451768}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -219,12 +219,12 @@ TextureImporter:
       name: walking_4
       rect:
         serializedVersion: 2
-        x: 720
-        y: 238
-        width: 165
-        height: 244
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 733
+        y: 236
+        width: 162
+        height: 248
+      alignment: 9
+      pivot: {x: 0.27069354, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -241,12 +241,12 @@ TextureImporter:
       name: walking_5
       rect:
         serializedVersion: 2
-        x: 874
-        y: 235
-        width: 396
-        height: 250
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 886
+        y: 238
+        width: 186
+        height: 244
+      alignment: 9
+      pivot: {x: 0.4072735, y: 0.50543725}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -259,11 +259,33 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: walking_6
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 235
+        width: 206
+        height: 251
+      alignment: 9
+      pivot: {x: 0.46135822, y: 0.50528574}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b48fe06af7ca71746b02daf7b0cd8c65
+      internalID: -9688827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 50b79046f7b6a7a44b0009e753043277
     internalID: 0
     vertices: []
     indices: 
@@ -271,7 +293,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       walking_0: -2987179049035696926
       walking_1: -4154626181522259262
@@ -279,6 +303,7 @@ TextureImporter:
       walking_3: 4036955197636849006
       walking_4: -7918336409512017615
       walking_5: 1250286383453380257
+      walking_6: -9688827
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -27,7 +27,7 @@ MonoBehaviour:
   hitPerSecond: 2
   hitPower: 30
   HP: 40
-  level: 6
+  level: 1
   levelUpMultiplier: 1.2
   coolDownTime: 60
   goldPerAttack: 5

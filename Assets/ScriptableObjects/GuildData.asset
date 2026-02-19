@@ -15,9 +15,9 @@ MonoBehaviour:
   guildLevel: 3
   currentExperience: 155
   experienceToNextLevel: 100
-  gold: 2147479167
-  unlockedHeroID: 000000000000
-  maxUnlockableHeroID: 1
+  gold: 2147478307
+  unlockedHeroID: 010101000000
+  maxUnlockableHeroID: 6
   gems: 0
   woods: 200
   stones: 200
