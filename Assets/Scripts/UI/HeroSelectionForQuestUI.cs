@@ -99,7 +99,17 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         itemButtons.Add(child.GetComponent<Button>());
     }
 
-    
+    public void loadGame()
+    {
+        List<HeroData> heroDatas = GameManager.Instance.saveManager.heroDatas;
+
+        for (int i = 0; i < heroDatas.Count; i++)
+        {
+            AddButton(heroDatas[i]);
+
+        }
+    }
+
     private void goQuest()
     {
         GameManager.Instance.pannelManager.GoQuest(count, selectedHeroes);

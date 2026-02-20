@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a0ee30ce0467924c88f400592bd8b11, type: 3}
   m_Name: GuildData
   m_EditorClassIdentifier: 
-  guildLevel: 3
-  currentExperience: 155
-  experienceToNextLevel: 100
-  gold: 2147478307
-  unlockedHeroID: 010101000000
+  guildLevel: 7
+  currentExperience: 200
+  experienceToNextLevel: 0
+  gold: 21294
+  unlockedHeroID: 010101010101
   maxUnlockableHeroID: 6
   gems: 0
-  woods: 200
-  stones: 200
+  woods: 0
+  stones: 0
   BlackSmithLevel: 1
   HeroSummonerLevel: 1
   questCompleteTime: 

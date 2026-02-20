@@ -37,5 +37,5 @@ MonoBehaviour:
   HP: 18
   enemyCount: 2
   completionTime: 0
-  isCompleted: 0
+  isCompleted: 1
   slots: 1

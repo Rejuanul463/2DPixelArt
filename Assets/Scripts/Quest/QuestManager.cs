@@ -36,7 +36,7 @@ public class QuestManager : MonoBehaviour
     public QuestData selectedQuestData;
     public QuestDetails SelectedQD;
 
-    [SerializeField] QuestData[] questData;
+    [SerializeField] public QuestData[] questData;
     [SerializeField] int latestQuestInd;
 
     [SerializeField] private RectTransform content;
@@ -54,10 +54,21 @@ public class QuestManager : MonoBehaviour
         loadQuests();
     }
 
+    //public void LoadGame()
+    //{
+    //    for (int i = latestQuestInd; i < questData.Length; i++)
+    //    {
+
+    //    }
+    //}
+
     public void loadQuests()
     {
         for (int i = latestQuestInd; i < questData.Length; i++)
         {
+            if(questData[i].isCompleted)
+                continue;
+
             string difficulty = "";
             // Skip quests above guild level (DO NOT return)
             if (GameManager.Instance.GuildManager.GuildLevel < questData[i].requiredLevel)

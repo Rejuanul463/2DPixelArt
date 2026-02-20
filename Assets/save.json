@@ -1,0 +1,143 @@
+{
+    "heroes": [
+        {
+            "id": 0,
+            "uniqueId": 0,
+            "level": 1,
+            "hitPerSecond": 2.0,
+            "hitPower": 30.0,
+            "HP": 40.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 5,
+            "isHeroSummoned": true
+        },
+        {
+            "id": 1,
+            "uniqueId": 0,
+            "level": 1,
+            "hitPerSecond": 4.0,
+            "hitPower": 40.0,
+            "HP": 20.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 8,
+            "isHeroSummoned": true
+        },
+        {
+            "id": 4,
+            "uniqueId": 0,
+            "level": 1,
+            "hitPerSecond": 1.0,
+            "hitPower": 50.0,
+            "HP": 200.0,
+            "coolDownTime": 140.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true
+        },
+        {
+            "id": 5,
+            "uniqueId": 0,
+            "level": 2,
+            "hitPerSecond": 4.0,
+            "hitPower": 70.0,
+            "HP": 60.0,
+            "coolDownTime": 200.0,
+            "goldPerAttack": 24,
+            "isHeroSummoned": true
+        }
+    ],
+    "buildings": [
+        {
+            "buildingID": 2,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 1,
+            "upgradeStartTime": 0,
+            "upgradeCostGold": 100,
+            "upgradeCostWood": 100,
+            "upgradeCostStone": 100,
+            "xpBoost": 30.0
+        },
+        {
+            "buildingID": 3,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 1,
+            "upgradeStartTime": 0,
+            "upgradeCostGold": 50,
+            "upgradeCostWood": 50,
+            "upgradeCostStone": 50,
+            "xpBoost": 10.0
+        },
+        {
+            "buildingID": 4,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 1,
+            "upgradeStartTime": 0,
+            "upgradeCostGold": 50,
+            "upgradeCostWood": 50,
+            "upgradeCostStone": 50,
+            "xpBoost": 10.0
+        },
+        {
+            "buildingID": 5,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 1,
+            "upgradeStartTime": 0,
+            "upgradeCostGold": 50,
+            "upgradeCostWood": 50,
+            "upgradeCostStone": 50,
+            "xpBoost": 10.0
+        },
+        {
+            "buildingID": 0,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 1,
+            "upgradeStartTime": 0,
+            "upgradeCostGold": 500,
+            "upgradeCostWood": 500,
+            "upgradeCostStone": 500,
+            "xpBoost": 100.0
+        },
+        {
+            "buildingID": 1,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 1,
+            "upgradeStartTime": 0,
+            "upgradeCostGold": 100,
+            "upgradeCostWood": 100,
+            "upgradeCostStone": 100,
+            "xpBoost": 30.0
+        }
+    ],
+    "guild": {
+        "guildLevel": 7,
+        "currentExperience": 200,
+        "experienceToNextLevel": 0,
+        "gold": 21294,
+        "unlockedHeroID": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "maxUnlockableHeroID": 6,
+        "gems": 0,
+        "woods": 0,
+        "stones": 0,
+        "BlackSmithLevel": 1,
+        "HeroSummonerLevel": 1,
+        "questCompleteTime": []
+    }
+}

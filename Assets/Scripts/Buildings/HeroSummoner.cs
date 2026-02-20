@@ -11,6 +11,11 @@ public class HeroSummoner : Building
 
     [SerializeField] private Building blackSmith;
 
+    public void LoadGame()
+    {
+        heroDatas = GameManager.Instance.saveManager.heroDatas;
+    }
+
     public int isSummonable(int id , int currentCost)
     {
         if (heroClassTemplates[id].goldCost + currentCost <= GameManager.Instance.GuildManager.Gold)
@@ -42,8 +47,8 @@ public class HeroSummoner : Building
             heroDatas.Add(newHero);
 
             // 4. Save immediately
-            //SaveManager.Instance.AddHero(newHero);
-            
+            GameManager.Instance.saveManager.AddHero(newHero);
+
             GameManager.Instance.heroUI.AddButton(newHero);
             GameManager.Instance.heroSelectionForQuestUI.AddButton(newHero);
 

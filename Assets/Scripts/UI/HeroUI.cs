@@ -23,6 +23,18 @@ public class HeroUI : MonoBehaviour
     //    heroIconUpdate();
     //}
 
+
+    public void loadGame()
+    {
+        List<HeroData> heroDatas = GameManager.Instance.saveManager.heroDatas;
+
+        for (int i = 0; i < heroDatas.Count; i++)
+        {
+            AddButton(heroDatas[i]);
+            
+        }
+    }
+
     public void ShowDetails(int ind)
     {
         UpgradeButton.onClick.RemoveAllListeners();

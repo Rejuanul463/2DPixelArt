@@ -57,5 +57,10 @@ public class QuestData : ScriptableObject
     {
         isCompleted = true;
     }
+
+    public bool isComplete()
+    {
+        return isCompleted;
+    }
 }
 
