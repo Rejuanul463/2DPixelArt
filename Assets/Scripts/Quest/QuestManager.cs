@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -54,21 +54,11 @@ public class QuestManager : MonoBehaviour
         loadQuests();
     }
 
-    //public void LoadGame()
-    //{
-    //    for (int i = latestQuestInd; i < questData.Length; i++)
-    //    {
-
-    //    }
-    //}
 
     public void loadQuests()
     {
-        for (int i = latestQuestInd; i < questData.Length; i++)
+        for (int i = 0; i < questData.Length; i++)
         {
-            if(questData[i].isCompleted)
-                continue;
-
             string difficulty = "";
             // Skip quests above guild level (DO NOT return)
             if (GameManager.Instance.GuildManager.GuildLevel < questData[i].requiredLevel)
@@ -87,13 +77,13 @@ public class QuestManager : MonoBehaviour
             item.transform.localScale = Vector3.one;
 
             // Quest Name
-            var nameText = item.transform.Find("name")
+            var nameText = item.transform.Find("Name")
                 ?.GetComponent<TextMeshProUGUI>();
             if (nameText != null)
                 nameText.text = quest.questName;
 
             // Quest Type
-            var typeText = item.transform.Find("type")
+            var typeText = item.transform.Find("Quest Type")
                 ?.GetComponent<TextMeshProUGUI>();
             if (typeText != null)
                 typeText.text = quest.questType == QuestData.QuestType.Main ? "Main" : "Side";

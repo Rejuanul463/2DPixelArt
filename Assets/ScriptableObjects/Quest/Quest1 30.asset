@@ -36,6 +36,6 @@ MonoBehaviour:
   hitPower: 87
   HP: 680
   enemyCount: 6
-  completionTime: 0
+  completionTime: 60
   isCompleted: 0
   slots: 0

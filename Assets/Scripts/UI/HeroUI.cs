@@ -31,7 +31,6 @@ public class HeroUI : MonoBehaviour
         for (int i = 0; i < heroDatas.Count; i++)
         {
             AddButton(heroDatas[i]);
-            
         }
     }
 
@@ -70,8 +69,7 @@ public class HeroUI : MonoBehaviour
     public void AddButton(HeroData data)
     {
         GameObject child = Instantiate(heroButtonPrefabe, ButtonContainer.transform);
-        child.GetComponent<Image>().sprite = data.heroSprite[0];
-        
+        child.GetComponent<Image>().sprite = data.heroSprite[data.level - 1];
         child.GetComponent<Button>().onClick.AddListener(() => ShowDetails(data.uniqueId));
 
         itemButtons.Add(child.GetComponent<Button>());

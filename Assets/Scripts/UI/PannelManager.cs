@@ -372,6 +372,14 @@ public class PannelManager : MonoBehaviour
                 GameManager.Instance.GuildManager.Gold += simulationQuestData.goldRewardBase;
                 GameManager.Instance.GuildManager.Experience += simulationQuestData.experienceReward;
                 simulationQuestData.isCompleted = true;
+
+                foreach (int i in HeroesForQuest)
+                {
+                    Debug.Log("hero " + i);
+                    GameManager.Instance.HeroSummoner.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
+                    //saveManager.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
+                    //HeroSummoner.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
+                }
             }
             else
             {

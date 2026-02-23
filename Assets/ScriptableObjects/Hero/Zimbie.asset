@@ -32,3 +32,5 @@ MonoBehaviour:
   coolDownTime: 140
   goldPerAttack: 20
   isHeroSummoned: 0
+  xp: 0
+  xpForNextLevel: 100

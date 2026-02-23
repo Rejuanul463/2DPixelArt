@@ -1,4 +1,4 @@
-using TMPro;
+
 using UnityEngine;
 
 public class GuildManager : MonoBehaviour

@@ -85,12 +85,12 @@ public class SaveManager : MonoBehaviour
             questCompleteTime = guildData.questCompleteTime
         };
         ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //saveData.quests = GameManager.Instance.QuestManager.questData.Select(q => new QuestSaveData
-        //{
-        //    isCompleted = q.isCompleted,
-        //    questName = q.questName,
-        //    //completeTime = q.completeTime
-        //}).ToList();
+        saveData.quests = GameManager.Instance.QuestManager.questData.Select(q => new QuestSaveData
+        {
+            isCompleted = q.isCompleted,
+            questName = q.questName,
+            //completeTime = q.completeTime
+        }).ToList();
 
 
         //saveData.intList = intList;
@@ -157,12 +157,13 @@ public class SaveManager : MonoBehaviour
             buildingDatas[ind] = building;
             ind++;
         }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //for(int i = 0; i < saveData.quests.Count; i++)
-        //{
-        //    if (saveData.quests[i].isCompleted)
-        //        GameManager.Instance.QuestManager.questData[i].CompleteTask();
-        //}
+        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        for (int i = 0; i < saveData.quests.Count; i++)
+        {
+            if (saveData.quests[i].isCompleted)
+                GameManager.Instance.QuestManager.questData[i].CompleteTask();
+        }
+        GameManager.Instance.QuestManager.loadQuests();
 
         // ---- GUILD ----
         guildData.guildLevel = saveData.guild.guildLevel;
@@ -205,7 +206,7 @@ public class SaveManager : MonoBehaviour
         public List<HeroSaveData> heroes;
         public List<BuildingSaveData> buildings;
         public GuildSaveData guild;
-        //public List<QuestSaveData> quests;
+        public List<QuestSaveData> quests;
         //public List<int> intList;
     }
 
@@ -255,13 +256,13 @@ public class SaveManager : MonoBehaviour
         public long[] questCompleteTime;
     }
 
-    //[Serializable]
-    //private class QuestSaveData
-    //{
-    //    public string questName;
-    //    public bool isCompleted;
-    //    public long completeTime;
-    //}
+    [Serializable]
+    private class QuestSaveData
+    {
+        public string questName;
+        public bool isCompleted;
+        public long completeTime;
+    }
 
 
 
