@@ -42,6 +42,7 @@ public class SaveManager : MonoBehaviour
         // ---- HEROES ----
         saveData.heroes = heroDatas.Select(hero => new HeroSaveData
         {
+            name = hero.name,
             id = hero.Id,
             uniqueId = hero.uniqueId,
             level = hero.level,
@@ -123,7 +124,9 @@ public class SaveManager : MonoBehaviour
             HeroData hero = SampleHeroData[heroSave.id];
 
             if (hero == null) continue;
-
+            hero.name = heroSave.name;
+            hero.uniqueId = heroSave.uniqueId;
+            hero.Id = heroSave.id;
             hero.level = heroSave.level;
             hero.hitPower = heroSave.hitPower;
             hero.hitPerSecond = heroSave.hitPerSecond;
@@ -213,6 +216,7 @@ public class SaveManager : MonoBehaviour
     [Serializable]
     private class HeroSaveData
     {
+        public string name;
         public int id;
         public int uniqueId;
         public int level;

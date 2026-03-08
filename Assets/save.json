@@ -1,6 +1,7 @@
 {
     "heroes": [
         {
+            "name": "Sebastian Martinez",
             "id": 0,
             "uniqueId": 0,
             "level": 1,
@@ -12,19 +13,21 @@
             "isHeroSummoned": true
         },
         {
-            "id": 1,
-            "uniqueId": 0,
+            "name": "Grayson Taylor",
+            "id": 2,
+            "uniqueId": 1,
             "level": 1,
-            "hitPerSecond": 4.0,
-            "hitPower": 40.0,
-            "HP": 20.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 8,
+            "hitPerSecond": 0.5,
+            "hitPower": 60.0,
+            "HP": 100.0,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 10,
             "isHeroSummoned": true
         },
         {
+            "name": "Aiden Robinson",
             "id": 4,
-            "uniqueId": 0,
+            "uniqueId": 2,
             "level": 1,
             "hitPerSecond": 1.0,
             "hitPower": 50.0,
@@ -34,36 +37,15 @@
             "isHeroSummoned": true
         },
         {
+            "name": "Mila Harris",
             "id": 5,
-            "uniqueId": 0,
+            "uniqueId": 3,
             "level": 1,
             "hitPerSecond": 4.0,
             "hitPower": 70.0,
             "HP": 60.0,
             "coolDownTime": 200.0,
             "goldPerAttack": 24,
-            "isHeroSummoned": true
-        },
-        {
-            "id": 3,
-            "uniqueId": 0,
-            "level": 1,
-            "hitPerSecond": 3.0,
-            "hitPower": 50.0,
-            "HP": 40.0,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 14,
-            "isHeroSummoned": true
-        },
-        {
-            "id": 4,
-            "uniqueId": 5,
-            "level": 1,
-            "hitPerSecond": 1.0,
-            "hitPower": 50.0,
-            "HP": 200.0,
-            "coolDownTime": 140.0,
-            "goldPerAttack": 20,
             "isHeroSummoned": true
         }
     ],
@@ -118,34 +100,34 @@
         },
         {
             "buildingID": 0,
-            "buildingLevel": 1,
+            "buildingLevel": 2,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 1,
-            "upgradeStartTime": 0,
-            "upgradeCostGold": 500,
-            "upgradeCostWood": 500,
-            "upgradeCostStone": 500,
-            "xpBoost": 100.0
+            "upgradeStartTime": 1773004692072,
+            "upgradeCostGold": 750,
+            "upgradeCostWood": 750,
+            "upgradeCostStone": 750,
+            "xpBoost": 150.0
         },
         {
             "buildingID": 1,
-            "buildingLevel": 1,
+            "buildingLevel": 2,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 1,
-            "upgradeStartTime": 0,
-            "upgradeCostGold": 100,
-            "upgradeCostWood": 100,
-            "upgradeCostStone": 100,
-            "xpBoost": 30.0
+            "upgradeStartTime": 1773004732307,
+            "upgradeCostGold": 150,
+            "upgradeCostWood": 150,
+            "upgradeCostStone": 150,
+            "xpBoost": 45.0
         }
     ],
     "guild": {
-        "guildLevel": 33,
-        "currentExperience": 2585,
+        "guildLevel": 34,
+        "currentExperience": 2615,
         "experienceToNextLevel": 0,
-        "gold": 26054,
+        "gold": 45226,
         "unlockedHeroID": [
             true,
             true,
@@ -154,10 +136,10 @@
             true,
             true
         ],
-        "maxUnlockableHeroID": 6,
+        "maxUnlockableHeroID": 7,
         "gems": 0,
-        "woods": 0,
-        "stones": 0,
+        "woods": 3349,
+        "stones": 3439,
         "BlackSmithLevel": 1,
         "HeroSummonerLevel": 1,
         "questCompleteTime": []
@@ -165,7 +147,7 @@
     "quests": [
         {
             "questName": "Searing For Embers",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {

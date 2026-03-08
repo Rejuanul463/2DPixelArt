@@ -14,6 +14,11 @@ public class HeroSummoner : Building
     public void LoadGame()
     {
         heroDatas = GameManager.Instance.saveManager.heroDatas;
+
+        foreach(HeroData h in heroDatas)
+        {
+            Debug.Log(h.name);
+        }
     }
 
     public int isSummonable(int id , int currentCost)
@@ -43,6 +48,8 @@ public class HeroSummoner : Building
             // 1. Clone class template
             HeroData newHero = Instantiate(heroClassTemplates[heroIndex]);
             newHero.uniqueId = heroDatas.Count;
+            if(newHero.Id % 2 == 0) newHero.name = NameGenerator.GenerateName(Gender.Male, true);
+            else newHero.name = NameGenerator.GenerateName(Gender.Female, true);
             // 3. Add to player hero list
             heroDatas.Add(newHero);
 
@@ -60,7 +67,6 @@ public class HeroSummoner : Building
             );
 
             hero.GetComponent<Hero>().heroData = newHero;
-
 
             heroDatas[newHero.uniqueId].isHeroSummoned = true;
         }
@@ -82,7 +88,7 @@ public class HeroSummoner : Building
 
     public string getHeroName(int id)
     {
-        return heroDatas[id].heroName;
+        return heroDatas[id].name;
     }
     public float getHeroHP(int id)
     {

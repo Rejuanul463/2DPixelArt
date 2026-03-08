@@ -36,6 +36,7 @@ public class HeroUI : MonoBehaviour
 
     public void ShowDetails(int ind)
     {
+
         UpgradeButton.onClick.RemoveAllListeners();
         UpgradeButton.onClick.AddListener( () => UpgradeHero(ind));
 
