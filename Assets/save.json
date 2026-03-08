@@ -1,51 +1,39 @@
 {
     "heroes": [
         {
-            "name": "Sebastian Martinez",
+            "name": "Lincoln Martin",
             "id": 0,
             "uniqueId": 0,
-            "level": 1,
+            "level": 2,
             "hitPerSecond": 2.0,
-            "hitPower": 35.0,
-            "HP": 25.0,
+            "hitPower": 42.0,
+            "HP": 30.000001907348634,
             "coolDownTime": 60.0,
             "goldPerAttack": 5,
             "isHeroSummoned": true
         },
         {
-            "name": "Grayson Taylor",
-            "id": 2,
+            "name": "Layla Adams",
+            "id": 1,
             "uniqueId": 1,
             "level": 1,
-            "hitPerSecond": 0.5,
-            "hitPower": 60.0,
-            "HP": 100.0,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 10,
+            "hitPerSecond": 4.0,
+            "hitPower": 40.0,
+            "HP": 20.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 8,
             "isHeroSummoned": true
         },
         {
-            "name": "Aiden Robinson",
-            "id": 4,
+            "name": "Ella Hernandez",
+            "id": 3,
             "uniqueId": 2,
             "level": 1,
-            "hitPerSecond": 1.0,
+            "hitPerSecond": 3.0,
             "hitPower": 50.0,
-            "HP": 200.0,
-            "coolDownTime": 140.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Mila Harris",
-            "id": 5,
-            "uniqueId": 3,
-            "level": 1,
-            "hitPerSecond": 4.0,
-            "hitPower": 70.0,
-            "HP": 60.0,
-            "coolDownTime": 200.0,
-            "goldPerAttack": 24,
+            "HP": 40.0,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 14,
             "isHeroSummoned": true
         }
     ],
@@ -124,10 +112,10 @@
         }
     ],
     "guild": {
-        "guildLevel": 34,
-        "currentExperience": 2615,
+        "guildLevel": 38,
+        "currentExperience": 2830,
         "experienceToNextLevel": 0,
-        "gold": 45226,
+        "gold": 44826,
         "unlockedHeroID": [
             true,
             true,
@@ -152,22 +140,22 @@
         },
         {
             "questName": " The Moonlit Rebellion",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
             "questName": "The Starlit Rites",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {

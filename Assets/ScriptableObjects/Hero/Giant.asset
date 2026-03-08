@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Grayson Taylor
+  m_Name: James Campbell
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: f4719763fc7d84425886c35a6b038636, type: 3}
   heroSprite:
@@ -32,5 +32,5 @@ MonoBehaviour:
   coolDownTime: 100
   goldPerAttack: 10
   isHeroSummoned: 1
-  xp: 0
+  xp: 22
   xpForNextLevel: 100

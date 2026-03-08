@@ -377,6 +377,7 @@ public class PannelManager : MonoBehaviour
                 {
                     Debug.Log("hero " + i);
                     GameManager.Instance.HeroSummoner.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
+                    Debug.Log(GameManager.Instance.HeroSummoner.heroDatas[i].xp + " " + i);
                     //saveManager.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
                     //HeroSummoner.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
                 }
