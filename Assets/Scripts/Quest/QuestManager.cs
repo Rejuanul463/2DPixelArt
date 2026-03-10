@@ -1,6 +1,6 @@
+
 using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -36,7 +36,7 @@ public class QuestManager : MonoBehaviour
     public QuestData selectedQuestData;
     public QuestDetails SelectedQD;
 
-    [SerializeField] QuestData[] questData;
+    [SerializeField] public QuestData[] questData;
     [SerializeField] int latestQuestInd;
 
     [SerializeField] private RectTransform content;
@@ -54,9 +54,10 @@ public class QuestManager : MonoBehaviour
         loadQuests();
     }
 
+
     public void loadQuests()
     {
-        for (int i = latestQuestInd; i < questData.Length; i++)
+        for (int i = 0; i < questData.Length; i++)
         {
             string difficulty = "";
             // Skip quests above guild level (DO NOT return)
@@ -76,13 +77,13 @@ public class QuestManager : MonoBehaviour
             item.transform.localScale = Vector3.one;
 
             // Quest Name
-            var nameText = item.transform.Find("name")
+            var nameText = item.transform.Find("Name")
                 ?.GetComponent<TextMeshProUGUI>();
             if (nameText != null)
                 nameText.text = quest.questName;
 
             // Quest Type
-            var typeText = item.transform.Find("type")
+            var typeText = item.transform.Find("Quest Type")
                 ?.GetComponent<TextMeshProUGUI>();
             if (typeText != null)
                 typeText.text = quest.questType == QuestData.QuestType.Main ? "Main" : "Side";
@@ -160,6 +161,8 @@ public class QuestManager : MonoBehaviour
         details.text =  "<b>Quest Details :</b> " + "<color=#FFFFFF>" + qD.name + "</color>\n" + "\n" +
                         "<b>Difficulty :</b> " + "<color=#FFFFFF>" + difficulty + "</color>\n" + "\n" +
                         "<b>Enemy :</b> " + "<color=#FFFFFF>" + qD.enemyName + "</color>\n";
+
+        //GameManager.Instance.heroSelectionForQuestUI.setMaxHeroNumber()
     }
 
     public QuestData SimulateCombat(float heroHP, float heroHPS, float heroHitPower)

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using UnityEngine;
 public class PopUPManager : MonoBehaviour
@@ -6,6 +5,7 @@ public class PopUPManager : MonoBehaviour
     [SerializeField] private GameObject notEnoughtGold;
     [SerializeField] private GameObject notEnoughtGems;
     [SerializeField] private GameObject notAvailable;
+    [SerializeField] private GameObject maxPlayerCount;
 
     [HideInInspector] private GameObject currentActive;
     private void OnEnable()
@@ -39,6 +39,13 @@ public class PopUPManager : MonoBehaviour
         if (currentActive != null) currentActive.SetActive(false);
         currentActive = notAvailable;
         notAvailable.SetActive(true);
+    }
+
+    public void ShowMaxPlayerCount()
+    {
+        if (currentActive != null) currentActive.SetActive(false);
+        currentActive = maxPlayerCount;
+        maxPlayerCount.SetActive(true);
     }
 
     IEnumerator disable()

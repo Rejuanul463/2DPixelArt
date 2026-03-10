@@ -1,5 +1,4 @@
-using JetBrains.Annotations;
-using System.Text.RegularExpressions;
+
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -11,6 +10,11 @@ public class GameManager : MonoBehaviour
     [SerializeField] public QuestManager QuestManager;
     [SerializeField] public PopUPManager popUpManager;
     [SerializeField] public Transform SummonPoint;
+    [SerializeField] public HeroUI heroUI;
+    [SerializeField] public HeroSelectionForQuestUI heroSelectionForQuestUI;
+    [SerializeField] public PannelManager pannelManager;
+    [SerializeField] public SaveManager saveManager;
+    
 
     [SerializeField] public BuildingData TownHall;
     private void Awake()
@@ -29,12 +33,6 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         popUpManager = UIManager.popUpPannel.GetComponent<PopUPManager>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 
     public void ChangeScene(string sceneName)

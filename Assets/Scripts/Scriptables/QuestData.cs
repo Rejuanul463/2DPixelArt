@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+
 using UnityEngine;
 using static QuestData;
 
@@ -56,6 +56,11 @@ public class QuestData : ScriptableObject
     public void CompleteTask()
     {
         isCompleted = true;
+    }
+
+    public bool isComplete()
+    {
+        return isCompleted;
     }
 }
 

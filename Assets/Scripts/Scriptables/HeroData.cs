@@ -6,6 +6,7 @@ public class HeroData : ScriptableObject
     public GameObject heroPrefab;
     public Sprite[] heroSprite;
     public int Id;
+    public int uniqueId;
     public string heroName;
     public int goldCost;
     public float hitPerSecond;
@@ -18,4 +19,20 @@ public class HeroData : ScriptableObject
     public bool isHeroSummoned;
     public float speed => 3 * hitPerSecond;
     public float DPS => hitPerSecond * hitPower;
+
+    public int xp;
+    public int xpForNextLevel;
+
+    public void upgradeHero(int bonus)
+    {
+        xp += bonus;
+        if (xp >= xpForNextLevel)
+        {
+            hitPower *= levelUpMultiplier;
+            HP *= levelUpMultiplier;
+            level++;
+            xpForNextLevel += (int)(xp * levelUpMultiplier);
+        }
+        
+    }
 }
