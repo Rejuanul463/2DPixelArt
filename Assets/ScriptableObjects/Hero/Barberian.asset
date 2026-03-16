@@ -23,11 +23,11 @@ MonoBehaviour:
   Id: 0
   uniqueId: 0
   heroName: Barberian
-  goldCost: 80
+  goldCost: 115
   hitPerSecond: 2
-  hitPower: 42
-  HP: 30.000002
-  level: 2
+  hitPower: 60
+  HP: 43
+  level: 1
   levelUpMultiplier: 1.2
   coolDownTime: 60
   goldPerAttack: 5

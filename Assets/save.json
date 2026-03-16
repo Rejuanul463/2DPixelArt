@@ -4,10 +4,10 @@
             "name": "Lincoln Martin",
             "id": 0,
             "uniqueId": 0,
-            "level": 2,
+            "level": 1,
             "hitPerSecond": 2.0,
-            "hitPower": 42.0,
-            "HP": 30.000001907348634,
+            "hitPower": 60.0,
+            "HP": 43.0,
             "coolDownTime": 60.0,
             "goldPerAttack": 5,
             "isHeroSummoned": true
@@ -18,8 +18,8 @@
             "uniqueId": 1,
             "level": 1,
             "hitPerSecond": 4.0,
-            "hitPower": 40.0,
-            "HP": 20.0,
+            "hitPower": 85.0,
+            "HP": 41.0,
             "coolDownTime": 60.0,
             "goldPerAttack": 8,
             "isHeroSummoned": true
@@ -30,10 +30,34 @@
             "uniqueId": 2,
             "level": 1,
             "hitPerSecond": 3.0,
-            "hitPower": 50.0,
-            "HP": 40.0,
+            "hitPower": 107.0,
+            "HP": 85.0,
             "coolDownTime": 100.0,
             "goldPerAttack": 14,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Grayson Jackson",
+            "id": 0,
+            "uniqueId": 3,
+            "level": 1,
+            "hitPerSecond": 2.0,
+            "hitPower": 60.0,
+            "HP": 43.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 5,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Scarlett Nelson",
+            "id": 5,
+            "uniqueId": 4,
+            "level": 1,
+            "hitPerSecond": 4.0,
+            "hitPower": 70.0,
+            "HP": 60.0,
+            "coolDownTime": 200.0,
+            "goldPerAttack": 24,
             "isHeroSummoned": true
         }
     ],
@@ -88,15 +112,15 @@
         },
         {
             "buildingID": 0,
-            "buildingLevel": 2,
+            "buildingLevel": 4,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 1,
-            "upgradeStartTime": 1773004692072,
-            "upgradeCostGold": 750,
-            "upgradeCostWood": 750,
-            "upgradeCostStone": 750,
-            "xpBoost": 150.0
+            "upgradeStartTime": 1773567471693,
+            "upgradeCostGold": 1687,
+            "upgradeCostWood": 1687,
+            "upgradeCostStone": 1687,
+            "xpBoost": 337.0
         },
         {
             "buildingID": 1,
@@ -115,7 +139,7 @@
         "guildLevel": 38,
         "currentExperience": 2830,
         "experienceToNextLevel": 0,
-        "gold": 44826,
+        "gold": 38694,
         "unlockedHeroID": [
             true,
             true,
@@ -126,8 +150,8 @@
         ],
         "maxUnlockableHeroID": 7,
         "gems": 0,
-        "woods": 3349,
-        "stones": 3439,
+        "woods": 1474,
+        "stones": 1564,
         "BlackSmithLevel": 1,
         "HeroSummonerLevel": 1,
         "questCompleteTime": []
