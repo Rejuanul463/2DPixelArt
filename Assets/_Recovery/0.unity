@@ -22234,7 +22234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14125, y: 0.23}
   m_AnchorMax: {x: 0.8625001, y: 0.4157687}
-  m_AnchoredPosition: {x: -0.46826172, y: 1.1169434}
+  m_AnchoredPosition: {x: -0.46826172, y: 1.1169472}
   m_SizeDelta: {x: -9.8524, y: -1.574501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &209979003
@@ -80360,7 +80360,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81d5e3d23ebc9947afd7723e2f8cac9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UpgradeCounter
-  questUpdate: {fileID: 1702320440}
+  upgradeTimer: 60
+  TextObject: {fileID: 1372593044}
+  timerText: {fileID: 1702320440}
+  questManager: {fileID: 1191472164}
+  pannelManager: {fileID: 0}
 --- !u!1 &731872911
 GameObject:
   m_ObjectHideFlags: 0
@@ -203478,7 +203482,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.14125, y: 0.23}
   m_AnchorMax: {x: 0.8625001, y: 0.4157687}
-  m_AnchoredPosition: {x: -0.46826172, y: 1.1169434}
+  m_AnchoredPosition: {x: -0.46826172, y: 1.1169472}
   m_SizeDelta: {x: -9.8524, y: -1.574501}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1221898409
@@ -268265,7 +268269,6 @@ MonoBehaviour:
   heroSelectionForQuestUI: {fileID: 215744663}
   pannelManager: {fileID: 9107377152094392517}
   saveManager: {fileID: 2042531335}
-  upgradeCounter: {fileID: 731535032}
   TownHall: {fileID: 11400000, guid: 78a26f9c8a1fddd459bf95101699a06e, type: 2}
 --- !u!4 &1736130336
 Transform:

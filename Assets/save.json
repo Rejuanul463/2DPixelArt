@@ -1,61 +1,97 @@
 {
     "heroes": [
         {
-            "name": "Lincoln Martin",
-            "id": 0,
-            "uniqueId": 0,
-            "level": 1,
-            "hitPerSecond": 2.0,
-            "hitPower": 60.0,
-            "HP": 43.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 5,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Layla Adams",
-            "id": 1,
-            "uniqueId": 1,
-            "level": 1,
-            "hitPerSecond": 4.0,
-            "hitPower": 85.0,
-            "HP": 41.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 8,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Ella Hernandez",
+            "name": "Ella Carter",
             "id": 3,
-            "uniqueId": 2,
-            "level": 1,
+            "uniqueId": 0,
+            "level": 3,
             "hitPerSecond": 3.0,
-            "hitPower": 107.0,
-            "HP": 85.0,
+            "hitPower": 180.82998657226563,
+            "HP": 143.6499786376953,
             "coolDownTime": 100.0,
             "goldPerAttack": 14,
             "isHeroSummoned": true
         },
         {
-            "name": "Grayson Jackson",
+            "name": "Logan Rivera",
+            "id": 4,
+            "uniqueId": 1,
+            "level": 3,
+            "hitPerSecond": 1.0,
+            "hitPower": 84.5,
+            "HP": 338.0,
+            "coolDownTime": 140.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Julian Williams",
             "id": 0,
-            "uniqueId": 3,
-            "level": 1,
+            "uniqueId": 2,
+            "level": 4,
             "hitPerSecond": 2.0,
-            "hitPower": 60.0,
-            "HP": 43.0,
+            "hitPower": 103.20000457763672,
+            "HP": 73.20000457763672,
             "coolDownTime": 60.0,
             "goldPerAttack": 5,
             "isHeroSummoned": true
         },
         {
-            "name": "Scarlett Nelson",
-            "id": 5,
-            "uniqueId": 4,
-            "level": 1,
+            "name": "Zoe Young",
+            "id": 1,
+            "uniqueId": 3,
+            "level": 3,
             "hitPerSecond": 4.0,
-            "hitPower": 70.0,
-            "HP": 60.0,
+            "hitPower": 143.6499786376953,
+            "HP": 69.28999328613281,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 8,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Daniel Taylor",
+            "id": 2,
+            "uniqueId": 4,
+            "level": 2,
+            "hitPerSecond": 0.5,
+            "hitPower": 72.0,
+            "HP": 120.00000762939453,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 10,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Isabella Mitchell",
+            "id": 3,
+            "uniqueId": 5,
+            "level": 3,
+            "hitPerSecond": 3.0,
+            "hitPower": 180.82998657226563,
+            "HP": 143.6499786376953,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 14,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Carter Lopez",
+            "id": 4,
+            "uniqueId": 6,
+            "level": 3,
+            "hitPerSecond": 1.0,
+            "hitPower": 84.5,
+            "HP": 338.0,
+            "coolDownTime": 140.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Zoey Rodriguez",
+            "id": 5,
+            "uniqueId": 7,
+            "level": 2,
+            "hitPerSecond": 4.0,
+            "hitPower": 105.0,
+            "HP": 90.0,
             "coolDownTime": 200.0,
             "goldPerAttack": 24,
             "isHeroSummoned": true
@@ -136,10 +172,10 @@
         }
     ],
     "guild": {
-        "guildLevel": 38,
-        "currentExperience": 2830,
+        "guildLevel": 88,
+        "currentExperience": 7240,
         "experienceToNextLevel": 0,
-        "gold": 38694,
+        "gold": 37705,
         "unlockedHeroID": [
             true,
             true,
@@ -184,7 +220,7 @@
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
@@ -194,17 +230,17 @@
         },
         {
             "questName": "A Dance with Shadows",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
             "questName": "The Ironfang Wars",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {

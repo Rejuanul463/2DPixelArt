@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,10 +15,10 @@ public class PannelManager : MonoBehaviour
     private Button blackSmithButton;
     private Button pauseButton;
     private Button heroSelectionButton;
-
+    private QuestData _questData;
     private Button GoToQuestButton;
     private Button summonHeroButton;
-
+    private bool publishResult =false;
     [SerializeField] private List<GameObject> pannels;
     [SerializeField] private Transform spawner;
     [SerializeField] private List<Button> heroesSummonButtons;
@@ -26,21 +27,51 @@ public class PannelManager : MonoBehaviour
     [SerializeField] private List<Button> heroesQuestButtons;
     [SerializeField] private List<Button> heroQuestDeletButtons;
     public GameObject activePannelObj;
-
+    
     public int[] typeAvailable;
-
+    [SerializeField]private OngoingQuest ongoingQuest;
     [SerializeField] private int requiredGold;
+    private QuestData simulationQuestData;
+    [SerializeField] private UpgradeCounter _upgradeCounter;
+    private List<int> selectHeroesForQuest = new List<int>();
+
+    public bool PublishResult
+    {
+        get => publishResult;
+        set => publishResult = value;
+    }
+    public List<int> SelectedHeroesForQuest
+    {
+        get => selectedHeroesForQuest;
+        set => selectedHeroesForQuest = value;
+    }
+    public QuestData SimulationQuestData
+    {
+        get => simulationQuestData;
+        set => simulationQuestData = value;
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    
     void Start()
     {
         AddGameObjects();
         deactiveAllPannels();
         addListener();
         typeAvailable = new int[6];
+        GameManager.Instance.upgradeCounter.OnQuestFinished += QuestFinishedHandler;
     }
 
+    private void Update()
+    {
 
+    }
 
+    private void QuestFinishedHandler()
+    {
+        Debug.Log("Quest finished callback received");
+        ResultOfTheQuest(simulationQuestData,selectedHeroesForQuest);
+    }
     private void checkInterectableForSummon()
     {
         for(int i = 0; i < typeAvailable.Length; i++)
@@ -90,7 +121,7 @@ public class PannelManager : MonoBehaviour
     }
 
 
-    private void deactiveAllPannels()
+    public void deactiveAllPannels()
     {
         foreach (GameObject pannel in pannels)
         {
@@ -321,6 +352,7 @@ public class PannelManager : MonoBehaviour
     //}
     
     List<int> selectedHeroesForQuest = new List<int>();
+    
     private void addHeroForQuest(int id)
     {
         
@@ -350,6 +382,7 @@ public class PannelManager : MonoBehaviour
 
     public void GoQuest(int cnt, List<int> HeroesForQuest)
     {
+        selectHeroesForQuest = HeroesForQuest;
         if(cnt > 0)
         {
             float hitDamage = 0;
@@ -364,32 +397,48 @@ public class PannelManager : MonoBehaviour
                     hp += GameManager.Instance.HeroSummoner.getHeroHP(i);
                 //}
             }
-            QuestData simulationQuestData = GameManager.Instance.QuestManager.SimulateCombat(hp, hps, hitDamage);
             
-            if (simulationQuestData != null)
-            {
-                Debug.Log("Wins");
-                GameManager.Instance.GuildManager.Gold += simulationQuestData.goldRewardBase;
-                GameManager.Instance.GuildManager.Experience += simulationQuestData.experienceReward;
-                simulationQuestData.isCompleted = true;
-
-                foreach (int i in HeroesForQuest)
-                {
-                    Debug.Log("hero " + i);
-                    GameManager.Instance.HeroSummoner.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
-                    Debug.Log(GameManager.Instance.HeroSummoner.heroDatas[i].xp + " " + i);
-                    //saveManager.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
-                    //HeroSummoner.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
-                }
-            }
-            else
-            {
-                Debug.Log("loses");
-            }
-            deactiveAllPannels();
+            simulationQuestData = GameManager.Instance.QuestManager.SimulateCombat(hp, hps, hitDamage);
+            DateTime startTime = DateTime.UtcNow;
+            simulationQuestData.startTime= startTime;
+            simulationQuestData.willWin = simulationQuestData.isCompleted;
+            simulationQuestData.isCompleted = false;
+            ongoingQuest.OnGoingQuest.Enqueue((simulationQuestData,simulationQuestData.name,startTime));
+            //_upgradeCounter.StartUpgradeTimer(simulationQuestData.name,simulationQuestData.completionTime);
+            Debug.Log("Quest Started: "+ simulationQuestData.name);
+            GameManager.Instance.upgradeCounter.StartQuest(simulationQuestData.completionTime);
+            
         }
     }
 
+    private void ResultOfTheQuest(QuestData simulationQuestData,List<int> HeroesForQuest)
+    {
+        if (simulationQuestData != null)
+        {
+            _upgradeCounter.QuestUpdate.text = "You Have Won The Quest!";
+            Debug.Log("Wins");
+            GameManager.Instance.GuildManager.Gold += simulationQuestData.goldRewardBase;
+            GameManager.Instance.GuildManager.Experience += simulationQuestData.experienceReward;
+            simulationQuestData.isCompleted = true; 
+            foreach (int i in HeroesForQuest)
+            {
+                Debug.Log("hero " + i);
+                GameManager.Instance.HeroSummoner.heroDatas[i]
+                    .upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
+                Debug.Log(GameManager.Instance.HeroSummoner.heroDatas[i].xp + " " + i);
+                //saveManager.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
+                //HeroSummoner.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
+            }
+        }
+        else
+        {
+            _upgradeCounter.QuestUpdate.text = "You Have Lost The Quest!";
+            Debug.Log("loses");
+        }
+
+        deactiveAllPannels();
+        
+    }
     private void summonHeroes()
     {
         GameManager.Instance.HeroSummoner.summonHeroes(typeAvailable, summonCost);

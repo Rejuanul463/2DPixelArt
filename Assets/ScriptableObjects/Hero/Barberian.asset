@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Lincoln Martin
+  m_Name: Elijah Thomas
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 1a0a988c33d93434691a57249a575b4f, type: 3}
   heroSprite:
@@ -25,12 +25,12 @@ MonoBehaviour:
   heroName: Barberian
   goldCost: 115
   hitPerSecond: 2
-  hitPower: 60
-  HP: 43
-  level: 1
+  hitPower: 103.200005
+  HP: 73.200005
+  level: 4
   levelUpMultiplier: 1.2
   coolDownTime: 60
   goldPerAttack: 5
   isHeroSummoned: 1
-  xp: 121
-  xpForNextLevel: 245
+  xp: 306
+  xpForNextLevel: 558

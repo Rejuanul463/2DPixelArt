@@ -1,4 +1,5 @@
 
+using System;
 using UnityEngine;
 using static QuestData;
 
@@ -43,7 +44,8 @@ public class QuestData : ScriptableObject
     public float HP;
     public int enemyCount = 1;
 
-    [Header("State")]
+    [Header("State")] public bool willWin;
+    public DateTime startTime;
     public float completionTime;
     public bool isCompleted;
 
@@ -58,6 +60,7 @@ public class QuestData : ScriptableObject
         isCompleted = true;
     }
 
+ 
     public bool isComplete()
     {
         return isCompleted;

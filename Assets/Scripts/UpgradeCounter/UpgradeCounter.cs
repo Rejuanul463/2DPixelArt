@@ -1,79 +1,85 @@
 using System;
-using UnityEngine;
+using System.Collections;
 using TMPro;
+using UnityEngine;
 
 public class UpgradeCounter : MonoBehaviour
 {
-    [SerializeField] private float upgradeTimer;
-
-    private const string START_TIMER = "StartTimer";
-    private const string IS_UPGRADING = "IsUpgrading";
-
-    [SerializeField] TextMeshProUGUI timerText;
-
-    // Start is called once before the first execution of Update
+    private DateTime endTime;
+    [SerializeField] TextMeshProUGUI questUpdate;
+    private const string QUEST_END = "QuestEndTime";
+    public Action OnQuestFinished;
     void Start()
     {
-        CheckUpgradeProgress();
+        RestoreQuestTimer();
     }
 
-    // Update is called once per frame
-    void Update()
+    public TextMeshProUGUI QuestUpdate
     {
-        CheckUpgradeProgress();
+        get => questUpdate;
+        set => questUpdate = value;
     }
-
-    public void StartUpgradeTimer()
+    // Start quest
+    public void StartQuest(float duration)
     {
-        DateTime startTime = DateTime.UtcNow;
+        endTime = DateTime.UtcNow.AddSeconds(duration);
 
-        PlayerPrefs.SetString(START_TIMER, startTime.ToString("yyyy-MM-dd HH:mm:ss"));
-        PlayerPrefs.SetInt(IS_UPGRADING, 1);
+        PlayerPrefs.SetString(QUEST_END, endTime.ToString("o"));
         PlayerPrefs.Save();
 
-        // upgrade time to show in the text
-        timerText.text = startTime.ToString();
-
-        Debug.Log("Upgrade Start at: " + startTime);
+        Debug.Log("Quest Started. Ends at: " + endTime);
+        questUpdate.text = "Quest Started";
+        StartCoroutine(QuestCoroutine());
     }
 
-    private void CheckUpgradeProgress()
+    // Coroutine countdown
+    IEnumerator QuestCoroutine()
     {
-        if (PlayerPrefs.GetInt(IS_UPGRADING, 0) == 0)
-            return;
-
-        string savedTime = PlayerPrefs.GetString(START_TIMER);
-        DateTime startTime = DateTime.Parse(savedTime);
-
-        TimeSpan elapsedTime = DateTime.UtcNow - startTime;
-
-        if (elapsedTime.TotalSeconds > upgradeTimer)
+        while (true)
         {
-            FinishUpgrade();
+            TimeSpan remaining = endTime - DateTime.UtcNow;
+
+            if (remaining.TotalSeconds <= 0)
+                break;
+
+            Debug.Log("Remaining Time: " + Mathf.Ceil((float)remaining.TotalSeconds));
+            questUpdate.text = "Quest Will be Updated in "+ (int)remaining.TotalSeconds ;
+            yield return new WaitForSeconds(1f);
+        }
+
+        QuestFinished();
+    }
+
+    // Restore quest when game restarts
+    void RestoreQuestTimer()
+    {
+        if (!PlayerPrefs.HasKey(QUEST_END))
+            return;
+        
+        string savedTime = PlayerPrefs.GetString(QUEST_END);
+        endTime = DateTime.Parse(savedTime, null, System.Globalization.DateTimeStyles.RoundtripKind);
+        TimeSpan remaining =endTime -  DateTime.UtcNow;
+
+        if (remaining.TotalSeconds <= 0)
+        {
+            QuestFinished();
         }
         else
         {
-            float remaining = upgradeTimer - (float)elapsedTime.TotalSeconds;
+            Debug.Log("Restored Quest. Remaining: " + Mathf.Ceil((float)remaining.TotalSeconds));
 
-            TimeSpan time = TimeSpan.FromSeconds(remaining);
-
-            string formattedTime = string.Format("{0:D2}:{1:D2}:{2:D2}",
-                time.Hours,
-                time.Minutes,
-                time.Seconds);
-
-            timerText.text = "Upgrade Timer Remaining: " + formattedTime;
-
-            Debug.Log("Remain Timer: " + formattedTime);
+            StartCoroutine(QuestCoroutine());
         }
     }
 
-    void FinishUpgrade()
+    // Quest completion
+    void QuestFinished()
     {
-        timerText.text = "Upgrade Complete";
-        Debug.Log("Finish Upgrade");
+        //questUpdate.text = "Quest Finished";
+        Debug.Log("Quest Complete");
+        OnQuestFinished?.Invoke();
+        PlayerPrefs.DeleteKey(QUEST_END);
 
-        PlayerPrefs.SetInt(IS_UPGRADING, 0);
-        PlayerPrefs.DeleteKey(START_TIMER);
+        // Add reward logic here
     }
 }
