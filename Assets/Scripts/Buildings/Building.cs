@@ -1,15 +1,27 @@
 using System;
 using System.Collections;
 using UnityEngine;
-
+using TMPro;
 public class Building : MonoBehaviour
 {
     [SerializeField] public BuildingData buildingDataPref;
     public static Action<int> OnUpgradeRequested;
     [HideInInspector] public BuildingData buildingData;
+    private float upgradeTime;
+   [SerializeField] private TextMeshProUGUI buildingUpgradeText;
 
+   private BuildingCounter _buildingCounter;
+    //[SerializeField] private GameObject buildingUpgradePanel;
+    public float UpgradeTime
+    {
+        get => upgradeTime;
+        set => upgradeTime = value;
+    }
+    //[SerializeField] private TextMeshProUGUI upgradeText;
     void Awake()
     {
+        _buildingCounter =  GetComponent<BuildingCounter>();
+         //buildingUpgradePanel.SetActive(true);
         buildingData = Instantiate(buildingDataPref);
     }
 
@@ -25,7 +37,6 @@ public class Building : MonoBehaviour
 
     private void HandleUpgradeRequest(int id)
     {
-
         if (buildingData.buildingID != id)
             return;
         Debug.Log("upgrade");
@@ -62,11 +73,11 @@ public class Building : MonoBehaviour
             }
             else
             {
+                buildingUpgradeText.text= "Not Enough Resources!";
                 Debug.Log("NotEnough resource");
                 GameManager.Instance.popUpManager.ShowNotEnoughtResources();
             }
         }
-
     }
 
     public void Start()
@@ -79,12 +90,22 @@ public class Building : MonoBehaviour
         Debug.Log("CallingUpdate");
         StartCoroutine(completeUpgrade(timeLeft));
     }
-
-
+    
     public virtual IEnumerator completeUpgrade(long timeLeft)
     {
-        Debug.Log("update");
-        yield return new WaitForSeconds(timeLeft);
+        //upgradeTime = timeLeft;
+        float reamainingTime = (float)timeLeft;
+        Debug.Log("timeleft "+timeLeft );
+        while (reamainingTime > 0f)
+        {
+            upgradeTime = reamainingTime;
+            buildingUpgradeText.text = "Building Update will finish " + reamainingTime + " seconds.";
+            yield return new WaitForSeconds(1f);
+            reamainingTime -= 1f;
+        }
+        upgradeTime = 0f;
+        buildingUpgradeText.text = "Building Update Finished!!";
+        Debug.Log("update completed");
         gameObject.GetComponent<SpriteRenderer>().sprite = buildingData.buildingSprites[buildingData.buildingLevel - 1];
         buildingData.CompleteUpgrade();
         if(buildingDataPref.isUnderUpgrade)

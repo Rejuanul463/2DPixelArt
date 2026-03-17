@@ -1,109 +1,12 @@
 {
-    "heroes": [
-        {
-            "name": "Ella Carter",
-            "id": 3,
-            "uniqueId": 0,
-            "level": 3,
-            "hitPerSecond": 3.0,
-            "hitPower": 180.82998657226563,
-            "HP": 143.6499786376953,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 14,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Logan Rivera",
-            "id": 4,
-            "uniqueId": 1,
-            "level": 3,
-            "hitPerSecond": 1.0,
-            "hitPower": 84.5,
-            "HP": 338.0,
-            "coolDownTime": 140.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Julian Williams",
-            "id": 0,
-            "uniqueId": 2,
-            "level": 4,
-            "hitPerSecond": 2.0,
-            "hitPower": 103.20000457763672,
-            "HP": 73.20000457763672,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 5,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Zoe Young",
-            "id": 1,
-            "uniqueId": 3,
-            "level": 3,
-            "hitPerSecond": 4.0,
-            "hitPower": 143.6499786376953,
-            "HP": 69.28999328613281,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 8,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Daniel Taylor",
-            "id": 2,
-            "uniqueId": 4,
-            "level": 2,
-            "hitPerSecond": 0.5,
-            "hitPower": 72.0,
-            "HP": 120.00000762939453,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 10,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Isabella Mitchell",
-            "id": 3,
-            "uniqueId": 5,
-            "level": 3,
-            "hitPerSecond": 3.0,
-            "hitPower": 180.82998657226563,
-            "HP": 143.6499786376953,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 14,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Carter Lopez",
-            "id": 4,
-            "uniqueId": 6,
-            "level": 3,
-            "hitPerSecond": 1.0,
-            "hitPower": 84.5,
-            "HP": 338.0,
-            "coolDownTime": 140.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true
-        },
-        {
-            "name": "Zoey Rodriguez",
-            "id": 5,
-            "uniqueId": 7,
-            "level": 2,
-            "hitPerSecond": 4.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 200.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true
-        }
-    ],
+    "heroes": [],
     "buildings": [
         {
             "buildingID": 2,
             "buildingLevel": 1,
             "isUnderUpgrade": false,
             "isUpgradable": true,
-            "upgradeTime": 1,
+            "upgradeTime": 90,
             "upgradeStartTime": 0,
             "upgradeCostGold": 100,
             "upgradeCostWood": 100,
@@ -112,46 +15,46 @@
         },
         {
             "buildingID": 3,
-            "buildingLevel": 1,
+            "buildingLevel": 3,
             "isUnderUpgrade": false,
             "isUpgradable": true,
-            "upgradeTime": 1,
-            "upgradeStartTime": 0,
-            "upgradeCostGold": 50,
-            "upgradeCostWood": 50,
-            "upgradeCostStone": 50,
-            "xpBoost": 10.0
+            "upgradeTime": 90,
+            "upgradeStartTime": 1773739463863,
+            "upgradeCostGold": 0,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 73.0
         },
         {
             "buildingID": 4,
-            "buildingLevel": 1,
+            "buildingLevel": 2,
             "isUnderUpgrade": false,
             "isUpgradable": true,
-            "upgradeTime": 1,
-            "upgradeStartTime": 0,
-            "upgradeCostGold": 50,
-            "upgradeCostWood": 50,
-            "upgradeCostStone": 50,
-            "xpBoost": 10.0
+            "upgradeTime": 90,
+            "upgradeStartTime": 1773735970842,
+            "upgradeCostGold": 0,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 73.0
         },
         {
             "buildingID": 5,
             "buildingLevel": 1,
             "isUnderUpgrade": false,
             "isUpgradable": true,
-            "upgradeTime": 1,
-            "upgradeStartTime": 0,
-            "upgradeCostGold": 50,
-            "upgradeCostWood": 50,
-            "upgradeCostStone": 50,
-            "xpBoost": 10.0
+            "upgradeTime": 90,
+            "upgradeStartTime": 1,
+            "upgradeCostGold": 0,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 33.0
         },
         {
             "buildingID": 0,
             "buildingLevel": 4,
             "isUnderUpgrade": false,
             "isUpgradable": true,
-            "upgradeTime": 1,
+            "upgradeTime": 90,
             "upgradeStartTime": 1773567471693,
             "upgradeCostGold": 1687,
             "upgradeCostWood": 1687,
@@ -160,7 +63,7 @@
         },
         {
             "buildingID": 1,
-            "buildingLevel": 2,
+            "buildingLevel": 1,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 1,
@@ -172,10 +75,10 @@
         }
     ],
     "guild": {
-        "guildLevel": 88,
-        "currentExperience": 7240,
+        "guildLevel": 95,
+        "currentExperience": 7650,
         "experienceToNextLevel": 0,
-        "gold": 37705,
+        "gold": 30956,
         "unlockedHeroID": [
             true,
             true,
@@ -186,8 +89,8 @@
         ],
         "maxUnlockableHeroID": 7,
         "gems": 0,
-        "woods": 1474,
-        "stones": 1564,
+        "woods": 49,
+        "stones": 139,
         "BlackSmithLevel": 1,
         "HeroSummonerLevel": 1,
         "questCompleteTime": []
@@ -210,17 +113,17 @@
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0
         },
         {
             "questName": "The Starlit Rites",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0
         },
         {
@@ -230,17 +133,17 @@
         },
         {
             "questName": "A Dance with Shadows",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0
         },
         {
             "questName": "The Ironfang Wars",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0
         },
         {

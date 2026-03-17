@@ -173,7 +173,6 @@ public class PannelManager : MonoBehaviour
         GameManager.Instance.QuestManager.details.text = "Quest Details";
         activePannelObj.SetActive(false);
         activePannelObj = null;
-
         for (int i = 0; i < typeAvailable.Length; i++)
         {
             typeAvailable[i] = 0;

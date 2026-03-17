@@ -10,7 +10,7 @@ public class HeroSelectionForQuestUI : MonoBehaviour
     [SerializeField] public GameObject SelectedButtonContainer;
     [SerializeField] public GameObject heroButtonPrefabe;
     [SerializeField] public List<Button> itemButtons = new List<Button>();
-
+    [SerializeField] private GameObject TextPanel;
     [SerializeField] Button StartQuestButton;
 
     List<int > selectedHeroes = new List<int>();
@@ -26,7 +26,7 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         {
             itemButtons[ind].interactable = true;
         }
-
+        
         selectedHeroes.Clear();
         count = 0;
     }
@@ -112,6 +112,7 @@ public class HeroSelectionForQuestUI : MonoBehaviour
 
     private void goQuest()
     {
+        TextPanel.SetActive(true);
         GameManager.Instance.pannelManager.GoQuest(count, selectedHeroes);
     }
 }

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 public class AdditionalBuiildings : Building
 {
-    public override IEnumerator completeUpgrade(long timeLeft)
+    public  IEnumerator completeUpgrade(long timeLeft)
     {
         Debug.Log("update");
         yield return new WaitForSeconds(timeLeft);

@@ -29,15 +29,5 @@ public class OngoingQuest : MonoBehaviour
         }
         
     }
-
-    public void QuestChecker(string name, DateTime startTime)
-    {
-        foreach (QuestData q in questManager.questData)
-        {
-            if (q.name == name)
-            { 
-                //upgradeCounter.CheckUpgradeProgress(,name);
-            }
-        }
-    }
+    
 }

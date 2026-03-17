@@ -9,8 +9,10 @@ public class UpgradeCounter : MonoBehaviour
     [SerializeField] TextMeshProUGUI questUpdate;
     private const string QUEST_END = "QuestEndTime";
     public Action OnQuestFinished;
+    //[SerializeField] private GameObject TextPanel;
     void Start()
     {
+        //TextPanel.SetActive(true);
         RestoreQuestTimer();
     }
 
