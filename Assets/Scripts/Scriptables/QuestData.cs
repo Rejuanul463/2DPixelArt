@@ -9,13 +9,13 @@ public class QuestData : ScriptableObject
     public enum QuestType { Main, Side, Daily }
     public enum QuestDifficulty { Easy, Medium, Hard, SuperHard, Epic }
 
-    [Header("Quest Info")]
+    [Header("Quest Info")] [SerializeField]
+    public int uniqueId;
     public string questName;
     public QuestType questType;
     public QuestDifficulty questDifficulty;
     [TextArea] public string description;
     [SerializeField] private Sprite questIcon;
-
     [Header("Requirements")]
     [SerializeField] public int requiredLevel;
     [SerializeField] public int minTeamSize = 1;

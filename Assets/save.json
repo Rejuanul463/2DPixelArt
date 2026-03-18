@@ -1,5 +1,126 @@
 {
-    "heroes": [],
+    "heroes": [
+        {
+            "name": "Sebastian Davis",
+            "id": 0,
+            "uniqueId": 6,
+            "level": 2,
+            "hitPerSecond": 2.0,
+            "hitPower": 123.0,
+            "HP": 87.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 5,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Layla Anderson",
+            "id": 1,
+            "uniqueId": 7,
+            "level": 3,
+            "hitPerSecond": 4.0,
+            "hitPower": 313.0,
+            "HP": 150.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 8,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Isaac Scott",
+            "id": 2,
+            "uniqueId": 8,
+            "level": 4,
+            "hitPerSecond": 0.5,
+            "hitPower": 123.0,
+            "HP": 206.0,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 10,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Lillian Smith",
+            "id": 3,
+            "uniqueId": 9,
+            "level": 1,
+            "hitPerSecond": 3.0,
+            "hitPower": 180.82998657226563,
+            "HP": 143.6499786376953,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 14,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Gabriel Wilson",
+            "id": 4,
+            "uniqueId": 4,
+            "level": 1,
+            "hitPerSecond": 1.0,
+            "hitPower": 84.5,
+            "HP": 338.0,
+            "coolDownTime": 140.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Emily Jackson",
+            "id": 5,
+            "uniqueId": 5,
+            "level": 1,
+            "hitPerSecond": 4.0,
+            "hitPower": 105.0,
+            "HP": 90.0,
+            "coolDownTime": 200.0,
+            "goldPerAttack": 24,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Sebastian Davis",
+            "id": 0,
+            "uniqueId": 6,
+            "level": 2,
+            "hitPerSecond": 2.0,
+            "hitPower": 123.0,
+            "HP": 87.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 5,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Layla Anderson",
+            "id": 1,
+            "uniqueId": 7,
+            "level": 3,
+            "hitPerSecond": 4.0,
+            "hitPower": 313.0,
+            "HP": 150.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 8,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Isaac Scott",
+            "id": 2,
+            "uniqueId": 8,
+            "level": 4,
+            "hitPerSecond": 0.5,
+            "hitPower": 123.0,
+            "HP": 206.0,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 10,
+            "isHeroSummoned": true
+        },
+        {
+            "name": "Lillian Smith",
+            "id": 3,
+            "uniqueId": 9,
+            "level": 1,
+            "hitPerSecond": 3.0,
+            "hitPower": 180.82998657226563,
+            "HP": 143.6499786376953,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 14,
+            "isHeroSummoned": true
+        }
+    ],
     "buildings": [
         {
             "buildingID": 2,
@@ -75,10 +196,10 @@
         }
     ],
     "guild": {
-        "guildLevel": 95,
-        "currentExperience": 7650,
+        "guildLevel": 102,
+        "currentExperience": 8085,
         "experienceToNextLevel": 0,
-        "gold": 30956,
+        "gold": 29456,
         "unlockedHeroID": [
             true,
             true,
@@ -113,12 +234,12 @@
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
             "questName": "The Starlit Rites",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {

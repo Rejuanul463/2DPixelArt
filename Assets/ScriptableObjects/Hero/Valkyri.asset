@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Aria Rivera
+  m_Name: Emily Jackson
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 42fa60f72d1f24c978ec657bc12902d2, type: 3}
   heroSprite:

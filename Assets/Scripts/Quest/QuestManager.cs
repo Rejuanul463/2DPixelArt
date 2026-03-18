@@ -42,7 +42,7 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private RectTransform content;
     [SerializeField] private GameObject itemPrefab;
     List<GameObject> questItemList;
-
+    private List<(QuestDetails,QuestData)> ongoingQuestList=new List<(QuestDetails, QuestData)>() ;
     [SerializeField] public TextMeshProUGUI details;
 
     public bool questSelected = false;
@@ -75,7 +75,9 @@ public class QuestManager : MonoBehaviour
             // Instantiate UI item
             GameObject item = Instantiate(itemPrefab, content);
             item.transform.localScale = Vector3.one;
-
+            
+            //quest id
+ 
             // Quest Name
             var nameText = item.transform.Find("Name")
                 ?.GetComponent<TextMeshProUGUI>();
@@ -161,7 +163,8 @@ public class QuestManager : MonoBehaviour
         details.text =  "<b>Quest Details :</b> " + "<color=#FFFFFF>" + qD.name + "</color>\n" + "\n" +
                         "<b>Difficulty :</b> " + "<color=#FFFFFF>" + difficulty + "</color>\n" + "\n" +
                         "<b>Enemy :</b> " + "<color=#FFFFFF>" + qD.enemyName + "</color>\n";
-
+        
+        //ongoingQuestList.Add((qD,quest));
         //GameManager.Instance.heroSelectionForQuestUI.setMaxHeroNumber()
     }
 

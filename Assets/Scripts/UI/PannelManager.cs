@@ -402,7 +402,10 @@ public class PannelManager : MonoBehaviour
             simulationQuestData.startTime= startTime;
             simulationQuestData.willWin = simulationQuestData.isCompleted;
             simulationQuestData.isCompleted = false;
-            ongoingQuest.OnGoingQuest.Enqueue((simulationQuestData,simulationQuestData.name,startTime));
+            ongoingQuest.OnGoingQuest.Enqueue((simulationQuestData,startTime));
+            DateTime time = startTime.AddSeconds(simulationQuestData.completionTime);
+            TimeSpan timeSpan = time - DateTime.UtcNow;
+            ongoingQuest.AddQuestUI(simulationQuestData.uniqueId,simulationQuestData,time);
             //_upgradeCounter.StartUpgradeTimer(simulationQuestData.name,simulationQuestData.completionTime);
             Debug.Log("Quest Started: "+ simulationQuestData.name);
             GameManager.Instance.upgradeCounter.StartQuest(simulationQuestData.completionTime);
@@ -438,6 +441,7 @@ public class PannelManager : MonoBehaviour
         deactiveAllPannels();
         
     }
+    
     private void summonHeroes()
     {
         GameManager.Instance.HeroSummoner.summonHeroes(typeAvailable, summonCost);

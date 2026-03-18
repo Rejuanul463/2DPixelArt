@@ -35,7 +35,7 @@ public class UpgradeCounter : MonoBehaviour
     }
 
     // Coroutine countdown
-    IEnumerator QuestCoroutine()
+  public  IEnumerator QuestCoroutine()
     {
         while (true)
         {

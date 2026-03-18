@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Grayson Hall
+  m_Name: Gabriel Wilson
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 8ee6d27a27d58437192611f518cebef7, type: 3}
   heroSprite:
