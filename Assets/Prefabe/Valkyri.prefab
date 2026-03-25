@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7777510713877424659}
   m_Layer: 0
   m_Name: Valkyri
-  m_TagString: Untagged
+  m_TagString: Heroes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

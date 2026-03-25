@@ -20,7 +20,7 @@ MonoBehaviour:
   - {fileID: 6914442600668188890, guid: 62690619282a5db4f8dab39fe37f2615, type: 3}
   - {fileID: -6551805626470343092, guid: b857d6891bd3f6845b999e8d975035b3, type: 3}
   - {fileID: 6914442600668188890, guid: 62690619282a5db4f8dab39fe37f2615, type: 3}
-  buildingLevel: 4
+  buildingLevel: 1
   maxBuildingLevel: 4
   upgradeCostGold: 100
   upgradeCostWood: 100

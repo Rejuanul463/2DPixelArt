@@ -62,7 +62,10 @@ public class HeroSelectionForQuestUI : MonoBehaviour
 
     private void DeselectForQuest(int ind, GameObject copy)
     {
-        count--;
+        if (count > 0)
+        {
+            count--;
+        }
         if(count == 0)
         {
             StartQuestButton.interactable = false;

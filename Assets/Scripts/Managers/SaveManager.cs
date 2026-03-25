@@ -11,9 +11,12 @@ public class SaveManager : MonoBehaviour
     public List<BuildingData> buildingDatas;
     public GuildData guildData;
     //public List<int> intList;
-
     public List<HeroData> SampleHeroData;
-
+    public float posX;
+    public float posY;
+    public float posZ;
+    
+    
     private string SavePath =>
 #if UNITY_EDITOR
         Application.dataPath + "/save.json";
@@ -37,10 +40,35 @@ public class SaveManager : MonoBehaviour
     // ==========================
     public void SaveGame()
     {
+        //CollectHeroesFromScene();
         GameSaveData saveData = new GameSaveData();
 
         // ---- HEROES ----
-        saveData.heroes = heroDatas.Select(hero => new HeroSaveData
+        saveData.heroes = heroDatas.Select(hero =>
+        {
+            var heroObj = GameObject.FindObjectsOfType<Hero>()
+                .FirstOrDefault(h => h.heroData.uniqueId == hero.uniqueId);
+
+            Vector3 pos = heroObj != null ? heroObj.transform.position : Vector3.zero;
+
+            return new HeroSaveData
+            {
+                name = hero.name,
+                id = hero.Id,
+                uniqueId = hero.uniqueId,
+                level = hero.level,
+                hitPower = hero.hitPower,
+                hitPerSecond = hero.hitPerSecond,
+                HP = hero.HP,
+                goldPerAttack = hero.goldPerAttack,
+                isHeroSummoned = hero.isHeroSummoned,
+                coolDownTime = hero.coolDownTime,
+
+            };
+        }).ToList();
+        
+        
+        /*saveData.heroes = heroDatas.Select(hero => new HeroSaveData
         {
             name = hero.name,
             id = hero.Id,
@@ -52,8 +80,9 @@ public class SaveManager : MonoBehaviour
             goldPerAttack = hero.goldPerAttack,
             isHeroSummoned = hero.isHeroSummoned,
             coolDownTime = hero.coolDownTime
-        }).ToList();
-
+        }).ToList();*/
+        
+        
         // ---- BUILDINGS ----
         saveData.buildings = buildingDatas.Select(b => new BuildingSaveData
         {
@@ -107,6 +136,7 @@ public class SaveManager : MonoBehaviour
     // ==========================
     private void LoadGame()
     {
+        //ClearExistingHeroes();
         isLoaded = true;
         if (!File.Exists(SavePath))
         {
@@ -116,7 +146,6 @@ public class SaveManager : MonoBehaviour
 
         string json = File.ReadAllText(SavePath);
         GameSaveData saveData = JsonUtility.FromJson<GameSaveData>(json);
-
         // ---- HEROES ----
         foreach (var heroSave in saveData.heroes)
         {
@@ -183,7 +212,7 @@ public class SaveManager : MonoBehaviour
         guildData.questCompleteTime = saveData.guild.questCompleteTime;
 
         //intList = saveData.intList;
-
+ 
         Debug.Log("GAME LOADED");
     }
 
@@ -227,6 +256,23 @@ public class SaveManager : MonoBehaviour
         public int goldPerAttack;
         public bool isHeroSummoned;
     }
+//Collect Heroes from the scene
+    /*
+    public void CollectHeroesFromScene(HeroData obj)
+    {
+        heroPrefabs.Clear();
+        GameObject[] heroes = GameObject.FindGameObjectsWithTag("Heroes");
+        foreach (var hero in heroes)
+        {
+            heroPrefabs.Add(hero.gameObject);
+        }
+        heroPrefabs.Add(obj);
+    }
+    */
+    
+    // Load Heroes to the scene
+
+    //Clearing Heroes
 
     [Serializable]
     private class BuildingSaveData
@@ -267,16 +313,13 @@ public class SaveManager : MonoBehaviour
         public bool isCompleted;
         public long completeTime;
     }
-
-
-
+    
     private bool isLoaded = false;
 
     private void Awake()
     {
         LoadGame(); // Load when game starts
         isLoaded = true;
-        
     }
 
     private void Start()
@@ -284,13 +327,13 @@ public class SaveManager : MonoBehaviour
         GameManager.Instance.heroUI.loadGame();
         GameManager.Instance.heroSelectionForQuestUI.loadGame();
         GameManager.Instance.HeroSummoner.LoadGame();
+     
     }
     // ==========================
     // ANDROID LIFECYCLE
     // ==========================
 
     private void OnApplicationPause(bool pauseStatus)
-
     {
         if (pauseStatus)
         {

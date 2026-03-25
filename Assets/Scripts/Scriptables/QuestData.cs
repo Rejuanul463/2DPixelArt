@@ -48,7 +48,7 @@ public class QuestData : ScriptableObject
     public DateTime startTime;
     public float completionTime;
     public bool isCompleted;
-
+    public bool isSelected;
     public int slots;
 
     public float SingleDPS => hitPerSecond * hitPower;

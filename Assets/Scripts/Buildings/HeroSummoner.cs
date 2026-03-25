@@ -8,9 +8,12 @@ public class HeroSummoner : Building
     [SerializeField] private HeroData[] heroClassTemplates;
     [SerializeField] public List<HeroData> heroDatas = new List<HeroData>();
     [SerializeField] private Transform summonPoint;
-
+    private SaveManager _saveManager;
     [SerializeField] private Building blackSmith;
-
+    private void Awake()
+    {
+        _saveManager = GameManager.Instance.saveManager;
+    }
     public void LoadGame()
     {
         heroDatas = GameManager.Instance.saveManager.heroDatas;
@@ -54,8 +57,9 @@ public class HeroSummoner : Building
             heroDatas.Add(newHero);
 
             // 4. Save immediately
-            GameManager.Instance.saveManager.AddHero(newHero);
-
+            //GameManager.Instance.saveManager.AddHero(newHero);
+           // _saveManager.CollectHeroesFromScene(heroClassTemplates[heroIndex]);
+          // _heroSpawn.heroPrefabs.Add(newHero);
             GameManager.Instance.heroUI.AddButton(newHero);
             GameManager.Instance.heroSelectionForQuestUI.AddButton(newHero);
 
@@ -65,7 +69,8 @@ public class HeroSummoner : Building
                 summonPoint.position,
                 Quaternion.identity
             );
-
+            /*GameManager.Instance.saveManager.AddHero(newHero);
+            _heroSpawn.heroPrefabs.Add(hero);*/
             hero.GetComponent<Hero>().heroData = newHero;
 
             heroDatas[newHero.uniqueId].isHeroSummoned = true;

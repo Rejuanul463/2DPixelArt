@@ -34,7 +34,7 @@ public class PannelManager : MonoBehaviour
     private QuestData simulationQuestData;
     [SerializeField] private UpgradeCounter _upgradeCounter;
     private List<int> selectHeroesForQuest = new List<int>();
-
+    [SerializeField] GameObject gotoQuestPrefab;
     public bool PublishResult
     {
         get => publishResult;
@@ -405,6 +405,7 @@ public class PannelManager : MonoBehaviour
             ongoingQuest.OnGoingQuest.Enqueue((simulationQuestData,startTime));
             DateTime time = startTime.AddSeconds(simulationQuestData.completionTime);
             TimeSpan timeSpan = time - DateTime.UtcNow;
+            gotoQuestPrefab.SetActive(false);
             ongoingQuest.AddQuestUI(simulationQuestData.uniqueId,simulationQuestData,time);
             //_upgradeCounter.StartUpgradeTimer(simulationQuestData.name,simulationQuestData.completionTime);
             Debug.Log("Quest Started: "+ simulationQuestData.name);
@@ -419,6 +420,8 @@ public class PannelManager : MonoBehaviour
         {
             _upgradeCounter.QuestUpdate.text = "You Have Won The Quest!";
             Debug.Log("Wins");
+            simulationQuestData.isSelected = true;
+            
             GameManager.Instance.GuildManager.Gold += simulationQuestData.goldRewardBase;
             GameManager.Instance.GuildManager.Experience += simulationQuestData.experienceReward;
             simulationQuestData.isCompleted = true; 
@@ -434,6 +437,7 @@ public class PannelManager : MonoBehaviour
         }
         else
         {
+            simulationQuestData.isSelected = false;
             _upgradeCounter.QuestUpdate.text = "You Have Lost The Quest!";
             Debug.Log("loses");
         }
