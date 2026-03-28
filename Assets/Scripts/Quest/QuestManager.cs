@@ -77,6 +77,7 @@ public class QuestManager : MonoBehaviour
             // Skip completed quests
             if (questData[i].isCompleted)
                 continue;
+                //Destroy(questData[i]);
 
             // Cache loop variables (CRITICAL FIX)
             int index = i;
@@ -153,12 +154,16 @@ public class QuestManager : MonoBehaviour
             );
 
             // Assign button listener (SAFE)
-            if (!quest.isSelected)
+            if (!quest.isCompleted)
             {
                 Button btn = item.GetComponent<Button>();
                 btn.onClick.RemoveAllListeners(); // safety
                 btn.onClick.AddListener(() =>
                     OnQuestButtonPressed(qDetails, quest, index, ref item, difficulty));
+            }
+            else
+            {
+
             }
 
         }

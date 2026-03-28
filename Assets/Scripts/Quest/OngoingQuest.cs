@@ -1,66 +1,111 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class OngoingQuest : MonoBehaviour
 {
-    private Queue<(QuestData,DateTime)> onGoingQuest = new Queue<(QuestData,DateTime)>();
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [SerializeField] private QuestManager questManager;
-    [SerializeField] private UpgradeCounter  upgradeCounter;
+    private Queue<(QuestData quest, DateTime startTime)> onGoingQuest
+        = new Queue<(QuestData, DateTime)>();
+
     [SerializeField] private RectTransform content;
     [SerializeField] private GameObject itemPrefab;
-    [SerializeField] private List<QuestItemUI> uiList;
-    private GameObject go;
-    private QuestItemUI _questItemUI;
-    public Queue<(QuestData,DateTime)> OnGoingQuest
-    {
-        get => onGoingQuest;
-        set => onGoingQuest = value;
-    }
+
+    // 🔥 Faster lookup (no Find)
+    private Dictionary<int, QuestItemUI> uiDict = new Dictionary<int, QuestItemUI>();
 
     void Start()
     {
-    
-    }
-    
-    public void AddQuestUI(int id, QuestData quest, DateTime startTime)
-    {
-        GameObject go = Instantiate(itemPrefab, content);
-
-        QuestItemUI ui = go.GetComponent<QuestItemUI>();
-
-        ui.Identity = id;
-
-        uiList.Add(ui);
-
-        onGoingQuest.Enqueue((quest, startTime));
+        LoadOngoingQuests();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        foreach (var questData in onGoingQuest)
+        if (onGoingQuest.Count == 0) return;
+
+        int count = onGoingQuest.Count;
+
+        for (int i = 0; i < count; i++)
         {
-            foreach (var ui in uiList)
+            var data = onGoingQuest.Dequeue();
+
+            QuestData quest = data.quest;
+            DateTime startTime = data.startTime;
+
+            DateTime endTime = startTime.AddSeconds(quest.completionTime);
+            TimeSpan remaining = endTime - DateTime.UtcNow;
+
+            // Try get UI safely
+            if (!uiDict.TryGetValue(quest.uniqueId, out QuestItemUI ui))
+                continue;
+
+            if (remaining > TimeSpan.Zero)
             {
-                if (ui.Identity == questData.Item1.uniqueId)
-                {
-                    DateTime endTime =
-                        questData.Item2.AddSeconds(questData.Item1.completionTime);
+                // 🟢 Ongoing
+                ui.UpdateUI(quest.uniqueId, quest.questName, remaining);
 
-                    TimeSpan remaining = endTime - DateTime.UtcNow;
+                // Put back in queue
+                onGoingQuest.Enqueue(data);
+            }
+            else
+            {
+                // ✅ COMPLETED
+                ui.UpdateUI(quest.uniqueId, quest.questName, TimeSpan.Zero);
 
-                    ui.UpdateUI(
-                        questData.Item1.uniqueId,
-                        questData.Item1.questName,
-                        remaining
-                    );
-                }
+                quest.isCompleted = true;
+
+                /*// ❌ Remove from save
+                PlayerPrefs.DeleteKey(GetKey(quest.uniqueId));
+
+                // ❌ Remove UI
+                Destroy(ui.gameObject);
+                uiDict.Remove(quest.uniqueId);*/
+
+                Debug.Log($"✅ Quest Completed: {quest.questName}");
             }
         }
     }
-    
+
+    /*public void DestroyUI(GameObject obj)
+    {
+        Destroy(ui.gameObject);
+        uiDict.Remove(quest.uniqueId);
+    }*/
+    // ✅ ADD QUEST
+    public void AddQuestUI(int id, QuestData quest, DateTime startTime)
+    {
+        GameObject go = Instantiate(itemPrefab, content);
+        QuestItemUI ui = go.GetComponent<QuestItemUI>();
+        ui.Identity = id;
+        uiDict[id] = ui;
+        onGoingQuest.Enqueue((quest, startTime));
+        // 💾 SAVE
+        PlayerPrefs.SetString(GetKey(id), startTime.ToBinary().ToString());
+        PlayerPrefs.Save();
+    }
+
+    // ✅ LOAD QUESTS (OFFLINE SUPPORT)
+    void LoadOngoingQuests()
+    {
+        QuestData[] allQuests = Resources.LoadAll<QuestData>(""); // Or your quest folder
+
+        foreach (var quest in allQuests)
+        {
+            string key = GetKey(quest.uniqueId);
+
+            // Check if quest was started but not completed
+            if (PlayerPrefs.HasKey(key) && !quest.isCompleted)
+            {
+                long binary = Convert.ToInt64(PlayerPrefs.GetString(key));
+                DateTime savedStart = DateTime.FromBinary(binary);
+
+                // Recreate UI + add to queue
+                AddQuestUI(quest.uniqueId, quest, savedStart);
+            }
+        }
+    }
+    // 🔑 Key generator
+    private string GetKey(int id)
+    {
+        return "QuestStart_" + id;
+    }
 }

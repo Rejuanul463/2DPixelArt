@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class PannelManager : MonoBehaviour
 {
     private Button inventoryButton;
+    private HeroSelectionForQuestUI  heroSelectionForQuestUI;
     private Button questButton;
     private Button heroButton;
     private Button buildingButton;
@@ -35,6 +36,13 @@ public class PannelManager : MonoBehaviour
     [SerializeField] private UpgradeCounter _upgradeCounter;
     private List<int> selectHeroesForQuest = new List<int>();
     [SerializeField] GameObject gotoQuestPrefab;
+    private bool theResultIsOut;
+
+    public bool TheResultIsOut
+    {
+        get => theResultIsOut;
+        set => theResultIsOut = value;
+    }
     public bool PublishResult
     {
         get => publishResult;
@@ -402,11 +410,11 @@ public class PannelManager : MonoBehaviour
             simulationQuestData.startTime= startTime;
             simulationQuestData.willWin = simulationQuestData.isCompleted;
             simulationQuestData.isCompleted = false;
-            ongoingQuest.OnGoingQuest.Enqueue((simulationQuestData,startTime));
+            //ongoingQuest.OnGoingQuest.Enqueue((simulationQuestData,startTime));
             DateTime time = startTime.AddSeconds(simulationQuestData.completionTime);
             TimeSpan timeSpan = time - DateTime.UtcNow;
             gotoQuestPrefab.SetActive(false);
-            ongoingQuest.AddQuestUI(simulationQuestData.uniqueId,simulationQuestData,time);
+            ongoingQuest.AddQuestUI(simulationQuestData.uniqueId,simulationQuestData,startTime);
             //_upgradeCounter.StartUpgradeTimer(simulationQuestData.name,simulationQuestData.completionTime);
             Debug.Log("Quest Started: "+ simulationQuestData.name);
             GameManager.Instance.upgradeCounter.StartQuest(simulationQuestData.completionTime);
@@ -421,7 +429,6 @@ public class PannelManager : MonoBehaviour
             _upgradeCounter.QuestUpdate.text = "You Have Won The Quest!";
             Debug.Log("Wins");
             simulationQuestData.isSelected = true;
-            
             GameManager.Instance.GuildManager.Gold += simulationQuestData.goldRewardBase;
             GameManager.Instance.GuildManager.Experience += simulationQuestData.experienceReward;
             simulationQuestData.isCompleted = true; 
@@ -433,15 +440,18 @@ public class PannelManager : MonoBehaviour
                 Debug.Log(GameManager.Instance.HeroSummoner.heroDatas[i].xp + " " + i);
                 //saveManager.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
                 //HeroSummoner.heroDatas[i].upgradeHero((int)(simulationQuestData.experienceReward / HeroesForQuest.Count));
+                
             }
         }
         else
         {
             simulationQuestData.isSelected = false;
+            Destroy(simulationQuestData);
             _upgradeCounter.QuestUpdate.text = "You Have Lost The Quest!";
             Debug.Log("loses");
         }
-
+        heroSelectionForQuestUI.itemButtons.Clear();
+        theResultIsOut = true;
         deactiveAllPannels();
         
     }

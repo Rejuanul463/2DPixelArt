@@ -69,7 +69,6 @@ public class UpgradeCounter : MonoBehaviour
         else
         {
             Debug.Log("Restored Quest. Remaining: " + Mathf.Ceil((float)remaining.TotalSeconds));
-
             StartCoroutine(QuestCoroutine());
         }
     }

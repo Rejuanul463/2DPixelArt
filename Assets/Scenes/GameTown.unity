@@ -16305,7 +16305,6 @@ GameObject:
   m_Component:
   - component: {fileID: 147382659}
   - component: {fileID: 147382660}
-  - component: {fileID: 147382661}
   - component: {fileID: 147382662}
   m_Layer: 5
   m_Name: Content
@@ -16357,55 +16356,6 @@ MonoBehaviour:
   m_Spacing: {x: 0, y: 30}
   m_Constraint: 1
   m_ConstraintCount: 1
---- !u!114 &147382661
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 147382658}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 697414855a9ee7b44b49252ae5a9d1dc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  selectedQuestData: {fileID: 0}
-  questData:
-  - {fileID: 11400000, guid: b1f10a4045cea1e4b8539b05fb7a154a, type: 2}
-  - {fileID: 11400000, guid: a886e755df375d245a77511d92f1dc59, type: 2}
-  - {fileID: 11400000, guid: 1fc2fc4f4ed45f848a23f76adc5013d8, type: 2}
-  - {fileID: 11400000, guid: 934b7db9d5b2e904188d4f34f4d76a1c, type: 2}
-  - {fileID: 11400000, guid: cdfb071095c8631478961564738439d9, type: 2}
-  - {fileID: 11400000, guid: ef87348f59bf58146b5d247325274a20, type: 2}
-  - {fileID: 11400000, guid: a9e81f0cd1f5b5843b089049d2045fbf, type: 2}
-  - {fileID: 11400000, guid: 435ad07b04a4c6140ac2ccf54722012f, type: 2}
-  - {fileID: 11400000, guid: 1f0484012af9cb9469212f780f388ddc, type: 2}
-  - {fileID: 11400000, guid: 6a7c6f898f2ea9744a4073b7e79c8280, type: 2}
-  - {fileID: 11400000, guid: 303275bd7b3794047b3ac051c01d81ea, type: 2}
-  - {fileID: 11400000, guid: 3911958badbc10449b7ececcbfe2146c, type: 2}
-  - {fileID: 11400000, guid: 1a8fa07659d0f6345b29ae5d321736aa, type: 2}
-  - {fileID: 11400000, guid: 21afe76874d478547aa84ab556d86afe, type: 2}
-  - {fileID: 11400000, guid: a734510f947ea354e8fef80923946753, type: 2}
-  - {fileID: 11400000, guid: 0ce5b9e3de3641647a878b014a9f73d6, type: 2}
-  - {fileID: 11400000, guid: 4038f8b888d61b440b24c6e1dd409a27, type: 2}
-  - {fileID: 11400000, guid: ff782dbe026c9764d874fc314678e207, type: 2}
-  - {fileID: 11400000, guid: 7eba89fb7cf4d3f4d8d23b640979433d, type: 2}
-  - {fileID: 11400000, guid: 21894bbd335d3404d85c722c2613739f, type: 2}
-  - {fileID: 11400000, guid: e3d89fe6b3bd86a4bb19f7a3a4e9a477, type: 2}
-  - {fileID: 11400000, guid: fb891c5149cc8554795338e2a5b55fb7, type: 2}
-  - {fileID: 11400000, guid: bdac333e95feaa848b6d480dd96c4353, type: 2}
-  - {fileID: 11400000, guid: ab6d6fec2290e384badb1efa2cf4838d, type: 2}
-  - {fileID: 11400000, guid: b21e6132a1dbfb84ebd5761f64d0c017, type: 2}
-  - {fileID: 11400000, guid: ac67c0611d52976489e0222baf85e7f5, type: 2}
-  - {fileID: 11400000, guid: 49ac2553bd817624e8184c2cf42dcb76, type: 2}
-  - {fileID: 11400000, guid: 793ecb250a417814a8a67b7e71b5dd34, type: 2}
-  - {fileID: 11400000, guid: 865d4dd1226831545a520a504dd2d886, type: 2}
-  - {fileID: 11400000, guid: 35fa33fc9f4e7af4e95906a735c0d536, type: 2}
-  latestQuestInd: 0
-  content: {fileID: 147382659}
-  itemPrefab: {fileID: 2824948512204075242, guid: 3bfdcac6d7e405244bf0ef78a563c98e, type: 3}
-  details: {fileID: 1366374229}
-  questSelected: 0
 --- !u!114 &147382662
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80823,16 +80773,13 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 731535029}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e27b21447865572489f3d1ade53b8817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OngoingQuest
-  questManager: {fileID: 1191472164}
-  upgradeCounter: {fileID: 731535032}
   content: {fileID: 1392657021}
   itemPrefab: {fileID: 246316828591938014, guid: ec7993d9ee052f14f8a4e4e407c659a8, type: 3}
-  uiList: []
 --- !u!1 &731872911
 GameObject:
   m_ObjectHideFlags: 0
@@ -194084,6 +194031,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1127275476}
   m_CullTransparentMesh: 1
+--- !u!1 &1127283139
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1127283141}
+  - component: {fileID: 1127283140}
+  m_Layer: 0
+  m_Name: PlayerInstantiate
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1127283140
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127283139}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ff0ca2706efc0264d8599f06234040f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInstantiate
+--- !u!4 &1127283141
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127283139}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -752.0558, y: 490.44247, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1128075525
 GameObject:
   m_ObjectHideFlags: 0
@@ -264513,11 +264504,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e27b21447865572489f3d1ade53b8817, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::OngoingQuest
-  questManager: {fileID: 1191472164}
-  upgradeCounter: {fileID: 731535032}
   content: {fileID: 1785211787}
   itemPrefab: {fileID: 246316828591938014, guid: ec7993d9ee052f14f8a4e4e407c659a8, type: 3}
-  uiList: []
 --- !u!1 &1692128105
 GameObject:
   m_ObjectHideFlags: 0
@@ -298790,7 +298778,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2016630538}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1684bb3c80c5fb2429f4b8b0c6fd0017, type: 3}
   m_Name: 
@@ -302037,9 +302025,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 1530f775c2e45a24d993ac6bfba06f25, type: 2}
   - {fileID: 11400000, guid: dfeb5bbee08a4ff4e81b650473b5ef98, type: 2}
   - {fileID: 11400000, guid: c3c2c2465db2ed4449a1f34045300fbd, type: 2}
-  posX: 0
-  posY: 0
-  posZ: 0
+  sceneObjects: []
 --- !u!4 &2042531336
 Transform:
   m_ObjectHideFlags: 0
@@ -313276,3 +313262,4 @@ SceneRoots:
   - {fileID: 731535031}
   - {fileID: 697682869}
   - {fileID: 1691249967}
+  - {fileID: 1127283141}

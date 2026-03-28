@@ -39,5 +39,6 @@ MonoBehaviour:
   enemyCount: 4
   willWin: 1
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
+  isSelected: 1
   slots: 1

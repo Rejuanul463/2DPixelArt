@@ -45,7 +45,6 @@ public class QuestData : ScriptableObject
     public int enemyCount = 1;
 
     [Header("State")] public bool willWin;
-    public DateTime startTime;
     public float completionTime;
     public bool isCompleted;
     public bool isSelected;
@@ -54,7 +53,7 @@ public class QuestData : ScriptableObject
     public float SingleDPS => hitPerSecond * hitPower;
     public float TotalDPS => SingleDPS * enemyCount;
     public float TotalHP => HP * enemyCount;
-
+    public DateTime startTime = DateTime.UtcNow;
     public void CompleteTask()
     {
         isCompleted = true;
