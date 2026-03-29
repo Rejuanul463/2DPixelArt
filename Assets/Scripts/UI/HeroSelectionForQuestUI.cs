@@ -14,12 +14,12 @@ public class HeroSelectionForQuestUI : MonoBehaviour
     [SerializeField] private GameObject TextPanel;
     [SerializeField] Button StartQuestButton;
     private PannelManager _pannelManager;
-    List<int > selectedHeroes = new List<int>();
+   private List<(int,bool) > selectedHeroes = new List<(int,bool)>();
     private GameObject newCopy;
     private int maxHeroNumber;
     private int count = 0;
     private List<(GameObject,int)> heroButtons = new List<(GameObject,int)>();
-    public List<int> SelectedHeroes
+    public List<(int,bool)> SelectedHeroes
     {
         get => selectedHeroes;
         set => selectedHeroes = value;
@@ -36,15 +36,40 @@ public class HeroSelectionForQuestUI : MonoBehaviour
  
         }*/
     }
+    public void SaveSelectedHeroes()
+    {
+        GameManager.Instance.saveManager.SaveGame();
+    }
 
+    public void LoadSelectedHeroes(List<int> saved)
+    {
+        if (saved == null || saved.Count == 0) return;
+
+        foreach (int ind in saved)
+        {
+            if (ind >= itemButtons.Count) continue;
+
+            selectedHeroes.Add((ind,true));
+            count++;
+
+            // Lock the button
+            itemButtons[ind].interactable = false;
+
+            // Rebuild the copy in SelectedButtonContainer
+            CreateChildCopy(itemButtons[ind].gameObject, ind);
+        }
+
+        if (count > 0)
+            StartQuestButton.interactable = true;
+    }
     public void OnEnable()
     {
         StartQuestButton.onClick.AddListener(() => goQuest());
         StartQuestButton.interactable = false;
 
-        foreach(int ind in selectedHeroes)
+        foreach((int,bool) ind in selectedHeroes)
         {
-            itemButtons[ind].interactable = true;
+            if(!ind.Item2) itemButtons[ind.Item1].interactable = true;
         }
         
         /*selectedHeroes.Clear();*/
@@ -56,16 +81,20 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         count = 0;
     }
 
+// In HeroSelectionForQuestUI.cs
+
     public void SelectForQuest(int ind)
     {
+        
         if(count < maxHeroNumber)
         {
             count++;
-            selectedHeroes.Add(ind);
+            selectedHeroes.Add((ind,true));
             itemButtons[ind].interactable = false;
-            //itemButtons[ind].gameObject.SetActive(false);
             CreateChildCopy(itemButtons[ind].gameObject, ind);
             StartQuestButton.interactable = true;
+
+            SaveSelectedHeroes(); 
         }
         else
         {
@@ -74,24 +103,25 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         }
     }
 
+
     public void CreateChildCopy(GameObject Item, int ind)
     {
         newCopy = Instantiate(Item, SelectedButtonContainer.transform);
-        newCopy.GetComponent<Button>().interactable = true;
+        //newCopy.GetComponent<Button>().interactable = true;
         newCopy.GetComponent<Button>().onClick.AddListener(() => DeselectForQuest(ind, newCopy));
     }
 
     private void DeselectForQuest(int ind, GameObject copy)
     {
-        if (count > 0)
+        if (count >= 0)
         {
             count--;
         }
-        if(count == 0)
+        if(count <= 0)
         {
             StartQuestButton.interactable = false;
         }
-        selectedHeroes.Remove(ind);
+        selectedHeroes.Remove((ind,false));
         itemButtons[ind].interactable = true;
         //itemButtons[ind].gameObject.SetActive(true);
         Destroy(copy);

@@ -40,5 +40,5 @@ MonoBehaviour:
   willWin: 1
   completionTime: 60
   isCompleted: 0
-  isSelected: 1
+  isSelected: 0
   slots: 0

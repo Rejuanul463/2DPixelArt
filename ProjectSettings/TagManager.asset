@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Heroes
+  - notificationpanel
   layers:
   - Default
   - TransparentFX

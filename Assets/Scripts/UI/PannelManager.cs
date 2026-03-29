@@ -34,10 +34,10 @@ public class PannelManager : MonoBehaviour
     [SerializeField] private int requiredGold;
     private QuestData simulationQuestData;
     [SerializeField] private UpgradeCounter _upgradeCounter;
-    private List<int> selectHeroesForQuest = new List<int>();
+    private List<(int,bool)> selectHeroesForQuest = new List<(int,bool)>();
     [SerializeField] GameObject gotoQuestPrefab;
     private bool theResultIsOut;
-
+    private HeroSelectionForQuestUI _heroSelectionForQuestUI;
     public bool TheResultIsOut
     {
         get => theResultIsOut;
@@ -157,6 +157,7 @@ public class PannelManager : MonoBehaviour
             //checkInteractableForHire();
             GameManager.Instance.heroSelectionForQuestUI.setMaxHeroNumber(GameManager.Instance.QuestManager.SelectedQD.maxPlayerCount);
             typeAvailable = new int[6];
+            RestoreHeroSelectionState();
             Debug.Log("PlayerSelectionPannel");
             //checkInterectableForQuest();
         }
@@ -174,7 +175,29 @@ public class PannelManager : MonoBehaviour
         pannels[ind].SetActive(true);
         activePannelObj = pannels[ind];
     }
+    public void RestoreHeroSelectionState()
+    {
+        // First unlock all buttons
+        for (int i = 0; i < heroesQuestButtons.Count; i++)
+        {
+            if (!GameManager.Instance.GuildManager.IsHeroUnlocked(i))
+            {
+                heroesQuestButtons[i].interactable = false;
+                heroQuestDeletButtons[i].interactable = false;
+                continue;
+            }
 
+            heroesQuestButtons[i].interactable = true;
+            heroQuestDeletButtons[i].interactable = false;
+        }
+
+        // Then re-lock only the ones already selected
+        foreach (int id in selectedHeroesForQuest)
+        {
+            heroesQuestButtons[id].interactable = false;
+            heroQuestDeletButtons[id].interactable = true;
+        }
+    }
     public void deactivePannel()
     {
         GameManager.Instance.QuestManager.questSelected = false;
@@ -369,8 +392,8 @@ public class PannelManager : MonoBehaviour
             //selectedHero[id] = true;
             selectedHeroesForQuest.Add(id);
             count++;
-            //heroesQuestButtons[id].interactable = false;
-            //heroQuestDeletButtons[id].interactable = true;
+            heroesQuestButtons[id].interactable = false;
+            heroQuestDeletButtons[id].interactable = true;
         }
         else
         {
@@ -386,27 +409,38 @@ public class PannelManager : MonoBehaviour
     //    //heroesQuestButtons[id].interactable = true;
     //    heroQuestDeletButtons[id].interactable = false;
     //}
-
-    public void GoQuest(int cnt, List<int> HeroesForQuest)
+    private void RemoveHeroForQuest(int id)
     {
+        selectedHeroesForQuest.Remove(id);
+        count--;
+
+        // 🔓 Unlock button again
+        heroesQuestButtons[id].interactable = true;
+        heroQuestDeletButtons[id].interactable = false;
+    }
+    public void GoQuest(int cnt, List<(int,bool)> HeroesForQuest)
+    {
+        
         selectHeroesForQuest = HeroesForQuest;
         if(cnt > 0)
         {
+            
             float hitDamage = 0;
             float hps = 0;
             float hp = 0;
-            foreach(int i in HeroesForQuest)
+            foreach((int , bool) i in HeroesForQuest)
             {
                 //if (selectedHero[i])
                 //{
-                    hitDamage += GameManager.Instance.HeroSummoner.getHeroPower(i);
-                    hps += GameManager.Instance.HeroSummoner.getHeroHitPerSecound(i);
-                    hp += GameManager.Instance.HeroSummoner.getHeroHP(i);
+                    hitDamage += GameManager.Instance.HeroSummoner.getHeroPower(i.Item1);
+                    hps += GameManager.Instance.HeroSummoner.getHeroHitPerSecound(i.Item1);
+                    hp += GameManager.Instance.HeroSummoner.getHeroHP(i.Item1);
                 //}
             }
             
             simulationQuestData = GameManager.Instance.QuestManager.SimulateCombat(hp, hps, hitDamage);
             DateTime startTime = DateTime.UtcNow;
+            
             simulationQuestData.startTime= startTime;
             simulationQuestData.willWin = simulationQuestData.isCompleted;
             simulationQuestData.isCompleted = false;
@@ -419,8 +453,23 @@ public class PannelManager : MonoBehaviour
             Debug.Log("Quest Started: "+ simulationQuestData.name);
             GameManager.Instance.upgradeCounter.StartQuest(simulationQuestData.completionTime);
             
+            ongoingQuest.AddQuestUI(simulationQuestData.uniqueId, simulationQuestData, startTime);
+            GameManager.Instance.upgradeCounter.StartQuest(simulationQuestData.completionTime);
+            /*foreach (int i in HeroesForQuest)
+            {
+                heroesQuestButtons[i].interactable = false;
+                heroQuestDeletButtons[i].interactable = false;
+            }*/
+            // Reset selection state
+            GameManager.Instance.pannelManager.GoQuest(count, selectHeroesForQuest);
+
+            // ✅ Clear after quest starts
+            selectedHeroesForQuest.Clear();
+            count = 0;
+            GameManager.Instance.saveManager.SaveGame();
         }
     }
+    
 
     private void ResultOfTheQuest(QuestData simulationQuestData,List<int> HeroesForQuest)
     {
@@ -450,6 +499,18 @@ public class PannelManager : MonoBehaviour
             _upgradeCounter.QuestUpdate.text = "You Have Lost The Quest!";
             Debug.Log("loses");
         }
+        // ✅ Unlock heroes now that quest is done
+        for (int index = 0; index < _heroSelectionForQuestUI.SelectedHeroes.Count; index++)
+        {
+            var heroTuple = _heroSelectionForQuestUI.SelectedHeroes[index];
+
+            if (heroTuple.Item2) // if the bool is true
+            {
+                // create a new tuple with the bool set to false
+                _heroSelectionForQuestUI.SelectedHeroes[index] = (heroTuple.Item1, false);
+            }
+        }
+
         heroSelectionForQuestUI.itemButtons.Clear();
         theResultIsOut = true;
         deactiveAllPannels();

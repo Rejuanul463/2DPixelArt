@@ -12,7 +12,9 @@ public class SaveManager : MonoBehaviour
     public List<BuildingData> buildingDatas;
     public GuildData guildData;
     public List<HeroData> SampleHeroData;
-
+    private OngoingQuest _ongoingQuest;
+    public PannelManager pannelManager; // assign in Inspector
+    public OngoingQuest ongoingQuest;
     // Optional: objects you want to save in scene
     public List<GameObject> sceneObjects;
 
@@ -27,6 +29,7 @@ public class SaveManager : MonoBehaviour
 
     private void Awake()
     {
+        
         if (Instance == null)
         {
             Instance = this;
@@ -44,6 +47,7 @@ public class SaveManager : MonoBehaviour
         GameManager.Instance.heroUI.loadGame();
         GameManager.Instance.heroSelectionForQuestUI.loadGame();
         GameManager.Instance.HeroSummoner.LoadGame();
+        GameManager.Instance.pannelManager.RestoreHeroSelectionState();
     }
 
     // ==========================
@@ -52,7 +56,11 @@ public class SaveManager : MonoBehaviour
     public void SaveGame()
     {
         GameSaveData saveData = new GameSaveData();
-
+        
+// ---- SELECTED HEROES FOR QUEST ----
+        saveData.selectedHeroesForQuest = GameManager.Instance.heroSelectionForQuestUI.SelectedHeroes
+            .Select(h => h.Item1) // take the int (hero ID) only
+            .ToList();
         // ---- HEROES ----
         saveData.heroes = heroDatas.Select(hero =>
         {
@@ -76,8 +84,21 @@ public class SaveManager : MonoBehaviour
                 position = pos
             };
         }).ToList();
+        
+        //Notification
+        // ---- ONGOING QUESTS ----
+        saveData.ongoingQuests = new List<OngoingQuestSaveData>();
 
-        // ---- BUILDINGS ----
+// Snapshot the queue without destroying it
+        foreach (var entry in ongoingQuest.OngoingQuests)
+        {
+            saveData.ongoingQuests.Add(new OngoingQuestSaveData
+            {
+                questUniqueId = entry.quest.uniqueId,
+                startTime = entry.startTime.ToString("o") // ISO 8601 UtcNow format
+            });
+        }
+            // ---- BUILDINGS ----
         saveData.buildings = buildingDatas.Select(b => new BuildingSaveData
         {
             buildingID = b.buildingID,
@@ -108,7 +129,7 @@ public class SaveManager : MonoBehaviour
             unlockedHeroID = guildData.unlockedHeroID,
             questCompleteTime = guildData.questCompleteTime
         };
-
+        
         // ---- QUESTS ----
         saveData.quests = GameManager.Instance.QuestManager.questData.Select(q => new QuestSaveData
         {
@@ -170,7 +191,44 @@ public class SaveManager : MonoBehaviour
 
         string json = File.ReadAllText(SavePath);
         GameSaveData saveData = JsonUtility.FromJson<GameSaveData>(json);
+// ---- SELECTED HEROES FOR QUEST ----
+        if (saveData.selectedHeroesForQuest != null && saveData.selectedHeroesForQuest.Count > 0)
+        {
+            GameManager.Instance.heroSelectionForQuestUI.LoadSelectedHeroes(
+                saveData.selectedHeroesForQuest
+            );
+        }
+// ---- ONGOING QUESTS ----
 
+        if (saveData.ongoingQuests != null)
+        {
+            foreach (var saved in saveData.ongoingQuests)
+            {
+                // Find the matching QuestData by uniqueId
+                QuestData quest = GameManager.Instance.QuestManager.questData
+                    .FirstOrDefault(q => q.uniqueId == saved.questUniqueId);
+
+                if (quest == null || quest.isCompleted) continue;
+
+                DateTime startTime = DateTime.Parse(
+                    saved.startTime, 
+                    null, 
+                    System.Globalization.DateTimeStyles.RoundtripKind
+                );
+
+                DateTime endTime = startTime.AddSeconds(quest.completionTime);
+
+                // Already finished while offline
+                if (DateTime.UtcNow >= endTime)
+                {
+                    quest.isCompleted = true;
+                    continue;
+                }
+
+                // Still ongoing — re-enqueue it
+                ongoingQuest.AddQuestUI(quest.uniqueId, quest, startTime);
+            }
+        }
         // ---- HEROES ----
         foreach (var heroSave in saveData.heroes)
         {
@@ -286,8 +344,15 @@ public class SaveManager : MonoBehaviour
         public GuildSaveData guild;
         public List<QuestSaveData> quests;
         public List<SceneObjectSaveData> sceneObjects;
+        public List<OngoingQuestSaveData> ongoingQuests; // 👈 Add this
+        public List<int> selectedHeroesForQuest;
     }
-
+    [Serializable]
+    private class OngoingQuestSaveData
+    {
+        public int questUniqueId;
+        public string startTime; // ISO 8601 format
+    }
     [Serializable]
     private class HeroSaveData
     {
