@@ -12,6 +12,6 @@ public class SplashManager : MonoBehaviour
 
     void LoadAuthScene()
     {
-        SceneManager.LoadScene("AuthScreen");
+        //SceneManager.LoadScene("AuthScreen");
     }
 }
