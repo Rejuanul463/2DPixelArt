@@ -145,6 +145,7 @@ namespace Virtuery.PlayFab
         public const string UPDATED_AT = "UpdatedAt";
         public const string CHAT_HISTORY_KEY = "ChatHistory";
         public const string OFFLINE_QUEUE = "OfflineQueue";
+        public const string GAME_SAVE_DATA_KEY = "GameSaveData";
     }
 
     public static class TitleDataKeys

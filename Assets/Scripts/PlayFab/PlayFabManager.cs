@@ -65,6 +65,13 @@ namespace Virtuery.PlayFab
             titleDataObj.AddComponent<TitleDataManager>();
             LogDebug("TitleDataManager created automatically");
         }
+
+        if (GameSaveSyncManager.Instance == null)
+        {
+            GameObject gameSaveSyncObj = new GameObject("GameSaveSyncManager");
+            gameSaveSyncObj.AddComponent<GameSaveSyncManager>();
+            LogDebug("GameSaveSyncManager created automatically");
+        }
     }
 
         private void InitializePlayFab()

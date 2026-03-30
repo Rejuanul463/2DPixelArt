@@ -171,8 +171,15 @@ public class SaveManager : MonoBehaviour
                 });
             }
         }
+        saveData.lastUpdatedAt = DateTime.UtcNow.ToString("o");
+
         string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(SavePath, json);
+
+        if (Virtuery.PlayFab.GameSaveSyncManager.Instance != null)
+        {
+            Virtuery.PlayFab.GameSaveSyncManager.Instance.OnLocalSave();
+        }
 
         Debug.Log("GAME SAVED");
     }
@@ -337,24 +344,25 @@ public class SaveManager : MonoBehaviour
     // SERIALIZABLE CLASSES
     // ==========================
     [Serializable]
-    private class GameSaveData
+    public class GameSaveData
     {
         public List<HeroSaveData> heroes;
         public List<BuildingSaveData> buildings;
         public GuildSaveData guild;
         public List<QuestSaveData> quests;
         public List<SceneObjectSaveData> sceneObjects;
-        public List<OngoingQuestSaveData> ongoingQuests; // 👈 Add this
+        public List<OngoingQuestSaveData> ongoingQuests;
         public List<int> selectedHeroesForQuest;
+        public string lastUpdatedAt;
     }
     [Serializable]
-    private class OngoingQuestSaveData
+    public class OngoingQuestSaveData
     {
         public int questUniqueId;
-        public string startTime; // ISO 8601 format
+        public string startTime;
     }
     [Serializable]
-    private class HeroSaveData
+    public class HeroSaveData
     {
         public string name;
         public int id;
@@ -370,7 +378,7 @@ public class SaveManager : MonoBehaviour
     }
 
     [Serializable]
-    private class BuildingSaveData
+    public class BuildingSaveData
     {
         public int buildingID;
         public int buildingLevel;
@@ -385,7 +393,7 @@ public class SaveManager : MonoBehaviour
     }
 
     [Serializable]
-    private class GuildSaveData
+    public class GuildSaveData
     {
         public int guildLevel;
         public int currentExperience;
@@ -402,7 +410,7 @@ public class SaveManager : MonoBehaviour
     }
 
     [Serializable]
-    private class QuestSaveData
+    public class QuestSaveData
     {
         public string questName;
         public bool isCompleted;
@@ -410,7 +418,7 @@ public class SaveManager : MonoBehaviour
     }
 
     [Serializable]
-    private class SceneObjectSaveData
+    public class SceneObjectSaveData
     {
         public string objectName;
         public Vector3 position;
