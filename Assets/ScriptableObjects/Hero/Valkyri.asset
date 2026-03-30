@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Avery Davis
+  m_Name: Emily Campbell
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 42fa60f72d1f24c978ec657bc12902d2, type: 3}
   heroSprite:
@@ -25,12 +25,12 @@ MonoBehaviour:
   heroName: Valkyri
   goldCost: 250
   hitPerSecond: 4
-  hitPower: 70
-  HP: 60
+  hitPower: 105
+  HP: 90
   level: 1
   levelUpMultiplier: 1.5
   coolDownTime: 200
   goldPerAttack: 24
   isHeroSummoned: 1
-  xp: 32
-  xpForNextLevel: 100
+  xp: 105
+  xpForNextLevel: 257

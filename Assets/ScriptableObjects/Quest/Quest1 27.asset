@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
   m_Name: Quest1 27
   m_EditorClassIdentifier: 
+  uniqueId: 26
   questName: ' Whispers of the Abyss'
   questType: 0
   questDifficulty: 2
@@ -36,6 +37,8 @@ MonoBehaviour:
   hitPower: 79.5
   HP: 620
   enemyCount: 5
+  willWin: 0
   completionTime: 60
   isCompleted: 0
+  isSelected: 0
   slots: 0

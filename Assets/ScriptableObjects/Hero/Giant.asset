@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: James Campbell
+  m_Name: James Brown
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: f4719763fc7d84425886c35a6b038636, type: 3}
   heroSprite:
@@ -21,16 +21,16 @@ MonoBehaviour:
   - {fileID: 1314777561561512713, guid: d40cfbad960b57844ab26a09fb3d7636, type: 3}
   - {fileID: 5676001472787654812, guid: 74922428c7eb59546b3a690dc3c884c8, type: 3}
   Id: 2
-  uniqueId: 1
+  uniqueId: 2
   heroName: Giant
-  goldCost: 150
+  goldCost: 259
   hitPerSecond: 0.5
-  hitPower: 60
-  HP: 100
-  level: 1
+  hitPower: 123
+  HP: 206
+  level: 4
   levelUpMultiplier: 1.2
   coolDownTime: 100
   goldPerAttack: 10
   isHeroSummoned: 1
-  xp: 22
-  xpForNextLevel: 100
+  xp: 125
+  xpForNextLevel: 250

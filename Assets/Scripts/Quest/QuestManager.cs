@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -18,7 +19,6 @@ public class QuestManager : MonoBehaviour
         public float reward;
         public int enemyCount;
         public int maxPlayerCount;
-
         // Constructor
         public QuestDetails(string name, string desc, string eName, float eHP, float hps, float hit, float gold, int count, int plc)
         {
@@ -42,19 +42,29 @@ public class QuestManager : MonoBehaviour
     [SerializeField] private RectTransform content;
     [SerializeField] private GameObject itemPrefab;
     List<GameObject> questItemList;
-
+    private List<(QuestDetails,QuestData)> ongoingQuestList=new List<(QuestDetails, QuestData)>() ;
     [SerializeField] public TextMeshProUGUI details;
-
+    private List<QuestData>  tempQuestList;
     public bool questSelected = false;
-
+    private List<QuestData> activeQuests = new List<QuestData>();
     private void Start()
     {
+        activeQuests = new List<QuestData>(questData);
         questSelected = false;
         latestQuestInd = 0;
         loadQuests();
     }
 
+    private void Update()
+    {
+        CheckAndDeleteQuest();
+    }
 
+    private void CheckAndDeleteQuest()
+    {
+        activeQuests.RemoveAll(q => q.isSelected);
+    }
+    
     public void loadQuests()
     {
         for (int i = 0; i < questData.Length; i++)
@@ -67,6 +77,7 @@ public class QuestManager : MonoBehaviour
             // Skip completed quests
             if (questData[i].isCompleted)
                 continue;
+                //Destroy(questData[i]);
 
             // Cache loop variables (CRITICAL FIX)
             int index = i;
@@ -75,7 +86,9 @@ public class QuestManager : MonoBehaviour
             // Instantiate UI item
             GameObject item = Instantiate(itemPrefab, content);
             item.transform.localScale = Vector3.one;
-
+            
+            //quest id
+ 
             // Quest Name
             var nameText = item.transform.Find("Name")
                 ?.GetComponent<TextMeshProUGUI>();
@@ -141,10 +154,18 @@ public class QuestManager : MonoBehaviour
             );
 
             // Assign button listener (SAFE)
-            Button btn = item.GetComponent<Button>();
-            btn.onClick.RemoveAllListeners(); // safety
-            btn.onClick.AddListener(() =>
-                OnQuestButtonPressed(qDetails, quest, index, ref item, difficulty));
+            if (!quest.isCompleted)
+            {
+                Button btn = item.GetComponent<Button>();
+                btn.onClick.RemoveAllListeners(); // safety
+                btn.onClick.AddListener(() =>
+                    OnQuestButtonPressed(qDetails, quest, index, ref item, difficulty));
+            }
+            else
+            {
+
+            }
+
         }
     }
 
@@ -158,10 +179,12 @@ public class QuestManager : MonoBehaviour
         selectedQuestData = quest;
         SelectedQD = qD;
         questSelected = true;
+        quest.isSelected = true;
         details.text =  "<b>Quest Details :</b> " + "<color=#FFFFFF>" + qD.name + "</color>\n" + "\n" +
                         "<b>Difficulty :</b> " + "<color=#FFFFFF>" + difficulty + "</color>\n" + "\n" +
                         "<b>Enemy :</b> " + "<color=#FFFFFF>" + qD.enemyName + "</color>\n";
-
+        
+        //ongoingQuestList.Add((qD,quest));
         //GameManager.Instance.heroSelectionForQuestUI.setMaxHeroNumber()
     }
 

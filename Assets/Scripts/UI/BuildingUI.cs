@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -20,11 +21,15 @@ public class BuildingUI : MonoBehaviour
     [SerializeField] TextMeshProUGUI gold;
     [SerializeField] TextMeshProUGUI wood;
     [SerializeField] TextMeshProUGUI stone;
+    [SerializeField] private List<Building>  building;
 
+    [SerializeField] private GameObject buildingUpgradePanel;
+    private Building buildingScript;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Upgrade.interactable = false;
+        buildingScript = GetComponent<Building>();
+       // Upgrade.interactable = false;
         assignEvent();
     }
 
@@ -36,7 +41,6 @@ public class BuildingUI : MonoBehaviour
         building1.onClick.AddListener(() => ActiveImage(3));
         building2.onClick.AddListener(() => ActiveImage(4));
         building3.onClick.AddListener(() => ActiveImage(5));
-
         Upgrade.onClick.AddListener(() => updateBuilding(buildingId));
     }
 
@@ -54,18 +58,18 @@ public class BuildingUI : MonoBehaviour
         }
 
         buildingId = ind;
-
         imageHolder.gameObject.SetActive(true);
         buildingLvl.text = "Level : " + buildingData[ind].buildingLevel.ToString();
         gold.text = buildingData[ind].upgradeCostGold.ToString();
         gold.text = buildingData[ind].upgradeCostWood.ToString();
         stone.text = buildingData[ind].upgradeCostStone.ToString();
-
         imageHolder.sprite = buildingData[ind].currentBuilding;
     }
 
     private void updateBuilding(int id)
     {
+       buildingUpgradePanel.SetActive(true);
         Building.OnUpgradeRequested?.Invoke(id);
     }
+    
 }

@@ -6,13 +6,17 @@ using System.Linq;
 
 public class SaveManager : MonoBehaviour
 {
+    public static SaveManager Instance;
     [Header("Assign In Inspector")]
     public List<HeroData> heroDatas = new List<HeroData>();
     public List<BuildingData> buildingDatas;
     public GuildData guildData;
-    //public List<int> intList;
-
     public List<HeroData> SampleHeroData;
+    private OngoingQuest _ongoingQuest;
+    public PannelManager pannelManager; // assign in Inspector
+    public OngoingQuest ongoingQuest;
+    // Optional: objects you want to save in scene
+    public List<GameObject> sceneObjects;
 
     private string SavePath =>
 #if UNITY_EDITOR
@@ -21,16 +25,30 @@ public class SaveManager : MonoBehaviour
     Application.persistentDataPath + "/save.json";
 #endif
 
-    public void AddHero(HeroData hero)
-    {
-        if (!heroDatas.Contains(hero))
-            heroDatas.Add(hero);
+    private bool isLoaded = false;
 
-        DeleteSaveFile();
-        SaveGame();
+    private void Awake()
+    {
+        
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        LoadGame(); // Load when game starts
+        isLoaded = true;
     }
 
-
+    private void Start()
+    {
+        GameManager.Instance.heroUI.loadGame();
+        GameManager.Instance.heroSelectionForQuestUI.loadGame();
+        GameManager.Instance.HeroSummoner.LoadGame();
+        GameManager.Instance.pannelManager.RestoreHeroSelectionState();
+    }
 
     // ==========================
     // SAVE GAME
@@ -38,23 +56,49 @@ public class SaveManager : MonoBehaviour
     public void SaveGame()
     {
         GameSaveData saveData = new GameSaveData();
-
+        
+// ---- SELECTED HEROES FOR QUEST ----
+        saveData.selectedHeroesForQuest = GameManager.Instance.heroSelectionForQuestUI.SelectedHeroes
+            .Select(h => h.Item1) // take the int (hero ID) only
+            .ToList();
         // ---- HEROES ----
-        saveData.heroes = heroDatas.Select(hero => new HeroSaveData
+        saveData.heroes = heroDatas.Select(hero =>
         {
-            name = hero.name,
-            id = hero.Id,
-            uniqueId = hero.uniqueId,
-            level = hero.level,
-            hitPower = hero.hitPower,
-            hitPerSecond = hero.hitPerSecond,
-            HP = hero.HP,
-            goldPerAttack = hero.goldPerAttack,
-            isHeroSummoned = hero.isHeroSummoned,
-            coolDownTime = hero.coolDownTime
-        }).ToList();
+            var heroObj = GameObject.FindObjectsOfType<Hero>()
+                .FirstOrDefault(h => h.heroData.uniqueId == hero.uniqueId);
 
-        // ---- BUILDINGS ----
+            Vector3 pos = heroObj != null ? heroObj.transform.position : Vector3.zero;
+
+            return new HeroSaveData
+            {
+                name = hero.name,
+                id = hero.Id,
+                uniqueId = hero.uniqueId,
+                level = hero.level,
+                hitPower = hero.hitPower,
+                hitPerSecond = hero.hitPerSecond,
+                HP = hero.HP,
+                goldPerAttack = hero.goldPerAttack,
+                isHeroSummoned = hero.isHeroSummoned,
+                coolDownTime = hero.coolDownTime,
+                position = pos
+            };
+        }).ToList();
+        
+        //Notification
+        // ---- ONGOING QUESTS ----
+        saveData.ongoingQuests = new List<OngoingQuestSaveData>();
+
+// Snapshot the queue without destroying it
+        foreach (var entry in ongoingQuest.OngoingQuests)
+        {
+            saveData.ongoingQuests.Add(new OngoingQuestSaveData
+            {
+                questUniqueId = entry.quest.uniqueId,
+                startTime = entry.startTime.ToString("o") // ISO 8601 UtcNow format
+            });
+        }
+            // ---- BUILDINGS ----
         saveData.buildings = buildingDatas.Select(b => new BuildingSaveData
         {
             buildingID = b.buildingID,
@@ -85,19 +129,57 @@ public class SaveManager : MonoBehaviour
             unlockedHeroID = guildData.unlockedHeroID,
             questCompleteTime = guildData.questCompleteTime
         };
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        // ---- QUESTS ----
         saveData.quests = GameManager.Instance.QuestManager.questData.Select(q => new QuestSaveData
         {
             isCompleted = q.isCompleted,
-            questName = q.questName,
-            //completeTime = q.completeTime
+            questName = q.questName
         }).ToList();
 
+        // ---- SCENE OBJECTS ----
+        saveData.sceneObjects = new List<SceneObjectSaveData>();
+        foreach (var obj in sceneObjects)
+        {
+            
+            if (obj == null) continue;
+            saveData.sceneObjects.Add(new SceneObjectSaveData
+            {
+                objectName = obj.name,
+                position = obj.transform.position,
+                rotation = obj.transform.rotation,
+                scale = obj.transform.localScale,
+                isActive = obj.activeSelf
+            });
+        }
+        string[] tags = { "Heroes"};
+        foreach (var tag in tags)
+        {
+            GameObject[] objects = GameObject.FindGameObjectsWithTag(tag);
 
-        //saveData.intList = intList;
+            foreach (var obj in objects)
+            {
+                if (obj == null) continue;
+
+                saveData.sceneObjects.Add(new SceneObjectSaveData
+                {
+                    objectName = obj.name,
+                    position = obj.transform.position,
+                    rotation = obj.transform.rotation,
+                    scale = obj.transform.localScale,
+                    isActive = obj.activeSelf
+                });
+            }
+        }
+        saveData.lastUpdatedAt = DateTime.UtcNow.ToString("o");
 
         string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(SavePath, json);
+
+        if (Virtuery.PlayFab.GameSaveSyncManager.Instance != null)
+        {
+            Virtuery.PlayFab.GameSaveSyncManager.Instance.OnLocalSave();
+        }
 
         Debug.Log("GAME SAVED");
     }
@@ -116,14 +198,50 @@ public class SaveManager : MonoBehaviour
 
         string json = File.ReadAllText(SavePath);
         GameSaveData saveData = JsonUtility.FromJson<GameSaveData>(json);
+// ---- SELECTED HEROES FOR QUEST ----
+        if (saveData.selectedHeroesForQuest != null && saveData.selectedHeroesForQuest.Count > 0)
+        {
+            GameManager.Instance.heroSelectionForQuestUI.LoadSelectedHeroes(
+                saveData.selectedHeroesForQuest
+            );
+        }
+// ---- ONGOING QUESTS ----
 
+        if (saveData.ongoingQuests != null)
+        {
+            foreach (var saved in saveData.ongoingQuests)
+            {
+                // Find the matching QuestData by uniqueId
+                QuestData quest = GameManager.Instance.QuestManager.questData
+                    .FirstOrDefault(q => q.uniqueId == saved.questUniqueId);
+
+                if (quest == null || quest.isCompleted) continue;
+
+                DateTime startTime = DateTime.Parse(
+                    saved.startTime, 
+                    null, 
+                    System.Globalization.DateTimeStyles.RoundtripKind
+                );
+
+                DateTime endTime = startTime.AddSeconds(quest.completionTime);
+
+                // Already finished while offline
+                if (DateTime.UtcNow >= endTime)
+                {
+                    quest.isCompleted = true;
+                    continue;
+                }
+
+                // Still ongoing — re-enqueue it
+                ongoingQuest.AddQuestUI(quest.uniqueId, quest, startTime);
+            }
+        }
         // ---- HEROES ----
         foreach (var heroSave in saveData.heroes)
         {
-            //var hero = heroDatas.FirstOrDefault(h => h.uniqueId == heroSave.uniqueId);
             HeroData hero = SampleHeroData[heroSave.id];
-
             if (hero == null) continue;
+
             hero.name = heroSave.name;
             hero.uniqueId = heroSave.uniqueId;
             hero.Id = heroSave.id;
@@ -136,11 +254,18 @@ public class SaveManager : MonoBehaviour
             hero.coolDownTime = heroSave.coolDownTime;
 
             heroDatas.Add(hero);
+
+            // Restore hero position
+            var heroObj = GameObject.FindObjectsOfType<Hero>()
+                .FirstOrDefault(h => h.heroData.uniqueId == hero.uniqueId);
+            if (heroObj != null)
+                heroObj.transform.position = heroSave.position;
         }
-        int ind = 0;
+
         // ---- BUILDINGS ----
-        foreach (var buildingSave in saveData.buildings)
+        for (int i = 0; i < saveData.buildings.Count; i++)
         {
+            var buildingSave = saveData.buildings[i];
             var building = buildingDatas.FirstOrDefault(b => b.buildingID == buildingSave.buildingID);
             if (building == null) continue;
 
@@ -157,10 +282,10 @@ public class SaveManager : MonoBehaviour
             if (!building.isUnderUpgrade)
                 building.CompleteUpgrade();
 
-            buildingDatas[ind] = building;
-            ind++;
+            buildingDatas[i] = building;
         }
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+        // ---- QUESTS ----
         for (int i = 0; i < saveData.quests.Count; i++)
         {
             if (saveData.quests[i].isCompleted)
@@ -182,7 +307,18 @@ public class SaveManager : MonoBehaviour
         guildData.unlockedHeroID = saveData.guild.unlockedHeroID;
         guildData.questCompleteTime = saveData.guild.questCompleteTime;
 
-        //intList = saveData.intList;
+        // ---- RESTORE SCENE OBJECTS ----
+        foreach (var objSave in saveData.sceneObjects)
+        {
+            GameObject obj = sceneObjects.FirstOrDefault(o => o.name == objSave.objectName);
+            if (obj != null)
+            {
+                obj.transform.position = objSave.position;
+                obj.transform.rotation = objSave.rotation;
+                obj.transform.localScale = objSave.scale;
+                obj.SetActive(objSave.isActive);
+            }
+        }
 
         Debug.Log("GAME LOADED");
     }
@@ -199,22 +335,34 @@ public class SaveManager : MonoBehaviour
         }
     }
 
-    // =========================================================
-    // INTERNAL SERIALIZABLE CLASSES (INSIDE SAME SCRIPT)
-    // =========================================================
+    private void DeleteSaveFile()
+    {
+        DeleteSave();
+    }
 
+    // ==========================
+    // SERIALIZABLE CLASSES
+    // ==========================
     [Serializable]
-    private class GameSaveData
+    public class GameSaveData
     {
         public List<HeroSaveData> heroes;
         public List<BuildingSaveData> buildings;
         public GuildSaveData guild;
         public List<QuestSaveData> quests;
-        //public List<int> intList;
+        public List<SceneObjectSaveData> sceneObjects;
+        public List<OngoingQuestSaveData> ongoingQuests;
+        public List<int> selectedHeroesForQuest;
+        public string lastUpdatedAt;
     }
-
     [Serializable]
-    private class HeroSaveData
+    public class OngoingQuestSaveData
+    {
+        public int questUniqueId;
+        public string startTime;
+    }
+    [Serializable]
+    public class HeroSaveData
     {
         public string name;
         public int id;
@@ -226,10 +374,11 @@ public class SaveManager : MonoBehaviour
         public float coolDownTime;
         public int goldPerAttack;
         public bool isHeroSummoned;
+        public Vector3 position;
     }
 
     [Serializable]
-    private class BuildingSaveData
+    public class BuildingSaveData
     {
         public int buildingID;
         public int buildingLevel;
@@ -244,7 +393,7 @@ public class SaveManager : MonoBehaviour
     }
 
     [Serializable]
-    private class GuildSaveData
+    public class GuildSaveData
     {
         public int guildLevel;
         public int currentExperience;
@@ -261,41 +410,31 @@ public class SaveManager : MonoBehaviour
     }
 
     [Serializable]
-    private class QuestSaveData
+    public class QuestSaveData
     {
         public string questName;
         public bool isCompleted;
         public long completeTime;
     }
 
-
-
-    private bool isLoaded = false;
-
-    private void Awake()
+    [Serializable]
+    public class SceneObjectSaveData
     {
-        LoadGame(); // Load when game starts
-        isLoaded = true;
-        
+        public string objectName;
+        public Vector3 position;
+        public Quaternion rotation;
+        public Vector3 scale;
+        public bool isActive;
     }
 
-    private void Start()
-    {
-        GameManager.Instance.heroUI.loadGame();
-        GameManager.Instance.heroSelectionForQuestUI.loadGame();
-        GameManager.Instance.HeroSummoner.LoadGame();
-    }
     // ==========================
     // ANDROID LIFECYCLE
     // ==========================
-
     private void OnApplicationPause(bool pauseStatus)
-
     {
         if (pauseStatus)
         {
             Debug.Log("App Paused → Saving");
-            DeleteSaveFile();
             SaveGame();
         }
         else if(!isLoaded)
@@ -309,20 +448,6 @@ public class SaveManager : MonoBehaviour
     private void OnApplicationQuit()
     {
         Debug.Log("App Quit → Saving");
-        DeleteSaveFile();
         SaveGame();
-    }
-
-    private void DeleteSaveFile()
-    {
-        if (File.Exists(SavePath))
-        {
-            File.Delete(SavePath);
-            Debug.Log("Save file deleted: " + SavePath);
-        }
-        else
-        {
-            Debug.Log("No save file found to delete.");
-        }
     }
 }

@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
   m_Name: Quest1 16
   m_EditorClassIdentifier: 
+  uniqueId: 15
   questName: Nightfall's Wrath
   questType: 0
   questDifficulty: 1
@@ -36,6 +37,8 @@ MonoBehaviour:
   hitPower: 66
   HP: 320
   enemyCount: 7
+  willWin: 1
   completionTime: 60
   isCompleted: 0
+  isSelected: 0
   slots: 0
