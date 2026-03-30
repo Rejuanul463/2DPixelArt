@@ -288,7 +288,11 @@ public class PannelManager : MonoBehaviour
         summonButton.onClick.AddListener(() => activePannel(4));
         blackSmithButton.onClick.AddListener(() => activePannel(5));
         pauseButton.onClick.AddListener(() => activePannel(6));
-        heroSelectionButton.onClick.AddListener(() => activePannel(7));
+        heroSelectionButton.onClick.AddListener(() => 
+        { 
+            activePannel(7); 
+            GameManager.Instance.heroSelectionForQuestUI.ClearChildren();
+        });
 
         summonHeroButton.onClick.AddListener(() => summonHeroes());
         GameManager.Instance.UIManager.play.onClick.AddListener(() => deactivePannel());
@@ -383,7 +387,7 @@ public class PannelManager : MonoBehaviour
             questData.isCompleted = true;
             GameManager.Instance.GuildManager.Gold += questData.goldRewardBase;
             GameManager.Instance.GuildManager.Experience += questData.experienceReward;
-
+            GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(heroesForQuest);
             foreach (int i in heroesForQuest)
             {
                 Debug.Log("hero " + i);

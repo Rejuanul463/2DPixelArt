@@ -213,4 +213,24 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         TextPanel.SetActive(true);
         GameManager.Instance.pannelManager.GoQuest(count, selectedHeroes);
     }
+
+    public void ClearChildren()
+    {
+        foreach (Transform child in SelectedButtonContainer.transform)
+        {
+            GameObject.Destroy(child.gameObject);
+        }
+        count = 0;
+    }
+
+    public void RestoreButtons(List<int> selectedHeroIndices)
+    {
+        foreach (int index in selectedHeroIndices)
+        {
+            if (index >= 0 && index < itemButtons.Count)
+            {
+                itemButtons[index].interactable = true;
+            }
+        }
+    }
 }
