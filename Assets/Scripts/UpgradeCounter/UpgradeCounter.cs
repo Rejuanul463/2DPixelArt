@@ -60,7 +60,7 @@ public class UpgradeCounter : MonoBehaviour
         
         string savedTime = PlayerPrefs.GetString(QUEST_END);
         endTime = DateTime.Parse(savedTime, null, System.Globalization.DateTimeStyles.RoundtripKind);
-        TimeSpan remaining =endTime -  DateTime.UtcNow;
+        TimeSpan remaining = endTime -  DateTime.UtcNow;
 
         if (remaining.TotalSeconds <= 0)
         {

@@ -210,6 +210,8 @@ public class HeroSelectionForQuestUI : MonoBehaviour
 
     private void goQuest()
     {
+        SaveManager.Instance.SaveGame();
+        // SaveManager.Instance.loadGame();
         TextPanel.SetActive(true);
         GameManager.Instance.pannelManager.GoQuest(count, selectedHeroes);
     }
@@ -221,6 +223,7 @@ public class HeroSelectionForQuestUI : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
         count = 0;
+        selectedHeroes.Clear();
     }
 
     public void RestoreButtons(List<int> selectedHeroIndices)

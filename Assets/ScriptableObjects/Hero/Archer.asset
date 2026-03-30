@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Avery Gonzalez
+  m_Name: Layla Miller
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
   heroSprite:
@@ -32,5 +32,5 @@ MonoBehaviour:
   coolDownTime: 60
   goldPerAttack: 8
   isHeroSummoned: 1
-  xp: 517
-  xpForNextLevel: 572
+  xp: 816
+  xpForNextLevel: 1411

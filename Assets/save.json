@@ -1,7 +1,7 @@
 {
     "heroes": [
         {
-            "name": "Emily Walker",
+            "name": "Isabella Hall",
             "id": 5,
             "uniqueId": 5,
             "level": 1,
@@ -12,13 +12,13 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -49.524017333984378,
-                "y": -23.714977264404298,
-                "z": -0.000008481133590976242
+                "x": -20.253862380981447,
+                "y": -5.454836845397949,
+                "z": -0.0000019508033801685089
             }
         },
         {
-            "name": "Avery Gonzalez",
+            "name": "Layla Miller",
             "id": 1,
             "uniqueId": 1,
             "level": 3,
@@ -35,7 +35,7 @@
             }
         },
         {
-            "name": "James Ramirez",
+            "name": "Noah Flores",
             "id": 2,
             "uniqueId": 2,
             "level": 4,
@@ -52,7 +52,7 @@
             }
         },
         {
-            "name": "Mila Wilson",
+            "name": "Lily Scott",
             "id": 3,
             "uniqueId": 3,
             "level": 1,
@@ -69,13 +69,13 @@
             }
         },
         {
-            "name": "Isaac Adams",
+            "name": "Wyatt Sanchez",
             "id": 4,
             "uniqueId": 4,
-            "level": 2,
+            "level": 3,
             "hitPerSecond": 1.0,
-            "hitPower": 109.0,
-            "HP": 439.0,
+            "hitPower": 141.6999969482422,
+            "HP": 570.699951171875,
             "coolDownTime": 140.0,
             "goldPerAttack": 20,
             "isHeroSummoned": true,
@@ -86,7 +86,7 @@
             }
         },
         {
-            "name": "Emily Walker",
+            "name": "Isabella Hall",
             "id": 5,
             "uniqueId": 5,
             "level": 1,
@@ -97,9 +97,9 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -49.524017333984378,
-                "y": -23.714977264404298,
-                "z": -0.000008481133590976242
+                "x": -20.253862380981447,
+                "y": -5.454836845397949,
+                "z": -0.0000019508033801685089
             }
         }
     ],
@@ -166,22 +166,22 @@
         },
         {
             "buildingID": 1,
-            "buildingLevel": 1,
+            "buildingLevel": 2,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 1,
-            "upgradeStartTime": 1773004732307,
-            "upgradeCostGold": 150,
-            "upgradeCostWood": 150,
-            "upgradeCostStone": 150,
-            "xpBoost": 45.0
+            "upgradeStartTime": 1774903644391,
+            "upgradeCostGold": 225,
+            "upgradeCostWood": 225,
+            "upgradeCostStone": 225,
+            "xpBoost": 67.0
         }
     ],
     "guild": {
-        "guildLevel": 134,
-        "currentExperience": 24855,
+        "guildLevel": 141,
+        "currentExperience": 26045,
         "experienceToNextLevel": 0,
-        "gold": 1008155,
+        "gold": 1008457,
         "unlockedHeroID": [
             true,
             true,
@@ -190,10 +190,10 @@
             true,
             true
         ],
-        "maxUnlockableHeroID": 7,
+        "maxUnlockableHeroID": 8,
         "gems": 0,
-        "woods": 3349,
-        "stones": 3439,
+        "woods": 3199,
+        "stones": 3289,
         "BlackSmithLevel": 1,
         "HeroSummonerLevel": 1,
         "questCompleteTime": []
@@ -202,111 +202,152 @@
         {
             "questName": "Searing For Embers",
             "isCompleted": true,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": " The Moonlit Rebellion",
             "isCompleted": true,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "Searing Embers of the Void",
             "isCompleted": true,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "The Moonlit Rebellion",
             "isCompleted": true,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "The Starlit Rites",
             "isCompleted": true,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": false,
-            "completeTime": 0
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": " Echoes of the Lost Empire",
-            "isCompleted": false,
-            "completeTime": 0
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "A Dance with Shadows",
-            "isCompleted": false,
-            "completeTime": 0
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": [
+                1,
+                2
+            ]
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": false,
-            "completeTime": 0
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": [
+                1,
+                2
+            ]
         },
         {
             "questName": "The Ironfang Wars",
-            "isCompleted": false,
-            "completeTime": 0
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": [
+                1,
+                2,
+                3
+            ]
         },
         {
             "questName": " Frostbound Covenant",
-            "isCompleted": false,
-            "completeTime": 0
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": [
+                1,
+                2,
+                3
+            ]
         },
         {
             "questName": "The Starlit Rites",
-            "isCompleted": false,
-            "completeTime": 0
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": [
+                1,
+                2
+            ]
         },
         {
             "questName": "Frostbound Covenant",
-            "isCompleted": false,
-            "completeTime": 0
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": [
+                1,
+                2,
+                3
+            ]
         },
         {
             "questName": "A Dance with Shadows",
             "isCompleted": false,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "Nightfall's Wrath",
             "isCompleted": false,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "Nightfall's Wrath",
             "isCompleted": false,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "Nightfall's Wrath",
             "isCompleted": false,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": " Frostbound Covenant",
             "isCompleted": false,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "The Moonlit Rebellion",
             "isCompleted": false,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         },
         {
             "questName": "Echoes of the Lost Empire",
             "isCompleted": false,
-            "completeTime": 0
+            "completeTime": 0,
+            "heroesForQuest": []
         }
     ],
     "sceneObjects": [
         {
             "objectName": "Valkyri(Clone)",
             "position": {
-                "x": -43.191593170166019,
-                "y": 38.557334899902347,
-                "z": 0.00001378914930683095
+                "x": 29.35165786743164,
+                "y": 0.25000011920928957,
+                "z": 8.940695295223122e-8
             },
             "rotation": {
                 "x": 0.0,
@@ -324,9 +365,9 @@
         {
             "objectName": "Valkyri",
             "position": {
-                "x": -43.40159606933594,
-                "y": 40.10733413696289,
-                "z": -0.028123637661337854
+                "x": 29.141653060913087,
+                "y": 1.8000000715255738,
+                "z": -0.028137337416410447
             },
             "rotation": {
                 "x": 0.0,
@@ -344,9 +385,9 @@
         {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": 22.19186019897461,
-                "y": 18.315895080566408,
-                "z": 0.000006550249509018613
+                "x": 18.311294555664064,
+                "y": 20.28286361694336,
+                "z": 0.000007253720468725078
             },
             "rotation": {
                 "x": 0.0,
@@ -364,9 +405,9 @@
         {
             "objectName": "Giant(Clone)",
             "position": {
-                "x": 54.70016098022461,
-                "y": 51.10845184326172,
-                "z": 0.00001827779306040611
+                "x": 26.319482803344728,
+                "y": 10.454728126525879,
+                "z": 0.000003738904069905402
             },
             "rotation": {
                 "x": 0.0,
@@ -384,9 +425,9 @@
         {
             "objectName": "Witch(Clone)",
             "position": {
-                "x": -55.56302261352539,
-                "y": 25.17343521118164,
-                "z": 0.000009002688784676138
+                "x": 26.319482803344728,
+                "y": 10.454728126525879,
+                "z": 0.000003738904069905402
             },
             "rotation": {
                 "x": 0.0,
@@ -404,9 +445,9 @@
         {
             "objectName": "Witch",
             "position": {
-                "x": -55.77302169799805,
-                "y": 26.633434295654298,
-                "z": -0.028128424659371377
+                "x": 26.10948371887207,
+                "y": 11.914728164672852,
+                "z": -0.028133688494563104
             },
             "rotation": {
                 "x": 0.0,
@@ -424,9 +465,9 @@
         {
             "objectName": "Knight(Clone)",
             "position": {
-                "x": 32.46611022949219,
-                "y": 31.44655990600586,
-                "z": 0.000011246161193412263
+                "x": 26.319482803344728,
+                "y": 10.454728126525879,
+                "z": 0.000003738904069905402
             },
             "rotation": {
                 "x": 0.0,
@@ -444,9 +485,9 @@
         {
             "objectName": "Knight",
             "position": {
-                "x": 32.46540451049805,
-                "y": 33.2365608215332,
-                "z": -0.028126180171966554
+                "x": 26.31877899169922,
+                "y": 12.244728088378907,
+                "z": -0.028133688494563104
             },
             "rotation": {
                 "x": 0.0,
@@ -464,9 +505,9 @@
         {
             "objectName": "Valkyri(Clone)",
             "position": {
-                "x": -49.524017333984378,
-                "y": -23.714977264404298,
-                "z": -0.000008481133590976242
+                "x": -20.253862380981447,
+                "y": -5.454836845397949,
+                "z": -0.0000019508033801685089
             },
             "rotation": {
                 "x": 0.0,
@@ -484,9 +525,9 @@
         {
             "objectName": "Valkyri",
             "position": {
-                "x": -49.7340202331543,
-                "y": -22.16497802734375,
-                "z": -0.028145907446742059
+                "x": -20.4638671875,
+                "y": -3.904836893081665,
+                "z": -0.028139377012848855
             },
             "rotation": {
                 "x": 0.0,
@@ -504,9 +545,9 @@
         {
             "objectName": "Archer",
             "position": {
-                "x": 22.251859664916993,
-                "y": 19.73589515686035,
-                "z": -0.028130875900387765
+                "x": 18.371294021606447,
+                "y": 21.702863693237306,
+                "z": -0.028130173683166505
             },
             "rotation": {
                 "x": 0.0,
@@ -524,9 +565,9 @@
         {
             "objectName": "Giant",
             "position": {
-                "x": 54.69945526123047,
-                "y": 52.908451080322269,
-                "z": -0.028119148686528207
+                "x": 26.31877899169922,
+                "y": 12.254728317260743,
+                "z": -0.028133688494563104
             },
             "rotation": {
                 "x": 0.0,
@@ -542,14 +583,10 @@
             "isActive": true
         }
     ],
-    "ongoingQuests": [
-        {
-            "questUniqueId": 5,
-            "startTime": "2026-03-30T18:02:53.6724740Z"
-        }
-    ],
+    "ongoingQuests": [],
     "selectedHeroesForQuest": [
         1,
-        2
+        2,
+        3
     ]
 }

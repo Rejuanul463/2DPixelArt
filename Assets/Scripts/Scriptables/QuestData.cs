@@ -1,11 +1,13 @@
 
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using static QuestData;
 
 [CreateAssetMenu(fileName = "QuestData", menuName = "Scriptable Objects/QuestData")]
 public class QuestData : ScriptableObject
 {
+    public List<int> heroesForQuest = new List<int>();
     public enum QuestType { Main, Side, Daily }
     public enum QuestDifficulty { Easy, Medium, Hard, SuperHard, Epic }
 

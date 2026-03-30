@@ -117,7 +117,8 @@ public class SaveManager : MonoBehaviour
             saveData.ongoingQuests.Add(new OngoingQuestSaveData
             {
                 questUniqueId = entry.quest.uniqueId,
-                startTime = entry.startTime.ToString("o")
+                startTime = entry.startTime.ToString("o"),
+                heroesForQuest = entry.quest.heroesForQuest
             });
         }
 
@@ -157,7 +158,8 @@ public class SaveManager : MonoBehaviour
         saveData.quests = GameManager.Instance.QuestManager.questData.Select(q => new QuestSaveData
         {
             isCompleted = q.isCompleted,
-            questName = q.questName
+            questName = q.questName,
+            heroesForQuest = q.heroesForQuest, // Store hero indices for quest tracking
         }).ToList();
 
         // ---- SCENE OBJECTS ----
@@ -226,7 +228,7 @@ public class SaveManager : MonoBehaviour
             {
                 QuestData quest = GameManager.Instance.QuestManager.questData
                     .FirstOrDefault(q => q.uniqueId == saved.questUniqueId);
-
+                quest.heroesForQuest = saved.heroesForQuest; // Restore hero indices for quest tracking
                 if (quest == null || quest.isCompleted) continue;
 
                 DateTime startTime = DateTime.Parse(
@@ -239,6 +241,7 @@ public class SaveManager : MonoBehaviour
                 if (DateTime.UtcNow >= endTime)
                 {
                     quest.isCompleted = true;
+                    GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest); // Unlock buttons since quest is done
                     continue;
                 }
 
@@ -297,6 +300,7 @@ public class SaveManager : MonoBehaviour
         // ---- QUESTS ----
         for (int i = 0; i < saveData.quests.Count; i++)
         {
+            GameManager.Instance.QuestManager.questData[i].heroesForQuest = saveData.quests[i].heroesForQuest; // Restore hero indices for quest tracking
             if (saveData.quests[i].isCompleted)
                 GameManager.Instance.QuestManager.questData[i].CompleteTask();
         }
@@ -364,6 +368,7 @@ public class SaveManager : MonoBehaviour
     {
         public int questUniqueId;
         public string startTime;
+        public List<int> heroesForQuest; // Store hero indices for quest tracking
     }
 
     [Serializable]
@@ -420,6 +425,7 @@ public class SaveManager : MonoBehaviour
         public string questName;
         public bool isCompleted;
         public long completeTime;
+        public List<int> heroesForQuest; // Store hero indices for quest tracking
     }
 
     [Serializable]

@@ -356,6 +356,7 @@ public class PannelManager : MonoBehaviour
         simulationQuestData.startTime = startTime;
         simulationQuestData.willWin = simulationQuestData.isCompleted;
         simulationQuestData.isCompleted = false;
+        simulationQuestData.heroesForQuest = heroesForQuest.ConvertAll(h => h.Item1); // Store only hero indices for quest tracking
 
         gotoQuestPrefab.SetActive(false);
 
@@ -387,7 +388,7 @@ public class PannelManager : MonoBehaviour
             questData.isCompleted = true;
             GameManager.Instance.GuildManager.Gold += questData.goldRewardBase;
             GameManager.Instance.GuildManager.Experience += questData.experienceReward;
-            GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(heroesForQuest);
+            
             foreach (int i in heroesForQuest)
             {
                 Debug.Log("hero " + i);
@@ -402,9 +403,10 @@ public class PannelManager : MonoBehaviour
             _upgradeCounter.QuestUpdate.text = "You Have Lost The Quest!";
             Debug.Log("loses");
         }
-
+        GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(questData.heroesForQuest);
+        
         // ✅ Unlock all heroes in HeroSelectionForQuestUI now that quest is done
-        GameManager.Instance.heroSelectionForQuestUI.OnQuestComplete();
+        // GameManager.Instance.heroSelectionForQuestUI.OnQuestComplete();
 
         // Clear PannelManager's own tracking too
         selectedHeroesForQuest.Clear();
