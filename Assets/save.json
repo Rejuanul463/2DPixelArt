@@ -1,9 +1,9 @@
 {
     "heroes": [
         {
-            "name": "Emily Jackson",
+            "name": "Emma Clark",
             "id": 5,
-            "uniqueId": 8,
+            "uniqueId": 5,
             "level": 1,
             "hitPerSecond": 4.0,
             "hitPower": 105.0,
@@ -12,15 +12,15 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -10.853020668029786,
-                "y": -22.117984771728517,
-                "z": -0.000007910009117040318
+                "x": 2.4400033950805666,
+                "y": -57.26552200317383,
+                "z": -0.000020479734303080477
             }
         },
         {
-            "name": "Elizabeth Nelson",
+            "name": "Layla Sanchez",
             "id": 1,
-            "uniqueId": 4,
+            "uniqueId": 1,
             "level": 3,
             "hitPerSecond": 4.0,
             "hitPower": 313.0,
@@ -35,9 +35,9 @@
             }
         },
         {
-            "name": "Benjamin Lewis",
+            "name": "Aaron Taylor",
             "id": 2,
-            "uniqueId": 5,
+            "uniqueId": 2,
             "level": 4,
             "hitPerSecond": 0.5,
             "hitPower": 123.0,
@@ -52,60 +52,9 @@
             }
         },
         {
-            "name": "Emily Jackson",
-            "id": 5,
-            "uniqueId": 8,
-            "level": 1,
-            "hitPerSecond": 4.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 200.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -10.853020668029786,
-                "y": -22.117984771728517,
-                "z": -0.000007910009117040318
-            }
-        },
-        {
-            "name": "Elizabeth Nelson",
-            "id": 1,
-            "uniqueId": 4,
-            "level": 3,
-            "hitPerSecond": 4.0,
-            "hitPower": 313.0,
-            "HP": 150.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 8,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Benjamin Lewis",
-            "id": 2,
-            "uniqueId": 5,
-            "level": 4,
-            "hitPerSecond": 0.5,
-            "hitPower": 123.0,
-            "HP": 206.0,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 10,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Eleanor Martin",
+            "name": "Eleanor Thomas",
             "id": 3,
-            "uniqueId": 6,
+            "uniqueId": 3,
             "level": 1,
             "hitPerSecond": 3.0,
             "hitPower": 180.82998657226563,
@@ -120,9 +69,9 @@
             }
         },
         {
-            "name": "Elijah Thompson",
+            "name": "Mason Mitchell",
             "id": 4,
-            "uniqueId": 7,
+            "uniqueId": 4,
             "level": 2,
             "hitPerSecond": 1.0,
             "hitPower": 109.0,
@@ -137,9 +86,9 @@
             }
         },
         {
-            "name": "Emily Jackson",
+            "name": "Emma Clark",
             "id": 5,
-            "uniqueId": 8,
+            "uniqueId": 5,
             "level": 1,
             "hitPerSecond": 4.0,
             "hitPower": 105.0,
@@ -148,9 +97,9 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -10.853020668029786,
-                "y": -22.117984771728517,
-                "z": -0.000007910009117040318
+                "x": 2.4400033950805666,
+                "y": -57.26552200317383,
+                "z": -0.000020479734303080477
             }
         }
     ],
@@ -232,7 +181,7 @@
         "guildLevel": 128,
         "currentExperience": 24215,
         "experienceToNextLevel": 0,
-        "gold": 1010982,
+        "gold": 1008064,
         "unlockedHeroID": [
             true,
             true,
@@ -252,17 +201,17 @@
     "quests": [
         {
             "questName": "Searing For Embers",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
             "questName": " The Moonlit Rebellion",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
@@ -272,7 +221,7 @@
         },
         {
             "questName": "The Starlit Rites",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
@@ -282,7 +231,7 @@
         },
         {
             "questName": " Echoes of the Lost Empire",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
@@ -292,7 +241,7 @@
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0
         },
         {
@@ -355,9 +304,9 @@
         {
             "objectName": "Valkyri(Clone)",
             "position": {
-                "x": 20.547304153442384,
-                "y": 27.31960105895996,
-                "z": 0.000009770249562279787
+                "x": 26.274003982543947,
+                "y": 10.250005722045899,
+                "z": 0.0000036656742850027514
             },
             "rotation": {
                 "x": 0.0,
@@ -375,9 +324,9 @@
         {
             "objectName": "Valkyri",
             "position": {
-                "x": 20.337299346923829,
-                "y": 28.869600296020509,
-                "z": -0.028127657249569894
+                "x": 26.06399917602539,
+                "y": 11.800005912780762,
+                "z": -0.028133761137723924
             },
             "rotation": {
                 "x": 0.0,
@@ -395,9 +344,9 @@
         {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": 27.942218780517579,
-                "y": 8.100020408630371,
-                "z": 0.0000028967929210921285
+                "x": 43.233970642089847,
+                "y": 47.30448532104492,
+                "z": 0.000016917418179218657
             },
             "rotation": {
                 "x": 0.0,
@@ -415,89 +364,9 @@
         {
             "objectName": "Giant(Clone)",
             "position": {
-                "x": -28.865234375,
-                "y": -5.085534572601318,
-                "z": -0.0000018187296291216626
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Valkyri(Clone)",
-            "position": {
-                "x": 32.94280242919922,
-                "y": 15.753116607666016,
-                "z": 0.000005633757609757595
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Valkyri",
-            "position": {
-                "x": 32.7327995300293,
-                "y": 17.303115844726564,
-                "z": -0.028131792321801187
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.6000000238418579,
-                "y": 0.6000000238418579,
-                "z": 0.6000000238418579
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Archer(Clone)",
-            "position": {
-                "x": 23.356475830078126,
-                "y": 4.963245391845703,
-                "z": 0.0000017749948710843456
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Giant(Clone)",
-            "position": {
-                "x": 24.57114601135254,
-                "y": 25.381072998046876,
-                "z": 0.000009076983587874565
+                "x": 34.550559997558597,
+                "y": 10.250005722045899,
+                "z": 0.000003665691110654734
             },
             "rotation": {
                 "x": 0.0,
@@ -515,9 +384,9 @@
         {
             "objectName": "Witch(Clone)",
             "position": {
-                "x": -19.538101196289064,
-                "y": 24.51112174987793,
-                "z": 0.000008765861821302678
+                "x": 27.043581008911134,
+                "y": 7.520925998687744,
+                "z": 0.000002689679604372941
             },
             "rotation": {
                 "x": 0.0,
@@ -535,9 +404,9 @@
         {
             "objectName": "Witch",
             "position": {
-                "x": -19.74810028076172,
-                "y": 25.97112274169922,
-                "z": -0.02812866121530533
+                "x": 26.833581924438478,
+                "y": 8.980926513671875,
+                "z": -0.02813473716378212
             },
             "rotation": {
                 "x": 0.0,
@@ -555,9 +424,9 @@
         {
             "objectName": "Knight(Clone)",
             "position": {
-                "x": -10.853020668029786,
-                "y": -22.117984771728517,
-                "z": -0.000007910009117040318
+                "x": 28.6433048248291,
+                "y": -51.77228546142578,
+                "z": -0.00001851521483331453
             },
             "rotation": {
                 "x": 0.0,
@@ -575,9 +444,9 @@
         {
             "objectName": "Knight",
             "position": {
-                "x": -10.85372543334961,
-                "y": -20.327983856201173,
-                "z": -0.028145337477326394
+                "x": 28.642601013183595,
+                "y": -49.98228454589844,
+                "z": -0.028155941516160966
             },
             "rotation": {
                 "x": 0.0,
@@ -595,9 +464,9 @@
         {
             "objectName": "Valkyri(Clone)",
             "position": {
-                "x": -10.853020668029786,
-                "y": -22.117984771728517,
-                "z": -0.000007910009117040318
+                "x": 2.4400033950805666,
+                "y": -57.26552200317383,
+                "z": -0.000020479734303080477
             },
             "rotation": {
                 "x": 0.0,
@@ -615,9 +484,9 @@
         {
             "objectName": "Valkyri",
             "position": {
-                "x": -11.063024520874024,
-                "y": -20.56798553466797,
-                "z": -0.028145337477326394
+                "x": 2.22999906539917,
+                "y": -55.71552276611328,
+                "z": -0.028157906606793405
             },
             "rotation": {
                 "x": 0.0,
@@ -635,9 +504,9 @@
         {
             "objectName": "Archer",
             "position": {
-                "x": 28.00221824645996,
-                "y": 9.520020484924317,
-                "z": -0.028134530410170556
+                "x": 43.29397201538086,
+                "y": 48.724483489990237,
+                "z": -0.028120510280132295
             },
             "rotation": {
                 "x": 0.0,
@@ -655,49 +524,9 @@
         {
             "objectName": "Giant",
             "position": {
-                "x": -28.865938186645509,
-                "y": -3.285534620285034,
-                "z": -0.02813924476504326
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.699999988079071,
-                "y": 0.699999988079071,
-                "z": 0.699999988079071
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Archer",
-            "position": {
-                "x": 23.416475296020509,
-                "y": 6.383245468139648,
-                "z": -0.028135651722550393
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.6000000238418579,
-                "y": 0.6000000238418579,
-                "z": 0.6000000238418579
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Giant",
-            "position": {
-                "x": 24.57044219970703,
-                "y": 27.181072235107423,
-                "z": -0.028128350153565408
+                "x": 34.54985427856445,
+                "y": 12.050005912780762,
+                "z": -0.028133761137723924
             },
             "rotation": {
                 "x": 0.0,
@@ -715,12 +544,12 @@
     ],
     "ongoingQuests": [
         {
-            "questUniqueId": 0,
-            "startTime": "2026-03-30T07:12:26.5527613Z"
+            "questUniqueId": 3,
+            "startTime": "2026-03-30T07:19:21.1000735Z"
         }
     ],
     "selectedHeroesForQuest": [
-        5,
-        4
+        1,
+        0
     ]
 }
