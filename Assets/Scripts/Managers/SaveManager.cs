@@ -300,7 +300,7 @@ public class SaveManager : MonoBehaviour
         // ---- QUESTS ----
         for (int i = 0; i < saveData.quests.Count; i++)
         {
-            GameManager.Instance.QuestManager.questData[i].heroesForQuest = saveData.quests[i].heroesForQuest; // Restore hero indices for quest tracking
+            // GameManager.Instance.QuestManager.questData[i].heroesForQuest = saveData.quests[i].heroesForQuest; // Restore hero indices for quest tracking
             if (saveData.quests[i].isCompleted)
                 GameManager.Instance.QuestManager.questData[i].CompleteTask();
         }

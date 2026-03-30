@@ -1,9 +1,9 @@
 {
     "heroes": [
         {
-            "name": "Isabella Hall",
+            "name": "Amelia Thompson",
             "id": 5,
-            "uniqueId": 5,
+            "uniqueId": 4,
             "level": 1,
             "hitPerSecond": 4.0,
             "hitPower": 105.0,
@@ -12,13 +12,13 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -20.253862380981447,
-                "y": -5.454836845397949,
-                "z": -0.0000019508033801685089
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
             }
         },
         {
-            "name": "Layla Miller",
+            "name": "Hannah King",
             "id": 1,
             "uniqueId": 1,
             "level": 3,
@@ -35,7 +35,7 @@
             }
         },
         {
-            "name": "Noah Flores",
+            "name": "Isaac King",
             "id": 2,
             "uniqueId": 2,
             "level": 4,
@@ -52,7 +52,7 @@
             }
         },
         {
-            "name": "Lily Scott",
+            "name": "Charlotte Martinez",
             "id": 3,
             "uniqueId": 3,
             "level": 1,
@@ -69,26 +69,9 @@
             }
         },
         {
-            "name": "Wyatt Sanchez",
-            "id": 4,
-            "uniqueId": 4,
-            "level": 3,
-            "hitPerSecond": 1.0,
-            "hitPower": 141.6999969482422,
-            "HP": 570.699951171875,
-            "coolDownTime": 140.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Isabella Hall",
+            "name": "Amelia Thompson",
             "id": 5,
-            "uniqueId": 5,
+            "uniqueId": 4,
             "level": 1,
             "hitPerSecond": 4.0,
             "hitPower": 105.0,
@@ -97,9 +80,26 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -20.253862380981447,
-                "y": -5.454836845397949,
-                "z": -0.0000019508033801685089
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0
+            }
+        },
+        {
+            "name": "David Young",
+            "id": 4,
+            "uniqueId": 5,
+            "level": 3,
+            "hitPerSecond": 1.0,
+            "hitPower": 141.6999969482422,
+            "HP": 570.699951171875,
+            "coolDownTime": 140.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -43.997886657714847,
+                "y": 18.687904357910158,
+                "z": 0.0000066833245000452738
             }
         }
     ],
@@ -178,10 +178,10 @@
         }
     ],
     "guild": {
-        "guildLevel": 141,
-        "currentExperience": 26045,
+        "guildLevel": 145,
+        "currentExperience": 26295,
         "experienceToNextLevel": 0,
-        "gold": 1008457,
+        "gold": 1008368,
         "unlockedHeroID": [
             true,
             true,
@@ -203,51 +203,72 @@
             "questName": "Searing For Embers",
             "isCompleted": true,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                1,
+                2
+            ]
         },
         {
             "questName": " The Moonlit Rebellion",
             "isCompleted": true,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                3,
+                4
+            ]
         },
         {
             "questName": "Searing Embers of the Void",
             "isCompleted": true,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                1,
+                2
+            ]
         },
         {
             "questName": "The Moonlit Rebellion",
             "isCompleted": true,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                1,
+                2
+            ]
         },
         {
             "questName": "The Starlit Rites",
             "isCompleted": true,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                3,
+                4
+            ]
         },
         {
             "questName": "The Moonlit Rebellion",
             "isCompleted": true,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                3,
+                4
+            ]
         },
         {
             "questName": " Echoes of the Lost Empire",
             "isCompleted": true,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                1,
+                2
+            ]
         },
         {
             "questName": "A Dance with Shadows",
             "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": [
-                1,
-                2
+                3,
+                4
             ]
         },
         {
@@ -256,12 +277,13 @@
             "completeTime": 0,
             "heroesForQuest": [
                 1,
-                2
+                2,
+                3
             ]
         },
         {
             "questName": "The Ironfang Wars",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -271,7 +293,7 @@
         },
         {
             "questName": " Frostbound Covenant",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -281,7 +303,7 @@
         },
         {
             "questName": "The Starlit Rites",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -290,7 +312,7 @@
         },
         {
             "questName": "Frostbound Covenant",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -302,7 +324,11 @@
             "questName": "A Dance with Shadows",
             "isCompleted": false,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                3,
+                4,
+                5
+            ]
         },
         {
             "questName": "Nightfall's Wrath",
@@ -345,9 +371,9 @@
         {
             "objectName": "Valkyri(Clone)",
             "position": {
-                "x": 29.35165786743164,
-                "y": 0.25000011920928957,
-                "z": 8.940695295223122e-8
+                "x": 38.40235900878906,
+                "y": -45.25934982299805,
+                "z": -0.000016185984350158833
             },
             "rotation": {
                 "x": 0.0,
@@ -363,31 +389,11 @@
             "isActive": true
         },
         {
-            "objectName": "Valkyri",
-            "position": {
-                "x": 29.141653060913087,
-                "y": 1.8000000715255738,
-                "z": -0.028137337416410447
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.6000000238418579,
-                "y": 0.6000000238418579,
-                "z": 0.6000000238418579
-            },
-            "isActive": true
-        },
-        {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": 18.311294555664064,
-                "y": 20.28286361694336,
-                "z": 0.000007253720468725078
+                "x": 29.189950942993165,
+                "y": 46.254058837890628,
+                "z": 0.000016541729564778507
             },
             "rotation": {
                 "x": 0.0,
@@ -405,9 +411,9 @@
         {
             "objectName": "Giant(Clone)",
             "position": {
-                "x": 26.319482803344728,
-                "y": 10.454728126525879,
-                "z": 0.000003738904069905402
+                "x": 2.4400136470794679,
+                "y": -47.53162384033203,
+                "z": -0.000016998632418108173
             },
             "rotation": {
                 "x": 0.0,
@@ -425,9 +431,9 @@
         {
             "objectName": "Witch(Clone)",
             "position": {
-                "x": 26.319482803344728,
-                "y": 10.454728126525879,
-                "z": 0.000003738904069905402
+                "x": -13.551373481750489,
+                "y": 14.291670799255371,
+                "z": 0.00000511108510181657
             },
             "rotation": {
                 "x": 0.0,
@@ -439,75 +445,15 @@
                 "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Witch",
-            "position": {
-                "x": 26.10948371887207,
-                "y": 11.914728164672852,
-                "z": -0.028133688494563104
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.27000001072883608,
-                "y": 0.27000001072883608,
-                "z": 0.27000001072883608
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Knight(Clone)",
-            "position": {
-                "x": 26.319482803344728,
-                "y": 10.454728126525879,
-                "z": 0.000003738904069905402
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Knight",
-            "position": {
-                "x": 26.31877899169922,
-                "y": 12.244728088378907,
-                "z": -0.028133688494563104
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.75,
-                "y": 0.75,
-                "z": 0.75
             },
             "isActive": true
         },
         {
             "objectName": "Valkyri(Clone)",
             "position": {
-                "x": -20.253862380981447,
-                "y": -5.454836845397949,
-                "z": -0.0000019508033801685089
+                "x": 36.97526931762695,
+                "y": -47.09550476074219,
+                "z": -0.000016842643162817694
             },
             "rotation": {
                 "x": 0.0,
@@ -523,11 +469,11 @@
             "isActive": true
         },
         {
-            "objectName": "Valkyri",
+            "objectName": "Knight(Clone)",
             "position": {
-                "x": -20.4638671875,
-                "y": -3.904836893081665,
-                "z": -0.028139377012848855
+                "x": -43.997886657714847,
+                "y": 18.687904357910158,
+                "z": 0.0000066833245000452738
             },
             "rotation": {
                 "x": 0.0,
@@ -536,57 +482,13 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -0.6000000238418579,
-                "y": 0.6000000238418579,
-                "z": 0.6000000238418579
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Archer",
-            "position": {
-                "x": 18.371294021606447,
-                "y": 21.702863693237306,
-                "z": -0.028130173683166505
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.6000000238418579,
-                "y": 0.6000000238418579,
-                "z": 0.6000000238418579
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Giant",
-            "position": {
-                "x": 26.31877899169922,
-                "y": 12.254728317260743,
-                "z": -0.028133688494563104
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.699999988079071,
-                "y": 0.699999988079071,
-                "z": 0.699999988079071
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
             },
             "isActive": true
         }
     ],
     "ongoingQuests": [],
-    "selectedHeroesForQuest": [
-        1,
-        2,
-        3
-    ]
+    "selectedHeroesForQuest": []
 }

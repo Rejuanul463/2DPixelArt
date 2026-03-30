@@ -67,6 +67,7 @@ public class OngoingQuest : MonoBehaviour
                // uiDict.Remove(quest.uniqueId);
 
                 Debug.Log($"✅ Quest Completed: {quest.questName}");
+                GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest);
             }
         }
     }
