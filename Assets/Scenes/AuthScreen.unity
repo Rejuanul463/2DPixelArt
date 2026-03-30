@@ -656,10 +656,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13e6a4e9b5ec435488a5beb5ae6bed82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FullnameInputField: {fileID: 1175414426}
-  EmailInputField: {fileID: 24334526}
-  PasswordInputField: {fileID: 14249952}
-  ConfirmPasswordInputField: {fileID: 1494423719}
+  gameSceneName: GameTown
+  loginEmailInputField: {fileID: 177382568}
+  loginPasswordInputField: {fileID: 1979438992}
+  registerDisplayNameInputField: {fileID: 1175414426}
+  registerEmailInputField: {fileID: 24334526}
+  registerPasswordInputField: {fileID: 14249952}
 --- !u!1 &113781200
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,7 +1244,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 109592028}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: registerNewUser
+        m_MethodName: RegisterNewUser
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1252,10 +1254,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1730788986}
-        m_TargetAssemblyTypeName: AuthUIManager, Assembly-CSharp
-        m_MethodName: ShowLogin
-        m_Mode: 1
+      - m_Target: {fileID: 2102412217}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 113781200}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2223,14 +2237,14 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 880874296}
   m_Enabled: 1
-  serializedVersion: 11
+  serializedVersion: 12
   m_Type: 1
   m_Color: {r: 1, g: 0.95686275, b: 0.8392157, a: 1}
   m_Intensity: 1
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
-  m_CookieSize: 10
+  m_CookieSize2D: {x: 10, y: 10}
   m_Shadows:
     m_Type: 2
     m_Resolution: -1
@@ -2307,17 +2321,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 3
   m_UsePipelineSettings: 1
   m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_RenderingLayers: 1
   m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_ShadowRenderingLayers: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+  m_RenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_ShadowRenderingLayersMask:
+    serializedVersion: 0
+    m_Bits: 1
+  m_Version: 4
+  m_LightLayerMask: 1
+  m_ShadowLayerMask: 1
+  m_RenderingLayers: 1
+  m_ShadowRenderingLayers: 1
+--- !u!1 &976631232
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 976631233}
+  - component: {fileID: 976631234}
+  m_Layer: 0
+  m_Name: AuthChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &976631233
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976631232}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 879.51556, y: 1808.4769, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &976631234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 976631232}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 32533535559784d689b14327fa45574f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoLoginChecker
+  gameSceneName: GameTown
+  authSceneName: AuthScreen
 --- !u!1 &1104056690
 GameObject:
   m_ObjectHideFlags: 0
@@ -2519,10 +2585,22 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 109592028}
-        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: loginWithEmail
-        m_Mode: 1
+      - m_Target: {fileID: 113781200}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 1
+      - m_Target: {fileID: 2102412217}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2530,19 +2608,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1730788986}
-        m_TargetAssemblyTypeName: AuthUIManager, Assembly-CSharp
-        m_MethodName: ShowRegister
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+        m_CallState: 1
 --- !u!114 &1144267144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4167,23 +4233,11 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 109592028}
         m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: loginWithEmail
+        m_MethodName: LoginWithEmail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1730788985}
-        m_TargetAssemblyTypeName: AuthManager, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -4284,7 +4338,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a0c57bd3ecd7807499058d1c2ec359a9, type: 3}
+  m_Sprite: {fileID: -4320295261928297051, guid: 830cfdbe412556040a19091ecd0788ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -4385,6 +4439,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loginPanel: {fileID: 2102412217}
   registerPanel: {fileID: 113781200}
+  passwordResetPanel: {fileID: 0}
+  loginLoadingIndicator: {fileID: 0}
+  loginErrorText: {fileID: 0}
+  loginSuccessText: {fileID: 0}
+  loginButton: {fileID: 0}
+  goToRegisterButton: {fileID: 0}
+  forgotPasswordButton: {fileID: 0}
+  registerLoadingIndicator: {fileID: 0}
+  registerErrorText: {fileID: 0}
+  registerSuccessText: {fileID: 0}
+  registerButton: {fileID: 0}
+  goToLoginButton: {fileID: 0}
+  passwordResetLoadingIndicator: {fileID: 0}
+  passwordResetErrorText: {fileID: 0}
+  passwordResetSuccessText: {fileID: 0}
+  submitPasswordResetButton: {fileID: 0}
+  backToLoginButton: {fileID: 0}
 --- !u!4 &1730788987
 Transform:
   m_ObjectHideFlags: 0
@@ -4395,6 +4466,52 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 598.78375, y: 1378.1139, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1788565505
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1788565507}
+  - component: {fileID: 1788565506}
+  m_Layer: 0
+  m_Name: PlayFabManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1788565506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788565505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bf25d781d3cb34e2ab925ef78c403a6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Virtuery.PlayFab.PlayFabManager
+  playFabTitleId: 1AFC6D
+  enableDebugLogs: 1
+--- !u!4 &1788565507
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1788565505}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -45.235, y: 885.2549, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4978,7 +5095,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a0c57bd3ecd7807499058d1c2ec359a9, type: 3}
+  m_Sprite: {fileID: -4320295261928297051, guid: 830cfdbe412556040a19091ecd0788ea, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5403,3 +5520,5 @@ SceneRoots:
   - {fileID: 2030878626}
   - {fileID: 109592027}
   - {fileID: 1730788987}
+  - {fileID: 1788565507}
+  - {fileID: 976631233}

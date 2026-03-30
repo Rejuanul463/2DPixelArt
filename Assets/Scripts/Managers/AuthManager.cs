@@ -1,81 +1,175 @@
 using UnityEngine;
-using System.Collections;
-using PlayFab;
-using PlayFab.ClientModels;
+using UnityEngine.UI;
 using TMPro;
-using System;
+using Virtuery.PlayFab;
 
 public class AuthManager : MonoBehaviour
 {
+    [Header("Scene Settings")]
+    [SerializeField] private string gameSceneName = "GameTown";
 
-    [SerializeField]
-    public TMP_InputField FullnameInputField;
-    public TMP_InputField EmailInputField;
-    public TMP_InputField PasswordInputField;
-    public TMP_InputField ConfirmPasswordInputField;
+    [Header("Login Fields")]
+    [SerializeField] private TMP_InputField loginEmailInputField;
+    [SerializeField] private TMP_InputField loginPasswordInputField;
 
-    void Start()
+    [Header("Register Fields")]
+    [SerializeField] private TMP_InputField registerDisplayNameInputField;
+    [SerializeField] private TMP_InputField registerEmailInputField;
+    [SerializeField] private TMP_InputField registerPasswordInputField;
+
+    private PlayFabAuthService AuthService => PlayFabAuthService.Instance;
+    private bool isAttemptingAutoLogin = false;
+
+    private void Start()
     {
-        //login();
-    }
-
-    void login()
-    {
-        var request = new LoginWithCustomIDRequest
+        if (AuthService != null)
         {
-            CustomId = SystemInfo.deviceUniqueIdentifier,
-            CreateAccount = true
-        };
+            AuthService.OnLoginSuccess += OnLoginSuccess;
+            AuthService.OnLoginFailure += OnLoginFailure;
+            AuthService.OnRegisterSuccess += OnRegisterSuccess;
+            AuthService.OnRegisterFailure += OnRegisterFailure;
+            AuthService.OnPasswordResetSuccess += OnPasswordResetSuccess;
+            AuthService.OnPasswordResetFailure += OnPasswordResetFailure;
 
-        PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
-    }
-    // Player registration method
-    public void registerNewUser()
-    {
-        string fullName = FullnameInputField.text;
-        string email = EmailInputField.text;
-        string password = PasswordInputField.text;
-        //string confirmPassword = ConfirmPasswordInputField.text;
+            if (AuthService.CanAutoLoginWithoutPassword())
+            {
+                isAttemptingAutoLogin = true;
+                AuthService.TryAutoLogin();
+                return;
+            }
+        }
 
-        var request = new RegisterPlayFabUserRequest
+        if (AuthService != null && AuthService.CanAutoLogin())
         {
-            DisplayName = fullName,
-            Email = email,
-            Password = password,
-            Username = fullName,
-        };
-
-        PlayFabClientAPI.RegisterPlayFabUser(request, OnRegisterSuccess, OnLoginFailure);
+            string savedEmail = AuthService.GetSavedEmail();
+            if (!string.IsNullOrEmpty(savedEmail) && loginEmailInputField != null)
+            {
+                loginEmailInputField.text = savedEmail;
+            }
+        }
     }
 
-
-    // Player login method
-    public void loginWithEmail()
+    private void OnDestroy()
     {
-        string email = EmailInputField.text;
-        string password = PasswordInputField.text;
-
-        var request = new LoginWithEmailAddressRequest
+        if (AuthService != null)
         {
-            Email = email,
-            Password = password,
-        };
-
-        PlayFabClientAPI.LoginWithEmailAddress(request, OnLoginSuccess, OnLoginFailure);
+            AuthService.OnLoginSuccess -= OnLoginSuccess;
+            AuthService.OnLoginFailure -= OnLoginFailure;
+            AuthService.OnRegisterSuccess -= OnRegisterSuccess;
+            AuthService.OnRegisterFailure -= OnRegisterFailure;
+            AuthService.OnPasswordResetSuccess -= OnPasswordResetSuccess;
+            AuthService.OnPasswordResetFailure -= OnPasswordResetFailure;
+        }
     }
 
-    private void OnRegisterSuccess(RegisterPlayFabUserResult result)
+    public void LoginWithEmail()
     {
-        Debug.Log($"Login successful! {result.Username} , {result.PlayFabId}");
+        if (AuthService == null)
+        {
+            Debug.LogError("[AuthManager] PlayFabAuthService not available");
+            return;
+        }
+
+        string email = loginEmailInputField?.text ?? "";
+        string password = loginPasswordInputField?.text ?? "";
+
+        if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        {
+            Debug.LogWarning("[AuthManager] Email and password are required");
+            return;
+        }
+
+        AuthService.LoginWithEmail(email, password, false);
     }
 
-    private void OnLoginSuccess(LoginResult result)
+    public void RegisterNewUser()
     {
-        Debug.Log($"Login successful! {result.NewlyCreated} , {result.PlayFabId} , {result.LastLoginTime}");
+        if (AuthService == null)
+        {
+            Debug.LogError("[AuthManager] PlayFabAuthService not available");
+            return;
+        }
+
+        string displayName = registerDisplayNameInputField?.text ?? "";
+        string email = registerEmailInputField?.text ?? "";
+        string password = registerPasswordInputField?.text ?? "";
+
+        if (string.IsNullOrEmpty(displayName) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password))
+        {
+            Debug.LogWarning("[AuthManager] All fields are required");
+            return;
+        }
+
+        AuthService.RegisterWithEmail(email, password, displayName);
     }
 
-    private void OnLoginFailure(PlayFabError error)
+    public void RequestPasswordReset()
     {
-        Debug.LogError("Login failed: " + error.GenerateErrorReport());
+        if (AuthService == null)
+        {
+            Debug.LogError("[AuthManager] PlayFabAuthService not available");
+            return;
+        }
+
+        string email = loginEmailInputField?.text ?? "";
+
+        if (string.IsNullOrEmpty(email))
+        {
+            Debug.LogWarning("[AuthManager] Email is required for password reset");
+            return;
+        }
+
+        AuthService.RequestPasswordReset(email);
+    }
+
+    public void LoginAsGuest()
+    {
+        if (AuthService == null)
+        {
+            Debug.LogError("[AuthManager] PlayFabAuthService not available");
+            return;
+        }
+        AuthService.LoginAsGuest();
+    }
+
+    private void OnLoginSuccess(PlayFab.ClientModels.LoginResult result)
+    {
+        Debug.Log($"[AuthManager] Login successful! PlayFabId: {result.PlayFabId}");
+        LoadGameScene();
+    }
+
+    private void OnLoginFailure(string error)
+    {
+        isAttemptingAutoLogin = false;
+        Debug.LogError($"[AuthManager] Login failed: {error}");
+    }
+
+    private void OnRegisterSuccess(PlayFab.ClientModels.RegisterPlayFabUserResult result)
+    {
+        Debug.Log($"[AuthManager] Registration successful! PlayFabId: {result.PlayFabId}");
+        LoadGameScene();
+    }
+
+    private void OnRegisterFailure(string error)
+    {
+        Debug.LogError($"[AuthManager] Registration failed: {error}");
+    }
+
+    private void OnPasswordResetSuccess()
+    {
+        Debug.Log("[AuthManager] Password reset email sent successfully");
+    }
+
+    private void OnPasswordResetFailure(string error)
+    {
+        Debug.LogError($"[AuthManager] Password reset failed: {error}");
+    }
+
+    private void LoadGameScene()
+    {
+        if (!string.IsNullOrEmpty(gameSceneName))
+        {
+            UnityEngine.SceneManagement.SceneManager.LoadScene(gameSceneName);
+        }
     }
 }

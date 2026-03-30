@@ -10,9 +10,12 @@ public class HeroSummoner : Building
     [SerializeField] private Transform summonPoint;
     private SaveManager _saveManager;
     [SerializeField] private Building blackSmith;
-    private void Awake()
+    private void Start()
     {
-        _saveManager = GameManager.Instance.saveManager;
+        if (GameManager.Instance != null)
+        {
+            _saveManager = GameManager.Instance.saveManager;
+        }
     }
     public void LoadGame()
     {
