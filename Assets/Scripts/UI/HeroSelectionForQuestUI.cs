@@ -1,6 +1,5 @@
-using System;
 using System.Collections.Generic;
-
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,8 +30,8 @@ public class HeroSelectionForQuestUI : MonoBehaviour
     private void Start()
     {
         // Hide the template button (index 0 is the prefab placeholder in the inspector list)
-        if (itemButtons.Count > 0)
-            itemButtons[0].gameObject.SetActive(false);
+        // if (itemButtons.Count > 0)
+        //     itemButtons[0].gameObject.SetActive(false);
 
         count = 0;
     }
@@ -235,5 +234,20 @@ public class HeroSelectionForQuestUI : MonoBehaviour
                 itemButtons[index].interactable = true;
             }
         }
+    }
+
+
+    public void DeselectSelectedPlayer()
+    {
+        foreach(int btn in selectedHeroes.Where(h => h.Item2).Select(h => h.Item1))
+        {
+            itemButtons[btn].interactable = true;
+        }
+    }
+
+    public GameObject notificationPannel;
+    public void OpenNotification()
+    {
+        notificationPannel.SetActive(true);
     }
 }

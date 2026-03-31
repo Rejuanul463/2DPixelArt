@@ -502,7 +502,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eabf69cb336b85a46b6aa5ffef8e8216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heroData: {fileID: 11400000, guid: 1d9289731da99bd4d83f864064374616, type: 2}
+  heroData: {fileID: 11400000, guid: 690007be5ab12b744bac75a633a40dc4, type: 2}
   heroAIPath: {fileID: 4812155875450101386}
 --- !u!1 &7718632059508570837
 GameObject:

@@ -1,108 +1,5 @@
 {
-    "heroes": [
-        {
-            "name": "Amelia Thompson",
-            "id": 5,
-            "uniqueId": 4,
-            "level": 1,
-            "hitPerSecond": 4.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 200.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Hannah King",
-            "id": 1,
-            "uniqueId": 1,
-            "level": 3,
-            "hitPerSecond": 4.0,
-            "hitPower": 313.0,
-            "HP": 150.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 8,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Isaac King",
-            "id": 2,
-            "uniqueId": 2,
-            "level": 4,
-            "hitPerSecond": 0.5,
-            "hitPower": 123.0,
-            "HP": 206.0,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 10,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Charlotte Martinez",
-            "id": 3,
-            "uniqueId": 3,
-            "level": 1,
-            "hitPerSecond": 3.0,
-            "hitPower": 180.82998657226563,
-            "HP": 143.6499786376953,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 14,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Amelia Thompson",
-            "id": 5,
-            "uniqueId": 4,
-            "level": 1,
-            "hitPerSecond": 4.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 200.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "David Young",
-            "id": 4,
-            "uniqueId": 5,
-            "level": 3,
-            "hitPerSecond": 1.0,
-            "hitPower": 141.6999969482422,
-            "HP": 570.699951171875,
-            "coolDownTime": 140.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -25.458742141723634,
-                "y": 26.14874267578125,
-                "z": 0.000009351515473099425
-            }
-        }
-    ],
+    "heroes": [],
     "buildings": [
         {
             "buildingID": 2,
@@ -112,25 +9,25 @@
             "upgradeTime": 90,
             "upgradeStartTime": 0,
             "upgradeCostGold": 100,
-            "upgradeCostWood": 100,
-            "upgradeCostStone": 100,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
             "xpBoost": 30.0
         },
         {
             "buildingID": 3,
-            "buildingLevel": 3,
+            "buildingLevel": 1,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 90,
             "upgradeStartTime": 1774421256400,
-            "upgradeCostGold": 0,
+            "upgradeCostGold": 50,
             "upgradeCostWood": 0,
             "upgradeCostStone": 0,
             "xpBoost": 73.0
         },
         {
             "buildingID": 4,
-            "buildingLevel": 2,
+            "buildingLevel": 1,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 90,
@@ -147,22 +44,22 @@
             "isUpgradable": true,
             "upgradeTime": 90,
             "upgradeStartTime": 1,
-            "upgradeCostGold": 0,
+            "upgradeCostGold": 50,
             "upgradeCostWood": 0,
             "upgradeCostStone": 0,
             "xpBoost": 33.0
         },
         {
             "buildingID": 0,
-            "buildingLevel": 4,
+            "buildingLevel": 1,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 90,
             "upgradeStartTime": 1773567471693,
-            "upgradeCostGold": 1687,
-            "upgradeCostWood": 1687,
-            "upgradeCostStone": 1687,
-            "xpBoost": 337.0
+            "upgradeCostGold": 200,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 100.0
         },
         {
             "buildingID": 1,
@@ -171,29 +68,29 @@
             "isUpgradable": true,
             "upgradeTime": 1,
             "upgradeStartTime": 1774903644391,
-            "upgradeCostGold": 225,
-            "upgradeCostWood": 225,
-            "upgradeCostStone": 225,
+            "upgradeCostGold": 50,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
             "xpBoost": 67.0
         }
     ],
     "guild": {
-        "guildLevel": 145,
-        "currentExperience": 26295,
+        "guildLevel": 1,
+        "currentExperience": 0,
         "experienceToNextLevel": 0,
-        "gold": 1008538,
+        "gold": 1000,
         "unlockedHeroID": [
             true,
             true,
-            true,
-            true,
-            true,
-            true
+            false,
+            false,
+            false,
+            false
         ],
-        "maxUnlockableHeroID": 8,
+        "maxUnlockableHeroID": 1,
         "gems": 0,
-        "woods": 3199,
-        "stones": 3289,
+        "woods": 0,
+        "stones": 0,
         "BlackSmithLevel": 1,
         "HeroSummonerLevel": 1,
         "questCompleteTime": []
@@ -204,8 +101,8 @@
             "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": [
-                1,
-                2
+                0,
+                1
             ]
         },
         {
@@ -213,13 +110,13 @@
             "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": [
-                3,
-                4
+                2,
+                3
             ]
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -228,7 +125,7 @@
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -240,13 +137,13 @@
             "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": [
-                3,
-                4
+                0,
+                1
             ]
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 3,
@@ -255,7 +152,7 @@
         },
         {
             "questName": " Echoes of the Lost Empire",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -264,7 +161,7 @@
         },
         {
             "questName": "A Dance with Shadows",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 3,
@@ -273,7 +170,7 @@
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -283,7 +180,7 @@
         },
         {
             "questName": "The Ironfang Wars",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
                 1,
@@ -305,8 +202,8 @@
             "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
-                1,
-                2
+                4,
+                5
             ]
         },
         {
@@ -324,22 +221,32 @@
             "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": [
-                3,
                 4,
-                5
+                5,
+                6
             ]
         },
         {
             "questName": "Nightfall's Wrath",
             "isCompleted": false,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                0,
+                1,
+                2,
+                3
+            ]
         },
         {
             "questName": "Nightfall's Wrath",
             "isCompleted": false,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                4,
+                5,
+                6,
+                7
+            ]
         },
         {
             "questName": "Nightfall's Wrath",
@@ -366,128 +273,7 @@
             "heroesForQuest": []
         }
     ],
-    "sceneObjects": [
-        {
-            "objectName": "Valkyri(Clone)",
-            "position": {
-                "x": -11.560005187988282,
-                "y": -26.74143409729004,
-                "z": -0.00000956348048930522
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Archer(Clone)",
-            "position": {
-                "x": -28.674846649169923,
-                "y": -12.864828109741211,
-                "z": -0.000004600821284839185
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Giant(Clone)",
-            "position": {
-                "x": -31.203500747680665,
-                "y": -6.492671489715576,
-                "z": -0.000002321959527762374
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Witch(Clone)",
-            "position": {
-                "x": -25.458742141723634,
-                "y": 26.14874267578125,
-                "z": 0.000009351515473099425
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Valkyri(Clone)",
-            "position": {
-                "x": -19.56037139892578,
-                "y": 29.06782341003418,
-                "z": 0.000010395455319667235
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Knight(Clone)",
-            "position": {
-                "x": -25.458742141723634,
-                "y": 26.14874267578125,
-                "z": 0.000009351515473099425
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        }
-    ],
+    "sceneObjects": [],
     "ongoingQuests": [],
     "selectedHeroesForQuest": []
 }

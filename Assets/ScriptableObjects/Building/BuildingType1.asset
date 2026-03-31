@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingID: 3
   buildingType: 1
-  currentBuilding: {fileID: 7143562269525608349, guid: 7eed3658440687945b62899e857f7a76, type: 3}
+  currentBuilding: {fileID: 5205325699401563839, guid: 671092aacbe34c14e8a553c31cf97bcc, type: 3}
   buildingSprites:
   - {fileID: 5205325699401563839, guid: 671092aacbe34c14e8a553c31cf97bcc, type: 3}
   - {fileID: 7143562269525608349, guid: 7eed3658440687945b62899e857f7a76, type: 3}
   - {fileID: -8204928520399967940, guid: 664d08a0497fcba4a944abc4725b72c2, type: 3}
   - {fileID: -4768197608456668655, guid: 6b9f00d16fec2db418cbc91e2ce4fcc4, type: 3}
-  buildingLevel: 2
+  buildingLevel: 1
   maxBuildingLevel: 4
-  upgradeCostGold: 0
+  upgradeCostGold: 50
   upgradeCostWood: 0
   upgradeCostStone: 0
-  xpBoost: 49
+  xpBoost: 73
   isUnderUpgrade: 0
-  isUpgradable: 1
+  isUpgradable: 0
   upgradeTime: 90
   UpgradeMultiplier: 1.5
-  upgradeStartTime: 1773735910634
+  upgradeStartTime: 1774421256400

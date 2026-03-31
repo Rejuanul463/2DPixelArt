@@ -421,4 +421,5 @@ public class PannelManager : MonoBehaviour
         GameManager.Instance.HeroSummoner.summonHeroes(typeAvailable, summonCost);
         deactivePannel();
     }
+
 }

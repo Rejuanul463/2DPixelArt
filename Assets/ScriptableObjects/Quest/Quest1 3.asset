@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
   m_Name: Quest1 3
   m_EditorClassIdentifier: 
-  heroesForQuest: 0100000002000000
+  heroesForQuest: 
   uniqueId: 3
   questName: The Moonlit Rebellion
   questType: 0
@@ -38,8 +38,8 @@ MonoBehaviour:
   hitPower: 12
   HP: 38
   enemyCount: 3
-  willWin: 1
+  willWin: 0
   completionTime: 60
-  isCompleted: 1
-  isSelected: 1
+  isCompleted: 0
+  isSelected: 0
   slots: 1

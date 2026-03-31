@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: David Young
+  m_Name: Aaron King
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 1a0a988c33d93434691a57249a575b4f, type: 3}
   heroSprite:
@@ -20,17 +20,17 @@ MonoBehaviour:
   - {fileID: 8322510382185973450, guid: 5629399fb498e584aa39f86c2f356c81, type: 3}
   - {fileID: -2098897369129684202, guid: cbd123963c0bdda4b9b3b86a033aefb2, type: 3}
   - {fileID: 6630341104690361922, guid: 27099c0f57dcbf644abebbbeb73e9cc2, type: 3}
-  Id: 4
-  uniqueId: 5
+  Id: 0
+  uniqueId: 0
   heroName: Barberian
   goldCost: 138
   hitPerSecond: 2
-  hitPower: 141.7
-  HP: 570.69995
-  level: 3
+  hitPower: 105
+  HP: 90
+  level: 1
   levelUpMultiplier: 1.2
   coolDownTime: 60
-  goldPerAttack: 20
+  goldPerAttack: 24
   isHeroSummoned: 1
   xp: 306
   xpForNextLevel: 558
