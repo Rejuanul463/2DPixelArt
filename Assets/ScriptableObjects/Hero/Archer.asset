@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Victoria Taylor
+  m_Name: Lily Brown
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 2975f47b0285daa4c9716bc119fecb73, type: 3}
   heroSprite:
@@ -25,12 +25,12 @@ MonoBehaviour:
   heroName: Archer
   goldCost: 571
   hitPerSecond: 4
-  hitPower: 313
-  HP: 150
-  level: 3
+  hitPower: 406.9
+  HP: 195
+  level: 4
   levelUpMultiplier: 1.3
   coolDownTime: 60
   goldPerAttack: 8
   isHeroSummoned: 1
-  xp: 1202
+  xp: 1407
   xpForNextLevel: 1411

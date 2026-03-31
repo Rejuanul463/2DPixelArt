@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Evelyn Clark
+  m_Name: Lily Scott
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: 48a5d64ac578e451fa13c5ce958415a4, type: 3}
   heroSprite:
@@ -32,5 +32,5 @@ MonoBehaviour:
   coolDownTime: 100
   goldPerAttack: 14
   isHeroSummoned: 1
-  xp: 1548
+  xp: 1655
   xpForNextLevel: 3536
