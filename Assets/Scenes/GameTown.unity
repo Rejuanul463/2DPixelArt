@@ -23208,9 +23208,9 @@ MonoBehaviour:
   ButtonContainer: {fileID: 1392657020}
   SelectedButtonContainer: {fileID: 1903346503}
   heroButtonPrefabe: {fileID: 3153326784371428171, guid: d7313068ae702184390bbde216adc4ba, type: 3}
-  itemButtons: []
   TextPanel: {fileID: 1702320438}
   StartQuestButton: {fileID: 2066794339}
+  itemButtons: []
 --- !u!114 &215744664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -313237,6 +313237,7 @@ MonoBehaviour:
   heroSummonDelet: []
   heroesQuestButtons: []
   heroQuestDeletButtons: []
+  backButton: {fileID: 791184403}
   activePannelObj: {fileID: 0}
   typeAvailable: 
   ongoingQuest: {fileID: 1691249968}

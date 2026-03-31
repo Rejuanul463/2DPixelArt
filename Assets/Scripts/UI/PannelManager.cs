@@ -165,6 +165,7 @@ public class PannelManager : MonoBehaviour
 
         foreach (int id in selectedHeroesForQuest)
         {
+            if (id < 0 || id >= heroesQuestButtons.Count) continue;
             heroesQuestButtons[id].interactable = false;
             heroQuestDeletButtons[id].interactable = true;
         }
@@ -172,6 +173,13 @@ public class PannelManager : MonoBehaviour
 
     public void deactivePannel()
     {
+        // If closing the hero selection panel (panel 7), clear pending selections
+        // so all non-locked heroes are restored and their buttons re-enabled
+        if (activePannelObj != null && activePannelObj == pannels[7])
+        {
+            GameManager.Instance.heroSelectionForQuestUI.ClearChildren();
+        }
+
         GameManager.Instance.QuestManager.questSelected = false;
         GameManager.Instance.QuestManager.details.text = "Quest Details";
         activePannelObj.SetActive(false);
@@ -288,11 +296,7 @@ public class PannelManager : MonoBehaviour
         summonButton.onClick.AddListener(() => activePannel(4));
         blackSmithButton.onClick.AddListener(() => activePannel(5));
         pauseButton.onClick.AddListener(() => activePannel(6));
-        heroSelectionButton.onClick.AddListener(() => 
-        { 
-            activePannel(7); 
-            GameManager.Instance.heroSelectionForQuestUI.ClearChildren();
-        });
+        heroSelectionButton.onClick.AddListener(() => activePannel(7));
 
         summonHeroButton.onClick.AddListener(() => summonHeroes());
         GameManager.Instance.UIManager.play.onClick.AddListener(() => deactivePannel());
@@ -408,12 +412,10 @@ public class PannelManager : MonoBehaviour
         // ✅ Unlock all heroes in HeroSelectionForQuestUI now that quest is done
         // GameManager.Instance.heroSelectionForQuestUI.OnQuestComplete();
 
-        // Clear PannelManager's own tracking too
-        selectedHeroesForQuest.Clear();
-        count = 0;
-
         theResultIsOut = true;
-        deactiveAllPannels();
+
+        // Destroy child copies, scene heroes, and unlock buttons for completed quest heroes
+        GameManager.Instance.heroSelectionForQuestUI.OnQuestComplete(heroesForQuest);
     }
 
     private void summonHeroes()

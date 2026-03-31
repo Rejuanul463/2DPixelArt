@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
   m_Name: Quest1
   m_EditorClassIdentifier: 
-  heroesForQuest: 0100000002000000
+  heroesForQuest: 0d0000000e0000000f00000010000000
   uniqueId: 0
   questName: Searing For Embers
   questType: 0

@@ -56,18 +56,10 @@ public class OngoingQuest : MonoBehaviour
             {
                 // ✅ COMPLETED
                 ui.UpdateUI(quest.uniqueId, quest.questName, TimeSpan.Zero);
-
                 quest.isCompleted = true;
-
-                // ❌ Remove from save
-               // PlayerPrefs.DeleteKey(GetKey(quest.uniqueId));
-
-                // ❌ Remove UI
-                //Destroy(ui.gameObject);
-               // uiDict.Remove(quest.uniqueId);
-
                 Debug.Log($"✅ Quest Completed: {quest.questName}");
-                GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest);
+                // NOTE: Do NOT call RestoreButtons here — heroes remain permanently
+                // locked and removed from the scene after being sent on a quest.
             }
         }
     }

@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,18 +7,32 @@ public class HeroSelectionForQuestUI : MonoBehaviour
     [SerializeField] public GameObject ButtonContainer;
     [SerializeField] public GameObject SelectedButtonContainer;
     [SerializeField] public GameObject heroButtonPrefabe;
-    [SerializeField] public List<Button> itemButtons = new List<Button>();
     [SerializeField] private GameObject TextPanel;
-    [SerializeField] Button StartQuestButton;
-    private PannelManager _pannelManager;
+    [SerializeField] private Button StartQuestButton;
 
-    // Item1 = hero index, Item2 = true means "currently selected/locked for quest"
-    private List<(int, bool)> selectedHeroes = new List<(int, bool)>();
-    private int maxHeroNumber;
+    // Maps hero uniqueId -> its source Button in ButtonContainer
+    private Dictionary<int, Button> heroButtonMap = new Dictionary<int, Button>();
+
+    // Item1 = hero uniqueId, Item2 = true means currently selected for quest
+    private List<(int uid, bool active)> selectedHeroes = new List<(int, bool)>();
+
+    // Keep itemButtons list for any external references
+    public List<Button> itemButtons = new List<Button>();
+
+    private int maxHeroNumber = 0;
+
+    // count = heroes selected for the CURRENT quest only (not permanently locked ones)
     private int count = 0;
 
-    // Tracks the instantiated child copies in SelectedButtonContainer so we can restore them
-    private List<(GameObject copy, int heroIndex)> activeCopies = new List<(GameObject, int)>();
+    private List<(GameObject copy, int uid)> activeCopies = new List<(GameObject, int)>();
+
+    // Heroes that are permanently locked — sent on a quest, cannot be reused
+    private HashSet<int> permanentlyLockedHeroes = new HashSet<int>();
+
+    // Heroes selected in the current panel session (not yet started quest)
+    private HashSet<int> pendingSelection = new HashSet<int>();
+
+    public bool QuestInProgress => permanentlyLockedHeroes.Count > 0;
 
     public List<(int, bool)> SelectedHeroes
     {
@@ -30,82 +42,208 @@ public class HeroSelectionForQuestUI : MonoBehaviour
 
     private void Start()
     {
-        // Hide the template button (index 0 is the prefab placeholder in the inspector list)
-        if (itemButtons.Count > 0)
-            itemButtons[0].gameObject.SetActive(false);
-
         count = 0;
     }
+
+    // -------------------------------------------------------
+    // SAVE / LOAD
+    // -------------------------------------------------------
 
     public void SaveSelectedHeroes()
     {
         GameManager.Instance.saveManager.SaveGame();
     }
 
-    /// <summary>
-    /// Called by SaveManager after buttons exist (in Start, not Awake).
-    /// Restores which heroes were selected before the game was closed.
-    /// </summary>
-    public void LoadSelectedHeroes(List<int> saved)
+    public void LoadSelectedHeroes(List<int> saved, bool wasQuestInProgress)
     {
         if (saved == null || saved.Count == 0) return;
 
-        foreach (int ind in saved)
+        foreach (int uid in saved)
         {
-            if (ind >= itemButtons.Count) continue;
+            if (!heroButtonMap.ContainsKey(uid)) continue;
 
-            // Mark as selected
-            selectedHeroes.Add((ind, true));
-            count++;
+            selectedHeroes.Add((uid, true));
+            heroButtonMap[uid].interactable = false;
+            CreateChildCopy(heroButtonMap[uid].gameObject, uid);
 
-            // Lock the source button
-            itemButtons[ind].interactable = false;
-
-            // Rebuild the visual copy in the selected area
-            CreateChildCopy(itemButtons[ind].gameObject, ind);
+            if (wasQuestInProgress)
+            {
+                permanentlyLockedHeroes.Add(uid);
+            }
+            else
+            {
+                pendingSelection.Add(uid);
+                count++;
+            }
         }
 
-        if (count > 0)
+        if (wasQuestInProgress)
+        {
+            // Lock all restored copies
+            foreach (var (copy, _) in activeCopies)
+            {
+                if (copy == null) continue;
+                var btn = copy.GetComponent<Button>();
+                btn.onClick.RemoveAllListeners();
+                btn.interactable = false;
+            }
+            StartQuestButton.interactable = false;
+        }
+        else if (count > 0)
+        {
             StartQuestButton.interactable = true;
+        }
     }
+
+    // -------------------------------------------------------
+    // UNITY CALLBACKS
+    // -------------------------------------------------------
 
     public void OnEnable()
     {
         StartQuestButton.onClick.RemoveAllListeners();
         StartQuestButton.onClick.AddListener(() => goQuest());
 
-        // Rebuild count from current selectedHeroes so max-hero limit stays correct
+        // Reset count to only count the pending (non-locked) selections
         count = 0;
-        foreach ((int heroIndex, bool isActive) in selectedHeroes)
+        pendingSelection.Clear();
+        foreach ((int uid, bool isActive) in selectedHeroes)
         {
-            if (isActive) count++;
+            if (isActive && !permanentlyLockedHeroes.Contains(uid))
+            {
+                count++;
+                pendingSelection.Add(uid);
+            }
         }
 
         StartQuestButton.interactable = count > 0;
-
-        // Re-enable buttons for heroes that are NOT currently selected
-        foreach ((int heroIndex, bool isActive) in selectedHeroes)
-        {
-            if (!isActive && heroIndex < itemButtons.Count)
-                itemButtons[heroIndex].interactable = true;
-        }
     }
+
+    // -------------------------------------------------------
+    // PUBLIC API
+    // -------------------------------------------------------
 
     public void setMaxHeroNumber(int val)
     {
         maxHeroNumber = val;
+        Debug.Log("[HeroSelection] maxHeroNumber set to: " + val);
     }
 
-    public void SelectForQuest(int ind)
+    public void AddButton(HeroData data)
     {
+        GameObject child = Instantiate(heroButtonPrefabe, ButtonContainer.transform);
+        child.GetComponent<Image>().sprite = data.heroSprite[0];
+
+        int capturedUid = data.uniqueId;
+        Button btn = child.GetComponent<Button>();
+        btn.onClick.AddListener(() => SelectForQuest(capturedUid));
+
+        heroButtonMap[data.uniqueId] = btn;
+        itemButtons.Add(btn);
+    }
+
+    public void loadGame()
+    {
+        List<HeroData> heroDatas = GameManager.Instance.saveManager.heroDatas;
+        for (int i = 0; i < heroDatas.Count; i++)
+            AddButton(heroDatas[i]);
+    }
+
+    public void heroIconUpdate()
+    {
+        foreach (var kvp in heroButtonMap)
+        {
+            HeroData hd = GameManager.Instance.HeroSummoner.heroDatas
+                .Find(h => h.uniqueId == kvp.Key);
+            if (hd == null) continue;
+            kvp.Value.GetComponent<Image>().sprite =
+                GameManager.Instance.HeroSummoner.getCurrentHeroSprite(hd.uniqueId);
+            kvp.Value.gameObject.SetActive(
+                GameManager.Instance.HeroSummoner.isHeroSummoned(hd.uniqueId));
+        }
+    }
+
+    /// <summary>
+    /// Called when player cancels quest (closes panel without starting).
+    /// Removes pending child copies, re-enables buttons, restores heroes to scene.
+    /// Does NOT touch permanently locked heroes.
+    /// </summary>
+    public void ClearChildren()
+    {
+        var toDestroy = new List<(GameObject copy, int uid)>();
+        foreach (var (copy, uid) in activeCopies)
+        {
+            if (!permanentlyLockedHeroes.Contains(uid))
+                toDestroy.Add((copy, uid));
+        }
+
+        foreach (var (copy, uid) in toDestroy)
+        {
+            // Re-enable source button
+            if (heroButtonMap.ContainsKey(uid))
+                heroButtonMap[uid].interactable = true;
+
+            // Restore hero to scene (was deactivated on select)
+            ReactivateHeroInScene(uid);
+
+            // Remove from tracking
+            activeCopies.RemoveAll(c => c.copy == copy);
+            int removeIdx = selectedHeroes.FindIndex(h => h.uid == uid && h.active);
+            if (removeIdx >= 0) selectedHeroes.RemoveAt(removeIdx);
+
+            GameObject.Destroy(copy);
+        }
+
+        pendingSelection.Clear();
+        count = 0;
+        StartQuestButton.interactable = false;
+    }
+
+    public void RestoreButtons(List<int> uids)
+    {
+        foreach (int uid in uids)
+            if (heroButtonMap.ContainsKey(uid) && !permanentlyLockedHeroes.Contains(uid))
+                heroButtonMap[uid].interactable = true;
+    }
+
+    // -------------------------------------------------------
+    // SELECTION
+    // -------------------------------------------------------
+
+    public void SelectForQuest(int uniqueId)
+    {
+        Debug.Log("[HeroSelection] SelectForQuest uid=" + uniqueId
+            + " locked=" + permanentlyLockedHeroes.Contains(uniqueId)
+            + " maxHeroNumber=" + maxHeroNumber
+            + " count=" + count);
+
+        if (permanentlyLockedHeroes.Contains(uniqueId))
+        {
+            Debug.Log("[HeroSelection] Blocked: hero permanently locked");
+            return;
+        }
+
+        if (maxHeroNumber <= 0)
+        {
+            Debug.Log("[HeroSelection] Blocked: select a quest first");
+            return;
+        }
+
+        if (!heroButtonMap.ContainsKey(uniqueId))
+        {
+            Debug.Log("[HeroSelection] Blocked: uniqueId not in map");
+            return;
+        }
+
         if (count < maxHeroNumber)
         {
             count++;
-            selectedHeroes.Add((ind, true));
-            itemButtons[ind].interactable = false;
-            CreateChildCopy(itemButtons[ind].gameObject, ind);
+            pendingSelection.Add(uniqueId);
+            selectedHeroes.Add((uniqueId, true));
+            heroButtonMap[uniqueId].interactable = false;
+            CreateChildCopy(heroButtonMap[uniqueId].gameObject, uniqueId);
             StartQuestButton.interactable = true;
-
+            DeactivateHeroInScene(uniqueId);
             SaveSelectedHeroes();
         }
         else
@@ -115,124 +253,147 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         }
     }
 
-    public void CreateChildCopy(GameObject item, int ind)
+    public void CreateChildCopy(GameObject item, int uniqueId)
     {
         GameObject newCopy = Instantiate(item, SelectedButtonContainer.transform);
-        newCopy.GetComponent<Button>().interactable = true;
+        Button btn = newCopy.GetComponent<Button>();
+        btn.interactable = true;
 
-        // Capture local reference for the closure
         GameObject capturedCopy = newCopy;
-        newCopy.GetComponent<Button>().onClick.RemoveAllListeners();
-        newCopy.GetComponent<Button>().onClick.AddListener(() => DeselectForQuest(ind, capturedCopy));
+        btn.onClick.RemoveAllListeners();
+        btn.onClick.AddListener(() => DeselectForQuest(uniqueId, capturedCopy));
 
-        activeCopies.Add((newCopy, ind));
+        activeCopies.Add((newCopy, uniqueId));
     }
 
-    private void DeselectForQuest(int ind, GameObject copy)
+    private void DeselectForQuest(int uniqueId, GameObject copy)
     {
-        // Find and remove by matching hero index AND bool=true
-        int removeIndex = selectedHeroes.FindIndex(h => h.Item1 == ind && h.Item2 == true);
+        // Cannot deselect if permanently locked
+        if (permanentlyLockedHeroes.Contains(uniqueId)) return;
+
+        int removeIndex = selectedHeroes.FindIndex(h => h.uid == uniqueId && h.active);
         if (removeIndex >= 0)
             selectedHeroes.RemoveAt(removeIndex);
 
-        // Remove from activeCopies tracking list
         activeCopies.RemoveAll(c => c.copy == copy);
+        pendingSelection.Remove(uniqueId);
 
         count = Mathf.Max(0, count - 1);
-
         if (count <= 0)
             StartQuestButton.interactable = false;
 
-        itemButtons[ind].interactable = true;
+        if (heroButtonMap.ContainsKey(uniqueId))
+            heroButtonMap[uniqueId].interactable = true;
+
+        ReactivateHeroInScene(uniqueId);
         Destroy(copy);
-
         SaveSelectedHeroes();
     }
 
-    /// <summary>
-    /// Called when a quest finishes. Unlocks all previously selected heroes
-    /// and clears the selection so a new quest can be started.
-    /// </summary>
-    public void OnQuestComplete()
-    {
-        // Mark all heroes as no longer locked
-        for (int i = 0; i < selectedHeroes.Count; i++)
-        {
-            var h = selectedHeroes[i];
-            selectedHeroes[i] = (h.Item1, false);
-
-            if (h.Item1 < itemButtons.Count)
-                itemButtons[h.Item1].interactable = true;
-        }
-
-        // Destroy all child copies
-        foreach (var (copyObj, _) in activeCopies)
-        {
-            if (copyObj != null) Destroy(copyObj);
-        }
-        activeCopies.Clear();
-        selectedHeroes.Clear();
-        count = 0;
-
-        StartQuestButton.interactable = false;
-
-        SaveSelectedHeroes();
-    }
-
-    public void heroIconUpdate()
-    {
-        for (int i = 0; i < itemButtons.Count; i++)
-        {
-            itemButtons[i].GetComponent<Image>().sprite =
-                GameManager.Instance.HeroSummoner.getCurrentHeroSprite(i);
-
-            itemButtons[i].gameObject.SetActive(
-                GameManager.Instance.HeroSummoner.isHeroSummoned(i));
-        }
-    }
-
-    public void AddButton(HeroData data)
-    {
-        GameObject child = Instantiate(heroButtonPrefabe, ButtonContainer.transform);
-        child.GetComponent<Image>().sprite = data.heroSprite[0];
-        child.GetComponent<Button>().onClick.AddListener(() => SelectForQuest(data.uniqueId));
-        itemButtons.Add(child.GetComponent<Button>());
-    }
-
-    public void loadGame()
-    {
-        List<HeroData> heroDatas = GameManager.Instance.saveManager.heroDatas;
-        for (int i = 0; i < heroDatas.Count; i++)
-        {
-            AddButton(heroDatas[i]);
-        }
-    }
+    // -------------------------------------------------------
+    // QUEST LIFECYCLE
+    // -------------------------------------------------------
 
     private void goQuest()
     {
         SaveManager.Instance.SaveGame();
-        // SaveManager.Instance.loadGame();
         TextPanel.SetActive(true);
-        GameManager.Instance.pannelManager.GoQuest(count, selectedHeroes);
-    }
 
-    public void ClearChildren()
-    {
-        foreach (Transform child in SelectedButtonContainer.transform)
+        // Move pending selection into permanently locked
+        foreach (int uid in pendingSelection)
+            permanentlyLockedHeroes.Add(uid);
+
+        // Lock their copies
+        foreach (var (copy, uid) in activeCopies)
         {
-            GameObject.Destroy(child.gameObject);
+            if (!permanentlyLockedHeroes.Contains(uid)) continue;
+            if (copy == null) continue;
+            var btn = copy.GetComponent<Button>();
+            btn.onClick.RemoveAllListeners();
+            btn.interactable = false;
         }
+
+        int questCount = pendingSelection.Count;
+        pendingSelection.Clear();
         count = 0;
-        selectedHeroes.Clear();
+        StartQuestButton.interactable = false;
+
+        GameManager.Instance.pannelManager.GoQuest(questCount, selectedHeroes);
     }
 
-    public void RestoreButtons(List<int> selectedHeroIndices)
+    /// <summary>
+    /// Called when quest finishes. Destroys child copies and scene heroes
+    /// for the heroes that were on this quest.
+    /// </summary>
+    public void OnQuestComplete(List<int> questHeroUids)
     {
-        foreach (int index in selectedHeroIndices)
+        foreach (int uid in questHeroUids)
         {
-            if (index >= 0 && index < itemButtons.Count)
+            // Remove from permanently locked
+            permanentlyLockedHeroes.Remove(uid);
+
+            // Remove from selectedHeroes list
+            selectedHeroes.RemoveAll(h => h.uid == uid);
+
+            // Destroy child copy
+            var toRemove = activeCopies.FindAll(c => c.uid == uid);
+            foreach (var (copy, _) in toRemove)
             {
-                itemButtons[index].interactable = true;
+                if (copy != null) Destroy(copy);
+            }
+            activeCopies.RemoveAll(c => c.uid == uid);
+
+            // Destroy the hero GameObject from scene permanently
+            DestroyHeroInScene(uid);
+
+            // Remove button from map (hero is gone permanently)
+            if (heroButtonMap.ContainsKey(uid))
+            {
+                var btn = heroButtonMap[uid];
+                if (btn != null) Destroy(btn.gameObject);
+                heroButtonMap.Remove(uid);
+            }
+        }
+
+        SaveSelectedHeroes();
+    }
+
+    // -------------------------------------------------------
+    // SCENE HERO VISIBILITY
+    // -------------------------------------------------------
+
+    private void DeactivateHeroInScene(int heroUniqueId)
+    {
+        foreach (Hero hero in GameObject.FindObjectsOfType<Hero>())
+        {
+            if (hero.heroData.uniqueId == heroUniqueId)
+            {
+                hero.gameObject.SetActive(false);
+                return;
+            }
+        }
+    }
+
+    private void ReactivateHeroInScene(int heroUniqueId)
+    {
+        foreach (Hero hero in GameObject.FindObjectsOfType<Hero>(true))
+        {
+            if (hero.heroData.uniqueId == heroUniqueId)
+            {
+                hero.gameObject.SetActive(true);
+                return;
+            }
+        }
+    }
+
+    private void DestroyHeroInScene(int heroUniqueId)
+    {
+        foreach (Hero hero in GameObject.FindObjectsOfType<Hero>(true))
+        {
+            if (hero.heroData.uniqueId == heroUniqueId)
+            {
+                Destroy(hero.gameObject);
+                return;
             }
         }
     }

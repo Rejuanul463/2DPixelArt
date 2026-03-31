@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
   m_Name: Quest1 13
   m_EditorClassIdentifier: 
-  heroesForQuest: 010000000200000003000000
+  heroesForQuest: 020000000300000001000000
   uniqueId: 12
   questName: Frostbound Covenant
   questType: 0
@@ -38,7 +38,7 @@ MonoBehaviour:
   hitPower: 46
   HP: 190
   enemyCount: 6
-  willWin: 0
+  willWin: 1
   completionTime: 60
   isCompleted: 0
   isSelected: 0

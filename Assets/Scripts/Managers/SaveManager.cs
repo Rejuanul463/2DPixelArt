@@ -65,11 +65,12 @@ public class SaveManager : MonoBehaviour
     // ==========================
     // Stored temporarily during LoadGame() (Awake) until Start() can apply it.
     private List<int> _pendingSelectedHeroes = new List<int>();
+    private bool _pendingQuestInProgress = false;
 
     private void RestoreHeroSelectionUI()
     {
         if (_pendingSelectedHeroes == null || _pendingSelectedHeroes.Count == 0) return;
-        GameManager.Instance.heroSelectionForQuestUI.LoadSelectedHeroes(_pendingSelectedHeroes);
+        GameManager.Instance.heroSelectionForQuestUI.LoadSelectedHeroes(_pendingSelectedHeroes, _pendingQuestInProgress);
         _pendingSelectedHeroes.Clear();
     }
 
@@ -81,11 +82,11 @@ public class SaveManager : MonoBehaviour
         GameSaveData saveData = new GameSaveData();
 
         // ---- SELECTED HEROES FOR QUEST ----
-        // Only save heroes that are currently active/locked (Item2 == true)
         saveData.selectedHeroesForQuest = GameManager.Instance.heroSelectionForQuestUI.SelectedHeroes
             .Where(h => h.Item2)
             .Select(h => h.Item1)
             .ToList();
+        saveData.questInProgress = GameManager.Instance.heroSelectionForQuestUI.QuestInProgress;
 
         // ---- HEROES ----
         saveData.heroes = heroDatas.Select(hero =>
@@ -193,7 +194,6 @@ public class SaveManager : MonoBehaviour
                 });
             }
         }
-
         string json = JsonUtility.ToJson(saveData, true);
         File.WriteAllText(SavePath, json);
         Debug.Log("GAME SAVED");
@@ -220,6 +220,7 @@ public class SaveManager : MonoBehaviour
         {
             _pendingSelectedHeroes = new List<int>(saveData.selectedHeroesForQuest);
         }
+        _pendingQuestInProgress = saveData.questInProgress;
 
         // ---- ONGOING QUESTS ----
         if (saveData.ongoingQuests != null)
@@ -361,6 +362,7 @@ public class SaveManager : MonoBehaviour
         public List<SceneObjectSaveData> sceneObjects;
         public List<OngoingQuestSaveData> ongoingQuests;
         public List<int> selectedHeroesForQuest;
+        public bool questInProgress;
     }
 
     [Serializable]
