@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Virtuery.PlayFab;
@@ -71,5 +72,11 @@ public class AutoLoginChecker : MonoBehaviour
         {
             UnityEngine.SceneManagement.SceneManager.LoadScene(authSceneName);
         }
+    }
+
+
+    public void PlayAsGuest()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
     }
 }
