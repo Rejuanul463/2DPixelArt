@@ -210,7 +210,6 @@ public class SaveManager : MonoBehaviour
     // ==========================
     private void LoadGame()
     {
-        isLoaded = true;
         if (!File.Exists(SavePath))
         {
             Debug.Log("NO SAVE FILE FOUND");
@@ -244,12 +243,13 @@ public class SaveManager : MonoBehaviour
                 );
                 DateTime endTime = startTime.AddSeconds(quest.completionTime);
 
-                if (DateTime.UtcNow >= endTime)
-                {
-                    quest.isCompleted = true;
-                    GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest); // Unlock buttons since quest is done
-                    continue;
-                }
+            if (DateTime.UtcNow >= endTime)
+            {
+                quest.isCompleted = true;
+                if (GameManager.Instance != null && GameManager.Instance.heroSelectionForQuestUI != null)
+                    GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest);
+                continue;
+            }
 
                 ongoingQuest.AddQuestUI(quest.uniqueId, quest, startTime);
             }
@@ -339,6 +339,7 @@ public class SaveManager : MonoBehaviour
             }
         }
 
+        isLoaded = true;
         Debug.Log("GAME LOADED");
     }
 

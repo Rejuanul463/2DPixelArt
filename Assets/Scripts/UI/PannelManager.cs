@@ -403,12 +403,14 @@ public class PannelManager : MonoBehaviour
             _upgradeCounter.QuestUpdate.text = "You Have Lost The Quest!";
             Debug.Log("loses");
         }
-        // GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(questData.heroesForQuest);
-        // Debug.Log("done quest 1");
-        // ✅ Unlock all heroes in HeroSelectionForQuestUI now that quest is done
-        // GameManager.Instance.heroSelectionForQuestUI.OnQuestComplete();
 
-        // Clear PannelManager's own tracking too
+        if (questData != null && GameManager.Instance != null && GameManager.Instance.heroSelectionForQuestUI != null)
+        {
+            GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(questData.heroesForQuest);
+            Debug.Log("done quest - heroes unlocked");
+            GameManager.Instance.heroSelectionForQuestUI.OnQuestComplete();
+        }
+
         selectedHeroesForQuest.Clear();
         count = 0;
 

@@ -54,34 +54,23 @@ public class OngoingQuest : MonoBehaviour
             }
             else
             {
-                // ✅ COMPLETED
                 ui.UpdateUI(quest.uniqueId, quest.questName, TimeSpan.Zero);
 
                 quest.isCompleted = true;
 
-                // ❌ Remove from save
-               // PlayerPrefs.DeleteKey(GetKey(quest.uniqueId));
-
-                // ❌ Remove UI
-                //Destroy(ui.gameObject);
-               // uiDict.Remove(quest.uniqueId);
-
                 Debug.Log($"✅ Quest Completed: {quest.questName}");
+            if (GameManager.Instance != null && GameManager.Instance.heroSelectionForQuestUI != null)
+            {
                 GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest);
+            }
             }
         }
     }
     void Update()
     {
-       QuestUpdate();
+        QuestUpdate();
     }
 
-    /*public void DestroyUI(GameObject obj)
-    {
-        Destroy(ui.gameObject);
-        uiDict.Remove(quest.uniqueId);
-    }*/
-    // ✅ ADD QUEST
     public void AddQuestUI(int id, QuestData quest, DateTime startTime)
     {
         GameObject go = Instantiate(itemPrefab, content);
@@ -89,7 +78,6 @@ public class OngoingQuest : MonoBehaviour
         ui.Identity = id;
         uiDict[id] = ui;
         onGoingQuest.Enqueue((quest, startTime));
-        // 💾 SAVE
         PlayerPrefs.SetString(GetKey(id), startTime.ToBinary().ToString());
         PlayerPrefs.Save();
     }

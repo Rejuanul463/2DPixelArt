@@ -59,6 +59,7 @@ public class QuestData : ScriptableObject
     public void CompleteTask()
     {
         isCompleted = true;
+        heroesForQuest.Clear();
     }
     
     public bool isComplete()

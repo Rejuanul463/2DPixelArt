@@ -142,7 +142,8 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         if (count <= 0)
             StartQuestButton.interactable = false;
 
-        itemButtons[ind].interactable = true;
+        if (ind >= 0 && ind < itemButtons.Count)
+            itemButtons[ind].interactable = true;
         Destroy(copy);
 
         SaveSelectedHeroes();
