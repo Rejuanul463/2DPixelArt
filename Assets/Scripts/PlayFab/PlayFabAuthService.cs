@@ -3,11 +3,6 @@ using System;
 using PlayFab;
 using PlayFab.ClientModels;
 
-#if UNITY_ANDROID
-using GooglePlayGames;
-using GooglePlayGames.BasicApi;
-#endif
-
 #if UNITY_IOS
 using UnityEngine.iOS;
 using UnityEngine.SocialPlatforms;
@@ -107,44 +102,7 @@ namespace Virtuery.PlayFab
 
         public void LoginWithGoogle(bool rememberMe = false)
         {
-#if UNITY_ANDROID
-            PlayGamesClientConfiguration config = new PlayGamesClientConfiguration.Builder()
-                .AddOauthScope("profile")
-                .RequestServerAuthCode(false)
-                .Build();
-
-            PlayGamesPlatform.InitializeInstance(config);
-            PlayGamesPlatform.Activate();
-
-            Social.localUser.Authenticate(success =>
-            {
-                if (success)
-                {
-                    string serverAuthCode = PlayGamesPlatform.Instance.GetServerAuthCode();
-                    var request = new LoginWithGoogleAccountRequest
-                    {
-                        ServerAuthCode = serverAuthCode,
-                        CreateAccount = true,
-                        InfoRequestParameters = new GetPlayerCombinedInfoRequestParams
-                        {
-                            GetPlayerProfile = true,
-                            GetUserData = true
-                        }
-                    };
-
-                    PlayFabClientAPI.LoginWithGoogleAccount(request,
-                        result => HandleLoginSuccess(result, rememberMe ? "google" : null, null, null),
-                        error => HandleLoginFailure(error)
-                    );
-                }
-                else
-                {
-                    OnLoginFailure?.Invoke("Google Sign-In failed. Please try again.");
-                }
-            });
-#else
-            OnLoginFailure?.Invoke("Google Sign-In is only supported on Android.");
-#endif
+            OnLoginFailure?.Invoke("Google Sign-In requires Google Play Games plugin. Please install the plugin or use another sign-in method.");
         }
 
         #endregion
