@@ -60,7 +60,7 @@ public class UpgradeCounter : MonoBehaviour
         
         string savedTime = PlayerPrefs.GetString(QUEST_END);
         endTime = DateTime.Parse(savedTime, null, System.Globalization.DateTimeStyles.RoundtripKind);
-        TimeSpan remaining =endTime -  DateTime.UtcNow;
+        TimeSpan remaining = endTime -  DateTime.UtcNow;
 
         if (remaining.TotalSeconds <= 0)
         {
@@ -68,7 +68,7 @@ public class UpgradeCounter : MonoBehaviour
         }
         else
         {
-            Debug.Log("Restored Quest. Remaining: " + Mathf.Ceil((float)remaining.TotalSeconds));
+            // Debug.Log("Restored Quest. Remaining: " + Mathf.Ceil((float)remaining.TotalSeconds));
             StartCoroutine(QuestCoroutine());
         }
     }

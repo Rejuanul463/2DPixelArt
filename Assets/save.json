@@ -1,490 +1,279 @@
 {
-    "heroes": [
-        {
-            "name": "Emily Campbell",
-            "id": 5,
-            "uniqueId": 4,
-            "level": 1,
-            "hitPerSecond": 4.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 200.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -3.0241951942443849,
-                "y": -3.7519373893737795,
-                "z": -0.0000013417985655905796
-            }
-        },
-        {
-            "name": "Elizabeth Rivera",
-            "id": 1,
-            "uniqueId": 1,
-            "level": 3,
-            "hitPerSecond": 4.0,
-            "hitPower": 313.0,
-            "HP": 150.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 8,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "James Brown",
-            "id": 2,
-            "uniqueId": 2,
-            "level": 4,
-            "hitPerSecond": 0.5,
-            "hitPower": 123.0,
-            "HP": 206.0,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 10,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Penelope Roberts",
-            "id": 3,
-            "uniqueId": 3,
-            "level": 1,
-            "hitPerSecond": 3.0,
-            "hitPower": 180.82998657226563,
-            "HP": 143.6499786376953,
-            "coolDownTime": 100.0,
-            "goldPerAttack": 14,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0
-            }
-        },
-        {
-            "name": "Emily Campbell",
-            "id": 5,
-            "uniqueId": 4,
-            "level": 1,
-            "hitPerSecond": 4.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 200.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -3.0241951942443849,
-                "y": -3.7519373893737795,
-                "z": -0.0000013417985655905796
-            }
-        }
-    ],
-    "buildings": [
-        {
-            "buildingID": 2,
-            "buildingLevel": 1,
-            "isUnderUpgrade": false,
-            "isUpgradable": true,
-            "upgradeTime": 90,
-            "upgradeStartTime": 0,
-            "upgradeCostGold": 100,
-            "upgradeCostWood": 100,
-            "upgradeCostStone": 100,
-            "xpBoost": 30.0
-        },
-        {
-            "buildingID": 3,
-            "buildingLevel": 3,
-            "isUnderUpgrade": false,
-            "isUpgradable": true,
-            "upgradeTime": 90,
-            "upgradeStartTime": 1774421256400,
-            "upgradeCostGold": 0,
-            "upgradeCostWood": 0,
-            "upgradeCostStone": 0,
-            "xpBoost": 73.0
-        },
-        {
-            "buildingID": 4,
-            "buildingLevel": 2,
-            "isUnderUpgrade": false,
-            "isUpgradable": true,
-            "upgradeTime": 90,
-            "upgradeStartTime": 1773735970842,
-            "upgradeCostGold": 0,
-            "upgradeCostWood": 0,
-            "upgradeCostStone": 0,
-            "xpBoost": 73.0
-        },
-        {
-            "buildingID": 5,
-            "buildingLevel": 1,
-            "isUnderUpgrade": false,
-            "isUpgradable": true,
-            "upgradeTime": 90,
-            "upgradeStartTime": 1,
-            "upgradeCostGold": 0,
-            "upgradeCostWood": 0,
-            "upgradeCostStone": 0,
-            "xpBoost": 33.0
-        },
-        {
-            "buildingID": 0,
-            "buildingLevel": 4,
-            "isUnderUpgrade": false,
-            "isUpgradable": true,
-            "upgradeTime": 90,
-            "upgradeStartTime": 1773567471693,
-            "upgradeCostGold": 1687,
-            "upgradeCostWood": 1687,
-            "upgradeCostStone": 1687,
-            "xpBoost": 337.0
-        },
-        {
-            "buildingID": 1,
-            "buildingLevel": 1,
-            "isUnderUpgrade": false,
-            "isUpgradable": true,
-            "upgradeTime": 1,
-            "upgradeStartTime": 1773004732307,
-            "upgradeCostGold": 150,
-            "upgradeCostWood": 150,
-            "upgradeCostStone": 150,
-            "xpBoost": 45.0
-        }
-    ],
-    "guild": {
-        "guildLevel": 124,
-        "currentExperience": 22495,
-        "experienceToNextLevel": 0,
-        "gold": 1012516,
-        "unlockedHeroID": [
-            true,
-            true,
-            true,
-            true,
-            true,
-            true
-        ],
-        "maxUnlockableHeroID": 7,
-        "gems": 0,
-        "woods": 3349,
-        "stones": 3439,
-        "BlackSmithLevel": 1,
-        "HeroSummonerLevel": 1,
-        "questCompleteTime": []
+  "heroes": [],
+  "buildings": [
+    {
+      "buildingID": 2,
+      "buildingLevel": 1,
+      "isUnderUpgrade": false,
+      "isUpgradable": true,
+      "upgradeTime": 90,
+      "upgradeStartTime": 0,
+      "upgradeCostGold": 100,
+      "upgradeCostWood": 0,
+      "upgradeCostStone": 0,
+      "xpBoost": 30.0
     },
-    "quests": [
-        {
-            "questName": "Searing For Embers",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": " The Moonlit Rebellion",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "Searing Embers of the Void",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "The Starlit Rites",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": " Echoes of the Lost Empire",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "A Dance with Shadows",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "Searing Embers of the Void",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "The Ironfang Wars",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": " Frostbound Covenant",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "The Starlit Rites",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "Frostbound Covenant",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "A Dance with Shadows",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "Nightfall's Wrath",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "Nightfall's Wrath",
-            "isCompleted": false,
-            "completeTime": 0
-        },
-        {
-            "questName": "Nightfall's Wrath",
-            "isCompleted": false,
-            "completeTime": 0
-        },
-        {
-            "questName": " Frostbound Covenant",
-            "isCompleted": false,
-            "completeTime": 0
-        },
-        {
-            "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
-            "completeTime": 0
-        },
-        {
-            "questName": "Echoes of the Lost Empire",
-            "isCompleted": false,
-            "completeTime": 0
-        }
+    {
+      "buildingID": 3,
+      "buildingLevel": 1,
+      "isUnderUpgrade": false,
+      "isUpgradable": true,
+      "upgradeTime": 90,
+      "upgradeStartTime": 1774421256400,
+      "upgradeCostGold": 50,
+      "upgradeCostWood": 0,
+      "upgradeCostStone": 0,
+      "xpBoost": 73.0
+    },
+    {
+      "buildingID": 4,
+      "buildingLevel": 1,
+      "isUnderUpgrade": false,
+      "isUpgradable": true,
+      "upgradeTime": 90,
+      "upgradeStartTime": 1773735970842,
+      "upgradeCostGold": 0,
+      "upgradeCostWood": 0,
+      "upgradeCostStone": 0,
+      "xpBoost": 73.0
+    },
+    {
+      "buildingID": 5,
+      "buildingLevel": 1,
+      "isUnderUpgrade": false,
+      "isUpgradable": true,
+      "upgradeTime": 90,
+      "upgradeStartTime": 1,
+      "upgradeCostGold": 50,
+      "upgradeCostWood": 0,
+      "upgradeCostStone": 0,
+      "xpBoost": 33.0
+    },
+    {
+      "buildingID": 0,
+      "buildingLevel": 1,
+      "isUnderUpgrade": false,
+      "isUpgradable": true,
+      "upgradeTime": 90,
+      "upgradeStartTime": 1773567471693,
+      "upgradeCostGold": 200,
+      "upgradeCostWood": 0,
+      "upgradeCostStone": 0,
+      "xpBoost": 100.0
+    },
+    {
+      "buildingID": 1,
+      "buildingLevel": 2,
+      "isUnderUpgrade": false,
+      "isUpgradable": true,
+      "upgradeTime": 1,
+      "upgradeStartTime": 1774903644391,
+      "upgradeCostGold": 50,
+      "upgradeCostWood": 0,
+      "upgradeCostStone": 0,
+      "xpBoost": 67.0
+    }
+  ],
+  "guild": {
+    "guildLevel": 1,
+    "currentExperience": 0,
+    "experienceToNextLevel": 0,
+    "gold": 1000,
+    "unlockedHeroID": [
+      true,
+      true,
+      false,
+      false,
+      false,
+      false
     ],
-    "sceneObjects": [
-        {
-            "objectName": "Valkyri(Clone)",
-            "position": {
-                "x": 11.14239501953125,
-                "y": 0.2500816583633423,
-                "z": 8.943622020751718e-8
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Valkyri",
-            "position": {
-                "x": 10.932391166687012,
-                "y": 1.8000816106796265,
-                "z": -0.028137337416410447
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.6000000238418579,
-                "y": 0.6000000238418579,
-                "z": 0.6000000238418579
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Archer(Clone)",
-            "position": {
-                "x": 5.492565631866455,
-                "y": 8.071167945861817,
-                "z": 0.000002886474021579488
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Giant(Clone)",
-            "position": {
-                "x": 10.5988130569458,
-                "y": 2.951162815093994,
-                "z": 0.0000010554185791988858
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Witch(Clone)",
-            "position": {
-                "x": -2.8077425956726076,
-                "y": 7.7225022315979,
-                "z": 0.000002761782525340095
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Witch",
-            "position": {
-                "x": -3.01774263381958,
-                "y": 9.182502746582032,
-                "z": -0.0281346645206213
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.27000001072883608,
-                "y": 0.27000001072883608,
-                "z": 0.27000001072883608
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Valkyri(Clone)",
-            "position": {
-                "x": -3.0241951942443849,
-                "y": -3.7519373893737795,
-                "z": -0.0000013417985655905796
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Valkyri",
-            "position": {
-                "x": -3.2341995239257814,
-                "y": -2.201937437057495,
-                "z": -0.028138767927885057
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.6000000238418579,
-                "y": 0.6000000238418579,
-                "z": 0.6000000238418579
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Archer",
-            "position": {
-                "x": 5.552565574645996,
-                "y": 9.491168022155762,
-                "z": -0.0281345397233963
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.6000000238418579,
-                "y": 0.6000000238418579,
-                "z": 0.6000000238418579
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Giant",
-            "position": {
-                "x": 10.598108291625977,
-                "y": 4.751162528991699,
-                "z": -0.028136370703577997
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -0.699999988079071,
-                "y": 0.699999988079071,
-                "z": 0.699999988079071
-            },
-            "isActive": true
-        }
-    ],
-    "ongoingQuests": [],
-    "selectedHeroesForQuest": []
+    "maxUnlockableHeroID": 1,
+    "gems": 0,
+    "woods": 0,
+    "stones": 0,
+    "BlackSmithLevel": 1,
+    "HeroSummonerLevel": 1,
+    "questCompleteTime": []
+  },
+  "quests": [
+    {
+      "questName": "Searing For Embers",
+      "isCompleted": true,
+      "completeTime": 0,
+      "heroesForQuest": [
+        0,
+        1
+      ]
+    },
+    {
+      "questName": " The Moonlit Rebellion",
+      "isCompleted": true,
+      "completeTime": 0,
+      "heroesForQuest": [
+        2,
+        3
+      ]
+    },
+    {
+      "questName": "Searing Embers of the Void",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        1,
+        2
+      ]
+    },
+    {
+      "questName": "The Moonlit Rebellion",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        1,
+        2
+      ]
+    },
+    {
+      "questName": "The Starlit Rites",
+      "isCompleted": true,
+      "completeTime": 0,
+      "heroesForQuest": [
+        0,
+        1
+      ]
+    },
+    {
+      "questName": "The Moonlit Rebellion",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        3,
+        4
+      ]
+    },
+    {
+      "questName": " Echoes of the Lost Empire",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        1,
+        2
+      ]
+    },
+    {
+      "questName": "A Dance with Shadows",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        3,
+        4
+      ]
+    },
+    {
+      "questName": "Searing Embers of the Void",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "questName": "The Ironfang Wars",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        1,
+        2
+      ]
+    },
+    {
+      "questName": " Frostbound Covenant",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "questName": "The Starlit Rites",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        4,
+        5
+      ]
+    },
+    {
+      "questName": "Frostbound Covenant",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "questName": "A Dance with Shadows",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "questName": "Nightfall's Wrath",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        0,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "questName": "Nightfall's Wrath",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": [
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "questName": "Nightfall's Wrath",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": []
+    },
+    {
+      "questName": " Frostbound Covenant",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": []
+    },
+    {
+      "questName": "The Moonlit Rebellion",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": []
+    },
+    {
+      "questName": "Echoes of the Lost Empire",
+      "isCompleted": false,
+      "completeTime": 0,
+      "heroesForQuest": []
+    }
+  ],
+  "sceneObjects": [],
+  "ongoingQuests": [],
+  "selectedHeroesForQuest": []
 }
