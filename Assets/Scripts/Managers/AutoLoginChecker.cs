@@ -5,7 +5,7 @@ using Virtuery.PlayFab;
 public class AutoLoginChecker : MonoBehaviour
 {
     [Header("Scene Settings")]
-    [SerializeField] private string gameSceneName = "GameTown";
+    [SerializeField] private string gameSceneName = "MainMenu";
     [SerializeField] private string authSceneName = "AuthScreen";
 
     private void Start()

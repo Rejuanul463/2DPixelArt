@@ -6,7 +6,7 @@ using Virtuery.PlayFab;
 public class AuthManager : MonoBehaviour
 {
     [Header("Scene Settings")]
-    [SerializeField] private string gameSceneName = "GameTown";
+    [SerializeField] private string gameSceneName = "MainMenu";
 
     [Header("Login Fields")]
     [SerializeField] private TMP_InputField loginEmailInputField;

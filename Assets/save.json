@@ -1,279 +1,224 @@
 {
-  "heroes": [],
-  "buildings": [
-    {
-      "buildingID": 2,
-      "buildingLevel": 1,
-      "isUnderUpgrade": false,
-      "isUpgradable": true,
-      "upgradeTime": 90,
-      "upgradeStartTime": 0,
-      "upgradeCostGold": 100,
-      "upgradeCostWood": 0,
-      "upgradeCostStone": 0,
-      "xpBoost": 30.0
-    },
-    {
-      "buildingID": 3,
-      "buildingLevel": 1,
-      "isUnderUpgrade": false,
-      "isUpgradable": true,
-      "upgradeTime": 90,
-      "upgradeStartTime": 1774421256400,
-      "upgradeCostGold": 50,
-      "upgradeCostWood": 0,
-      "upgradeCostStone": 0,
-      "xpBoost": 73.0
-    },
-    {
-      "buildingID": 4,
-      "buildingLevel": 1,
-      "isUnderUpgrade": false,
-      "isUpgradable": true,
-      "upgradeTime": 90,
-      "upgradeStartTime": 1773735970842,
-      "upgradeCostGold": 0,
-      "upgradeCostWood": 0,
-      "upgradeCostStone": 0,
-      "xpBoost": 73.0
-    },
-    {
-      "buildingID": 5,
-      "buildingLevel": 1,
-      "isUnderUpgrade": false,
-      "isUpgradable": true,
-      "upgradeTime": 90,
-      "upgradeStartTime": 1,
-      "upgradeCostGold": 50,
-      "upgradeCostWood": 0,
-      "upgradeCostStone": 0,
-      "xpBoost": 33.0
-    },
-    {
-      "buildingID": 0,
-      "buildingLevel": 1,
-      "isUnderUpgrade": false,
-      "isUpgradable": true,
-      "upgradeTime": 90,
-      "upgradeStartTime": 1773567471693,
-      "upgradeCostGold": 200,
-      "upgradeCostWood": 0,
-      "upgradeCostStone": 0,
-      "xpBoost": 100.0
-    },
-    {
-      "buildingID": 1,
-      "buildingLevel": 2,
-      "isUnderUpgrade": false,
-      "isUpgradable": true,
-      "upgradeTime": 1,
-      "upgradeStartTime": 1774903644391,
-      "upgradeCostGold": 50,
-      "upgradeCostWood": 0,
-      "upgradeCostStone": 0,
-      "xpBoost": 67.0
-    }
-  ],
-  "guild": {
-    "guildLevel": 1,
-    "currentExperience": 0,
-    "experienceToNextLevel": 0,
-    "gold": 1000,
-    "unlockedHeroID": [
-      true,
-      true,
-      false,
-      false,
-      false,
-      false
+    "heroes": [],
+    "buildings": [
+        {
+            "buildingID": 2,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 0,
+            "upgradeCostGold": 100,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 30.0
+        },
+        {
+            "buildingID": 3,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1774421256400,
+            "upgradeCostGold": 50,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 73.0
+        },
+        {
+            "buildingID": 4,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1773735970842,
+            "upgradeCostGold": 0,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 73.0
+        },
+        {
+            "buildingID": 5,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1,
+            "upgradeCostGold": 50,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 33.0
+        },
+        {
+            "buildingID": 0,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1773567471693,
+            "upgradeCostGold": 200,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 100.0
+        },
+        {
+            "buildingID": 1,
+            "buildingLevel": 2,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 1,
+            "upgradeStartTime": 1774903644391,
+            "upgradeCostGold": 50,
+            "upgradeCostWood": 0,
+            "upgradeCostStone": 0,
+            "xpBoost": 67.0
+        }
     ],
-    "maxUnlockableHeroID": 1,
-    "gems": 0,
-    "woods": 0,
-    "stones": 0,
-    "BlackSmithLevel": 1,
-    "HeroSummonerLevel": 1,
-    "questCompleteTime": []
-  },
-  "quests": [
-    {
-      "questName": "Searing For Embers",
-      "isCompleted": true,
-      "completeTime": 0,
-      "heroesForQuest": [
-        0,
-        1
-      ]
+    "guild": {
+        "guildLevel": 1,
+        "currentExperience": 0,
+        "experienceToNextLevel": 0,
+        "gold": 1000,
+        "unlockedHeroID": [
+            true,
+            true,
+            false,
+            false,
+            false,
+            false
+        ],
+        "maxUnlockableHeroID": 1,
+        "gems": 0,
+        "woods": 0,
+        "stones": 0,
+        "BlackSmithLevel": 1,
+        "HeroSummonerLevel": 1,
+        "questCompleteTime": []
     },
-    {
-      "questName": " The Moonlit Rebellion",
-      "isCompleted": true,
-      "completeTime": 0,
-      "heroesForQuest": [
-        2,
-        3
-      ]
-    },
-    {
-      "questName": "Searing Embers of the Void",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        1,
-        2
-      ]
-    },
-    {
-      "questName": "The Moonlit Rebellion",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        1,
-        2
-      ]
-    },
-    {
-      "questName": "The Starlit Rites",
-      "isCompleted": true,
-      "completeTime": 0,
-      "heroesForQuest": [
-        0,
-        1
-      ]
-    },
-    {
-      "questName": "The Moonlit Rebellion",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        3,
-        4
-      ]
-    },
-    {
-      "questName": " Echoes of the Lost Empire",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        1,
-        2
-      ]
-    },
-    {
-      "questName": "A Dance with Shadows",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        3,
-        4
-      ]
-    },
-    {
-      "questName": "Searing Embers of the Void",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "questName": "The Ironfang Wars",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        1,
-        2
-      ]
-    },
-    {
-      "questName": " Frostbound Covenant",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "questName": "The Starlit Rites",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        4,
-        5
-      ]
-    },
-    {
-      "questName": "Frostbound Covenant",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "questName": "A Dance with Shadows",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        4,
-        5,
-        6
-      ]
-    },
-    {
-      "questName": "Nightfall's Wrath",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        0,
-        1,
-        2,
-        3
-      ]
-    },
-    {
-      "questName": "Nightfall's Wrath",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": [
-        4,
-        5,
-        6,
-        7
-      ]
-    },
-    {
-      "questName": "Nightfall's Wrath",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": []
-    },
-    {
-      "questName": " Frostbound Covenant",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": []
-    },
-    {
-      "questName": "The Moonlit Rebellion",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": []
-    },
-    {
-      "questName": "Echoes of the Lost Empire",
-      "isCompleted": false,
-      "completeTime": 0,
-      "heroesForQuest": []
-    }
-  ],
-  "sceneObjects": [],
-  "ongoingQuests": [],
-  "selectedHeroesForQuest": []
+    "quests": [
+        {
+            "questName": "Searing For Embers",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": " The Moonlit Rebellion",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Searing Embers of the Void",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Moonlit Rebellion",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Starlit Rites",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Moonlit Rebellion",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": " Echoes of the Lost Empire",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "A Dance with Shadows",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Searing Embers of the Void",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Ironfang Wars",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": " Frostbound Covenant",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Starlit Rites",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Frostbound Covenant",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "A Dance with Shadows",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Nightfall's Wrath",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Nightfall's Wrath",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Nightfall's Wrath",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": " Frostbound Covenant",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Moonlit Rebellion",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Echoes of the Lost Empire",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        }
+    ],
+    "sceneObjects": [],
+    "ongoingQuests": [],
+    "selectedHeroesForQuest": [],
+    "lastUpdatedAt": "2026-04-01T20:06:10.0409920Z"
 }
