@@ -26,7 +26,6 @@ public class GameManager : MonoBehaviour
         else
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -40,4 +39,10 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 
+
+    public void goToMainMenu()
+    {
+        saveManager.SaveGame();
+        ChangeScene("MainMenu");
+    }
 }
