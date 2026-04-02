@@ -22,6 +22,7 @@ public class HeroData : ScriptableObject
 
     public int xp;
     public int xpForNextLevel;
+    
     public void upgradeHero(int bonus)
     {
         xp += bonus;

@@ -64,7 +64,7 @@ public class DestinationSetter : MonoBehaviour
         StartCoroutine(SetDestination());
     }
 
-
+    
     private void Update()
     {
         Vector3 moveDirection = aiPath.desiredVelocity.normalized;
@@ -79,7 +79,7 @@ public class DestinationSetter : MonoBehaviour
             // move left
             animator.Play("Side");
             
-            transform.localScale = new Vector3(1f, 1f, 1f);
+            transform.localScale = new Vector3(-1f, 1f, 1f);
         }
         else if(moveDirection.y < 0)
         {

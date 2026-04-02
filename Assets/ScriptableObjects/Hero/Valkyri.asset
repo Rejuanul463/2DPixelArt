@@ -23,14 +23,14 @@ MonoBehaviour:
   Id: 5
   uniqueId: 4
   heroName: Valkyri
-  goldCost: 250
+  goldCost: 150
   hitPerSecond: 4
-  hitPower: 105
+  hitPower: 180
   HP: 90
   level: 1
   levelUpMultiplier: 1.5
   coolDownTime: 200
   goldPerAttack: 24
   isHeroSummoned: 1
-  xp: 624
-  xpForNextLevel: 816
+  xp: 0
+  xpForNextLevel: 50

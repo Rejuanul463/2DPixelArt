@@ -23,7 +23,7 @@ public class PlayerInstantiate : MonoBehaviour
             {
                 continue;
             }
-            Vector3 spawnPos = Vector3.zero; // default
+            Vector3 spawnPos = new Vector3(-51.88f, 27.62f, 0f);
 
             GameObject heroObj = Instantiate(heroData.heroPrefab, spawnPos, Quaternion.identity);
             Hero heroComp = heroObj.GetComponent<Hero>();

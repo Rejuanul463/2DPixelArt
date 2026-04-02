@@ -1,7 +1,7 @@
 {
     "heroes": [
         {
-            "name": "Mason Gonzalez",
+            "name": "Benjamin Hall",
             "id": 0,
             "uniqueId": 0,
             "level": 1,
@@ -12,26 +12,9 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": 17.74294090270996,
-                "y": 0.2500002384185791,
-                "z": 8.940703821735952e-8
-            }
-        },
-        {
-            "name": "Scarlett Taylor",
-            "id": 1,
-            "uniqueId": 1,
-            "level": 3,
-            "hitPerSecond": 2.0,
-            "hitPower": 141.6999969482422,
-            "HP": 570.699951171875,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 9.122077941894532,
-                "y": 13.932247161865235,
-                "z": 0.000004982558493793476
+                "x": -26.560718536376954,
+                "y": 24.205806732177736,
+                "z": 0.00001224998868565308
             }
         }
     ],
@@ -113,16 +96,16 @@
         "guildLevel": 1,
         "currentExperience": 0,
         "experienceToNextLevel": 0,
-        "gold": 501,
+        "gold": 17400,
         "unlockedHeroID": [
             true,
             true,
-            false,
-            false,
-            false,
-            false
+            true,
+            true,
+            true,
+            true
         ],
-        "maxUnlockableHeroID": 1,
+        "maxUnlockableHeroID": 5,
         "gems": 0,
         "woods": 0,
         "stones": 0,
@@ -163,7 +146,7 @@
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": []
         },
@@ -256,9 +239,9 @@
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": 17.74294090270996,
-                "y": 0.2500002384185791,
-                "z": 8.940703821735952e-8
+                "x": -26.560718536376954,
+                "y": 24.205806732177736,
+                "z": 0.00001224998868565308
             },
             "rotation": {
                 "x": 0.0,
@@ -276,9 +259,9 @@
         {
             "objectName": "Barberian",
             "position": {
-                "x": 17.802936553955079,
-                "y": 1.5400002002716065,
-                "z": -0.028137337416410447
+                "x": -26.500722885131837,
+                "y": 25.495807647705079,
+                "z": -0.028125176206231118
             },
             "rotation": {
                 "x": 0.0,
@@ -287,34 +270,14 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -0.49000000953674319,
+                "x": 0.49000000953674319,
                 "y": 0.49000000953674319,
                 "z": 0.49000000953674319
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Archer(Clone)",
-            "position": {
-                "x": 9.122077941894532,
-                "y": 13.932247161865235,
-                "z": 0.000004982558493793476
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 1.0,
-                "y": 1.0,
-                "z": 1.0
             },
             "isActive": true
         }
     ],
     "ongoingQuests": [],
     "selectedHeroesForQuest": [],
-    "lastUpdatedAt": "2026-04-01T22:12:46.2906090Z"
+    "lastUpdatedAt": "2026-04-01T23:59:45.2503950Z"
 }
