@@ -12,9 +12,9 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -26.560718536376954,
-                "y": 24.205806732177736,
-                "z": 0.00001224998868565308
+                "x": -1.2897871732711793,
+                "y": 10.250005722045899,
+                "z": -0.0000062120025177136999
             }
         }
     ],
@@ -96,7 +96,7 @@
         "guildLevel": 1,
         "currentExperience": 0,
         "experienceToNextLevel": 0,
-        "gold": 17400,
+        "gold": 17480,
         "unlockedHeroID": [
             true,
             true,
@@ -116,37 +116,39 @@
     "quests": [
         {
             "questName": "Searing For Embers",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                0
+            ]
         },
         {
             "questName": " The Moonlit Rebellion",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": "The Starlit Rites",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": true,
+            "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": []
         },
@@ -239,9 +241,9 @@
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": -26.560718536376954,
-                "y": 24.205806732177736,
-                "z": 0.00001224998868565308
+                "x": -1.2897871732711793,
+                "y": 10.250005722045899,
+                "z": -0.0000062120025177136999
             },
             "rotation": {
                 "x": 0.0,
@@ -250,7 +252,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 1.0,
+                "x": -1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -259,9 +261,9 @@
         {
             "objectName": "Barberian",
             "position": {
-                "x": -26.500722885131837,
-                "y": 25.495807647705079,
-                "z": -0.028125176206231118
+                "x": -1.3497828245162964,
+                "y": 11.540005683898926,
+                "z": -0.028143638744950296
             },
             "rotation": {
                 "x": 0.0,
@@ -277,7 +279,17 @@
             "isActive": true
         }
     ],
-    "ongoingQuests": [],
-    "selectedHeroesForQuest": [],
-    "lastUpdatedAt": "2026-04-01T23:59:45.2503950Z"
+    "ongoingQuests": [
+        {
+            "questUniqueId": 0,
+            "startTime": "2026-04-16T04:30:13.5757743Z",
+            "heroesForQuest": [
+                0
+            ]
+        }
+    ],
+    "selectedHeroesForQuest": [
+        0
+    ],
+    "lastUpdatedAt": "2026-04-16T04:30:48.5706604Z"
 }
