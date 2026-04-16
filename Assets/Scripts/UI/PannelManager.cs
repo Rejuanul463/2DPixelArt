@@ -26,18 +26,18 @@ public class PannelManager : MonoBehaviour
     [SerializeField] private List<Button> heroSummonDelet;
     [SerializeField] private List<Button> heroesQuestButtons;
     [SerializeField] private List<Button> heroQuestDeletButtons;
-
+    [SerializeField] private GuildData  _guildData;
     public GameObject activePannelObj;
     public int[] typeAvailable;
-
+     
     [SerializeField] private OngoingQuest ongoingQuest;
     [SerializeField] private int requiredGold;
     private QuestData simulationQuestData;
     [SerializeField] private UpgradeCounter _upgradeCounter;
     [SerializeField] GameObject gotoQuestPrefab;
-
+    public static event System.Action<int> OnQuestStarting;
     private bool theResultIsOut;
-
+   [SerializeField] private HeroSelectionForQuestUI _heroSelectionForQuestUI;
     public bool TheResultIsOut
     {
         get => theResultIsOut;
@@ -69,8 +69,9 @@ public class PannelManager : MonoBehaviour
         addListener();
         typeAvailable = new int[6];
         GameManager.Instance.upgradeCounter.OnQuestFinished += QuestFinishedHandler;
+    
+        _heroSelectionForQuestUI = GameManager.Instance.heroSelectionForQuestUI; // ✅ add this
     }
-
     private void QuestFinishedHandler()
     {
         Debug.Log("Quest finished callback received");
@@ -337,6 +338,18 @@ public class PannelManager : MonoBehaviour
 
     public void GoQuest(int cnt, List<(int, bool)> heroesForQuest)
     {
+        /*// ✅ Guard against null
+        if (_heroSelectionForQuestUI == null)
+            _heroSelectionForQuestUI = FindObjectOfType<HeroSelectionForQuestUI>();
+
+        if (_heroSelectionForQuestUI == null)
+        {
+            Debug.LogError("HeroSelectionForQuestUI not found!");
+            return;
+        }
+
+        _guildData.gold -= _heroSelectionForQuestUI.HeroTotalGold;*/
+        OnQuestStarting?.Invoke(_guildData.gold); 
         if (cnt <= 0) return;
 
         float hitDamage = 0;

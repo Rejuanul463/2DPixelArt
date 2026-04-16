@@ -12,15 +12,21 @@ public class HeroSelectionForQuestUI : MonoBehaviour
     [SerializeField] private GameObject TextPanel;
     [SerializeField] Button StartQuestButton;
     private PannelManager _pannelManager;
-
+    public static event System.Action<int> OnRequiredGoldChanged;
+    private int _heroTotalGold=0;
     // Item1 = hero index, Item2 = true means "currently selected/locked for quest"
     private List<(int, bool)> selectedHeroes = new List<(int, bool)>();
     private int maxHeroNumber;
-    private int count = 0;
-
+    private int count = 0,gold;
+    private Dictionary<int, int> heroGoldCosts = new Dictionary<int, int>();
     // Tracks the instantiated child copies in SelectedButtonContainer so we can restore them
     private List<(GameObject copy, int heroIndex)> activeCopies = new List<(GameObject, int)>();
 
+    public int HeroTotalGold
+    {
+        get => _heroTotalGold;
+        set => _heroTotalGold = value;
+    }
     public List<(int, bool)> SelectedHeroes
     {
         get => selectedHeroes;
@@ -59,7 +65,7 @@ public class HeroSelectionForQuestUI : MonoBehaviour
 
             // Lock the source button
             itemButtons[ind].interactable = false;
-
+            _heroTotalGold += heroGoldCosts.ContainsKey(ind) ? heroGoldCosts[ind] : 0;
             // Rebuild the visual copy in the selected area
             CreateChildCopy(itemButtons[ind].gameObject, ind);
         }
@@ -102,9 +108,11 @@ public class HeroSelectionForQuestUI : MonoBehaviour
             count++;
             selectedHeroes.Add((ind, true));
             itemButtons[ind].interactable = false;
+            gold = heroGoldCosts.ContainsKey(ind) ? heroGoldCosts[ind] : 0;
+            _heroTotalGold += gold;                          // ✅ add first
+            OnRequiredGoldChanged?.Invoke(_heroTotalGold);   // ✅ then fire
             CreateChildCopy(itemButtons[ind].gameObject, ind);
             StartQuestButton.interactable = true;
-
             SaveSelectedHeroes();
         }
         else
@@ -113,7 +121,6 @@ public class HeroSelectionForQuestUI : MonoBehaviour
             GameManager.Instance.popUpManager.ShowMaxPlayerCount();
         }
     }
-
     public void CreateChildCopy(GameObject item, int ind)
     {
         GameObject newCopy = Instantiate(item, SelectedButtonContainer.transform);
@@ -129,14 +136,11 @@ public class HeroSelectionForQuestUI : MonoBehaviour
 
     private void DeselectForQuest(int ind, GameObject copy)
     {
-        // Find and remove by matching hero index AND bool=true
         int removeIndex = selectedHeroes.FindIndex(h => h.Item1 == ind && h.Item2 == true);
         if (removeIndex >= 0)
             selectedHeroes.RemoveAt(removeIndex);
 
-        // Remove from activeCopies tracking list
         activeCopies.RemoveAll(c => c.copy == copy);
-
         count = Mathf.Max(0, count - 1);
 
         if (count <= 0)
@@ -144,11 +148,14 @@ public class HeroSelectionForQuestUI : MonoBehaviour
 
         if (ind >= 0 && ind < itemButtons.Count)
             itemButtons[ind].interactable = true;
-        Destroy(copy);
 
+        gold = heroGoldCosts.ContainsKey(ind) ? heroGoldCosts[ind] : 0;
+        _heroTotalGold -= gold;                          // ✅ subtract first
+        _heroTotalGold = Mathf.Max(0, _heroTotalGold);  // ✅ then clamp
+        OnRequiredGoldChanged?.Invoke(_heroTotalGold);   // ✅ then fire
+        Destroy(copy);
         SaveSelectedHeroes();
     }
-
     /// <summary>
     /// Called when a quest finishes. Unlocks all previously selected heroes
     /// and clears the selection so a new quest can be started.
@@ -172,10 +179,9 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         }
         activeCopies.Clear();
         selectedHeroes.Clear();
+        _heroTotalGold = 0;
         count = 0;
-
         StartQuestButton.interactable = false;
-
         SaveSelectedHeroes();
     }
 
@@ -197,6 +203,7 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         child.GetComponent<Image>().sprite = data.heroSprite[0];
         child.GetComponent<Button>().onClick.AddListener(() => SelectForQuest(data.uniqueId));
         itemButtons.Add(child.GetComponent<Button>());
+        heroGoldCosts[data.uniqueId] = data.goldCost;
     }
 
     public void loadGame()
@@ -224,6 +231,8 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         }
         count = 0;
         selectedHeroes.Clear();
+        _heroTotalGold = 0;                              // ✅ add this
+        OnRequiredGoldChanged?.Invoke(_heroTotalGold);   // ✅ update UI
     }
 
     public void RestoreButtons(List<int> selectedHeroIndices)
