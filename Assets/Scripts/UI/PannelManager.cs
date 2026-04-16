@@ -7,6 +7,8 @@ using UnityEngine.UI;
 [Serializable]
 public class PannelManager : MonoBehaviour
 {
+    [SerializeField] public TextMeshProUGUI RemainingGold;
+    [SerializeField] public TextMeshProUGUI totalGold;
     private Button inventoryButton;
     private Button questButton;
     private Button heroButton;
@@ -64,6 +66,7 @@ public class PannelManager : MonoBehaviour
 
     void Start()
     {
+        RemainingGold.text = "Remaining Gold: " + GameManager.Instance.GuildManager.Gold.ToString();
         AddGameObjects();
         deactiveAllPannels();
         addListener();
@@ -188,7 +191,8 @@ public class PannelManager : MonoBehaviour
 
     private void addHero(int id)
     {
-        int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost);
+        
+        int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost, true);
 
         if (val > summonCost)
         {
@@ -204,6 +208,9 @@ public class PannelManager : MonoBehaviour
         checkInterectableForSummon();
 
         summonHeroButton.interactable = canSummon();
+
+        totalGold.text = "Gold Cost: " + summonCost.ToString();
+        RemainingGold.text = "Remaining Gold: " + (GameManager.Instance.GuildManager.Gold - summonCost).ToString();
     }
 
     private bool canSummon()
@@ -219,13 +226,17 @@ public class PannelManager : MonoBehaviour
     {
         if (summonIds[id])
         {
-            int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost);
+            int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost, false);
             summonCost = val;
             typeAvailable[id] -= 1;
-            summonIds[id] = false;
+            if(typeAvailable[id] == 0)
+                summonIds[id] = false;
         }
         checkInterectableForSummon();
         summonHeroButton.interactable = canSummon();
+
+        totalGold.text = "Gold Cost: " + summonCost.ToString();
+        RemainingGold.text = "Remaining Gold: " + (GameManager.Instance.GuildManager.Gold - summonCost).ToString();
     }
 
     private void AddGameObjects()

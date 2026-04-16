@@ -1,10 +1,12 @@
 ﻿
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class HeroSummoner : Building
 {
+    
     [SerializeField] private HeroData[] heroClassTemplates;
     [SerializeField] public List<HeroData> heroDatas = new List<HeroData>();
     [SerializeField] private Transform summonPoint;
@@ -27,11 +29,13 @@ public class HeroSummoner : Building
         }
     }
 
-    public int isSummonable(int id , int currentCost)
+    public int isSummonable(int id , int currentCost, bool isPos)
     {
         if (heroClassTemplates[id].goldCost + currentCost <= GameManager.Instance.GuildManager.Gold)
         {
-            return currentCost + heroClassTemplates[id].goldCost;
+            if(isPos) return currentCost + heroClassTemplates[id].goldCost;
+            else
+                return currentCost - heroClassTemplates[id].goldCost;
         }
         return currentCost;
     }
