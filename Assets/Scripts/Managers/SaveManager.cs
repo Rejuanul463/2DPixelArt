@@ -45,7 +45,6 @@ public class SaveManager : MonoBehaviour
 
     private void Start()
     {
-        // Buttons are created here — order matters:
         // 1. Build hero UI buttons
         GameManager.Instance.heroUI.loadGame();
         GameManager.Instance.heroSelectionForQuestUI.loadGame();
@@ -53,11 +52,13 @@ public class SaveManager : MonoBehaviour
         // 2. Restore hero summoner state
         GameManager.Instance.HeroSummoner.LoadGame();
 
-        // 3. Now that buttons exist, restore selected-hero state
+        // 3. Restore selected-hero state into both HeroSelectionForQuestUI AND PannelManager.
+        //    Must run before PannelManager.Start() calls RestoreHeroSelectionState().
         RestoreHeroSelectionUI();
 
-        // 4. Restore quest panel button states
-        GameManager.Instance.pannelManager.RestoreHeroSelectionState();
+        // NOTE: RestoreHeroSelectionState() is called from PannelManager.Start() after
+        // AddGameObjects() has populated heroesQuestButtons. It is NOT called here because
+        // PannelManager.Start() may not have run yet, causing an ArgumentOutOfRangeException.
     }
 
     // ==========================
@@ -69,7 +70,17 @@ public class SaveManager : MonoBehaviour
     private void RestoreHeroSelectionUI()
     {
         if (_pendingSelectedHeroes == null || _pendingSelectedHeroes.Count == 0) return;
+
+        // Lock buttons in HeroSelectionForQuestUI
         GameManager.Instance.heroSelectionForQuestUI.LoadSelectedHeroes(_pendingSelectedHeroes);
+
+        // Also sync PannelManager's own selectedHeroesForQuest list so that when
+        // PannelManager.Start() calls RestoreHeroSelectionState(), it knows which
+        // heroesQuestButtons to lock. Without this, PannelManager's list is always
+        // empty on startup and all quest-hero buttons appear unlocked.
+        if (pannelManager != null)
+            pannelManager.SelectedHeroesForQuest = new List<int>(_pendingSelectedHeroes);
+
         _pendingSelectedHeroes.Clear();
     }
 
@@ -159,7 +170,7 @@ public class SaveManager : MonoBehaviour
         {
             isCompleted = q.isCompleted,
             questName = q.questName,
-            heroesForQuest = q.heroesForQuest, // Store hero indices for quest tracking
+            heroesForQuest = q.heroesForQuest,
         }).ToList();
 
         // ---- SCENE OBJECTS ----
@@ -193,6 +204,7 @@ public class SaveManager : MonoBehaviour
                 });
             }
         }
+
         saveData.lastUpdatedAt = DateTime.UtcNow.ToString("o");
 
         string json = JsonUtility.ToJson(saveData, true);
@@ -220,7 +232,7 @@ public class SaveManager : MonoBehaviour
         GameSaveData saveData = JsonUtility.FromJson<GameSaveData>(json);
 
         // ---- SELECTED HEROES FOR QUEST ----
-        // Store for later — UI buttons don't exist yet in Awake
+        // Store for later — UI buttons don't exist yet in Awake.
         if (saveData.selectedHeroesForQuest != null && saveData.selectedHeroesForQuest.Count > 0)
         {
             _pendingSelectedHeroes = new List<int>(saveData.selectedHeroesForQuest);
@@ -233,8 +245,10 @@ public class SaveManager : MonoBehaviour
             {
                 QuestData quest = GameManager.Instance.QuestManager.questData
                     .FirstOrDefault(q => q.uniqueId == saved.questUniqueId);
-                quest.heroesForQuest = saved.heroesForQuest; // Restore hero indices for quest tracking
+
                 if (quest == null || quest.isCompleted) continue;
+
+                quest.heroesForQuest = saved.heroesForQuest;
 
                 DateTime startTime = DateTime.Parse(
                     saved.startTime,
@@ -243,13 +257,24 @@ public class SaveManager : MonoBehaviour
                 );
                 DateTime endTime = startTime.AddSeconds(quest.completionTime);
 
-            if (DateTime.UtcNow >= endTime)
-            {
-                quest.isCompleted = true;
-                if (GameManager.Instance != null && GameManager.Instance.heroSelectionForQuestUI != null)
-                    GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest);
-                continue;
-            }
+                if (DateTime.UtcNow >= endTime)
+                {
+                    // Quest finished while the game was closed.
+                    quest.isCompleted = true;
+
+                    // FIX: Remove this quest's heroes from the pending lock list so they
+                    // are NOT restored as locked on next launch. This is the core bug —
+                    // selectedHeroesForQuest in the save file still had these heroes because
+                    // ResultOfTheQuest() never ran (game was closed before timer fired).
+                    if (quest.heroesForQuest != null)
+                    {
+                        foreach (int heroIndex in quest.heroesForQuest)
+                            _pendingSelectedHeroes.Remove(heroIndex);
+                    }
+
+                    Debug.Log("Quest finished offline: " + quest.questName + " - heroes unlocked");
+                    continue;
+                }
 
                 ongoingQuest.AddQuestUI(quest.uniqueId, quest, startTime);
             }
@@ -306,7 +331,6 @@ public class SaveManager : MonoBehaviour
         // ---- QUESTS ----
         for (int i = 0; i < saveData.quests.Count; i++)
         {
-            // GameManager.Instance.QuestManager.questData[i].heroesForQuest = saveData.quests[i].heroesForQuest; // Restore hero indices for quest tracking
             if (saveData.quests[i].isCompleted)
                 GameManager.Instance.QuestManager.questData[i].CompleteTask();
         }
@@ -433,7 +457,7 @@ public class SaveManager : MonoBehaviour
         public string questName;
         public bool isCompleted;
         public long completeTime;
-        public List<int> heroesForQuest; // Store hero indices for quest tracking
+        public List<int> heroesForQuest;
     }
 
     [Serializable]
@@ -453,12 +477,12 @@ public class SaveManager : MonoBehaviour
     {
         if (pauseStatus)
         {
-            Debug.Log("App Paused → Saving");
+            Debug.Log("App Paused - Saving");
             SaveGame();
         }
         else if (!isLoaded)
         {
-            Debug.Log("App Resumed → Loading");
+            Debug.Log("App Resumed - Loading");
             LoadGame();
             isLoaded = true;
         }
@@ -466,7 +490,7 @@ public class SaveManager : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        Debug.Log("App Quit → Saving");
+        Debug.Log("App Quit - Saving");
         SaveGame();
     }
 }

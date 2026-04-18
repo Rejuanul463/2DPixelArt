@@ -7,8 +7,6 @@ using UnityEngine.UI;
 [Serializable]
 public class PannelManager : MonoBehaviour
 {
-    [SerializeField] public TextMeshProUGUI RemainingGold;
-    [SerializeField] public TextMeshProUGUI totalGold;
     private Button inventoryButton;
     private Button questButton;
     private Button heroButton;
@@ -28,10 +26,10 @@ public class PannelManager : MonoBehaviour
     [SerializeField] private List<Button> heroSummonDelet;
     [SerializeField] private List<Button> heroesQuestButtons;
     [SerializeField] private List<Button> heroQuestDeletButtons;
-    [SerializeField] private GuildData  _guildData;
+    [SerializeField] private GuildData _guildData;
     public GameObject activePannelObj;
     public int[] typeAvailable;
-     
+
     [SerializeField] private OngoingQuest ongoingQuest;
     [SerializeField] private int requiredGold;
     private QuestData simulationQuestData;
@@ -39,7 +37,8 @@ public class PannelManager : MonoBehaviour
     [SerializeField] GameObject gotoQuestPrefab;
     public static event System.Action<int> OnQuestStarting;
     private bool theResultIsOut;
-   [SerializeField] private HeroSelectionForQuestUI _heroSelectionForQuestUI;
+    [SerializeField] private HeroSelectionForQuestUI _heroSelectionForQuestUI;
+
     public bool TheResultIsOut
     {
         get => theResultIsOut;
@@ -66,15 +65,22 @@ public class PannelManager : MonoBehaviour
 
     void Start()
     {
-        RemainingGold.text = "Remaining Gold: " + GameManager.Instance.GuildManager.Gold.ToString();
         AddGameObjects();
         deactiveAllPannels();
         addListener();
         typeAvailable = new int[6];
         GameManager.Instance.upgradeCounter.OnQuestFinished += QuestFinishedHandler;
-    
-        _heroSelectionForQuestUI = GameManager.Instance.heroSelectionForQuestUI; // ✅ add this
+        _heroSelectionForQuestUI = GameManager.Instance.heroSelectionForQuestUI;
+
+        // FIX: Call RestoreHeroSelectionState() here, AFTER AddGameObjects() has populated
+        // heroesQuestButtons. SaveManager.Start() populated SelectedHeroesForQuest already
+        // (via RestoreHeroSelectionUI), so this will correctly lock the right buttons.
+        // This cannot be called from SaveManager.Start() because PannelManager.Start()
+        // (which populates heroesQuestButtons) may not have run yet at that point,
+        // causing an ArgumentOutOfRangeException.
+        RestoreHeroSelectionState();
     }
+
     private void QuestFinishedHandler()
     {
         Debug.Log("Quest finished callback received");
@@ -154,6 +160,9 @@ public class PannelManager : MonoBehaviour
 
     public void RestoreHeroSelectionState()
     {
+        // Guard: heroesQuestButtons may not be populated yet if called too early
+        if (heroesQuestButtons == null || heroesQuestButtons.Count == 0) return;
+
         for (int i = 0; i < heroesQuestButtons.Count; i++)
         {
             if (!GameManager.Instance.GuildManager.IsHeroUnlocked(i))
@@ -169,6 +178,8 @@ public class PannelManager : MonoBehaviour
 
         foreach (int id in selectedHeroesForQuest)
         {
+            // Guard: id must be a valid index
+            if (id < 0 || id >= heroesQuestButtons.Count) continue;
             heroesQuestButtons[id].interactable = false;
             heroQuestDeletButtons[id].interactable = true;
         }
@@ -191,7 +202,6 @@ public class PannelManager : MonoBehaviour
 
     private void addHero(int id)
     {
-        
         int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost, true);
 
         if (val > summonCost)
@@ -206,11 +216,7 @@ public class PannelManager : MonoBehaviour
             GameManager.Instance.popUpManager.ShowNotEnoughtGold();
         }
         checkInterectableForSummon();
-
         summonHeroButton.interactable = canSummon();
-
-        totalGold.text = "Gold Cost: " + summonCost.ToString();
-        RemainingGold.text = "Remaining Gold: " + (GameManager.Instance.GuildManager.Gold - summonCost).ToString();
     }
 
     private bool canSummon()
@@ -229,14 +235,11 @@ public class PannelManager : MonoBehaviour
             int val = GameManager.Instance.HeroSummoner.isSummonable(id, summonCost, false);
             summonCost = val;
             typeAvailable[id] -= 1;
-            if(typeAvailable[id] == 0)
+            if (typeAvailable[id] == 0)
                 summonIds[id] = false;
         }
         checkInterectableForSummon();
         summonHeroButton.interactable = canSummon();
-
-        totalGold.text = "Gold Cost: " + summonCost.ToString();
-        RemainingGold.text = "Remaining Gold: " + (GameManager.Instance.GuildManager.Gold - summonCost).ToString();
     }
 
     private void AddGameObjects()
@@ -300,9 +303,9 @@ public class PannelManager : MonoBehaviour
         summonButton.onClick.AddListener(() => activePannel(4));
         blackSmithButton.onClick.AddListener(() => activePannel(5));
         pauseButton.onClick.AddListener(() => activePannel(6));
-        heroSelectionButton.onClick.AddListener(() => 
-        { 
-            activePannel(7); 
+        heroSelectionButton.onClick.AddListener(() =>
+        {
+            activePannel(7);
             GameManager.Instance.heroSelectionForQuestUI.ClearChildren();
         });
 
@@ -349,18 +352,7 @@ public class PannelManager : MonoBehaviour
 
     public void GoQuest(int cnt, List<(int, bool)> heroesForQuest)
     {
-        /*// ✅ Guard against null
-        if (_heroSelectionForQuestUI == null)
-            _heroSelectionForQuestUI = FindObjectOfType<HeroSelectionForQuestUI>();
-
-        if (_heroSelectionForQuestUI == null)
-        {
-            Debug.LogError("HeroSelectionForQuestUI not found!");
-            return;
-        }
-
-        _guildData.gold -= _heroSelectionForQuestUI.HeroTotalGold;*/
-        OnQuestStarting?.Invoke(_guildData.gold); 
+        OnQuestStarting?.Invoke(_guildData.gold);
         if (cnt <= 0) return;
 
         float hitDamage = 0;
@@ -380,19 +372,15 @@ public class PannelManager : MonoBehaviour
         simulationQuestData.startTime = startTime;
         simulationQuestData.willWin = simulationQuestData.isCompleted;
         simulationQuestData.isCompleted = false;
-        simulationQuestData.heroesForQuest = heroesForQuest.ConvertAll(h => h.Item1); // Store only hero indices for quest tracking
+        simulationQuestData.heroesForQuest = heroesForQuest.ConvertAll(h => h.Item1);
 
         gotoQuestPrefab.SetActive(false);
 
-        // Add quest UI and start timer — only ONCE each
         ongoingQuest.AddQuestUI(simulationQuestData.uniqueId, simulationQuestData, startTime);
         GameManager.Instance.upgradeCounter.StartQuest(simulationQuestData.completionTime);
 
         Debug.Log("Quest Started: " + simulationQuestData.name);
 
-        // ✅ Do NOT call GoQuest recursively here
-
-        // Convert tuple list to int list for quest result tracking
         selectedHeroesForQuest.Clear();
         foreach ((int heroIndex, bool _) in heroesForQuest)
             selectedHeroesForQuest.Add(heroIndex);
@@ -412,7 +400,7 @@ public class PannelManager : MonoBehaviour
             questData.isCompleted = true;
             GameManager.Instance.GuildManager.Gold += questData.goldRewardBase;
             GameManager.Instance.GuildManager.Experience += questData.experienceReward;
-            
+
             foreach (int i in heroesForQuest)
             {
                 Debug.Log("hero " + i);
@@ -438,6 +426,11 @@ public class PannelManager : MonoBehaviour
         selectedHeroesForQuest.Clear();
         count = 0;
 
+        // FIX: Save immediately after quest result so selectedHeroesForQuest is written
+        // as empty to disk. Without this, if the player closes the app after the result
+        // screen, the old hero indices remain in the save file and get re-locked on next launch.
+        GameManager.Instance.saveManager.SaveGame();
+
         theResultIsOut = true;
         deactiveAllPannels();
     }
@@ -447,5 +440,4 @@ public class PannelManager : MonoBehaviour
         GameManager.Instance.HeroSummoner.summonHeroes(typeAvailable, summonCost);
         deactivePannel();
     }
-
 }

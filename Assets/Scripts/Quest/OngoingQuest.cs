@@ -15,14 +15,13 @@ public class OngoingQuest : MonoBehaviour
         get => onGoingQuest;
         set => onGoingQuest = value;
     }
-    // 🔥 Faster lookup (no Find)
+
     private Dictionary<int, QuestItemUI> uiDict = new Dictionary<int, QuestItemUI>();
 
     void Start()
     {
-    
-        LoadOngoingQuests(); // 👈 Load first
-        QuestUpdate();  
+        LoadOngoingQuests();
+        QuestUpdate();
     }
 
     public void QuestUpdate()
@@ -41,31 +40,41 @@ public class OngoingQuest : MonoBehaviour
             DateTime endTime = startTime.AddSeconds(quest.completionTime);
             TimeSpan remaining = endTime - DateTime.UtcNow;
 
-            // Try get UI safely
             if (!uiDict.TryGetValue(quest.uniqueId, out QuestItemUI ui))
                 continue;
 
             if (remaining > TimeSpan.Zero)
             {
-                // 🟢 Ongoing
+                // Still running
                 ui.UpdateUI(quest.uniqueId, quest.questName, remaining);
-                // Put back in queue
                 onGoingQuest.Enqueue(data);
             }
             else
             {
+                // Quest timer hit zero while game was open
                 ui.UpdateUI(quest.uniqueId, quest.questName, TimeSpan.Zero);
-
                 quest.isCompleted = true;
 
-                Debug.Log($"✅ Quest Completed: {quest.questName}");
-            if (GameManager.Instance != null && GameManager.Instance.heroSelectionForQuestUI != null)
-            {
-                GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest);
-            }
+                Debug.Log("Quest Completed: " + quest.questName);
+
+                // Unlock hero buttons in HeroSelectionForQuestUI
+                if (GameManager.Instance != null && GameManager.Instance.heroSelectionForQuestUI != null)
+                {
+                    GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest);
+                    // FIX: Clear the hero selection state so selectedHeroes list is emptied,
+                    // then immediately save so the save file has no locked heroes.
+                    // Without this, if the player quits after the timer fires but before
+                    // ResultOfTheQuest runs, heroes stay locked on the next launch.
+                    GameManager.Instance.heroSelectionForQuestUI.OnQuestComplete();
+                }
+
+                // FIX: Save immediately so selectedHeroesForQuest is written as empty.
+                if (SaveManager.Instance != null)
+                    SaveManager.Instance.SaveGame();
             }
         }
     }
+
     void Update()
     {
         QuestUpdate();
@@ -81,19 +90,18 @@ public class OngoingQuest : MonoBehaviour
         PlayerPrefs.SetString(GetKey(id), startTime.ToBinary().ToString());
         PlayerPrefs.Save();
     }
-    
+
     public void RebuildUI()
     {
         foreach (var data in onGoingQuest)
         {
             GameObject go = Instantiate(itemPrefab, content);
             QuestItemUI ui = go.GetComponent<QuestItemUI>();
-
             ui.Identity = data.quest.uniqueId;
             uiDict[data.quest.uniqueId] = ui;
         }
     }
-    // ✅ LOAD QUESTS (OFFLINE SUPPORT)
+
     void LoadOngoingQuests()
     {
         QuestData[] allQuests = Resources.LoadAll<QuestData>("Quests");
@@ -106,26 +114,26 @@ public class OngoingQuest : MonoBehaviour
             {
                 long binary = Convert.ToInt64(PlayerPrefs.GetString(key));
                 DateTime savedStart = DateTime.FromBinary(binary);
-
                 DateTime endTime = savedStart.AddSeconds(quest.completionTime);
 
-                // ✅ Already finished while offline
                 if (DateTime.UtcNow >= endTime)
                 {
+                    // Finished while offline — SaveManager.LoadGame() handles
+                    // clearing the hero lock via _pendingSelectedHeroes.Remove()
                     quest.isCompleted = true;
                     PlayerPrefs.DeleteKey(key);
-                    Debug.Log($"✅ Offline completed: {quest.questName}");
+                    Debug.Log("Offline completed: " + quest.questName);
                     continue;
                 }
 
-                // ⏳ Still ongoing — rebuild it
+                // Still ongoing
                 AddQuestUI(quest.uniqueId, quest, savedStart);
             }
         }
 
         PlayerPrefs.Save();
     }
-    // 🔑 Key generator
+
     private string GetKey(int id)
     {
         return "QuestStart_" + id;

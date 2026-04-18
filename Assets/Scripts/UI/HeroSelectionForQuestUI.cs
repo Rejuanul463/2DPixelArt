@@ -230,7 +230,7 @@ public class HeroSelectionForQuestUI : MonoBehaviour
             GameObject.Destroy(child.gameObject);
         }
         count = 0;
-        selectedHeroes.Clear();
+       // selectedHeroes.Clear();
         _heroTotalGold = 0;                              // ✅ add this
         OnRequiredGoldChanged?.Invoke(_heroTotalGold);   // ✅ update UI
     }

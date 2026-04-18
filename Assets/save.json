@@ -1,9 +1,9 @@
 {
     "heroes": [
         {
-            "name": "Nathan Rodriguez",
+            "name": "Aaron Taylor",
             "id": 0,
-            "uniqueId": 8,
+            "uniqueId": 14,
             "level": 1,
             "hitPerSecond": 2.0,
             "hitPower": 105.0,
@@ -12,15 +12,15 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -26.68111228942871,
-                "y": 18.985435485839845,
-                "z": -0.000003087972345383605
+                "x": -2.9216442108154299,
+                "y": 3.7080538272857668,
+                "z": -0.000008551594874006696
             }
         },
         {
-            "name": "Eleanor Mitchell",
+            "name": "Abigail Brown",
             "id": 1,
-            "uniqueId": 9,
+            "uniqueId": 15,
             "level": 3,
             "hitPerSecond": 2.0,
             "hitPower": 60.0,
@@ -29,15 +29,15 @@
             "goldPerAttack": 20,
             "isHeroSummoned": true,
             "position": {
-                "x": 33.76825714111328,
-                "y": 35.920738220214847,
-                "z": 0.0000029685347726626789
+                "x": 20.407081604003908,
+                "y": 0.6950080394744873,
+                "z": -0.000009629149644752033
             }
         },
         {
-            "name": "John Nelson",
+            "name": "Grayson Brown",
             "id": 2,
-            "uniqueId": 2,
+            "uniqueId": 16,
             "level": 4,
             "hitPerSecond": 0.5,
             "hitPower": 100.0,
@@ -46,15 +46,15 @@
             "goldPerAttack": 10,
             "isHeroSummoned": true,
             "position": {
-                "x": -22.900793075561525,
-                "y": 16.25010871887207,
-                "z": -0.000004066267138114199
+                "x": 32.802635192871097,
+                "y": 46.219120025634769,
+                "z": 0.000006651781859545736
             }
         },
         {
-            "name": "Avery Harris",
+            "name": "Nora Miller",
             "id": 3,
-            "uniqueId": 3,
+            "uniqueId": 17,
             "level": 1,
             "hitPerSecond": 3.0,
             "hitPower": 120.0,
@@ -63,9 +63,9 @@
             "goldPerAttack": 14,
             "isHeroSummoned": true,
             "position": {
-                "x": 34.81381607055664,
-                "y": 58.623111724853519,
-                "z": 0.000011087590792158153
+                "x": 21.753772735595704,
+                "y": 10.249998092651368,
+                "z": -0.000006212029347807402
             }
         },
         {
@@ -80,9 +80,9 @@
             "goldPerAttack": 20,
             "isHeroSummoned": true,
             "position": {
-                "x": -13.871537208557129,
-                "y": 15.178796768188477,
-                "z": -0.000004449319476407254
+                "x": 19.92387580871582,
+                "y": 0.5467666983604431,
+                "z": -0.00000968216590990778
             }
         },
         {
@@ -97,149 +97,13 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": 27.36026382446289,
-                "y": 7.332645416259766,
-                "z": -0.000007255315267684637
+                "x": -48.736236572265628,
+                "y": -2.58400297164917,
+                "z": -0.000010801839380292222
             }
         },
         {
-            "name": "Nathan Rodriguez",
-            "id": 0,
-            "uniqueId": 8,
-            "level": 1,
-            "hitPerSecond": 2.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -26.68111228942871,
-                "y": 18.985435485839845,
-                "z": -0.000003087972345383605
-            }
-        },
-        {
-            "name": "Eleanor Mitchell",
-            "id": 1,
-            "uniqueId": 9,
-            "level": 3,
-            "hitPerSecond": 2.0,
-            "hitPower": 60.0,
-            "HP": 40.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 33.76825714111328,
-                "y": 35.920738220214847,
-                "z": 0.0000029685347726626789
-            }
-        },
-        {
-            "name": "Nathan Rodriguez",
-            "id": 0,
-            "uniqueId": 8,
-            "level": 1,
-            "hitPerSecond": 2.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -26.68111228942871,
-                "y": 18.985435485839845,
-                "z": -0.000003087972345383605
-            }
-        },
-        {
-            "name": "Eleanor Mitchell",
-            "id": 1,
-            "uniqueId": 9,
-            "level": 3,
-            "hitPerSecond": 2.0,
-            "hitPower": 60.0,
-            "HP": 40.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 33.76825714111328,
-                "y": 35.920738220214847,
-                "z": 0.0000029685347726626789
-            }
-        },
-        {
-            "name": "James Ramirez",
-            "id": 4,
-            "uniqueId": 10,
-            "level": 3,
-            "hitPerSecond": 2.0,
-            "hitPower": 120.0,
-            "HP": 140.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 20,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -13.871537208557129,
-                "y": 15.178796768188477,
-                "z": -0.000004449319476407254
-            }
-        },
-        {
-            "name": "Henry Hall",
-            "id": 0,
-            "uniqueId": 11,
-            "level": 1,
-            "hitPerSecond": 2.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": 6.253764629364014,
-                "y": 9.79184627532959,
-                "z": 0.000007095168257365003
-            }
-        },
-        {
-            "name": "Jack Davis",
-            "id": 0,
-            "uniqueId": 12,
-            "level": 1,
-            "hitPerSecond": 2.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -17.96234893798828,
-                "y": -3.4727494716644289,
-                "z": 0.0000023513819087384037
-            }
-        },
-        {
-            "name": "Henry White",
-            "id": 0,
-            "uniqueId": 13,
-            "level": 1,
-            "hitPerSecond": 2.0,
-            "hitPower": 105.0,
-            "HP": 90.0,
-            "coolDownTime": 60.0,
-            "goldPerAttack": 24,
-            "isHeroSummoned": true,
-            "position": {
-                "x": -10.456964492797852,
-                "y": -6.5908660888671879,
-                "z": 0.0000012362553434286384
-            }
-        },
-        {
-            "name": "Henry Nguyen",
+            "name": "Aaron Taylor",
             "id": 0,
             "uniqueId": 14,
             "level": 1,
@@ -250,15 +114,32 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -0.9549900889396668,
-                "y": -5.145279407501221,
-                "z": 0.0000017532366882733186
+                "x": -2.9216442108154299,
+                "y": 3.7080538272857668,
+                "z": -0.000008551594874006696
             }
         },
         {
-            "name": "Julian Allen",
-            "id": 0,
+            "name": "Abigail Brown",
+            "id": 1,
             "uniqueId": 15,
+            "level": 3,
+            "hitPerSecond": 2.0,
+            "hitPower": 60.0,
+            "HP": 40.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 20.407081604003908,
+                "y": 0.6950080394744873,
+                "z": -0.000009629149644752033
+            }
+        },
+        {
+            "name": "Aaron Taylor",
+            "id": 0,
+            "uniqueId": 14,
             "level": 1,
             "hitPerSecond": 2.0,
             "hitPower": 105.0,
@@ -267,9 +148,162 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -5.436572074890137,
-                "y": -9.186114311218262,
-                "z": 3.081216846112511e-7
+                "x": -2.9216442108154299,
+                "y": 3.7080538272857668,
+                "z": -0.000008551594874006696
+            }
+        },
+        {
+            "name": "Abigail Brown",
+            "id": 1,
+            "uniqueId": 15,
+            "level": 3,
+            "hitPerSecond": 2.0,
+            "hitPower": 60.0,
+            "HP": 40.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 20.407081604003908,
+                "y": 0.6950080394744873,
+                "z": -0.000009629149644752033
+            }
+        },
+        {
+            "name": "Mia Campbell",
+            "id": 5,
+            "uniqueId": 5,
+            "level": 1,
+            "hitPerSecond": 4.0,
+            "hitPower": 180.0,
+            "HP": 90.0,
+            "coolDownTime": 200.0,
+            "goldPerAttack": 24,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -48.736236572265628,
+                "y": -2.58400297164917,
+                "z": -0.000010801839380292222
+            }
+        },
+        {
+            "name": "Aaron Taylor",
+            "id": 0,
+            "uniqueId": 14,
+            "level": 1,
+            "hitPerSecond": 2.0,
+            "hitPower": 105.0,
+            "HP": 90.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 24,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -2.9216442108154299,
+                "y": 3.7080538272857668,
+                "z": -0.000008551594874006696
+            }
+        },
+        {
+            "name": "Abigail Brown",
+            "id": 1,
+            "uniqueId": 15,
+            "level": 3,
+            "hitPerSecond": 2.0,
+            "hitPower": 60.0,
+            "HP": 40.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 20.407081604003908,
+                "y": 0.6950080394744873,
+                "z": -0.000009629149644752033
+            }
+        },
+        {
+            "name": "Grayson Brown",
+            "id": 2,
+            "uniqueId": 16,
+            "level": 4,
+            "hitPerSecond": 0.5,
+            "hitPower": 100.0,
+            "HP": 100.0,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 10,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 32.802635192871097,
+                "y": 46.219120025634769,
+                "z": 0.000006651781859545736
+            }
+        },
+        {
+            "name": "Aaron Taylor",
+            "id": 0,
+            "uniqueId": 14,
+            "level": 1,
+            "hitPerSecond": 2.0,
+            "hitPower": 105.0,
+            "HP": 90.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 24,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -2.9216442108154299,
+                "y": 3.7080538272857668,
+                "z": -0.000008551594874006696
+            }
+        },
+        {
+            "name": "Abigail Brown",
+            "id": 1,
+            "uniqueId": 15,
+            "level": 3,
+            "hitPerSecond": 2.0,
+            "hitPower": 60.0,
+            "HP": 40.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 20.407081604003908,
+                "y": 0.6950080394744873,
+                "z": -0.000009629149644752033
+            }
+        },
+        {
+            "name": "Grayson Brown",
+            "id": 2,
+            "uniqueId": 16,
+            "level": 4,
+            "hitPerSecond": 0.5,
+            "hitPower": 100.0,
+            "HP": 100.0,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 10,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 32.802635192871097,
+                "y": 46.219120025634769,
+                "z": 0.000006651781859545736
+            }
+        },
+        {
+            "name": "Nora Miller",
+            "id": 3,
+            "uniqueId": 17,
+            "level": 1,
+            "hitPerSecond": 3.0,
+            "hitPower": 120.0,
+            "HP": 180.0,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 14,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 21.753772735595704,
+                "y": 10.249998092651368,
+                "z": -0.000006212029347807402
             }
         }
     ],
@@ -351,7 +385,7 @@
         "guildLevel": 5,
         "currentExperience": 140,
         "experienceToNextLevel": 0,
-        "gold": 17410,
+        "gold": 19680,
         "unlockedHeroID": [
             true,
             true,
@@ -395,45 +429,49 @@
         },
         {
             "questName": "The Starlit Rites",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": "The Moonlit Rebellion",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": " Echoes of the Lost Empire",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": "A Dance with Shadows",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": "Searing Embers of the Void",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": "The Ironfang Wars",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": []
         },
         {
             "questName": " Frostbound Covenant",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
-            "heroesForQuest": []
+            "heroesForQuest": [
+                16,
+                17,
+                15
+            ]
         },
         {
             "questName": "The Starlit Rites",
@@ -494,9 +532,9 @@
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": 57.904544830322269,
-                "y": 44.134212493896487,
-                "z": 0.000005905738817091333
+                "x": 2.263218879699707,
+                "y": -36.44602966308594,
+                "z": -0.000022911881387699395
             },
             "rotation": {
                 "x": 0.0,
@@ -514,9 +552,9 @@
         {
             "objectName": "Barberian",
             "position": {
-                "x": 57.844547271728519,
-                "y": 45.42421340942383,
-                "z": -0.028131520375609399
+                "x": 2.20322322845459,
+                "y": -35.156028747558597,
+                "z": -0.0281603392213583
             },
             "rotation": {
                 "x": 0.0,
@@ -534,9 +572,9 @@
         {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": 28.53352928161621,
-                "y": -51.7703857421875,
-                "z": -0.00002839226544892881
+                "x": 29.30312156677246,
+                "y": 46.256378173828128,
+                "z": 0.000006664829925284721
             },
             "rotation": {
                 "x": 0.0,
@@ -545,7 +583,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 1.0,
+                "x": -1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -554,9 +592,9 @@
         {
             "objectName": "Giant(Clone)",
             "position": {
-                "x": -22.900793075561525,
-                "y": 16.25010871887207,
-                "z": -0.000004066267138114199
+                "x": -37.880313873291019,
+                "y": 16.117847442626954,
+                "z": -0.00000411349856221932
             },
             "rotation": {
                 "x": 0.0,
@@ -574,9 +612,9 @@
         {
             "objectName": "Witch(Clone)",
             "position": {
-                "x": 34.81381607055664,
-                "y": 58.623111724853519,
-                "z": 0.000011087590792158153
+                "x": 26.96865463256836,
+                "y": 10.250001907348633,
+                "z": -0.000006211986146809068
             },
             "rotation": {
                 "x": 0.0,
@@ -594,9 +632,9 @@
         {
             "objectName": "Witch",
             "position": {
-                "x": 35.0238151550293,
-                "y": 60.08311080932617,
-                "z": -0.028126338496804239
+                "x": 27.178653717041017,
+                "y": 11.710001945495606,
+                "z": -0.028143638744950296
             },
             "rotation": {
                 "x": 0.0,
@@ -614,9 +652,9 @@
         {
             "objectName": "Knight(Clone)",
             "position": {
-                "x": 57.904544830322269,
-                "y": 44.134212493896487,
-                "z": 0.000005905738817091333
+                "x": 19.92387580871582,
+                "y": 0.5467666983604431,
+                "z": -0.00000968216590990778
             },
             "rotation": {
                 "x": 0.0,
@@ -634,9 +672,9 @@
         {
             "objectName": "Valkyri(Clone)",
             "position": {
-                "x": 27.36026382446289,
-                "y": 7.332645416259766,
-                "z": -0.000007255315267684637
+                "x": -21.53757095336914,
+                "y": 38.156070709228519,
+                "z": 0.0000037680358673242155
             },
             "rotation": {
                 "x": 0.0,
@@ -654,9 +692,9 @@
         {
             "objectName": "Valkyri",
             "position": {
-                "x": 27.150259017944337,
-                "y": 8.882645606994629,
-                "z": -0.028144681826233865
+                "x": -21.747575759887697,
+                "y": 39.70606994628906,
+                "z": -0.028133658692240716
             },
             "rotation": {
                 "x": 0.0,
@@ -674,9 +712,9 @@
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": -23.49139976501465,
-                "y": 11.891814231872559,
-                "z": -0.000005624833192996448
+                "x": -62.560482025146487,
+                "y": 53.343017578125,
+                "z": 0.000009199311534757726
             },
             "rotation": {
                 "x": 0.0,
@@ -685,7 +723,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -1.0,
+                "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -694,9 +732,9 @@
         {
             "objectName": "Barberian",
             "position": {
-                "x": -23.551395416259767,
-                "y": 13.181814193725586,
-                "z": -0.028143052011728288
+                "x": -62.500484466552737,
+                "y": 54.633018493652347,
+                "z": -0.028128227218985559
             },
             "rotation": {
                 "x": 0.0,
@@ -714,9 +752,9 @@
         {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": 34.16851806640625,
-                "y": 46.250572204589847,
-                "z": 0.000006662906343990471
+                "x": 39.886322021484378,
+                "y": 47.26599884033203,
+                "z": 0.000007025931608950486
             },
             "rotation": {
                 "x": 0.0,
@@ -725,7 +763,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 1.0,
+                "x": -1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -734,9 +772,9 @@
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": -26.68111228942871,
-                "y": 18.985435485839845,
-                "z": -0.000003087972345383605
+                "x": 31.454601287841798,
+                "y": 10.250005722045899,
+                "z": -0.000006211952950252453
             },
             "rotation": {
                 "x": 0.0,
@@ -745,7 +783,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 1.0,
+                "x": -1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -754,9 +792,9 @@
         {
             "objectName": "Barberian",
             "position": {
-                "x": -26.621116638183595,
-                "y": 20.275436401367189,
-                "z": -0.028140515089035035
+                "x": 31.39460563659668,
+                "y": 11.540005683898926,
+                "z": -0.028143638744950296
             },
             "rotation": {
                 "x": 0.0,
@@ -774,9 +812,69 @@
         {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": 33.76825714111328,
-                "y": 35.920738220214847,
-                "z": 0.0000029685347726626789
+                "x": 5.3614654541015629,
+                "y": 40.1658821105957,
+                "z": 0.000004486734269448789
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Valkyri(Clone)",
+            "position": {
+                "x": -48.736236572265628,
+                "y": -2.58400297164917,
+                "z": -0.000010801839380292222
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Valkyri",
+            "position": {
+                "x": -48.94623947143555,
+                "y": -1.0340030193328858,
+                "z": -0.028148228302598
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": -0.6000000238418579,
+                "y": 0.6000000238418579,
+                "z": 0.6000000238418579
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Berbarian(Clone)",
+            "position": {
+                "x": 23.480953216552736,
+                "y": -53.75889587402344,
+                "z": -0.00002910345392592717
             },
             "rotation": {
                 "x": 0.0,
@@ -792,11 +890,11 @@
             "isActive": true
         },
         {
-            "objectName": "Knight(Clone)",
+            "objectName": "Barberian",
             "position": {
-                "x": -13.871537208557129,
-                "y": 15.178796768188477,
-                "z": -0.000004449319476407254
+                "x": 23.420957565307618,
+                "y": -52.468894958496097,
+                "z": -0.028166530653834344
             },
             "rotation": {
                 "x": 0.0,
@@ -805,7 +903,47 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -1.0,
+                "x": 0.49000000953674319,
+                "y": 0.49000000953674319,
+                "z": 0.49000000953674319
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Archer(Clone)",
+            "position": {
+                "x": -25.104562759399415,
+                "y": 25.79466438293457,
+                "z": -6.528538847305754e-7
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Giant(Clone)",
+            "position": {
+                "x": 15.120426177978516,
+                "y": 37.61865997314453,
+                "z": 0.0000035757948353420945
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -814,9 +952,9 @@
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": 6.253764629364014,
-                "y": 9.79184627532959,
-                "z": 0.000007095168257365003
+                "x": -2.9216442108154299,
+                "y": 3.7080538272857668,
+                "z": -0.000008551594874006696
             },
             "rotation": {
                 "x": 0.0,
@@ -834,9 +972,9 @@
         {
             "objectName": "Barberian",
             "position": {
-                "x": 6.313760280609131,
-                "y": 11.081846237182618,
-                "z": -0.02813033200800419
+                "x": -2.8616485595703127,
+                "y": 4.998053550720215,
+                "z": -0.02814597822725773
             },
             "rotation": {
                 "x": 0.0,
@@ -852,11 +990,11 @@
             "isActive": true
         },
         {
-            "objectName": "Berbarian(Clone)",
+            "objectName": "Archer(Clone)",
             "position": {
-                "x": -17.96234893798828,
-                "y": -3.4727494716644289,
-                "z": 0.0000023513819087384037
+                "x": 20.407081604003908,
+                "y": 0.6950080394744873,
+                "z": -0.000009629149644752033
             },
             "rotation": {
                 "x": 0.0,
@@ -872,71 +1010,11 @@
             "isActive": true
         },
         {
-            "objectName": "Barberian",
+            "objectName": "Giant(Clone)",
             "position": {
-                "x": -18.0223445892334,
-                "y": -2.1827495098114015,
-                "z": -0.02813507616519928
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 0.49000000953674319,
-                "y": 0.49000000953674319,
-                "z": 0.49000000953674319
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Berbarian(Clone)",
-            "position": {
-                "x": -10.456964492797852,
-                "y": -6.5908660888671879,
-                "z": 0.0000012362553434286384
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": -1.0,
-                "y": 1.0,
-                "z": 1.0
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Barberian",
-            "position": {
-                "x": -10.516960144042969,
-                "y": -5.30086612701416,
-                "z": -0.02813619002699852
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 0.49000000953674319,
-                "y": 0.49000000953674319,
-                "z": 0.49000000953674319
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Berbarian(Clone)",
-            "position": {
-                "x": -0.9549900889396668,
-                "y": -5.145279407501221,
-                "z": 0.0000017532366882733186
+                "x": 32.802635192871097,
+                "y": 46.219120025634769,
+                "z": 0.000006651781859545736
             },
             "rotation": {
                 "x": 0.0,
@@ -952,31 +1030,11 @@
             "isActive": true
         },
         {
-            "objectName": "Barberian",
+            "objectName": "Witch(Clone)",
             "position": {
-                "x": -0.8949943780899048,
-                "y": -3.8552794456481935,
-                "z": -0.028135674074292184
-            },
-            "rotation": {
-                "x": 0.0,
-                "y": 0.0,
-                "z": 0.0,
-                "w": 1.0
-            },
-            "scale": {
-                "x": 0.49000000953674319,
-                "y": 0.49000000953674319,
-                "z": 0.49000000953674319
-            },
-            "isActive": true
-        },
-        {
-            "objectName": "Berbarian(Clone)",
-            "position": {
-                "x": -5.436572074890137,
-                "y": -9.186114311218262,
-                "z": 3.081216846112511e-7
+                "x": 21.753772735595704,
+                "y": 10.249998092651368,
+                "z": -0.000006212029347807402
             },
             "rotation": {
                 "x": 0.0,
@@ -992,11 +1050,11 @@
             "isActive": true
         },
         {
-            "objectName": "Barberian",
+            "objectName": "Witch",
             "position": {
-                "x": -5.3765764236450199,
-                "y": -7.896114349365234,
-                "z": -0.028137119486927987
+                "x": 21.543773651123048,
+                "y": 11.70999813079834,
+                "z": -0.028143638744950296
             },
             "rotation": {
                 "x": 0.0,
@@ -1005,17 +1063,14 @@
                 "w": 1.0
             },
             "scale": {
-                "x": 0.49000000953674319,
-                "y": 0.49000000953674319,
-                "z": 0.49000000953674319
+                "x": -0.27000001072883608,
+                "y": 0.27000001072883608,
+                "z": 0.27000001072883608
             },
             "isActive": true
         }
     ],
     "ongoingQuests": [],
-    "selectedHeroesForQuest": [
-        6,
-        7
-    ],
-    "lastUpdatedAt": "2026-04-16T19:31:15.0938840Z"
+    "selectedHeroesForQuest": [],
+    "lastUpdatedAt": "2026-04-18T09:00:32.2959762Z"
 }
