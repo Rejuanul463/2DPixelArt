@@ -61,7 +61,7 @@ public class BuildingUI : MonoBehaviour
         imageHolder.gameObject.SetActive(true);
         buildingLvl.text = "Level : " + buildingData[ind].buildingLevel.ToString();
         gold.text = buildingData[ind].upgradeCostGold.ToString();
-        gold.text = buildingData[ind].upgradeCostWood.ToString();
+        wood.text = buildingData[ind].upgradeCostWood.ToString();
         stone.text = buildingData[ind].upgradeCostStone.ToString();
         imageHolder.sprite = buildingData[ind].currentBuilding;
     }

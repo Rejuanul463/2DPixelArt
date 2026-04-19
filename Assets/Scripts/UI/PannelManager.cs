@@ -38,7 +38,7 @@ public class PannelManager : MonoBehaviour
     public static event System.Action<int> OnQuestStarting;
     private bool theResultIsOut;
     [SerializeField] private HeroSelectionForQuestUI _heroSelectionForQuestUI;
-
+    //[SerializeField] private GameObject notificationObject;
     public bool TheResultIsOut
     {
         get => theResultIsOut;
@@ -171,7 +171,6 @@ public class PannelManager : MonoBehaviour
                 heroQuestDeletButtons[i].interactable = false;
                 continue;
             }
-
             heroesQuestButtons[i].interactable = true;
             heroQuestDeletButtons[i].interactable = false;
         }
@@ -187,9 +186,10 @@ public class PannelManager : MonoBehaviour
 
     public void deactivePannel()
     {
+        activePannelObj.SetActive(false);
         GameManager.Instance.QuestManager.questSelected = false;
         GameManager.Instance.QuestManager.details.text = "Quest Details";
-        activePannelObj.SetActive(false);
+        
         activePannelObj = null;
         for (int i = 0; i < typeAvailable.Length; i++)
         {

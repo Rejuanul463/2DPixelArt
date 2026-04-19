@@ -8,6 +8,7 @@ public class Building : MonoBehaviour
     public static Action<int> OnUpgradeRequested;
     [HideInInspector] public BuildingData buildingData;
     private float upgradeTime;
+    [SerializeField] private GameObject buildingUpgradeObject;
    [SerializeField] private TextMeshProUGUI buildingUpgradeText;
 
    private BuildingCounter _buildingCounter;
@@ -68,12 +69,13 @@ public class Building : MonoBehaviour
                 buildingData.Upgrade();
                 if(!buildingDataPref.isUnderUpgrade && buildingDataPref.isUpgradable)
                     buildingDataPref.Upgrade();
-                upgradeCompletion(buildingData.upgradeTime);
+                //upgradeCompletion(buildingData.upgradeTime);
                 Debug.Log("upgradeCalled");
             }
             else
             {
-                buildingUpgradeText.text= "Not Enough Resources!";
+                buildingUpgradeObject.SetActive(true);
+                buildingUpgradeText.text= $"Not Enough Resources!";
                 Debug.Log("NotEnough resource");
                 GameManager.Instance.popUpManager.ShowNotEnoughtResources();
             }
@@ -85,11 +87,13 @@ public class Building : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = buildingData.currentBuilding;
     }
 
+    /*
     public void upgradeCompletion(long timeLeft)
     {
         Debug.Log("CallingUpdate");
         StartCoroutine(completeUpgrade(timeLeft));
     }
+    */
     
     public virtual IEnumerator completeUpgrade(long timeLeft)
     {
