@@ -306,6 +306,7 @@ public class SaveManager : MonoBehaviour
         }
 
         // ---- BUILDINGS ----
+// ---- BUILDINGS ---- (in LoadGame)
         for (int i = 0; i < saveData.buildings.Count; i++)
         {
             var buildingSave = saveData.buildings[i];
@@ -322,8 +323,18 @@ public class SaveManager : MonoBehaviour
             building.upgradeCostStone = buildingSave.upgradeCostStone;
             building.xpBoost = buildingSave.xpBoost;
 
-            if (!building.isUnderUpgrade)
-                building.CompleteUpgrade();
+            // ✅ FIX: Only CompleteUpgrade for buildings that were MID-upgrade
+            if (building.isUnderUpgrade)
+            {
+                long now = System.DateTimeOffset.Now.ToUnixTimeSeconds();
+                long endTime = building.upgradeStartTime + building.upgradeTime;
+                if (now >= endTime)
+                {
+                    building.CompleteUpgrade(); // finished while game was closed
+                    building.isUnderUpgrade = false;
+                }
+                // else: still in progress — Building.cs coroutine should resume
+            }
 
             buildingDatas[i] = building;
         }
@@ -473,6 +484,7 @@ public class SaveManager : MonoBehaviour
     // ==========================
     // ANDROID LIFECYCLE
     // ==========================
+// SaveManager.cs — fix OnApplicationPause
     private void OnApplicationPause(bool pauseStatus)
     {
         if (pauseStatus)
@@ -484,6 +496,8 @@ public class SaveManager : MonoBehaviour
         {
             Debug.Log("App Resumed - Loading");
             LoadGame();
+            // ✅ FIX: Also restore hero selection UI after a mid-session reload
+            RestoreHeroSelectionUI();
             isLoaded = true;
         }
     }

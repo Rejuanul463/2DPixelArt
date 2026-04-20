@@ -1,10 +1,12 @@
 
+using TMPro;
 using UnityEngine;
 
 public class GuildManager : MonoBehaviour
 {
     [SerializeField] GuildData guildData;
-
+    [SerializeField] private TextMeshProUGUI woodsText;   // ✅ assign in Inspector
+    [SerializeField] private  TextMeshProUGUI stonesText; 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,8 +17,11 @@ public class GuildManager : MonoBehaviour
     {
         GameManager.Instance.UIManager.gold.text = guildData.gold.ToString();
         GameManager.Instance.UIManager.gems.text = guildData.gems.ToString();
-
         GameManager.Instance.UIManager.guildLevel.text = "Guild Level : " + guildData.guildLevel.ToString();
+
+        // ✅ FIX: Update woods and stones display too
+        if (woodsText != null) woodsText.text = guildData.woods.ToString();
+        if (stonesText != null) stonesText.text = guildData.stones.ToString();
     }
 
     public int Experience
@@ -60,16 +65,22 @@ public class GuildManager : MonoBehaviour
     public int Woods
     {
         get => guildData.woods;
-        set => guildData.woods = Mathf.Max(0, value);
+        set
+        {
+            guildData.woods = Mathf.Max(0, value);
+            updateResourcesUI(); // ✅ was missing
+        }
     }
-
     // -------- STONES --------
     public int Stones
     {
         get => guildData.stones;
-        set => guildData.stones = Mathf.Max(0, value);
+        set
+        {
+            guildData.stones = Mathf.Max(0, value);
+            updateResourcesUI(); // ✅ was missing
+        }
     }
-
     // -------- GUILD LEVEL --------
     public int GuildLevel => guildData.guildLevel;
 

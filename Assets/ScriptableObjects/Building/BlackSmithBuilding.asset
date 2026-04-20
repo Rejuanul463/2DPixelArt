@@ -30,4 +30,4 @@ MonoBehaviour:
   isUpgradable: 1
   upgradeTime: 90
   UpgradeMultiplier: 1.5
-  upgradeStartTime: 0
+  upgradeStartTime: 1

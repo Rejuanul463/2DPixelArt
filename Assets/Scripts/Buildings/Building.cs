@@ -46,54 +46,60 @@ public class Building : MonoBehaviour
 
     public void upgradeBuilding()
     {
-        if(buildingData.isUpgradable && !buildingData.isUnderUpgrade)
+       
+        if (buildingData.isUpgradable && !buildingData.isUnderUpgrade)
         {
+            
             if (!buildingData.isTownHall())
             {
-                if(buildingData.buildingLevel == GameManager.Instance.TownHall.buildingLevel)
+                if (buildingData.buildingLevel == GameManager.Instance.TownHall.buildingLevel)
                 {
                     GameManager.Instance.popUpManager.ShowNotAvailable();
                     return;
                 }
             }
             if (buildingData.upgradeCostGold <= GameManager.Instance.GuildManager.Gold &&
-               buildingData.upgradeCostWood <= GameManager.Instance.GuildManager.Woods &&
-               buildingData.upgradeCostStone <= GameManager.Instance.GuildManager.Stones)
+                buildingData.upgradeCostWood <= GameManager.Instance.GuildManager.Woods &&
+                buildingData.upgradeCostStone <= GameManager.Instance.GuildManager.Stones)
             {
+                
                 GameManager.Instance.GuildManager.Gold -= buildingData.upgradeCostGold;
                 GameManager.Instance.GuildManager.Woods -= buildingData.upgradeCostWood;
                 GameManager.Instance.GuildManager.Stones -= buildingData.upgradeCostStone;
+                Debug.Log("Building is being upgraded!!");
                 buildingData.isUnderUpgrade = true;
                 buildingData.upgradeStartTime = System.DateTimeOffset.Now.ToUnixTimeSeconds();
-                buildingDataPref.upgradeStartTime = System.DateTimeOffset.Now.ToUnixTimeMilliseconds();
+                buildingDataPref.upgradeStartTime = System.DateTimeOffset.Now.ToUnixTimeSeconds();
+
                 buildingData.Upgrade();
-                if(!buildingDataPref.isUnderUpgrade && buildingDataPref.isUpgradable)
+                if (!buildingDataPref.isUnderUpgrade && buildingDataPref.isUpgradable)
                     buildingDataPref.Upgrade();
-                //upgradeCompletion(buildingData.upgradeTime);
+
+                // ✅ FIX: Actually start the upgrade timer coroutine
+                StartCoroutine(completeUpgrade(buildingData.upgradeTime));
+
+                GameManager.Instance.saveManager.SaveGame(); // ✅ save after upgrade starts
                 Debug.Log("upgradeCalled");
             }
             else
             {
                 buildingUpgradeObject.SetActive(true);
-                buildingUpgradeText.text= $"Not Enough Resources!";
-                Debug.Log("NotEnough resource");
+                buildingUpgradeText.text = "Not Enough Resources!";
                 GameManager.Instance.popUpManager.ShowNotEnoughtResources();
             }
         }
     }
-
     public void Start()
     {
         GetComponent<SpriteRenderer>().sprite = buildingData.currentBuilding;
     }
 
-    /*
     public void upgradeCompletion(long timeLeft)
     {
         Debug.Log("CallingUpdate");
         StartCoroutine(completeUpgrade(timeLeft));
+        buildingUpgradeObject.SetActive(false);
     }
-    */
     
     public virtual IEnumerator completeUpgrade(long timeLeft)
     {

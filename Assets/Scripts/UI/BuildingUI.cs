@@ -44,19 +44,9 @@ public class BuildingUI : MonoBehaviour
         Upgrade.onClick.AddListener(() => updateBuilding(buildingId));
     }
 
+// BuildingUI.cs — replace ActiveImage()
     private void ActiveImage(int ind)
     {
-        if (buildingData[ind].upgradeCostGold <= GameManager.Instance.GuildManager.Gold)
-            Upgrade.interactable = true;
-        else
-            Upgrade.interactable = false;
-
-        if(ind != 0)
-        {
-            if (buildingData[ind].buildingLevel >= buildingData[0].buildingLevel)
-                Upgrade.interactable = false;
-        }
-
         buildingId = ind;
         imageHolder.gameObject.SetActive(true);
         buildingLvl.text = "Level : " + buildingData[ind].buildingLevel.ToString();
@@ -64,6 +54,19 @@ public class BuildingUI : MonoBehaviour
         wood.text = buildingData[ind].upgradeCostWood.ToString();
         stone.text = buildingData[ind].upgradeCostStone.ToString();
         imageHolder.sprite = buildingData[ind].currentBuilding;
+
+        // ✅ FIX: Check all 3 resources, not just gold
+        bool canAfford = buildingData[ind].upgradeCostGold <= GameManager.Instance.GuildManager.Gold &&
+                         buildingData[ind].upgradeCostWood <= GameManager.Instance.GuildManager.Woods &&
+                         buildingData[ind].upgradeCostStone <= GameManager.Instance.GuildManager.Stones;
+
+        // ✅ FIX: Disable if already upgrading or not upgradable
+        bool isReady = buildingData[ind].isUpgradable && !buildingData[ind].isUnderUpgrade;
+
+        // ✅ FIX: Disable if non-townhall building is at or above townhall level
+        bool notBlockedByTownHall = ind == 0 || buildingData[ind].buildingLevel < buildingData[0].buildingLevel;
+
+        Upgrade.interactable = canAfford && isReady && notBlockedByTownHall;
     }
 
     private void updateBuilding(int id)

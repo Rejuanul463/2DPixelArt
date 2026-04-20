@@ -197,13 +197,16 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         }
     }
 
+// HeroSelectionForQuestUI.cs — fix AddButton()
     public void AddButton(HeroData data)
     {
+        int buttonIndex = itemButtons.Count; // ✅ capture index BEFORE adding to list
+
         GameObject child = Instantiate(heroButtonPrefabe, ButtonContainer.transform);
         child.GetComponent<Image>().sprite = data.heroSprite[0];
-        child.GetComponent<Button>().onClick.AddListener(() => SelectForQuest(data.uniqueId));
+        child.GetComponent<Button>().onClick.AddListener(() => SelectForQuest(buttonIndex)); // ✅ use index, not uniqueId
         itemButtons.Add(child.GetComponent<Button>());
-        heroGoldCosts[data.uniqueId] = data.goldCost;
+        heroGoldCosts[buttonIndex] = data.goldCost; // ✅ key by index too
     }
 
     public void loadGame()

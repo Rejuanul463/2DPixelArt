@@ -33265,7 +33265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &295751181
 SpriteRenderer:
@@ -33512,7 +33512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &298481819
 SpriteRenderer:
@@ -42488,7 +42488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &380400411
 SpriteRenderer:
@@ -49508,7 +49508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &449920018
 SpriteRenderer:
@@ -53984,7 +53984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &484457110
 BoxCollider2D:
@@ -64513,7 +64513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &575830861
 SpriteRenderer:
@@ -74432,7 +74432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &660990933
 BoxCollider2D:
@@ -96249,7 +96249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &879157549
 SpriteRenderer:
@@ -97617,7 +97617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &890579344
 SpriteRenderer:
@@ -98960,7 +98960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &906260204
 SpriteRenderer:
@@ -184865,9 +184865,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Time Remained
-
-'
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -187916,7 +187914,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1065019581
 SpriteRenderer:
@@ -188622,7 +188620,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a666d8a6aa18544ab68d511aff5dc98, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!1 &1075606980
 GameObject:
@@ -190387,7 +190385,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1091729511
 SpriteRenderer:
@@ -195888,7 +195886,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1143984325
 SpriteRenderer:
@@ -201476,7 +201474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1185387494
 SpriteRenderer:
@@ -201813,6 +201811,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   guildData: {fileID: 11400000, guid: c1f304181004ab740b163d42ec9746e6, type: 2}
+  woodsText: {fileID: 447230273}
+  stonesText: {fileID: 447230273}
 --- !u!114 &1191472164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -202038,7 +202038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1195576386
 SpriteRenderer:
@@ -210257,7 +210257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1278287607
 SpriteRenderer:
@@ -210777,7 +210777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1283461756
 SpriteRenderer:
@@ -219379,7 +219379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1349137644
 SpriteRenderer:
@@ -226280,7 +226280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &1352283457
 BoxCollider2D:
@@ -233832,7 +233832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1424059364
 SpriteRenderer:
@@ -252996,7 +252996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1582528437
 SpriteRenderer:
@@ -263133,7 +263133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1673374040
 SpriteRenderer:
@@ -275768,7 +275768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &1791426674
 BoxCollider2D:
@@ -276231,7 +276231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1794324864
 SpriteRenderer:
@@ -285109,7 +285109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1881922367
 SpriteRenderer:
@@ -290399,9 +290399,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: UpgradeTimerRemaining, Assembly-CSharp
-        m_MethodName: StartUpgradeTimer
+      - m_Target: {fileID: 1352283456}
+        m_TargetAssemblyTypeName: Building, Assembly-CSharp
+        m_MethodName: upgradeBuilding
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -301693,7 +301693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &2033912255
 BoxCollider2D:
@@ -313290,7 +313290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
-  buildingUpgradeObject: {fileID: 0}
+  buildingUpgradeObject: {fileID: 717822576}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &2146185709
 SpriteRenderer:
