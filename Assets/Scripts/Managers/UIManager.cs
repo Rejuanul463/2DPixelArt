@@ -22,7 +22,7 @@ public class UIManager
     [SerializeField] public GameObject GoToQuestPannel;
     [SerializeField] public GameObject BlackSmith;
     [SerializeField] public GameObject PauseMenuPannel;
-
+    [SerializeField] public GameObject QuestNotificationPannel;
     [Header("Buttons")]
     [SerializeField] public Button InventoryButton;
     [SerializeField] public Button QuestsButton;

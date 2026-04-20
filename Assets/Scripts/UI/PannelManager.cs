@@ -144,16 +144,20 @@ public class PannelManager : MonoBehaviour
             Debug.Log("PlayerSelectionPannel");
         }
 
-        if (activePannelObj != null)
-            activePannelObj.SetActive(false);
-
+        // ✅ FIX: Check BEFORE closing, not after
         if (activePannelObj == pannels[ind])
         {
+            // Same panel clicked again — toggle it off
             activePannelObj.SetActive(false);
             activePannelObj = null;
             return;
         }
 
+        // Close the previously open panel
+        if (activePannelObj != null)
+            activePannelObj.SetActive(false);
+
+        // Open the new panel
         pannels[ind].SetActive(true);
         activePannelObj = pannels[ind];
     }
@@ -186,6 +190,7 @@ public class PannelManager : MonoBehaviour
 
     public void deactivePannel()
     {
+        if (activePannelObj == null) return;
         activePannelObj.SetActive(false);
         GameManager.Instance.QuestManager.questSelected = false;
         GameManager.Instance.QuestManager.details.text = "Quest Details";
@@ -260,7 +265,8 @@ public class PannelManager : MonoBehaviour
         pannels.Add(GameManager.Instance.UIManager.BlackSmith);
         pannels.Add(GameManager.Instance.UIManager.PauseMenuPannel);
         pannels.Add(GameManager.Instance.UIManager.GoToQuestPannel);
-
+        pannels.Add(GameManager.Instance.UIManager.QuestNotificationPannel);
+        
         heroesSummonButtons.Add(GameManager.Instance.UIManager.AddBerberian);
         heroesSummonButtons.Add(GameManager.Instance.UIManager.AddArcher);
         heroesSummonButtons.Add(GameManager.Instance.UIManager.AddGiant);
@@ -389,7 +395,12 @@ public class PannelManager : MonoBehaviour
 
         GameManager.Instance.saveManager.SaveGame();
     }
-
+    
+    public void openQuestNotification()
+    {
+        activePannel(8);
+    }
+    
     private void ResultOfTheQuest(QuestData questData, List<int> heroesForQuest)
     {
         if (questData != null && questData.willWin)

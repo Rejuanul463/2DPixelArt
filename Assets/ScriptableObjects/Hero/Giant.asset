@@ -25,12 +25,12 @@ MonoBehaviour:
   heroName: Giant
   goldCost: 80
   hitPerSecond: 0.5
-  hitPower: 100
-  HP: 100
-  level: 4
+  hitPower: 144.00002
+  HP: 144.00002
+  level: 6
   levelUpMultiplier: 1.2
   coolDownTime: 100
   goldPerAttack: 10
   isHeroSummoned: 1
-  xp: 0
-  xpForNextLevel: 50
+  xp: 225
+  xpForNextLevel: 272

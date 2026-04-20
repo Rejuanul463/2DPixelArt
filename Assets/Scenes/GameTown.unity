@@ -9369,9 +9369,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 9107377152094392517}
-        m_TargetAssemblyTypeName: PannelManager, Assembly-CSharp
-        m_MethodName: deactivePannel
+      - m_Target: {fileID: 1158727320}
+        m_TargetAssemblyTypeName: QuestNotificationPanelOff, Assembly-CSharp
+        m_MethodName: SetFalse
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33265,6 +33265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &295751181
 SpriteRenderer:
@@ -33511,6 +33512,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &298481819
 SpriteRenderer:
@@ -42486,6 +42488,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &380400411
 SpriteRenderer:
@@ -49505,6 +49508,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &449920018
 SpriteRenderer:
@@ -53980,6 +53984,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &484457110
 BoxCollider2D:
@@ -64508,6 +64513,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &575830861
 SpriteRenderer:
@@ -74426,6 +74432,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &660990933
 BoxCollider2D:
@@ -90300,7 +90307,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &819621534
 RectTransform:
   m_ObjectHideFlags: 0
@@ -96242,6 +96249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &879157549
 SpriteRenderer:
@@ -97609,6 +97617,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &890579344
 SpriteRenderer:
@@ -98951,6 +98960,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &906260204
 SpriteRenderer:
@@ -187906,6 +187916,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1065019581
 SpriteRenderer:
@@ -188611,6 +188622,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a666d8a6aa18544ab68d511aff5dc98, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!1 &1075606980
 GameObject:
@@ -190375,6 +190387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1091729511
 SpriteRenderer:
@@ -195875,6 +195888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1143984325
 SpriteRenderer:
@@ -197461,6 +197475,7 @@ GameObject:
   - component: {fileID: 1158727317}
   - component: {fileID: 1158727319}
   - component: {fileID: 1158727318}
+  - component: {fileID: 1158727320}
   m_Layer: 5
   m_Name: QuestNotification Panel
   m_TagString: notificationpanel
@@ -197529,6 +197544,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158727316}
   m_CullTransparentMesh: 1
+--- !u!114 &1158727320
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158727316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3a2e56c4032003741bc035e2feb62078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuestNotificationPanelOff
+  questNotificationPannel: {fileID: 1158727316}
 --- !u!1 &1159343116
 GameObject:
   m_ObjectHideFlags: 0
@@ -201448,6 +201476,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1185387494
 SpriteRenderer:
@@ -202009,6 +202038,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1195576386
 SpriteRenderer:
@@ -210227,6 +210257,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1278287607
 SpriteRenderer:
@@ -210746,6 +210777,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1283461756
 SpriteRenderer:
@@ -219347,6 +219379,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1349137644
 SpriteRenderer:
@@ -226247,6 +226280,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &1352283457
 BoxCollider2D:
@@ -233798,6 +233832,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1424059364
 SpriteRenderer:
@@ -252961,6 +252996,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: a647bcc79facb884a84de9ef8c2a7bd1, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1582528437
 SpriteRenderer:
@@ -259685,6 +259721,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: c0f5703897ad0564ea3752c2817ead8b, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 0}
   heroClassTemplates:
   - {fileID: 11400000, guid: 1d9289731da99bd4d83f864064374616, type: 2}
@@ -263096,6 +263133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1673374040
 SpriteRenderer:
@@ -269807,6 +269845,7 @@ MonoBehaviour:
     GoToQuestPannel: {fileID: 215744661}
     BlackSmith: {fileID: 323163804}
     PauseMenuPannel: {fileID: 1214280371}
+    QuestNotificationPannel: {fileID: 1158727316}
     InventoryButton: {fileID: 690844956945760670}
     QuestsButton: {fileID: 1443705801}
     HeroesButton: {fileID: 1367604547}
@@ -274781,8 +274820,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: -0}
-  m_SizeDelta: {x: 579.6255, y: 616.5557}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 579.6255, y: 515.59216}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1785211788
 MonoBehaviour:
@@ -275729,6 +275768,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &1791426674
 BoxCollider2D:
@@ -276191,6 +276231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1794324864
 SpriteRenderer:
@@ -285068,6 +285109,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &1881922367
 SpriteRenderer:
@@ -299048,6 +299090,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 78a26f9c8a1fddd459bf95101699a06e, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 0}
 --- !u!1 &2016634661
 GameObject:
@@ -301650,6 +301693,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 9a6fbc673df82ef438ce9eddcf9e1ff4, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!61 &2033912255
 BoxCollider2D:
@@ -313246,6 +313290,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   buildingDataPref: {fileID: 11400000, guid: 59ffdb9cadd12fe4299a9cc4790f8406, type: 2}
   buildingData: {fileID: 0}
+  buildingUpgradeObject: {fileID: 0}
   buildingUpgradeText: {fileID: 1037864982}
 --- !u!212 &2146185709
 SpriteRenderer:
