@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 using TMPro;
+using Unity.VisualScripting;
+
 public class Building : MonoBehaviour
 {
     [SerializeField] public BuildingData buildingDataPref;
@@ -10,7 +12,7 @@ public class Building : MonoBehaviour
     private float upgradeTime;
     [SerializeField] private GameObject buildingUpgradeObject;
    [SerializeField] private TextMeshProUGUI buildingUpgradeText;
-
+    [SerializeField]private GuildData guildData;
    private BuildingCounter _buildingCounter;
     //[SerializeField] private GameObject buildingUpgradePanel;
     public float UpgradeTime
@@ -21,6 +23,7 @@ public class Building : MonoBehaviour
     //[SerializeField] private TextMeshProUGUI upgradeText;
     void Awake()
     {
+       
         _buildingCounter =  GetComponent<BuildingCounter>();
          //buildingUpgradePanel.SetActive(true);
         buildingData = Instantiate(buildingDataPref);
@@ -46,7 +49,6 @@ public class Building : MonoBehaviour
 
     public void upgradeBuilding()
     {
-       
         if (buildingData.isUpgradable && !buildingData.isUnderUpgrade)
         {
             
@@ -58,26 +60,23 @@ public class Building : MonoBehaviour
                     return;
                 }
             }
-            if (buildingData.upgradeCostGold <= GameManager.Instance.GuildManager.Gold &&
-                buildingData.upgradeCostWood <= GameManager.Instance.GuildManager.Woods &&
-                buildingData.upgradeCostStone <= GameManager.Instance.GuildManager.Stones)
+            if (buildingData.upgradeCostGold <= guildData.gold &&
+                buildingData.upgradeCostWood <= guildData.woods &&
+                buildingData.upgradeCostStone <= guildData.stones)
             {
-                
-                GameManager.Instance.GuildManager.Gold -= buildingData.upgradeCostGold;
-                GameManager.Instance.GuildManager.Woods -= buildingData.upgradeCostWood;
-                GameManager.Instance.GuildManager.Stones -= buildingData.upgradeCostStone;
+                guildData.gold -= buildingData.upgradeCostGold;
+                guildData.woods -= buildingData.upgradeCostWood;
+                guildData.stones-= buildingData.upgradeCostStone;
                 Debug.Log("Building is being upgraded!!");
                 buildingData.isUnderUpgrade = true;
                 buildingData.upgradeStartTime = System.DateTimeOffset.Now.ToUnixTimeSeconds();
                 buildingDataPref.upgradeStartTime = System.DateTimeOffset.Now.ToUnixTimeSeconds();
-
+                buildingUpgradeText.text = $"Building is being upgraded";
                 buildingData.Upgrade();
                 if (!buildingDataPref.isUnderUpgrade && buildingDataPref.isUpgradable)
                     buildingDataPref.Upgrade();
-
                 // ✅ FIX: Actually start the upgrade timer coroutine
                 StartCoroutine(completeUpgrade(buildingData.upgradeTime));
-
                 GameManager.Instance.saveManager.SaveGame(); // ✅ save after upgrade starts
                 Debug.Log("upgradeCalled");
             }
