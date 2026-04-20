@@ -23,11 +23,11 @@ MonoBehaviour:
   buildingLevel: 1
   maxBuildingLevel: 4
   upgradeCostGold: 200
-  upgradeCostWood: 0
-  upgradeCostStone: 0
+  upgradeCostWood: 30
+  upgradeCostStone: 30
   xpBoost: 100
   isUnderUpgrade: 0
-  isUpgradable: 0
+  isUpgradable: 1
   upgradeTime: 90
   UpgradeMultiplier: 1.5
   upgradeStartTime: 1773567471693
