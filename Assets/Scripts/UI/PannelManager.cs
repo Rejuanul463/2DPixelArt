@@ -399,6 +399,8 @@ public class PannelManager : MonoBehaviour
             questData.isSelected = true;
             questData.isCompleted = true;
             GameManager.Instance.GuildManager.Gold += questData.goldRewardBase;
+            GameManager.Instance.GuildManager.Stones +=questData.StoneReward;
+            GameManager.Instance.GuildManager.Woods= questData.WoodReward;
             GameManager.Instance.GuildManager.Experience += questData.experienceReward;
 
             foreach (int i in heroesForQuest)
@@ -411,6 +413,8 @@ public class PannelManager : MonoBehaviour
         }
         else
         {
+            GameManager.Instance.GuildManager.Stones += 15;
+            GameManager.Instance.GuildManager.Woods +=15;
             if (questData != null) questData.isSelected = false;
             _upgradeCounter.QuestUpdate.text = "You Have Lost The Quest!";
             Debug.Log("loses");
