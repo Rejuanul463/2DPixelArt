@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 7
-  questName: A Dance with Shadows
+  questName: The Lost Relic of Arvandor
   questType: 0
   questDifficulty: 0
   description: The stars have spoken. Ancient forces return to reclaim what was once
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 4
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 1

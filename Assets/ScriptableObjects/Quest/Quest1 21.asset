@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 20
-  questName: Nightfall's Wrath
+  questName: "The Frozen Throne\u2019s Call"
   questType: 0
   questDifficulty: 2
   description: The stars have spoken. Ancient forces return to reclaim what was once
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 230
   experienceReward: 960
   experienceRewardBonus: 345
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 0
   travelDistance: 63
@@ -38,8 +38,8 @@ MonoBehaviour:
   hitPower: 64.5
   HP: 500
   enemyCount: 4
-  willWin: 0
+  willWin: 1
   completionTime: 60
-  isCompleted: 0
-  isSelected: 0
+  isCompleted: 1
+  isSelected: 1
   slots: 0

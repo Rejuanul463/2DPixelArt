@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 6
-  questName: ' Echoes of the Lost Empire'
+  questName: Siege of Blackstone Keep
   questType: 0
   questDifficulty: 0
   description: Across frozen tundras and beneath the Northern Lights, the Guild's
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 4
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 1

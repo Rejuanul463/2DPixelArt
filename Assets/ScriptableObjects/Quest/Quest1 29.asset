@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 28
-  questName: Echoes of the Lost Empire
+  questName: "The Fallen Paladin\u2019s Redemption"
   questType: 0
   questDifficulty: 2
   description: A forbidden pact must be completed before the ancient enemies arrive.
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 310
   experienceReward: 1280
   experienceRewardBonus: 465
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 0
   travelDistance: 87

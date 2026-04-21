@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 29
-  questName: Nightfall's Wrath
+  questName: The Veil of Dark Sorcery
   questType: 0
   questDifficulty: 3
   description: A forbidden pact must be completed before the ancient enemies arrive.
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 320
   experienceReward: 1320
   experienceRewardBonus: 480
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 0
   travelDistance: 90

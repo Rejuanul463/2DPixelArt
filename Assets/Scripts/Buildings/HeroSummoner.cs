@@ -22,7 +22,6 @@ public class HeroSummoner : Building
     public void LoadGame()
     {
         heroDatas = GameManager.Instance.saveManager.heroDatas;
-
         foreach(HeroData h in heroDatas)
         {
             Debug.Log(h.name);
@@ -45,7 +44,6 @@ public class HeroSummoner : Building
 
         // Take a snapshot so coroutine data never changes
         int[] idsSnapshot = (int[])ids.Clone();
-
         StartCoroutine(summonAll(idsSnapshot));
     }
 

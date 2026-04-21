@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 24
-  questName: Frostbound Covenant
+  questName: The Betrayal of Silvercrest
   questType: 0
   questDifficulty: 2
   description: Long-forgotten forces of darkness have risen. Stop them before they
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 270
   experienceReward: 1120
   experienceRewardBonus: 405
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 0
   travelDistance: 75

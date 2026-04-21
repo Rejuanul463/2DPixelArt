@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 26
-  questName: ' Whispers of the Abyss'
+  questName: "The Blacksmith\u2019s Hidden Legacy"
   questType: 0
   questDifficulty: 2
   description: The iron wolves grow restless. A looming war threatens everything
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 290
   experienceReward: 1200
   experienceRewardBonus: 435
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 1
   travelDistance: 81

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 25
-  questName: The Moonlit Rebellion
+  questName: The Guardian of the Sacred Flame
   questType: 0
   questDifficulty: 2
   description: Long-forgotten forces of darkness have risen. Stop them before they
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 280
   experienceReward: 1160
   experienceRewardBonus: 420
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 0
   travelDistance: 78

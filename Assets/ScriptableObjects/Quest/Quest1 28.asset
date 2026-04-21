@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 27
-  questName: The Moonlit Rebellion
+  questName: Wrath of the Stone Giants
   questType: 0
   questDifficulty: 2
   description: Long-forgotten forces of darkness have risen. Stop them before they
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 300
   experienceReward: 1240
   experienceRewardBonus: 450
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 0
   travelDistance: 84

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 2
-  questName: Searing Embers of the Void
+  questName: Shadows Over Eldermoor
   questType: 0
   questDifficulty: 0
   description: Burning winds carry whispers of a new power, and your guild is in
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 3
   willWin: 1
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 1

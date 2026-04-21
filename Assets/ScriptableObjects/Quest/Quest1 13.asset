@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 12
-  questName: Frostbound Covenant
+  questName: "The King\u2019s Stolen Heir"
   questType: 0
   questDifficulty: 1
   description: Long-forgotten forces of darkness have risen. Stop them before they
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 150
   experienceReward: 300
   experienceRewardBonus: 225
-  WoodReward: 220
-  StoneReward: 220
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 39
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 6
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 0

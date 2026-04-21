@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 8
-  questName: Searing Embers of the Void
+  questName: Flames of the Forsaken Village
   questType: 0
   questDifficulty: 0
   description: The stars have spoken. Ancient forces return to reclaim what was once
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 110
   experienceReward: 160
   experienceRewardBonus: 165
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 27
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 5
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 1

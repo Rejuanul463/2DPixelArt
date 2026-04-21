@@ -108,7 +108,7 @@ public class Building : MonoBehaviour
         while (reamainingTime > 0f)
         {
             upgradeTime = reamainingTime;
-            buildingUpgradeText.text = "Building Update will finish " + reamainingTime + " seconds.";
+            buildingUpgradeText.text = "Building Update will finish in " + reamainingTime + " seconds.";
             yield return new WaitForSeconds(1f);
             reamainingTime -= 1f;
         }

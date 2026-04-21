@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 17
-  questName: ' Frostbound Covenant'
+  questName: Trials of the Golden Order
   questType: 0
   questDifficulty: 1
   description: The vortex threatens to consume the world. Only the bravest can survive
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 200
   experienceReward: 580
   experienceRewardBonus: 300
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 54
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 8
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 0

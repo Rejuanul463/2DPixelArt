@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 16
-  questName: Nightfall's Wrath
+  questName: The Witch of Ravenwood
   questType: 0
   questDifficulty: 1
   description: The stars have spoken. Ancient forces return to reclaim what was once
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 190
   experienceReward: 380
   experienceRewardBonus: 285
-  WoodReward: 340
-  StoneReward: 340
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 51
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 7
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 0

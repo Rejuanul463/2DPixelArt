@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 21
-  questName: The Ironfang Wars
+  questName: The Knight Without a Name
   questType: 0
   questDifficulty: 2
   description: A forbidden pact must be completed before the ancient enemies arrive.
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 240
   experienceReward: 1000
   experienceRewardBonus: 360
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 1
   travelDistance: 66

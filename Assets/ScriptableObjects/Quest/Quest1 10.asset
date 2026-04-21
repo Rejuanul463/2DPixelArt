@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 9
-  questName: The Ironfang Wars
+  questName: "The Dragon\u2019s Forgotten Pact"
   questType: 0
   questDifficulty: 1
   description: Whispers of old secrets and forgotten magic travel on the wind. Find
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 120
   experienceReward: 190
   experienceRewardBonus: 180
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 30
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 5
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 0

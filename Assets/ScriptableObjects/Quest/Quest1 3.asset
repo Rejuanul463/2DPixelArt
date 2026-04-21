@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 3
-  questName: The Moonlit Rebellion
+  questName: "The Last Knight\u2019s Vow"
   questType: 0
   questDifficulty: 0
   description: Long-forgotten forces of darkness have risen. Stop them before they
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 3
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 1

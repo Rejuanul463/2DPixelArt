@@ -27,8 +27,8 @@ MonoBehaviour:
   goldRewardBonus: 0
   experienceReward: 0
   experienceRewardBonus: 0
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 300
+  StoneReward: 300
   location: 
   isInCity: 1
   travelDistance: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 18
-  questName: The Moonlit Rebellion
+  questName: The Phantom of Greywatch
   questType: 0
   questDifficulty: 1
   description: The vortex threatens to consume the world. Only the bravest can survive
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 210
   experienceReward: 680
   experienceRewardBonus: 315
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 57
@@ -38,8 +38,8 @@ MonoBehaviour:
   hitPower: 110
   HP: 600
   enemyCount: 7
-  willWin: 0
+  willWin: 1
   completionTime: 60
-  isCompleted: 0
-  isSelected: 0
+  isCompleted: 1
+  isSelected: 1
   slots: 0

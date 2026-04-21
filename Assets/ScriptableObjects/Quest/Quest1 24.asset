@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 23
-  questName: The Ironfang Wars
+  questName: The Sunken City Mystery
   questType: 0
   questDifficulty: 2
   description: Burning winds carry whispers of a new power, and your guild is in
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 260
   experienceReward: 1080
   experienceRewardBonus: 390
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: Frontier Zone
   isInCity: 0
   travelDistance: 75

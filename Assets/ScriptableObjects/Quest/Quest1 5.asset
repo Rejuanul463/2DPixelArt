@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 5
-  questName: The Moonlit Rebellion
+  questName: The Whispering Forest Trial
   questType: 0
   questDifficulty: 0
   description: The iron wolves grow restless. A looming war threatens everything
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 4
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 1

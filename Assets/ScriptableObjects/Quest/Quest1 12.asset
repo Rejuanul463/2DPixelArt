@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 11
-  questName: The Starlit Rites
+  questName: The Silent Monastery Secret
   questType: 0
   questDifficulty: 1
   description: A forbidden pact must be completed before the ancient enemies arrive.
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 6
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 0

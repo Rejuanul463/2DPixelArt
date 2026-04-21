@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 15
-  questName: Nightfall's Wrath
+  questName: Secrets Beneath Ironhold
   questType: 0
   questDifficulty: 1
   description: Long-forgotten forces of darkness have risen. Stop them before they
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 430
   experienceReward: 430
   experienceRewardBonus: 270
-  WoodReward: 300
-  StoneReward: 300
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 48
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 7
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 0

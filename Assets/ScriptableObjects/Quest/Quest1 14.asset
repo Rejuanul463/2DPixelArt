@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 13
-  questName: A Dance with Shadows
+  questName: Ashes of the Fallen Realm
   questType: 0
   questDifficulty: 1
   description: Burning winds carry whispers of a new power, and your guild is in
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 280
   experienceReward: 380
   experienceRewardBonus: 240
-  WoodReward: 260
-  StoneReward: 260
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 1
   travelDistance: 42
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 6
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 0

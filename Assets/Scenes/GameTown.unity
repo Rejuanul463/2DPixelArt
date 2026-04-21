@@ -201878,6 +201878,16 @@ MonoBehaviour:
   - {fileID: 11400000, guid: ff782dbe026c9764d874fc314678e207, type: 2}
   - {fileID: 11400000, guid: 7eba89fb7cf4d3f4d8d23b640979433d, type: 2}
   - {fileID: 11400000, guid: 21894bbd335d3404d85c722c2613739f, type: 2}
+  - {fileID: 11400000, guid: e3d89fe6b3bd86a4bb19f7a3a4e9a477, type: 2}
+  - {fileID: 11400000, guid: e3d89fe6b3bd86a4bb19f7a3a4e9a477, type: 2}
+  - {fileID: 11400000, guid: fb891c5149cc8554795338e2a5b55fb7, type: 2}
+  - {fileID: 11400000, guid: bdac333e95feaa848b6d480dd96c4353, type: 2}
+  - {fileID: 11400000, guid: ab6d6fec2290e384badb1efa2cf4838d, type: 2}
+  - {fileID: 11400000, guid: b21e6132a1dbfb84ebd5761f64d0c017, type: 2}
+  - {fileID: 11400000, guid: ac67c0611d52976489e0222baf85e7f5, type: 2}
+  - {fileID: 11400000, guid: 49ac2553bd817624e8184c2cf42dcb76, type: 2}
+  - {fileID: 11400000, guid: 793ecb250a417814a8a67b7e71b5dd34, type: 2}
+  - {fileID: 11400000, guid: 865d4dd1226831545a520a504dd2d886, type: 2}
   latestQuestInd: 0
   content: {fileID: 147382659}
   itemPrefab: {fileID: 2824948512204075242, guid: 3bfdcac6d7e405244bf0ef78a563c98e, type: 3}

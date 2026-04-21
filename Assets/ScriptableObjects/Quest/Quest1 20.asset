@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 19
-  questName: Echoes of the Lost Empire
+  questName: Rise of the Shadow Legion
   questType: 0
   questDifficulty: 2
   description: Burning winds carry whispers of a new power, and your guild is in
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 220
   experienceReward: 900
   experienceRewardBonus: 330
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 60
@@ -38,8 +38,8 @@ MonoBehaviour:
   hitPower: 160
   HP: 1800
   enemyCount: 1
-  willWin: 0
+  willWin: 1
   completionTime: 60
-  isCompleted: 0
-  isSelected: 0
+  isCompleted: 1
+  isSelected: 1
   slots: 0

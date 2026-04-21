@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 32
-  questName: 
+  questName: The Forbidden Spellbook
   questType: 0
   questDifficulty: 0
   description: 
@@ -27,8 +27,8 @@ MonoBehaviour:
   goldRewardBonus: 0
   experienceReward: 0
   experienceRewardBonus: 0
-  WoodReward: 0
-  StoneReward: 0
+  WoodReward: 250
+  StoneReward: 250
   location: 
   isInCity: 1
   travelDistance: 0

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 14
-  questName: Nightfall's Wrath
+  questName: The Cursed Blade Awakens
   questType: 0
   questDifficulty: 1
   description: The iron wolves grow restless. A looming war threatens everything
@@ -28,8 +28,8 @@ MonoBehaviour:
   goldRewardBonus: 380
   experienceReward: 380
   experienceRewardBonus: 255
-  WoodReward: 260
-  StoneReward: 260
+  WoodReward: 200
+  StoneReward: 200
   location: Frontier Zone
   isInCity: 0
   travelDistance: 45
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 6
   willWin: 0
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 0

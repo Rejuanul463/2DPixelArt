@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
   m_Name: Quest1 4
   m_EditorClassIdentifier: 
-  heroesForQuest: 1100000010000000
+  heroesForQuest: 
   uniqueId: 4
-  questName: The Starlit Rites
+  questName: Curse of the Hollow King
   questType: 0
   questDifficulty: 0
   description: The vortex threatens to consume the world. Only the bravest can survive
@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 4
   willWin: 1
   completionTime: 60
-  isCompleted: 0
+  isCompleted: 1
   isSelected: 0
   slots: 1
