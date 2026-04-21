@@ -410,6 +410,7 @@ public class PannelManager : MonoBehaviour
             questData.isSelected = true;
             questData.isCompleted = true;
             GameManager.Instance.GuildManager.Gold += questData.goldRewardBase;
+            GameManager.Instance.GuildManager.Gems += 15;
             GameManager.Instance.GuildManager.Stones +=questData.StoneReward;
             GameManager.Instance.GuildManager.Woods= questData.WoodReward;
             GameManager.Instance.GuildManager.Experience += questData.experienceReward;

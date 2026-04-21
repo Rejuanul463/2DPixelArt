@@ -11,7 +11,7 @@ public class GuildData : ScriptableObject
     [SerializeField] public int gold = 0;
     [SerializeField] public bool[] unlockedHeroID;
     [SerializeField] public int maxUnlockableHeroID = 0;
-    [SerializeField] public int gems = 0;
+    [SerializeField] public int gems = 1;
     [SerializeField] public int woods = 0;
     [SerializeField] public int stones = 0;
     [SerializeField] public int BlackSmithLevel = 1;

@@ -79841,7 +79841,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &717822577
 RectTransform:
   m_ObjectHideFlags: 0
@@ -188648,7 +188648,7 @@ MonoBehaviour:
   buildingDataPref: {fileID: 11400000, guid: 9a666d8a6aa18544ab68d511aff5dc98, type: 2}
   buildingData: {fileID: 0}
   buildingUpgradeObject: {fileID: 1158727316}
-  buildingUpgradeText: {fileID: 1426008966}
+  buildingUpgradeText: {fileID: 1037864982}
   guildData: {fileID: 11400000, guid: c1f304181004ab740b163d42ec9746e6, type: 2}
 --- !u!1 &1075606980
 GameObject:
@@ -299134,7 +299134,7 @@ MonoBehaviour:
   buildingDataPref: {fileID: 11400000, guid: 78a26f9c8a1fddd459bf95101699a06e, type: 2}
   buildingData: {fileID: 0}
   buildingUpgradeObject: {fileID: 1158727316}
-  buildingUpgradeText: {fileID: 1426008966}
+  buildingUpgradeText: {fileID: 1037864982}
   guildData: {fileID: 11400000, guid: c1f304181004ab740b163d42ec9746e6, type: 2}
 --- !u!1 &2016634661
 GameObject:
