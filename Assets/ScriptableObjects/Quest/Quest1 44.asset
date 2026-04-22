@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 43
-  questName: 
+  questName: The Silver Wolf Hunt
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 3
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

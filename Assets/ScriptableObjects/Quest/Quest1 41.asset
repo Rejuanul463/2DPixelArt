@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 40
-  questName: 
+  questName: Blades of the Crimson Brotherhood
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 2
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

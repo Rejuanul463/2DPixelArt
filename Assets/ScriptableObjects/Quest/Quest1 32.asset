@@ -16,7 +16,7 @@ MonoBehaviour:
   uniqueId: 31
   questName: "The Queen\u2019s Secret War"
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 1
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 38
-  questName: 
+  questName: The Serpent Beneath the Throne
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 2
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

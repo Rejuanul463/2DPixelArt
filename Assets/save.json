@@ -12,9 +12,9 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -8.095081329345704,
-                "y": -1.2850488424301148,
-                "z": -0.000010337306775909383
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             }
         },
         {
@@ -29,9 +29,9 @@
             "goldPerAttack": 20,
             "isHeroSummoned": true,
             "position": {
-                "x": -7.955955982208252,
-                "y": -3.7580254077911379,
-                "z": -0.000011221647582715377
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             }
         },
         {
@@ -46,9 +46,9 @@
             "goldPerAttack": 10,
             "isHeroSummoned": true,
             "position": {
-                "x": 61.44010543823242,
-                "y": 28.242341995239259,
-                "z": 2.225704349712032e-7
+                "x": -49.15271759033203,
+                "y": 25.215925216674806,
+                "z": -8.597642704444297e-7
             }
         },
         {
@@ -63,9 +63,9 @@
             "goldPerAttack": 14,
             "isHeroSummoned": true,
             "position": {
-                "x": 1.370315432548523,
-                "y": -52.680030822753909,
-                "z": -0.00002871760261768941
+                "x": -39.34257125854492,
+                "y": 9.806414604187012,
+                "z": -0.0000063706334003654778
             }
         },
         {
@@ -80,9 +80,9 @@
             "goldPerAttack": 20,
             "isHeroSummoned": true,
             "position": {
-                "x": -31.56122398376465,
-                "y": 16.250051498413087,
-                "z": -0.000004066264409630094
+                "x": -41.7952995300293,
+                "y": 16.528118133544923,
+                "z": -0.0000039667652345087849
             }
         },
         {
@@ -97,9 +97,9 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": 1.6382598876953126,
-                "y": 5.446136474609375,
-                "z": -0.000007929907951620407
+                "x": -26.61971664428711,
+                "y": 16.249862670898439,
+                "z": -0.000004066275323566515
             }
         },
         {
@@ -114,9 +114,9 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -8.095081329345704,
-                "y": -1.2850488424301148,
-                "z": -0.000010337306775909383
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             }
         },
         {
@@ -131,9 +131,9 @@
             "goldPerAttack": 20,
             "isHeroSummoned": true,
             "position": {
-                "x": -7.955955982208252,
-                "y": -3.7580254077911379,
-                "z": -0.000011221647582715377
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             }
         },
         {
@@ -148,9 +148,9 @@
             "goldPerAttack": 10,
             "isHeroSummoned": true,
             "position": {
-                "x": 61.44010543823242,
-                "y": 28.242341995239259,
-                "z": 2.225704349712032e-7
+                "x": -49.15271759033203,
+                "y": 25.215925216674806,
+                "z": -8.597642704444297e-7
             }
         },
         {
@@ -165,9 +165,9 @@
             "goldPerAttack": 24,
             "isHeroSummoned": true,
             "position": {
-                "x": -8.095081329345704,
-                "y": -1.2850488424301148,
-                "z": -0.000010337306775909383
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             }
         },
         {
@@ -182,9 +182,9 @@
             "goldPerAttack": 20,
             "isHeroSummoned": true,
             "position": {
-                "x": -7.955955982208252,
-                "y": -3.7580254077911379,
-                "z": -0.000011221647582715377
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             }
         },
         {
@@ -199,9 +199,9 @@
             "goldPerAttack": 10,
             "isHeroSummoned": true,
             "position": {
-                "x": 61.44010543823242,
-                "y": 28.242341995239259,
-                "z": 2.225704349712032e-7
+                "x": -49.15271759033203,
+                "y": 25.215925216674806,
+                "z": -8.597642704444297e-7
             }
         }
     ],
@@ -222,9 +222,9 @@
             "buildingID": 3,
             "buildingLevel": 4,
             "isUnderUpgrade": false,
-            "isUpgradable": true,
+            "isUpgradable": false,
             "upgradeTime": 90,
-            "upgradeStartTime": 1776767292,
+            "upgradeStartTime": 1776834703,
             "upgradeCostGold": 450,
             "upgradeCostWood": 180,
             "upgradeCostStone": 180,
@@ -268,22 +268,22 @@
         },
         {
             "buildingID": 1,
-            "buildingLevel": 3,
+            "buildingLevel": 4,
             "isUnderUpgrade": false,
             "isUpgradable": true,
             "upgradeTime": 1,
-            "upgradeStartTime": 1776767292,
-            "upgradeCostGold": 225,
-            "upgradeCostWood": 75,
-            "upgradeCostStone": 75,
-            "xpBoost": 337.0
+            "upgradeStartTime": 1776834703,
+            "upgradeCostGold": 337,
+            "upgradeCostWood": 112,
+            "upgradeCostStone": 112,
+            "xpBoost": 505.0
         }
     ],
     "guild": {
-        "guildLevel": 14,
+        "guildLevel": 16,
         "currentExperience": 4970,
         "experienceToNextLevel": 0,
-        "gold": 8257,
+        "gold": 7907,
         "unlockedHeroID": [
             true,
             true,
@@ -292,10 +292,10 @@
             true,
             true
         ],
-        "maxUnlockableHeroID": 8,
-        "gems": 60,
-        "woods": 80,
-        "stones": 339,
+        "maxUnlockableHeroID": 9,
+        "gems": 90,
+        "woods": 400,
+        "stones": 859,
         "BlackSmithLevel": 1,
         "HeroSummonerLevel": 1,
         "questCompleteTime": []
@@ -480,15 +480,141 @@
             "isCompleted": false,
             "completeTime": 0,
             "heroesForQuest": []
+        },
+        {
+            "questName": "The Veil of Dark Sorcery",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Hunt for the Crimson Beast",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Queen’s Secret War",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Forbidden Spellbook",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Watchtower’s Last Stand",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Merchant of Hidden Truths",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Crown of Ashen Kings",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Lanterns of Lost Souls",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Iron Duke’s Rebellion",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Serpent Beneath the Throne",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Forgotten Chapel Curse",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Blades of the Crimson Brotherhood",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Oracle of Stormpeak",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Ruins of Evernight",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Silver Wolf Hunt",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Warlock’s Final Bargain",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Banner of the Fallen Legion",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Hidden Vault of Kingsreach",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Plague of Black Hollow",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Harbinger’s Omen",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Trial of the Seven Seals",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
         }
     ],
     "sceneObjects": [
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": 27.712512969970704,
-                "y": 7.820329189300537,
-                "z": -0.000007080887826305116
+                "x": -61.15439987182617,
+                "y": 38.941829681396487,
+                "z": 0.000004049001745443093
             },
             "rotation": {
                 "x": 0.0,
@@ -506,9 +632,9 @@
         {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": 2.318563938140869,
-                "y": -37.27629470825195,
-                "z": -0.000023208727725432254
+                "x": -41.7952995300293,
+                "y": 16.528118133544923,
+                "z": -0.0000039667652345087849
             },
             "rotation": {
                 "x": 0.0,
@@ -526,9 +652,9 @@
         {
             "objectName": "Giant(Clone)",
             "position": {
-                "x": 3.3191046714782717,
-                "y": 10.249757766723633,
-                "z": -0.000006211968411662383
+                "x": -49.24214172363281,
+                "y": 24.938800811767579,
+                "z": -9.58874238676799e-7
             },
             "rotation": {
                 "x": 0.0,
@@ -537,7 +663,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -1.0,
+                "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -546,9 +672,9 @@
         {
             "objectName": "Witch(Clone)",
             "position": {
-                "x": 1.370315432548523,
-                "y": -52.680030822753909,
-                "z": -0.00002871760261768941
+                "x": -39.34257125854492,
+                "y": 9.806414604187012,
+                "z": -0.0000063706334003654778
             },
             "rotation": {
                 "x": 0.0,
@@ -557,7 +683,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -1.0,
+                "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -566,9 +692,9 @@
         {
             "objectName": "Knight(Clone)",
             "position": {
-                "x": -31.56122398376465,
-                "y": 16.250051498413087,
-                "z": -0.000004066264409630094
+                "x": -41.7952995300293,
+                "y": 16.528118133544923,
+                "z": -0.0000039667652345087849
             },
             "rotation": {
                 "x": 0.0,
@@ -586,9 +712,9 @@
         {
             "objectName": "Valkyri(Clone)",
             "position": {
-                "x": 1.6382598876953126,
-                "y": 5.446136474609375,
-                "z": -0.000007929907951620407
+                "x": -26.61971664428711,
+                "y": 16.249862670898439,
+                "z": -0.000004066275323566515
             },
             "rotation": {
                 "x": 0.0,
@@ -606,9 +732,9 @@
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": -30.179948806762697,
-                "y": -15.130050659179688,
-                "z": -0.000015288571376004256
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             },
             "rotation": {
                 "x": 0.0,
@@ -626,9 +752,9 @@
         {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": 22.48592758178711,
-                "y": 27.827468872070314,
-                "z": 7.40711385560644e-8
+                "x": -42.04997634887695,
+                "y": 16.800111770629884,
+                "z": -0.000003869491592922714
             },
             "rotation": {
                 "x": 0.0,
@@ -646,9 +772,9 @@
         {
             "objectName": "Giant(Clone)",
             "position": {
-                "x": -5.041555881500244,
-                "y": 30.76701545715332,
-                "z": 0.0000011254779792579939
+                "x": -48.25384521484375,
+                "y": 27.582366943359376,
+                "z": -1.3458224756845994e-8
             },
             "rotation": {
                 "x": 0.0,
@@ -666,9 +792,9 @@
         {
             "objectName": "Berbarian(Clone)",
             "position": {
-                "x": -8.095081329345704,
-                "y": -1.2850488424301148,
-                "z": -0.000010337306775909383
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             },
             "rotation": {
                 "x": 0.0,
@@ -677,7 +803,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -1.0,
+                "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -686,9 +812,9 @@
         {
             "objectName": "Archer(Clone)",
             "position": {
-                "x": -7.955955982208252,
-                "y": -3.7580254077911379,
-                "z": -0.000011221647582715377
+                "x": -38.43282699584961,
+                "y": 31.22254753112793,
+                "z": 0.0000012883742783742492
             },
             "rotation": {
                 "x": 0.0,
@@ -697,7 +823,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -1.0,
+                "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -706,9 +832,9 @@
         {
             "objectName": "Giant(Clone)",
             "position": {
-                "x": 61.44010543823242,
-                "y": 28.242341995239259,
-                "z": 2.225704349712032e-7
+                "x": -49.15271759033203,
+                "y": 25.215925216674806,
+                "z": -8.597642704444297e-7
             },
             "rotation": {
                 "x": 0.0,
@@ -717,7 +843,7 @@
                 "w": 1.0
             },
             "scale": {
-                "x": -1.0,
+                "x": 1.0,
                 "y": 1.0,
                 "z": 1.0
             },
@@ -726,5 +852,5 @@
     ],
     "ongoingQuests": [],
     "selectedHeroesForQuest": [],
-    "lastUpdatedAt": "2026-04-21T10:58:44.4115260Z"
+    "lastUpdatedAt": "2026-04-22T05:24:36.0975790Z"
 }

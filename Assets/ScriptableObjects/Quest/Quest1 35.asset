@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
   m_Name: Quest1 35
   m_EditorClassIdentifier: 
-  heroesForQuest: 
+  heroesForQuest: 05000000060000000700000008000000
   uniqueId: 34
   questName: The Merchant of Hidden Truths
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 1
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0
@@ -37,8 +37,8 @@ MonoBehaviour:
   hitPower: 0
   HP: 0
   enemyCount: 1
-  willWin: 0
+  willWin: 1
   completionTime: 60
-  isCompleted: 0
-  isSelected: 0
+  isCompleted: 1
+  isSelected: 1
   slots: 0

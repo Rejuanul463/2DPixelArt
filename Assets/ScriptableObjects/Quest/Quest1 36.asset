@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 35
-  questName: 
+  questName: The Crown of Ashen Kings
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 1
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

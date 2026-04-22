@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 46
-  questName: 
+  questName: The Hidden Vault of Kingsreach
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 4
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 44
-  questName: 
+  questName: "The Warlock\u2019s Final Bargain"
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 3
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

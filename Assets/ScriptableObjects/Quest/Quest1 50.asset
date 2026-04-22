@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 49
-  questName: 
+  questName: The Trial of the Seven Seals
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 4
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 45
-  questName: 
+  questName: The Banner of the Fallen Legion
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 3
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0

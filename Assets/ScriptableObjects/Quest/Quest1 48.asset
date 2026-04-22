@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   heroesForQuest: 
   uniqueId: 47
-  questName: 
+  questName: The Plague of Black Hollow
   questType: 0
-  questDifficulty: 0
+  questDifficulty: 4
   description: 
   questIcon: {fileID: 0}
   requiredLevel: 0
