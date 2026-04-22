@@ -1,10 +1,13 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.EnhancedTouch;
+using Touch = UnityEngine.InputSystem.EnhancedTouch.Touch;
 
 public class CameraController2D : MonoBehaviour
 {
     [Header("Camera Movement")]
-    public float dragSpeed = 0.5f;       // how fast camera moves
-    public float smoothTime = 0.2f;      // smooth damping
+    public float dragSpeed = 0.5f;
+    public float smoothTime = 0.2f;
 
     [Header("Map Boundaries")]
     public Vector2 minBounds;
@@ -15,6 +18,16 @@ public class CameraController2D : MonoBehaviour
     private Vector3 velocity = Vector3.zero;
 
     [SerializeField] private PannelManager pannelManager;
+
+    void Awake()
+    {
+        EnhancedTouchSupport.Enable();
+    }
+
+    void OnDisable()
+    {
+        EnhancedTouchSupport.Disable();
+    }
 
     void Start()
     {
@@ -32,37 +45,44 @@ public class CameraController2D : MonoBehaviour
         ClampPosition();
     }
 
+    Vector3 GetWorldPoint(Vector2 screenPos)
+    {
+        Vector3 point = new Vector3(screenPos.x, screenPos.y, -Camera.main.transform.position.z);
+        return Camera.main.ScreenToWorldPoint(point);
+    }
+
     void HandleDrag()
     {
-#if UNITY_EDITOR || UNITY_STANDALONE
-        // MOUSE DRAG
-        if (Input.GetMouseButtonDown(0))
+        // Handle touch (works on Android AND in Editor with touch simulation)
+        if (Touch.activeTouches.Count > 0)
         {
-            dragOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        }
+            Touch touch = Touch.activeTouches[0];
 
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 difference = dragOrigin - Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            targetPosition += difference * dragSpeed;
-        }
-#else
-        // TOUCH DRAG
-        if (Input.touchCount > 0)
-        {
-            Touch touch = Input.GetTouch(0);
-
-            if (touch.phase == TouchPhase.Began)
+            if (touch.phase == UnityEngine.InputSystem.TouchPhase.Began)
             {
-                dragOrigin = Camera.main.ScreenToWorldPoint(touch.position);
+                dragOrigin = GetWorldPoint(touch.screenPosition);
             }
-            else if (touch.phase == TouchPhase.Moved)
+            else if (touch.phase == UnityEngine.InputSystem.TouchPhase.Moved ||
+                     touch.phase == UnityEngine.InputSystem.TouchPhase.Stationary)
             {
-                Vector3 difference = dragOrigin - Camera.main.ScreenToWorldPoint(touch.position);
+                Vector3 difference = dragOrigin - GetWorldPoint(touch.screenPosition);
                 targetPosition += difference * dragSpeed;
             }
         }
-#endif
+        // Handle mouse (Editor / Standalone fallback)
+        else if (Mouse.current != null)
+        {
+            if (Mouse.current.leftButton.wasPressedThisFrame)
+            {
+                dragOrigin = GetWorldPoint(Mouse.current.position.ReadValue());
+            }
+
+            if (Mouse.current.leftButton.isPressed)
+            {
+                Vector3 difference = dragOrigin - GetWorldPoint(Mouse.current.position.ReadValue());
+                targetPosition += difference * dragSpeed;
+            }
+        }
     }
 
     void SmoothMove()
@@ -77,12 +97,12 @@ public class CameraController2D : MonoBehaviour
 
     void ClampPosition()
     {
-        Vector3 pos = transform.position;
+        targetPosition.x = Mathf.Clamp(targetPosition.x, minBounds.x, maxBounds.x);
+        targetPosition.y = Mathf.Clamp(targetPosition.y, minBounds.y, maxBounds.y);
 
+        Vector3 pos = transform.position;
         pos.x = Mathf.Clamp(pos.x, minBounds.x, maxBounds.x);
         pos.y = Mathf.Clamp(pos.y, minBounds.y, maxBounds.y);
-
         transform.position = pos;
-        targetPosition = pos; // so smoothing doesn't push camera outside
     }
 }

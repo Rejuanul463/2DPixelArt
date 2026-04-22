@@ -57183,7 +57183,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b68158f731ae99a4ea98ca3212bdd34b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dragSpeed: 10
+  dragSpeed: 1
   smoothTime: 0.2
   minBounds: {x: -58, y: -51}
   maxBounds: {x: 58, y: 44}
