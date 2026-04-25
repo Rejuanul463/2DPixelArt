@@ -33,4 +33,5 @@ MonoBehaviour:
   goldPerAttack: 20
   isHeroSummoned: 1
   xp: 1587
+  xp: 1457
   xpForNextLevel: 2997
