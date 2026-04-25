@@ -1,0 +1,628 @@
+{
+    "heroes": [
+        {
+            "name": "Gabriel Walker",
+            "id": 0,
+            "uniqueId": 0,
+            "level": 5,
+            "hitPerSecond": 2.0,
+            "hitPower": 374.4000244140625,
+            "HP": 320.4000244140625,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 24,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 32.68046951293945,
+                "y": 10.250849723815918,
+                "z": -0.0000062116901062836408
+            }
+        },
+        {
+            "name": "Lillian Garcia",
+            "id": 1,
+            "uniqueId": 1,
+            "level": 6,
+            "hitPerSecond": 2.0,
+            "hitPower": 371.79998779296877,
+            "HP": 246.73997497558595,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -2.4777557849884035,
+                "y": 10.673723220825196,
+                "z": -0.000006060484793124488
+            }
+        },
+        {
+            "name": "Jacob Torres",
+            "id": 2,
+            "uniqueId": 2,
+            "level": 5,
+            "hitPerSecond": 0.5,
+            "hitPower": 356.4000244140625,
+            "HP": 356.4000244140625,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 10,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -33.54436492919922,
+                "y": -5.683851718902588,
+                "z": -0.000011910383364011068
+            }
+        },
+        {
+            "name": "Daniel Allen",
+            "id": 4,
+            "uniqueId": 3,
+            "level": 5,
+            "hitPerSecond": 2.0,
+            "hitPower": 441.9999694824219,
+            "HP": 516.0999755859375,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -0.24690131843090058,
+                "y": -64.83680725097656,
+                "z": -0.00003306513463030569
+            }
+        },
+        {
+            "name": "Riley Jackson",
+            "id": 5,
+            "uniqueId": 4,
+            "level": 5,
+            "hitPerSecond": 4.0,
+            "hitPower": 2047.5,
+            "HP": 1021.5,
+            "coolDownTime": 200.0,
+            "goldPerAttack": 24,
+            "isHeroSummoned": true,
+            "position": {
+                "x": 46.429222106933597,
+                "y": 30.91931915283203,
+                "z": 0.0000011798936156992568
+            }
+        }
+    ],
+    "buildings": [
+        {
+            "buildingID": 2,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1776680458,
+            "upgradeCostGold": 150,
+            "upgradeCostWood": 50,
+            "upgradeCostStone": 50,
+            "xpBoost": 45.0
+        },
+        {
+            "buildingID": 3,
+            "buildingLevel": 4,
+            "isUnderUpgrade": false,
+            "isUpgradable": false,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1776834703,
+            "upgradeCostGold": 450,
+            "upgradeCostWood": 180,
+            "upgradeCostStone": 180,
+            "xpBoost": 823.0
+        },
+        {
+            "buildingID": 4,
+            "buildingLevel": 3,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1776764116,
+            "upgradeCostGold": 150,
+            "upgradeCostWood": 30,
+            "upgradeCostStone": 30,
+            "xpBoost": 366.0
+        },
+        {
+            "buildingID": 5,
+            "buildingLevel": 1,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1,
+            "upgradeCostGold": 50,
+            "upgradeCostWood": 15,
+            "upgradeCostStone": 15,
+            "xpBoost": 33.0
+        },
+        {
+            "buildingID": 0,
+            "buildingLevel": 4,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 90,
+            "upgradeStartTime": 1776746123,
+            "upgradeCostGold": 675,
+            "upgradeCostWood": 337,
+            "upgradeCostStone": 337,
+            "xpBoost": 1135.0
+        },
+        {
+            "buildingID": 1,
+            "buildingLevel": 4,
+            "isUnderUpgrade": false,
+            "isUpgradable": true,
+            "upgradeTime": 1,
+            "upgradeStartTime": 1776834703,
+            "upgradeCostGold": 337,
+            "upgradeCostWood": 112,
+            "upgradeCostStone": 112,
+            "xpBoost": 505.0
+        }
+    ],
+    "guild": {
+        "guildLevel": 18,
+        "currentExperience": 7050,
+        "experienceToNextLevel": 0,
+        "gold": 12898,
+        "unlockedHeroID": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "maxUnlockableHeroID": 9,
+        "gems": 120,
+        "woods": 265,
+        "stones": 1374,
+        "BlackSmithLevel": 1,
+        "HeroSummonerLevel": 1,
+        "questCompleteTime": []
+    },
+    "quests": [
+        {
+            "questName": "Searing For Embers",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Broken Crown Oath",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Shadows Over Eldermoor",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Last Knight’s Vow",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Curse of the Hollow King",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Whispering Forest Trial",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Siege of Blackstone Keep",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Lost Relic of Arvandor",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Flames of the Forsaken Village",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Dragon’s Forgotten Pact",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Blood Moon Rising",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Silent Monastery Secret",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The King’s Stolen Heir",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Ashes of the Fallen Realm",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Cursed Blade Awakens",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Secrets Beneath Ironhold",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Witch of Ravenwood",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Trials of the Golden Order",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Phantom of Greywatch",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Rise of the Shadow Legion",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Frozen Throne’s Call",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Frozen Throne’s Call",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Knight Without a Name",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Echoes of the Ancient War",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Sunken City Mystery",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Betrayal of Silvercrest",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": [
+                0,
+                1,
+                2
+            ]
+        },
+        {
+            "questName": "The Guardian of the Sacred Flame",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": [
+                0,
+                1,
+                2,
+                0,
+                1,
+                2
+            ]
+        },
+        {
+            "questName": "The Blacksmith’s Hidden Legacy",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Wrath of the Stone Giants",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Fallen Paladin’s Redemption",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Veil of Dark Sorcery",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Hunt for the Crimson Beast",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Queen’s Secret War",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Forbidden Spellbook",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Watchtower’s Last Stand",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Merchant of Hidden Truths",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Crown of Ashen Kings",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Lanterns of Lost Souls",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Iron Duke’s Rebellion",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Serpent Beneath the Throne",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Forgotten Chapel Curse",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "Blades of the Crimson Brotherhood",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Oracle of Stormpeak",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Ruins of Evernight",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Silver Wolf Hunt",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Warlock’s Final Bargain",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Banner of the Fallen Legion",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Hidden Vault of Kingsreach",
+            "isCompleted": true,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Plague of Black Hollow",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Harbinger’s Omen",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        },
+        {
+            "questName": "The Trial of the Seven Seals",
+            "isCompleted": false,
+            "completeTime": 0,
+            "heroesForQuest": []
+        }
+    ],
+    "sceneObjects": [
+        {
+            "objectName": "Berbarian(Clone)",
+            "position": {
+                "x": 32.68046951293945,
+                "y": 10.250849723815918,
+                "z": -0.0000062116901062836408
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": -1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Archer(Clone)",
+            "position": {
+                "x": -2.4777557849884035,
+                "y": 10.673723220825196,
+                "z": -0.000006060484793124488
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Giant(Clone)",
+            "position": {
+                "x": -33.54436492919922,
+                "y": -5.683851718902588,
+                "z": -0.000011910383364011068
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Knight(Clone)",
+            "position": {
+                "x": -0.24690131843090058,
+                "y": -64.83680725097656,
+                "z": -0.00003306513463030569
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Valkyri(Clone)",
+            "position": {
+                "x": 46.429222106933597,
+                "y": 30.91931915283203,
+                "z": 0.0000011798936156992568
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        }
+    ],
+    "ongoingQuests": [
+        {
+            "questUniqueId": 25,
+            "startTime": "2026-04-25T11:01:46.5240330Z",
+            "heroesForQuest": [
+                0,
+                1,
+                2,
+                0,
+                1,
+                2
+            ]
+        }
+    ],
+    "selectedHeroesForQuest": [
+        0,
+        1,
+        2,
+        0,
+        1,
+        2
+    ],
+    "lastUpdatedAt": "2026-04-25T11:01:50.6872056Z"
+}
