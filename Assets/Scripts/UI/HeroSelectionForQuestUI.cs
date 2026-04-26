@@ -183,6 +183,7 @@ public class HeroSelectionForQuestUI : MonoBehaviour
         count = 0;
         StartQuestButton.interactable = false;
         SaveSelectedHeroes();
+        GameManager.Instance.heroUI.ClearQuestOverlays();  // remove overlays from hero panel
     }
 
     public void heroIconUpdate()
@@ -221,9 +222,19 @@ public class HeroSelectionForQuestUI : MonoBehaviour
     private void goQuest()
     {
         SaveManager.Instance.SaveGame();
-        // SaveManager.Instance.loadGame();
         TextPanel.SetActive(true);
+
+        // Collect the indices of heroes going on this quest
+        List<int> onQuestIndices = new List<int>();
+        foreach ((int heroIndex, bool isActive) in selectedHeroes)
+        {
+            if (isActive) onQuestIndices.Add(heroIndex);
+        }
+
         GameManager.Instance.pannelManager.GoQuest(count, selectedHeroes);
+
+        // Tell HeroUI which heroes are now busy — AFTER GoQuest so data is committed
+        GameManager.Instance.heroUI.SetHeroesOnQuest(onQuestIndices);
     }
 
     public void ClearChildren()
