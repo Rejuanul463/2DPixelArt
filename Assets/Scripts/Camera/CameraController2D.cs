@@ -65,8 +65,10 @@ public class CameraController2D : MonoBehaviour
             else if (touch.phase == UnityEngine.InputSystem.TouchPhase.Moved ||
                      touch.phase == UnityEngine.InputSystem.TouchPhase.Stationary)
             {
-                Vector3 difference = dragOrigin - GetWorldPoint(touch.screenPosition);
+                Vector3 currentWorldPoint = GetWorldPoint(touch.screenPosition);
+                Vector3 difference = dragOrigin - currentWorldPoint;
                 targetPosition += difference * dragSpeed;
+                dragOrigin = currentWorldPoint;
             }
         }
         // Handle mouse (Editor / Standalone fallback)
@@ -79,8 +81,10 @@ public class CameraController2D : MonoBehaviour
 
             if (Mouse.current.leftButton.isPressed)
             {
-                Vector3 difference = dragOrigin - GetWorldPoint(Mouse.current.position.ReadValue());
+                Vector3 currentWorldPoint = GetWorldPoint(Mouse.current.position.ReadValue());
+                Vector3 difference = dragOrigin - currentWorldPoint;
                 targetPosition += difference * dragSpeed;
+                dragOrigin = currentWorldPoint;
             }
         }
     }
