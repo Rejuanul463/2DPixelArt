@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a42d417ede243de4496f33ffde425aa8
+guid: b5fce9f843199a546b4acca96d12c1f5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6258982733121160375
-    second: OnGoingQuest_0
+      213: -8685919658859883920
+    second: Ongoing_Quest-removebg-preview_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: OnGoingQuest_0
+      name: Ongoing_Quest-removebg-preview_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 27
-        width: 426
-        height: 470
+        x: 33
+        y: 26
+        width: 428
+        height: 472
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 7b48dfe52af5cd650800000000000000
-      internalID: 6258982733121160375
+      spriteID: 072131a171a657780800000000000000
+      internalID: -8685919658859883920
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      OnGoingQuest_0: 6258982733121160375
+      Ongoing_Quest-removebg-preview_0: -8685919658859883920
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
