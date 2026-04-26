@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9df0272fd2763074fb16b1c06d37cd2e, type: 3}
-  m_Name: Jacob Torres
+  m_Name: Wyatt Baker
   m_EditorClassIdentifier: 
   heroPrefab: {fileID: 5576259084274473655, guid: f4719763fc7d84425886c35a6b038636, type: 3}
   heroSprite:
@@ -25,9 +25,9 @@ MonoBehaviour:
   heroName: Giant
   goldCost: 138
   hitPerSecond: 0.5
-  hitPower: 356.40002
-  HP: 356.40002
-  level: 5
+  hitPower: 427
+  HP: 427
+  level: 2
   levelUpMultiplier: 1.2
   coolDownTime: 100
   goldPerAttack: 10
