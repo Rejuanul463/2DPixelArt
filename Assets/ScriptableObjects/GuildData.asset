@@ -15,7 +15,7 @@ MonoBehaviour:
   guildLevel: 1
   currentExperience: 0
   experienceToNextLevel: 0
-  gold: 300
+  gold: 400
   unlockedHeroID: 010101010101
   maxUnlockableHeroID: 9
   gems: 0
