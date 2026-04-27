@@ -1,5 +1,4 @@
-﻿
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -120,7 +119,7 @@ public class HeroSummoner : Building
 
     public Sprite getCurrentHeroSprite(int id)
     {
-        return heroDatas[id].heroSprite[getHeroLevel(id)];
+        return heroDatas[id].heroSprite[getHeroLevel(id) - 1];
     }
 
     public override IEnumerator completeUpgrade(long timeLeft)

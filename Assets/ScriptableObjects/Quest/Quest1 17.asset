@@ -40,6 +40,6 @@ MonoBehaviour:
   enemyCount: 7
   willWin: 0
   completionTime: 60
-  isCompleted: 1
+  isCompleted: 0
   isSelected: 0
   slots: 0

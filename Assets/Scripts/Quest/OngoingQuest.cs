@@ -61,14 +61,10 @@ public class OngoingQuest : MonoBehaviour
                 if (GameManager.Instance != null && GameManager.Instance.heroSelectionForQuestUI != null)
                 {
                     GameManager.Instance.heroSelectionForQuestUI.RestoreButtons(quest.heroesForQuest);
-                    // FIX: Clear the hero selection state so selectedHeroes list is emptied,
-                    // then immediately save so the save file has no locked heroes.
-                    // Without this, if the player quits after the timer fires but before
-                    // ResultOfTheQuest runs, heroes stay locked on the next launch.
                     GameManager.Instance.heroSelectionForQuestUI.OnQuestComplete();
                 }
 
-                // FIX: Save immediately so selectedHeroesForQuest is written as empty.
+                // Save immediately so selectedHeroesForQuest is written as empty
                 if (SaveManager.Instance != null)
                     SaveManager.Instance.SaveGame();
             }
@@ -118,8 +114,6 @@ public class OngoingQuest : MonoBehaviour
 
                 if (DateTime.UtcNow >= endTime)
                 {
-                    // Finished while offline — SaveManager.LoadGame() handles
-                    // clearing the hero lock via _pendingSelectedHeroes.Remove()
                     quest.isCompleted = true;
                     PlayerPrefs.DeleteKey(key);
                     Debug.Log("Offline completed: " + quest.questName);

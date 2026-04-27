@@ -38,7 +38,7 @@ public class PannelManager : MonoBehaviour
     public static event System.Action<int> OnQuestStarting;
     private bool theResultIsOut;
     [SerializeField] private HeroSelectionForQuestUI _heroSelectionForQuestUI;
-    //[SerializeField] private GameObject notificationObject;
+
     public bool TheResultIsOut
     {
         get => theResultIsOut;
@@ -72,12 +72,6 @@ public class PannelManager : MonoBehaviour
         GameManager.Instance.upgradeCounter.OnQuestFinished += QuestFinishedHandler;
         _heroSelectionForQuestUI = GameManager.Instance.heroSelectionForQuestUI;
 
-        // FIX: Call RestoreHeroSelectionState() here, AFTER AddGameObjects() has populated
-        // heroesQuestButtons. SaveManager.Start() populated SelectedHeroesForQuest already
-        // (via RestoreHeroSelectionUI), so this will correctly lock the right buttons.
-        // This cannot be called from SaveManager.Start() because PannelManager.Start()
-        // (which populates heroesQuestButtons) may not have run yet at that point,
-        // causing an ArgumentOutOfRangeException.
         RestoreHeroSelectionState();
     }
 
@@ -144,27 +138,22 @@ public class PannelManager : MonoBehaviour
             Debug.Log("PlayerSelectionPannel");
         }
 
-        // ✅ FIX: Check BEFORE closing, not after
         if (activePannelObj == pannels[ind])
         {
-            // Same panel clicked again — toggle it off
             activePannelObj.SetActive(false);
             activePannelObj = null;
             return;
         }
 
-        // Close the previously open panel
         if (activePannelObj != null)
             activePannelObj.SetActive(false);
 
-        // Open the new panel
         pannels[ind].SetActive(true);
         activePannelObj = pannels[ind];
     }
 
     public void RestoreHeroSelectionState()
     {
-        // Guard: heroesQuestButtons may not be populated yet if called too early
         if (heroesQuestButtons == null || heroesQuestButtons.Count == 0) return;
 
         for (int i = 0; i < heroesQuestButtons.Count; i++)
@@ -181,7 +170,6 @@ public class PannelManager : MonoBehaviour
 
         foreach (int id in selectedHeroesForQuest)
         {
-            // Guard: id must be a valid index
             if (id < 0 || id >= heroesQuestButtons.Count) continue;
             heroesQuestButtons[id].interactable = false;
             heroQuestDeletButtons[id].interactable = true;
@@ -409,10 +397,12 @@ public class PannelManager : MonoBehaviour
             Debug.Log("Wins");
             questData.isSelected = true;
             questData.isCompleted = true;
-            GameManager.Instance.GuildManager.Gold += questData.goldRewardBase;
-            GameManager.Instance.GuildManager.Gems += 15;
-            GameManager.Instance.GuildManager.Stones +=questData.StoneReward;
-            GameManager.Instance.GuildManager.Woods= questData.WoodReward;
+
+            // Apply all rewards
+            GameManager.Instance.GuildManager.Gold       += questData.goldRewardBase;
+            GameManager.Instance.GuildManager.Gems       += 15;
+            GameManager.Instance.GuildManager.Stones     += questData.StoneReward;
+            GameManager.Instance.GuildManager.Woods       = questData.WoodReward;
             GameManager.Instance.GuildManager.Experience += questData.experienceReward;
 
             foreach (int i in heroesForQuest)
@@ -422,11 +412,19 @@ public class PannelManager : MonoBehaviour
                     .upgradeHero((int)(questData.experienceReward / heroesForQuest.Count));
                 Debug.Log(GameManager.Instance.HeroSummoner.heroDatas[i].xp + " " + i);
             }
+
+            // ── REWARD POPUP ─────────────────────────────────────────────
+            // Triggered HERE only — after the countdown timer fires,
+            // after all resources have been applied, on a win only.
+            // QuestManager and OngoingQuest are NOT touched.
+            // ─────────────────────────────────────────────────────────────
+            if (QuestRewardPopup.Instance != null)
+                QuestRewardPopup.Instance.Show(questData);
         }
         else
         {
             GameManager.Instance.GuildManager.Stones += 15;
-            GameManager.Instance.GuildManager.Woods +=15;
+            GameManager.Instance.GuildManager.Woods += 15;
             if (questData != null) questData.isSelected = false;
             _upgradeCounter.QuestUpdate.text = "You Have Lost The Quest!";
             Debug.Log("loses");
@@ -442,9 +440,6 @@ public class PannelManager : MonoBehaviour
         selectedHeroesForQuest.Clear();
         count = 0;
 
-        // FIX: Save immediately after quest result so selectedHeroesForQuest is written
-        // as empty to disk. Without this, if the player closes the app after the result
-        // screen, the old hero indices remain in the save file and get re-locked on next launch.
         GameManager.Instance.saveManager.SaveGame();
 
         theResultIsOut = true;
