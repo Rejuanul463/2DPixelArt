@@ -11,9 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 55de1385aa2db32418d2e6ac7917dc1e
-  - enabled: 1
-    path: Assets/Scenes/TutorialScene.unity
-    guid: 718e6f2f68a550f469f78cc3d41ac238
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: 95d6bc8e2ec6d41409d912fe080e7c35, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
