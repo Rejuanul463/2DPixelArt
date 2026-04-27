@@ -14797,7 +14797,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.15875001, y: 0.47561574}
   m_AnchorMax: {x: 0.56374997, y: 0.82010335}
-  m_AnchoredPosition: {x: 1.7514954, y: 0.026931763}
+  m_AnchoredPosition: {x: 1.7515259, y: 0.026947021}
   m_SizeDelta: {x: 2.9274006, y: 0.053711}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &134166295
@@ -16673,10 +16673,10 @@ RectTransform:
   - {fileID: 24887205}
   m_Father: {fileID: 1778275356}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.17750001, y: 0.4568968}
-  m_AnchorMax: {x: 0.57250005, y: 0.8316157}
-  m_AnchoredPosition: {x: -14.639, y: -17.35}
-  m_SizeDelta: {x: 28.723, y: 34.7}
+  m_AnchorMin: {x: 0.17750001, y: 0.42448565}
+  m_AnchorMax: {x: 0.57000005, y: 0.8184486}
+  m_AnchoredPosition: {x: 0.86120605, y: 0.37750244}
+  m_SizeDelta: {x: 1.7224998, y: 6.155098}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &150011968
 CanvasRenderer:
@@ -55932,10 +55932,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 150011967}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.13585018}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 37, y: -108}
-  m_SizeDelta: {x: 31.5969, y: -363.58}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -4.3843, y: 37.994995}
+  m_SizeDelta: {x: 306.95, y: -75.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &504902095
 MonoBehaviour:
@@ -56023,7 +56023,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -0.00009918213, w: 0}
+  m_margin: {x: 1.9089966, y: 0, z: 3.8179855, w: -2.2457619}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -231653,7 +231653,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1388532661
 RectTransform:
   m_ObjectHideFlags: 0
@@ -259481,10 +259481,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1316974108}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 567.1477, y: 152.4895}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1634955535
 MonoBehaviour:
