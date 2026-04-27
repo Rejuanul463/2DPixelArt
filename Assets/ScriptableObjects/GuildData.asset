@@ -15,12 +15,12 @@ MonoBehaviour:
   guildLevel: 1
   currentExperience: 0
   experienceToNextLevel: 0
-  gold: 400
+  gold: 500
   unlockedHeroID: 010101010101
   maxUnlockableHeroID: 9
-  gems: 0
-  woods: 0
-  stones: 0
+  gems: 10
+  woods: 50
+  stones: 50
   BlackSmithLevel: 1
   HeroSummonerLevel: 1
   questCompleteTime: 
