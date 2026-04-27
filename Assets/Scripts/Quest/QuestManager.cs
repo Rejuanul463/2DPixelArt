@@ -1,4 +1,3 @@
-
 using System;
 using System.Collections.Generic;
 using TMPro;
@@ -77,7 +76,6 @@ public class QuestManager : MonoBehaviour
             // Skip completed quests
             if (questData[i].isCompleted)
                 continue;
-                //Destroy(questData[i]);
 
             // Cache loop variables (CRITICAL FIX)
             int index = i;
@@ -86,9 +84,7 @@ public class QuestManager : MonoBehaviour
             // Instantiate UI item
             GameObject item = Instantiate(itemPrefab, content);
             item.transform.localScale = Vector3.one;
-            
-            //quest id
- 
+
             // Quest Name
             var nameText = item.transform.Find("Name")
                 ?.GetComponent<TextMeshProUGUI>();
@@ -161,11 +157,6 @@ public class QuestManager : MonoBehaviour
                 btn.onClick.AddListener(() =>
                     OnQuestButtonPressed(qDetails, quest, index, ref item, difficulty));
             }
-            else
-            {
-
-            }
-
         }
     }
 
@@ -183,9 +174,6 @@ public class QuestManager : MonoBehaviour
         details.text =  "<b>Quest Details :</b> " + "<color=#FFFFFF>" + qD.name + "</color>\n" + "\n" +
                         "<b>Difficulty :</b> " + "<color=#FFFFFF>" + difficulty + "</color>\n" + "\n" +
                         "<b>Enemy :</b> " + "<color=#FFFFFF>" + qD.enemyName + "</color>\n";
-        
-        //ongoingQuestList.Add((qD,quest));
-        //GameManager.Instance.heroSelectionForQuestUI.setMaxHeroNumber()
     }
 
     public QuestData SimulateCombat(float heroHP, float heroHPS, float heroHitPower)
@@ -208,12 +196,11 @@ public class QuestManager : MonoBehaviour
         float timeForHeroesToKillEnemies = totalEnemyHP / totalHeroDPS;
         float timeForEnemiesToKillHeroes = totalHeroHP / totalEnemyDPS;
 
-        // Debug log (optional)
         Debug.Log($"Heroes DPS: {totalHeroDPS}, Total Enemy HP: {totalEnemyHP}, Time to kill: {timeForHeroesToKillEnemies}");
         Debug.Log($"Enemies DPS: {totalEnemyDPS}, Total Hero HP: {totalHeroHP}, Time to kill: {timeForEnemiesToKillHeroes}");
 
         // Winner is the side that kills the other first
-        if( timeForHeroesToKillEnemies <= timeForEnemiesToKillHeroes)
+        if (timeForHeroesToKillEnemies <= timeForEnemiesToKillHeroes)
         {
             GameManager.Instance.GuildManager.Gold += (int)SelectedQD.reward;
             selectedQuestData.isCompleted = true;
