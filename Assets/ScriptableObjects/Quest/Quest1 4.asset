@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c22ed004a4b8ad4db520b9cfff8edd6, type: 3}
   m_Name: Quest1 4
   m_EditorClassIdentifier: 
-  heroesForQuest: 
+  heroesForQuest: 0000000001000000
   uniqueId: 4
   questName: Curse of the Hollow King
   questType: 0

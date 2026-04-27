@@ -23,10 +23,10 @@ MonoBehaviour:
   Id: 3
   uniqueId: 3
   heroName: Wizard
-  goldCost: 217
+  goldCost: 282
   hitPerSecond: 3
-  hitPower: 575.89996
-  HP: 865.8
+  hitPower: 748
+  HP: 1125
   level: 1
   levelUpMultiplier: 1.3
   coolDownTime: 100

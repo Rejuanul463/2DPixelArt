@@ -27,10 +27,10 @@ MonoBehaviour:
   hitPerSecond: 2
   hitPower: 483
   HP: 320
-  level: 2
+  level: 1
   levelUpMultiplier: 1.3
   coolDownTime: 60
   goldPerAttack: 20
   isHeroSummoned: 1
-  xp: 2021
+  xp: 2088
   xpForNextLevel: 2997

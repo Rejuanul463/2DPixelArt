@@ -20,14 +20,14 @@ MonoBehaviour:
   - {fileID: 21300000, guid: b1f3fd612b2a8d740875f8d8e89e7ae6, type: 3}
   - {fileID: 21300000, guid: ef2c999838fcb444fa41d096036a7a05, type: 3}
   - {fileID: 21300000, guid: db265b7bb1739a84d878a5f6ca3ca3ff, type: 3}
-  buildingLevel: 2
+  buildingLevel: 1
   maxBuildingLevel: 4
-  upgradeCostGold: 150
-  upgradeCostWood: 50
-  upgradeCostStone: 50
-  xpBoost: 225
+  upgradeCostGold: 337
+  upgradeCostWood: 112
+  upgradeCostStone: 112
+  xpBoost: 505
   isUnderUpgrade: 0
   isUpgradable: 1
   upgradeTime: 1
   UpgradeMultiplier: 1.5
-  upgradeStartTime: 1776745830
+  upgradeStartTime: 1776834703
