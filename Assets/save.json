@@ -1,5 +1,57 @@
 {
-    "heroes": [],
+    "heroes": [
+        {
+            "name": "Samuel Hall",
+            "id": 0,
+            "uniqueId": 0,
+            "level": 1,
+            "hitPerSecond": 2.0,
+            "hitPower": 646.0,
+            "HP": 553.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 24,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -15.558080673217774,
+                "y": 12.456826210021973,
+                "z": -0.000005422788944997592
+            }
+        },
+        {
+            "name": "Aria Walker",
+            "id": 1,
+            "uniqueId": 1,
+            "level": 1,
+            "hitPerSecond": 2.0,
+            "hitPower": 483.0,
+            "HP": 320.0,
+            "coolDownTime": 60.0,
+            "goldPerAttack": 20,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -3.343135118484497,
+                "y": -63.82859802246094,
+                "z": -0.0000327045563608408
+            }
+        },
+        {
+            "name": "Grayson Davis",
+            "id": 2,
+            "uniqueId": 2,
+            "level": 1,
+            "hitPerSecond": 0.5,
+            "hitPower": 427.0,
+            "HP": 427.0,
+            "coolDownTime": 100.0,
+            "goldPerAttack": 10,
+            "isHeroSummoned": true,
+            "position": {
+                "x": -36.58523178100586,
+                "y": 0.6773921847343445,
+                "z": -0.000009635424248699564
+            }
+        }
+    ],
     "buildings": [
         {
             "buildingID": 2,
@@ -75,10 +127,10 @@
         }
     ],
     "guild": {
-        "guildLevel": 1,
-        "currentExperience": 0,
+        "guildLevel": 2,
+        "currentExperience": 35,
         "experienceToNextLevel": 0,
-        "gold": 500,
+        "gold": 332,
         "unlockedHeroID": [
             true,
             true,
@@ -88,9 +140,9 @@
             true
         ],
         "maxUnlockableHeroID": 9,
-        "gems": 10,
-        "woods": 50,
-        "stones": 50,
+        "gems": 25,
+        "woods": 90,
+        "stones": 140,
         "BlackSmithLevel": 1,
         "HeroSummonerLevel": 1,
         "questCompleteTime": []
@@ -104,7 +156,7 @@
         },
         {
             "questName": "The Broken Crown Oath",
-            "isCompleted": false,
+            "isCompleted": true,
             "completeTime": 0,
             "heroesForQuest": []
         },
@@ -409,8 +461,129 @@
             "heroesForQuest": []
         }
     ],
-    "sceneObjects": [],
+    "sceneObjects": [
+        {
+            "objectName": "Berbarian(Clone)",
+            "position": {
+                "x": -15.558080673217774,
+                "y": 12.456826210021973,
+                "z": -0.000005422788944997592
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": -1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Barberian",
+            "position": {
+                "x": -15.61807632446289,
+                "y": 13.746826171875,
+                "z": -0.02814284898340702
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 0.49000000953674319,
+                "y": 0.49000000953674319,
+                "z": 0.49000000953674319
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Archer(Clone)",
+            "position": {
+                "x": -3.343135118484497,
+                "y": -63.82859802246094,
+                "z": -0.0000327045563608408
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": -1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Giant(Clone)",
+            "position": {
+                "x": -36.58523178100586,
+                "y": 0.6773921847343445,
+                "z": -0.000009635424248699564
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": 1.0,
+                "y": 1.0,
+                "z": 1.0
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Archer",
+            "position": {
+                "x": -3.403135061264038,
+                "y": -62.408599853515628,
+                "z": -0.028170131146907808
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": -0.6000000238418579,
+                "y": 0.6000000238418579,
+                "z": 0.6000000238418579
+            },
+            "isActive": true
+        },
+        {
+            "objectName": "Giant",
+            "position": {
+                "x": -36.5859375,
+                "y": 2.4773921966552736,
+                "z": -0.02814706228673458
+            },
+            "rotation": {
+                "x": 0.0,
+                "y": 0.0,
+                "z": 0.0,
+                "w": 1.0
+            },
+            "scale": {
+                "x": -0.699999988079071,
+                "y": 0.699999988079071,
+                "z": 0.699999988079071
+            },
+            "isActive": true
+        }
+    ],
     "ongoingQuests": [],
     "selectedHeroesForQuest": [],
-    "lastUpdatedAt": "2026-04-27T10:47:33.4442093Z"
+    "lastUpdatedAt": "2026-05-06T05:15:06.7126830Z"
 }
