@@ -6,7 +6,9 @@ public class GuildManager : MonoBehaviour
 {
     [SerializeField] GuildData guildData;
     [SerializeField] private TextMeshProUGUI woodsText;   // ✅ assign in Inspector
-    [SerializeField] private  TextMeshProUGUI stonesText; 
+    [SerializeField] private  TextMeshProUGUI stonesText;
+
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

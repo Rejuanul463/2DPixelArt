@@ -66,7 +66,7 @@ public class BuildingUI : MonoBehaviour
         // ✅ FIX: Disable if non-townhall building is at or above townhall level
         bool notBlockedByTownHall = ind == 0 || buildingData[ind].buildingLevel < buildingData[0].buildingLevel;
 
-        Upgrade.interactable = canAfford && isReady && notBlockedByTownHall;
+        Upgrade.interactable = canAfford && isReady;
     }
 
     private void updateBuilding(int id)

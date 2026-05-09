@@ -52,14 +52,15 @@ public class Building : MonoBehaviour
         if (buildingData.isUpgradable && !buildingData.isUnderUpgrade)
         {
             
-            if (!buildingData.isTownHall())
+            /*if (!buildingData.isTownHall())
             {
                 if (buildingData.buildingLevel == GameManager.Instance.TownHall.buildingLevel)
                 {
                     GameManager.Instance.popUpManager.ShowNotAvailable();
+                    Debug.Log("Building Upgrade hocche na!");
                     return;
                 }
-            }
+            }*/
             if (buildingData.upgradeCostGold <= guildData.gold &&
                 buildingData.upgradeCostWood <= guildData.woods &&
                 buildingData.upgradeCostStone <= guildData.stones)
