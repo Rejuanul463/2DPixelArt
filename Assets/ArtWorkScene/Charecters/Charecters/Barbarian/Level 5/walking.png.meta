@@ -155,11 +155,11 @@ TextureImporter:
         serializedVersion: 2
         x: 224
         y: 240
-        width: 181
+        width: 178
         height: 244
       alignment: 9
       pivot: {x: 0.34607354, y: 0.50543725}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 5, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -175,9 +175,9 @@ TextureImporter:
       name: walking_2
       rect:
         serializedVersion: 2
-        x: 395
-        y: 239
-        width: 164
+        x: 399
+        y: 240
+        width: 151
         height: 242
       alignment: 9
       pivot: {x: 0.24922143, y: 0.5}
@@ -197,9 +197,9 @@ TextureImporter:
       name: walking_3
       rect:
         serializedVersion: 2
-        x: 550
-        y: 239
-        width: 191
+        x: 553
+        y: 240
+        width: 178
         height: 242
       alignment: 9
       pivot: {x: 0.37497061, y: 0.49451768}
@@ -219,9 +219,9 @@ TextureImporter:
       name: walking_4
       rect:
         serializedVersion: 2
-        x: 733
+        x: 739
         y: 236
-        width: 162
+        width: 148
         height: 248
       alignment: 9
       pivot: {x: 0.27069354, y: 0.5}
@@ -241,9 +241,9 @@ TextureImporter:
       name: walking_5
       rect:
         serializedVersion: 2
-        x: 886
+        x: 896
         y: 238
-        width: 186
+        width: 173
         height: 244
       alignment: 9
       pivot: {x: 0.4072735, y: 0.50543725}
@@ -263,13 +263,13 @@ TextureImporter:
       name: walking_6
       rect:
         serializedVersion: 2
-        x: 1061
+        x: 1075
         y: 235
-        width: 206
+        width: 193
         height: 251
       alignment: 9
       pivot: {x: 0.46135822, y: 0.50528574}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 1, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []

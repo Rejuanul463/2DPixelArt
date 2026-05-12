@@ -128,12 +128,12 @@ TextureImporter:
       name: Walking_0
       rect:
         serializedVersion: 2
-        x: 21
-        y: 131
-        width: 259
+        x: 24
+        y: 132
+        width: 226
         height: 468
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,13 +150,13 @@ TextureImporter:
       name: Walking_1
       rect:
         serializedVersion: 2
-        x: 253
+        x: 280
         y: 131
-        width: 258
+        width: 201
         height: 466
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -172,13 +172,13 @@ TextureImporter:
       name: Walking_2
       rect:
         serializedVersion: 2
-        x: 483
+        x: 513
         y: 132
-        width: 277
+        width: 219
         height: 469
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 2, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: Walking_3
       rect:
         serializedVersion: 2
-        x: 732
+        x: 760
         y: 131
-        width: 272
+        width: 217
         height: 473
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: Walking_4
       rect:
         serializedVersion: 2
-        x: 977
+        x: 1007
         y: 131
-        width: 268
+        width: 218
         height: 471
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 191e39916eac0c043b14205af0368d11
     internalID: 0
     vertices: []
     indices: 

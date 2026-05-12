@@ -128,12 +128,12 @@ TextureImporter:
       name: walking_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 164
-        width: 221
+        x: 33
+        y: 163
+        width: 201
         height: 393
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -150,12 +150,12 @@ TextureImporter:
       name: walking_1
       rect:
         serializedVersion: 2
-        x: 236
+        x: 257
         y: 168
-        width: 315
-        height: 370
+        width: 267
+        height: 387
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,12 +172,12 @@ TextureImporter:
       name: walking_2
       rect:
         serializedVersion: 2
-        x: 534
-        y: 168
-        width: 283
-        height: 376
+        x: 552
+        y: 169
+        width: 235
+        height: 386
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -194,12 +194,12 @@ TextureImporter:
       name: walking_3
       rect:
         serializedVersion: 2
-        x: 797
+        x: 820
         y: 175
-        width: 253
+        width: 212
         height: 378
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -216,12 +216,12 @@ TextureImporter:
       name: walking_4
       rect:
         serializedVersion: 2
-        x: 1032
+        x: 1053
         y: 171
-        width: 234
-        height: 386
+        width: 196
+        height: 383
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -238,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: e1a12403113a70540828640b3724e8b1
     internalID: 0
     vertices: []
     indices: 
